@@ -1,0 +1,6 @@
+D:\GitHubKashbin\Core\Source\DNN7\bin\MICROS.Modules.MyCentralSiteConfiguration.XML
+D:\GitHubKashbin\Core\Source\DNN7\bin\MICROS.Modules.MyCentralSiteConfiguration.dll
+D:\GitHubKashbin\Core\Source\DNN7\bin\MICROS.Modules.MyCentralSiteConfiguration.pdb
+D:\GitHubKashbin\Core\Source\DNN7\DesktopModules\MyCentral\MyCentralSiteConfiguration\obj\Debug\ResolveAssemblyReference.cache
+D:\GitHubKashbin\Core\Source\DNN7\DesktopModules\MyCentral\MyCentralSiteConfiguration\obj\Debug\MICROS.Modules.MyCentralSiteConfiguration.dll
+D:\GitHubKashbin\Core\Source\DNN7\DesktopModules\MyCentral\MyCentralSiteConfiguration\obj\Debug\MICROS.Modules.MyCentralSiteConfiguration.pdb
