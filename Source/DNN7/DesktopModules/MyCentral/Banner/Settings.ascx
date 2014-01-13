@@ -1,6 +1,6 @@
-<%@ Control Language="C#" AutoEventWireup="false" Inherits="MICROS.Modules.MyCentralBanner.Settings" Codebehind="Settings.ascx.cs" %>
+<%@ Control Language="C#" AutoEventWireup="false" Inherits="Kashbin.Modules.Banner.Settings" Codebehind="Settings.ascx.cs" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
-<table cellspacing="0" cellpadding="2" border="0" summary="MyCentralBanner Settings Design Table">
+<table cellspacing="0" cellpadding="2" border="0" summary="Banner Settings Design Table">
     <tr>
         <td class="SubHead" width="150" valign="top">
             <dnn:label id="lblBannerOption" runat="server" controlname="RadioButtonListBannerOption"

@@ -5,14 +5,14 @@ using System.Web;
 using DotNetNuke.Entities.Modules;
 using System.Collections;
 
-namespace MICROS.Modules.MyCentralBanner
+namespace Kashbin.Modules.Banner
 {
-    public class MyCentralBannerSettings
+    public class BannerSettings
     {
         ModuleController controller;
         int tabModuleId;
 
-        public MyCentralBannerSettings(int tabModuleId)
+        public BannerSettings(int tabModuleId)
         {
             controller = new ModuleController();
             this.tabModuleId = tabModuleId;

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DotNetNuke.Modules.MyCentralBanner")]
+[assembly: AssemblyTitle("DotNetNuke.Modules.Banner")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("YourCompany")]
-[assembly: AssemblyProduct("MyCentralBanner")]
+[assembly: AssemblyProduct("Banner")]
 [assembly: AssemblyCopyright("(c) YourCompany 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: GuidAttribute("7c4eb4d2-3ffc-41b9-992e-0072c4fa7060")]

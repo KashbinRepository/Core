@@ -7,45 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MICROS.Modules.MyCentralBanner {
+namespace Kashbin.Modules.Banner {
     
     
-    public partial class Settings {
+    public partial class ViewBanner {
         
         /// <summary>
-        /// lblBannerOption control.
+        /// hdnSkinPath control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl lblBannerOption;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnSkinPath;
         
         /// <summary>
-        /// RadioButtonListBannerOption control.
+        /// hdnShowLogo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListBannerOption;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnShowLogo;
         
         /// <summary>
-        /// lblShowLogo control.
+        /// hdnBannerOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UserControl lblShowLogo;
-        
-        /// <summary>
-        /// chkShowLogo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkShowLogo;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden hdnBannerOption;
     }
 }

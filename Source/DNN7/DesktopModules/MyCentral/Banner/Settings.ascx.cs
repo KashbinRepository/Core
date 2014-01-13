@@ -20,46 +20,73 @@
 
 using System;
 using System.Web.UI;
-using DotNetNuke.Entities.Modules;
-using DotNetNuke.Entities.Modules.Actions;
-using DotNetNuke.Services.Exceptions;
-//using ModuleServices;
 
-namespace MICROS.Modules.MyCentralBanner
+using DotNetNuke;
+using DotNetNuke.Entities.Modules;
+using DotNetNuke.Services.Exceptions;
+
+namespace Kashbin.Modules.Banner
 {
 
     /// ----------------------------------------------------------------------------- 
     /// <summary> 
-    /// The ViewMyCentralBanner class displays the content 
+    /// The Settings class manages Module Settings 
     /// </summary> 
     /// <remarks> 
     /// </remarks> 
     /// <history> 
     /// </history> 
     /// ----------------------------------------------------------------------------- 
-    partial class ViewMyCentralBanner : PortalModuleBase, IActionable
+    partial class Settings : ModuleSettingsBase
     {
 
-        #region "Event Handlers"
+        #region "Base Method Implementations"
 
         /// ----------------------------------------------------------------------------- 
         /// <summary> 
-        /// Page_Load runs when the control is loaded 
+        /// LoadSettings loads the settings from the Database and displays them 
         /// </summary> 
+        /// <remarks> 
+        /// </remarks> 
+        /// <history> 
+        /// </history> 
         /// ----------------------------------------------------------------------------- 
-        protected void Page_Load(object sender, System.EventArgs e)
+        public override void LoadSettings()
         {
             try
             {
-               // SessionServiceFactory.InitializeModule(Request.ApplicationPath, Request.RawUrl);
-                DotNetNuke.Framework.jQuery.RequestRegistration();
+                if (!IsPostBack)
+                {
+                    BannerSettings settingsData = new BannerSettings(this.TabModuleId);
 
-                MyCentralBannerSettings settingsData = new MyCentralBannerSettings(this.TabModuleId);
-                this.hdnBannerOption.Value = !string.IsNullOrEmpty(settingsData.BannerOption) ? settingsData.BannerOption : "Fixed";
-                this.hdnShowLogo.Value = !string.IsNullOrEmpty(settingsData.ShowLogo) ? settingsData.ShowLogo : bool.FalseString;
-                this.hdnSkinPath.Value = PortalSettings.ActiveTab.SkinPath;
+                    this.chkShowLogo.Checked = !string.IsNullOrEmpty(settingsData.ShowLogo) ? Convert.ToBoolean(settingsData.ShowLogo) : false;
+                    if (!string.IsNullOrEmpty(settingsData.BannerOption)) RadioButtonListBannerOption.SelectedValue = settingsData.BannerOption;
+                }
             }
+            catch (Exception exc)
+            {
+                //Module failed to load 
+                Exceptions.ProcessModuleLoadException(this, exc);
+            }
+        }
 
+        /// ----------------------------------------------------------------------------- 
+        /// <summary> 
+        /// UpdateSettings saves the modified settings to the Database 
+        /// </summary> 
+        /// <remarks> 
+        /// </remarks> 
+        /// <history> 
+        /// </history> 
+        /// ----------------------------------------------------------------------------- 
+        public override void UpdateSettings()
+        {
+            try
+            {
+                BannerSettings settingsData = new BannerSettings(this.TabModuleId);
+                settingsData.BannerOption = this.RadioButtonListBannerOption.SelectedValue.ToString();
+                settingsData.ShowLogo = this.chkShowLogo.Checked.ToString();
+            }
             catch (Exception exc)
             {
                 //Module failed to load 
@@ -69,32 +96,7 @@ namespace MICROS.Modules.MyCentralBanner
 
         #endregion
 
-        #region "Optional Interfaces"
-
-        /// ----------------------------------------------------------------------------- 
-        /// <summary> 
-        /// Registers the module actions required for interfacing with the portal framework 
-        /// </summary> 
-        /// <value></value> 
-        /// <returns></returns> 
-        /// <remarks></remarks> 
-        /// <history> 
-        /// </history> 
-        /// ----------------------------------------------------------------------------- 
-        public ModuleActionCollection ModuleActions
-        {
-            get
-            {
-               // ModuleActionCollection Actions = new ModuleActionCollection();
-                Actions.Add(GetNextActionID(), "Module Style Editor", //Localization.GetString(ModuleActionType.AddContent, this.LocalResourceFile),
-                   ModuleActionType.AddContent, "", "edit.gif", EditUrl("ModuleStyleEditor"), false, DotNetNuke.Security.SecurityAccessLevel.Edit,
-                    true, false);
-                return Actions;
-            }
-        }
-
-        #endregion
-
     }
 
 }
+

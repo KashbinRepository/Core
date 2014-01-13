@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCentralBanner", "MyCentralBanner.csproj", "{50928ABF-4B98-44E7-AF6A-3C0661225B3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banner", "Banner\Banner.csproj", "{50928ABF-4B98-44E7-AF6A-3C0661225B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCentralSiteConfiguration", "..\MyCentralSiteConfiguration\MyCentralSiteConfiguration.csproj", "{086F3BE1-F744-4000-9D35-FF38F8F3A43B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCentralSiteConfiguration", "MyCentralSiteConfiguration\MyCentralSiteConfiguration.csproj", "{086F3BE1-F744-4000-9D35-FF38F8F3A43B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

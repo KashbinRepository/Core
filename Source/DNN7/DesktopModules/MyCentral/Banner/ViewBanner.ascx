@@ -1,5 +1,5 @@
-<%@ Control Language="C#" Inherits="MICROS.Modules.MyCentralBanner.ViewMyCentralBanner"
-    AutoEventWireup="true" CodeBehind="ViewMyCentralBanner.ascx.cs" %>
+<%@ Control Language="C#" Inherits="Kashbin.Modules.Banner.ViewBanner"
+    AutoEventWireup="true" CodeBehind="ViewBanner.ascx.cs" %>
 <%@ Import Namespace="ModuleLibrary" %>
 <script src="<%= ResolveUrl("~/js/jquery.cycle.all.js") %>" type="text/javascript"></script>
 <input type="hidden" runat="server" id="hdnSkinPath" name="hdnSkinPath" />
