@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add Attribute</value>
+  </data>
+  <data name="lblVideoType.Text" xml:space="preserve">
+    <value>View customized attributes for gallery</value>
+  </data>
+  <data name="ControlTitle_adminvideo_udt.Text" xml:space="preserve">
+    <value>Media Attributes</value>
+  </data>
+  <data name="lblFieldName.Text" xml:space="preserve">
+    <value>Field Name</value>
+  </data>
+  <data name="lblFieldTitle.Text" xml:space="preserve">
+    <value>Filed Title</value>
+  </data>
+  <data name="lblFieldType.Text" xml:space="preserve">
+    <value>Data Type</value>
+  </data>
+  <data name="lblRequired.Text" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="plDefault.Help" xml:space="preserve">
+    <value>New records will use this default value</value>
+  </data>
+  <data name="plDefault.Text" xml:space="preserve">
+    <value>Default Value</value>
+  </data>
+  <data name="plEditStyle.Help" xml:space="preserve">
+    <value>Style which is applied on text box or list control in form, e.g. "width:300px"</value>
+  </data>
+  <data name="plEditStyle.Text" xml:space="preserve">
+    <value>Edit Style</value>
+  </data>
+  <data name="plHelpText.Help" xml:space="preserve">
+    <value>This is the Help Text displayed to the user to explain this field.</value>
+  </data>
+  <data name="plHelpText.Text" xml:space="preserve">
+    <value>Help Text</value>
+  </data>
+  <data name="plInputSettings.Help1" xml:space="preserve">
+    <value>InputSettings (Help Placeholder)</value>
+  </data>
+  <data name="plInputSettings.Text1" xml:space="preserve">
+    <value>Input Settings</value>
+  </data>
+  <data name="plName.Help" xml:space="preserve">
+    <value>Enter field name,strongly recommend enter latin characters. Note, some words are already used in video tables, so you can't enter them as field name.&lt;br/&gt;
+The restricted words (case insensitive) include: Id,TypeId,PortalId,UserId,UserName,CreatedDate,Quote,Title,&lt;br/&gt; Author,Source,Thumbnail,Image,LinkUrl,Summary,Description,Field1,&lt;br/&gt;Field2,Field3,Field4,Field5,DisplayOrder,PublishDate,&lt;br/&gt; ExpireDate,LastModifiedDate,SubmitDate,AuthedDate,VideoFile,VideoPath,&lt;br/&gt; Duration,HttpType,Streamer,VideoType,MasterVideoId,SerialOrder,&lt;br/&gt;Audio,Active,Authed,Featured,Views,&lt;br/&gt;AllowComment,CommentRoles,AutoAuthComment,CommentCount,AllowRating,&lt;br/&gt;Categories,Tags,RatingRoles,RatingTotal,RatingCount,RatingAverage,AllowRecommend,&lt;br/&gt;RecommendRoles,RecommendCount,RecommendUp,RecommendDown,DownloadRoles,Private, Protect,ProtectPassword.&lt;br/&gt;</value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Field Name</value>
+  </data>
+  <data name="plNormalizeFlag.Help1" xml:space="preserve">
+    <value>NormalizeFlag (Help Placeholder)</value>
+  </data>
+  <data name="plNormalizeFlag.Text1" xml:space="preserve">
+    <value>NormalizeFlag (Placeholder)</value>
+  </data>
+  <data name="plOutputSettings.Help1" xml:space="preserve">
+    <value>OutputSettings (Help Placeholder)</value>
+  </data>
+  <data name="plOutputSettings.Text1" xml:space="preserve">
+    <value>OutputSettings (Placeholder)</value>
+  </data>
+  <data name="plRequired.Help" xml:space="preserve">
+    <value>If checked, user must enter value for this field</value>
+  </data>
+  <data name="plRequired.Text" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="plTitle.Help" xml:space="preserve">
+    <value>Enter filed title which will be display when editing.Leave it as blank will use field name as edit title.</value>
+  </data>
+  <data name="plTitle.Text" xml:space="preserve">
+    <value>Field Title</value>
+  </data>
+  <data name="plType.Help" xml:space="preserve">
+    <value>Choose data type. Note, it can't be modified after added, so choose it carefully when you add it first time.</value>
+  </data>
+  <data name="plType.Text" xml:space="preserve">
+    <value>Data Type</value>
+  </data>
+  <data name="plValidationMessage.Help" xml:space="preserve">
+    <value>This message will be displayed if the user entered value violates the Validation Rule.</value>
+  </data>
+  <data name="plValidationMessage.Text" xml:space="preserve">
+    <value>Validation Message</value>
+  </data>
+  <data name="plValidationRule.Help" xml:space="preserve">
+    <value>This Regular Expression is used to validate the value entered by the user. Failure to match this Regular Expression will prevent the record from being updated.</value>
+  </data>
+  <data name="plValidationRule.Text" xml:space="preserve">
+    <value>Validation Rule</value>
+  </data>
+  <data name="ExistingWords.Text" xml:space="preserve">
+    <value>Field name already existing, please check it.</value>
+  </data>
+  <data name="RestrictedWords.Text" xml:space="preserve">
+    <value>You enter a restricted words as field name, please change it. Some words are already used in video tables, so you can't enter them as field name.&lt;br/&gt;
+The restricted words (case insensitive) include :Id,TypeId,PortalId,UserId,UserName,CreatedDate,Quote,Title,&lt;br/&gt; Author,Source,Thumbnail,Image,LinkUrl,Summary,Description,Field1,&lt;br/&gt;Field2,Field3,Field4,Field5,DisplayOrder,PublishDate,&lt;br/&gt; ExpireDate,LastModifiedDate,SubmitDate,AuthedDate,VideoFile,VideoPath,&lt;br/&gt; Duration,HttpType,Streamer,VideoType,MasterVideoId,SerialOrder,&lt;br/&gt;Audio,Active,Authed,Featured,Views,&lt;br/&gt;AllowComment,CommentRoles,AutoAuthComment,CommentCount,AllowRating,&lt;br/&gt;Categories,Tags,RatingRoles,RatingTotal,RatingCount,RatingAverage,AllowRecommend,&lt;br/&gt;RecommendRoles,RecommendCount,RecommendUp,RecommendDown,DownloadRoles,Private, Protect,ProtectPassword,MapTitle,Longitude,Latitude&lt;br/&gt;</value>
+  </data>
+  <data name="lblRetrictWords.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Note, some words are already used in video tables, so you can't enter them as field name.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;The restricted words (case insensitive) include: Id,TypeId,PortalId,UserId,UserName,CreatedDate,Quote,Title,&lt;br/&gt; Author,Source,Thumbnail,Image,LinkUrl,Summary,Description,Field1,&lt;br/&gt;Field2,Field3,Field4,Field5,DisplayOrder,PublishDate,&lt;br/&gt; ExpireDate,LastModifiedDate,SubmitDate,AuthedDate,VideoFile,VideoPath,&lt;br/&gt; Duration,HttpType,Streamer,VideoType,MasterVideoId,SerialOrder,&lt;br/&gt;Audio,Active,Authed,Featured,Views,&lt;br/&gt;AllowComment,CommentRoles,AutoAuthComment,CommentCount,AllowRating,&lt;br/&gt;Categories,Tags,RatingRoles,RatingTotal,RatingCount,RatingAverage,AllowRecommend,&lt;br/&gt;RecommendRoles,RecommendCount,RecommendUp,RecommendDown,DownloadRoles,Private, Protect,ProtectPassword.&lt;br/&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_AddAttribute.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Attributes are used to create inter-dependant media variations. After create an attribute, author can then create specific attribute values for an individual media.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;For example, if you want to create a "Color" attribute, you can do it as follows:&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Input "Color" as "Field Name",&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. Input "Cloth Color" as "Field Title" (optional) .&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Input "Enter cloth color, like red, green, white" as "Help Text" (optional). &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Click "Update"&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;Then author will see a "Cloth Color" field while edit media. He can specify its value for each media (e.g. "White"). &lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;You can also provide a list of values to let author choose. For example, if you input "red;green;white" (separate by semicolon, name|value pairs like "One|1;Two|2;Three|3" also acceptable) as "List of Values", then author can only choose value from "red", "green" and "white". You can even specify a default value. For example, if you input "red" as "Default Value", then "color" value will be set as "red" if author doesn't change it.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;"Drop down list" and "Radio button list" only allow select one from "List of values". "Check box list" allows you select multiple items from "List of values". You can also input multiple value like "red;green" in "default value" for "check box list", so both "red" and "green" check box will be choosen by default.&lt;/p&gt;</value>
+  </data>
+  <data name="li_CheckBoxsHorizontal.Text" xml:space="preserve">
+    <value>Display as check box list (horizontal align)</value>
+  </data>
+  <data name="li_CheckBoxsVertical.Text" xml:space="preserve">
+    <value>Display as check box list (vertical align)</value>
+  </data>
+  <data name="li_DropDown.Text" xml:space="preserve">
+    <value>Display as drop down list</value>
+  </data>
+  <data name="li_RadioButtonsHorizontal.Text" xml:space="preserve">
+    <value>Display as radio button list (horizontal align)</value>
+  </data>
+  <data name="li_RadioButtonsVertical.Text" xml:space="preserve">
+    <value>Display as radio button list (vertical align)</value>
+  </data>
+</root>

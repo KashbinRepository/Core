@@ -1,0 +1,6 @@
+/****** update schedule item FriendlyName ******/
+Update {databaseOwner}[{objectQualifier}Schedule]
+Set FriendlyName='Import YouTube Videos'
+Where TypeFullName='Cross.Modules.Video.Business.Schedule,Cross.Dnn.Modules.Video'
+
+GO

@@ -1,0 +1,644 @@
+
+
+/******   alter  tables CrossVideo_Type   begin ******/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Type] ADD [AllowGoogleMap] [bit] NULL
+
+GO
+
+
+/******   add new column in  table CrossVideo_Video   begin ******/
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [MapTitle] [nvarchar](2000) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [Longitude] [nvarchar](40) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [Latitude] [nvarchar](40) NULL
+
+GO
+
+/******   alter columns in CrossVideo_Video ******/
+alter table {databaseOwner}{objectQualifier}CrossVideo_Video alter column Thumbnail nvarchar(800) 
+
+alter table {databaseOwner}{objectQualifier}CrossVideo_Video alter column Image nvarchar(800) 
+
+alter table {databaseOwner}{objectQualifier}CrossVideo_Video alter column LinkUrl nvarchar(800) 
+
+go
+
+/******   alter  tables  CrossVideo_Video  end ******/
+
+
+
+/******   drop  procedure    begin ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Add]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Update]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Add]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Update]
+GO
+
+/******   drop  procedure    end ******/
+
+
+/******   create  procedure    begin ******/
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossVideo_Type_Update]    Script Date: 04/24/2013 11:58:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Update]
+	@Id int, 
+	@PortalId int, 
+	@Name nvarchar(80), 
+	@Thumbnail nvarchar(200), 
+	@Image nvarchar(200), 
+	@ListPage int, 
+	@DetailPage int, 
+	@DisplayOrder int, 
+	@FieldEnable_Field1 bit, 
+	@Field1Title nvarchar(50), 
+	@Field1Default ntext, 
+	@FieldEnable_Field2 bit, 
+	@Field2Title nvarchar(50), 
+	@Field2Default ntext, 
+	@FieldEnable_Field3 bit, 
+	@Field3Title nvarchar(50), 
+	@Field3Default ntext, 
+	@FieldEnable_Field4 bit, 
+	@Field4Title nvarchar(50), 
+	@Field4Default ntext, 
+	@FieldEnable_Field5 bit, 
+	@Field5Title nvarchar(50), 
+	@Field5Default ntext, 
+	@FieldEnable_Quote bit, 
+	@FieldEnable_Author bit, 
+	@FieldEnable_Source bit, 
+	@FieldEnable_Image bit, 
+	@FieldEnable_Summary bit, 
+	@FieldEnable_LinkUrl bit, 
+	@FieldEnable_Description bit,
+	@MediaType int,
+    @AllowGoogleMap bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Type SET
+	[PortalId] = @PortalId,
+	[Name] = @Name,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ListPage] = @ListPage,
+	[DetailPage] = @DetailPage,
+	[DisplayOrder] = @DisplayOrder,
+	[FieldEnable_Field1] = @FieldEnable_Field1,
+	[Field1Title] = @Field1Title,
+	[Field1Default] = @Field1Default,
+	[FieldEnable_Field2] = @FieldEnable_Field2,
+	[Field2Title] = @Field2Title,
+	[Field2Default] = @Field2Default,
+	[FieldEnable_Field3] = @FieldEnable_Field3,
+	[Field3Title] = @Field3Title,
+	[Field3Default] = @Field3Default,
+	[FieldEnable_Field4] = @FieldEnable_Field4,
+	[Field4Title] = @Field4Title,
+	[Field4Default] = @Field4Default,
+	[FieldEnable_Field5] = @FieldEnable_Field5,
+	[Field5Title] = @Field5Title,
+	[Field5Default] = @Field5Default,
+	[FieldEnable_Quote] = @FieldEnable_Quote,
+	[FieldEnable_Author] = @FieldEnable_Author,
+	[FieldEnable_Source] = @FieldEnable_Source,
+	[FieldEnable_Image] = @FieldEnable_Image,
+	[FieldEnable_Summary] = @FieldEnable_Summary,
+	[FieldEnable_LinkUrl] = @FieldEnable_LinkUrl,
+	[FieldEnable_Description] = @FieldEnable_Description,
+    [MediaType]=@MediaType,
+    [AllowGoogleMap] = @AllowGoogleMap
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossVideo_Type_Add]    Script Date: 04/24/2013 11:58:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Add]
+	@PortalId int,
+	@Name nvarchar(80),
+	@Thumbnail nvarchar(200),
+	@Image nvarchar(200),
+	@ListPage int,
+	@DetailPage int,
+	@DisplayOrder int,
+	@FieldEnable_Field1 bit,
+	@Field1Title nvarchar(50),
+	@Field1Default ntext,
+	@FieldEnable_Field2 bit,
+	@Field2Title nvarchar(50),
+	@Field2Default ntext,
+	@FieldEnable_Field3 bit,
+	@Field3Title nvarchar(50),
+	@Field3Default ntext,
+	@FieldEnable_Field4 bit,
+	@Field4Title nvarchar(50),
+	@Field4Default ntext,
+	@FieldEnable_Field5 bit,
+	@Field5Title nvarchar(50),
+	@Field5Default ntext,
+	@FieldEnable_Quote bit,
+	@FieldEnable_Author bit,
+	@FieldEnable_Source bit,
+	@FieldEnable_Image bit,
+	@FieldEnable_Summary bit,
+	@FieldEnable_LinkUrl bit,
+	@FieldEnable_Description bit,
+    @MediaType int,
+    @AllowGoogleMap bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Type (
+	[PortalId],
+	[Name],
+	[Thumbnail],
+	[Image],
+	[ListPage],
+	[DetailPage],
+	[DisplayOrder],
+	[FieldEnable_Field1],
+	[Field1Title],
+	[Field1Default],
+	[FieldEnable_Field2],
+	[Field2Title],
+	[Field2Default],
+	[FieldEnable_Field3],
+	[Field3Title],
+	[Field3Default],
+	[FieldEnable_Field4],
+	[Field4Title],
+	[Field4Default],
+	[FieldEnable_Field5],
+	[Field5Title],
+	[Field5Default],
+	[FieldEnable_Quote],
+	[FieldEnable_Author],
+	[FieldEnable_Source],
+	[FieldEnable_Image],
+	[FieldEnable_Summary],
+	[FieldEnable_LinkUrl],
+	[FieldEnable_Description],
+    [MediaType],
+    [AllowGoogleMap]
+) VALUES (
+	@PortalId,
+	@Name,
+	@Thumbnail,
+	@Image,
+	@ListPage,
+	@DetailPage,
+	@DisplayOrder,
+	@FieldEnable_Field1,
+	@Field1Title,
+	@Field1Default,
+	@FieldEnable_Field2,
+	@Field2Title,
+	@Field2Default,
+	@FieldEnable_Field3,
+	@Field3Title,
+	@Field3Default,
+	@FieldEnable_Field4,
+	@Field4Title,
+	@Field4Default,
+	@FieldEnable_Field5,
+	@Field5Title,
+	@Field5Default,
+	@FieldEnable_Quote,
+	@FieldEnable_Author,
+	@FieldEnable_Source,
+	@FieldEnable_Image,
+	@FieldEnable_Summary,
+	@FieldEnable_LinkUrl,
+	@FieldEnable_Description,
+    @MediaType,
+    @AllowGoogleMap
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossVideo_Video_Update]    Script Date: 04/24/2013 11:58:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Update]
+	@Id int, 
+	@TypeId int, 
+	@PortalId int, 
+	@UserId int, 
+	@UserName nvarchar(100), 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Thumbnail nvarchar(800), 
+	@Image nvarchar(800), 
+	@LinkUrl nvarchar(800), 
+	@Summary nvarchar(1000), 
+	@Description ntext, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext, 
+	@DisplayOrder int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@VideoFile nvarchar(2000), 
+	@VideoPath nvarchar(2000), 
+    @UrlMode nvarchar(10),
+	@Duration nvarchar(20), 
+	@HttpType nvarchar(50), 
+	@VideoType int, 
+	@MasterVideoId int, 
+	@SerialOrder int, 
+	@MediaType int, 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Views int, 
+	@AllowComment bit, 
+	@CommentRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@CommentCount int, 
+	@AllowRating bit, 
+	@RatingRoles nvarchar(200), 
+	@RatingTotal int, 
+	@RatingCount int, 
+	@RatingAverage decimal(18, 2), 
+	@AllowRecommend bit, 
+	@RecommendRoles nvarchar(200), 
+	@RecommendCount int, 
+	@RecommendUp int, 
+	@RecommendDown int, 
+	@DownloadRoles nvarchar(200), 
+	@Private bit, 
+	@Protected bit, 
+	@ProtectPassword nvarchar(50),
+    @HasVideo bit,
+    @ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200),
+	@MapTitle nvarchar(2000),
+	@Longitude nvarchar(40),
+	@Latitude nvarchar(40),
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Video SET
+	[TypeId] = @TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[LinkUrl] = @LinkUrl,
+	[Summary] = @Summary,
+	[Description] = @Description,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+	[DisplayOrder] = @DisplayOrder,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = @LastModifiedDate,
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[VideoFile] = @VideoFile,
+	[VideoPath] = @VideoPath,
+    [UrlMode] = @UrlMode,
+	[Duration] = @Duration,
+	[HttpType] = @HttpType,
+	[VideoType] = @VideoType,
+	[MasterVideoId] = @MasterVideoId,
+	[SerialOrder] = @SerialOrder,
+	[MediaType] = @MediaType,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Views] = @Views,
+	[AllowComment] = @AllowComment,
+	[CommentRoles] = @CommentRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[CommentCount] = @CommentCount,
+	[AllowRating] = @AllowRating,
+	[RatingRoles] = @RatingRoles,
+	[RatingTotal] = @RatingTotal,
+	[RatingCount] = @RatingCount,
+	[RatingAverage] = @RatingAverage,
+	[AllowRecommend] = @AllowRecommend,
+	[RecommendRoles] = @RecommendRoles,
+	[RecommendCount] = @RecommendCount,
+	[RecommendUp] = @RecommendUp,
+	[RecommendDown] = @RecommendDown,
+	[DownloadRoles] = @DownloadRoles,
+	[Private] = @Private,
+	[Protected] = @Protected,
+	[ProtectPassword] = @ProtectPassword,
+    [HasVideo] = @HasVideo,
+    [ShareType] = @ShareType,
+	[Friends] = @Friends,
+	[Followers] = @Followers,
+	[Groups] = @Groups,
+	[MapTitle] = @MapTitle,
+	[Longitude] = @Longitude,
+	[Latitude] = @Latitude
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+Begin
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)
+
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Tags)
+
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToRole WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@ViewRoles)
+end 
+
+' 
+END
+GO
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CrossVideo_Video_Add]    Script Date: 04/24/2013 11:58:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Add]
+	@TypeId int,
+	@PortalId int,
+	@UserId int,
+	@UserName nvarchar(100),
+	@CreatedDate datetime,
+	@Quote bit,
+	@Title nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Thumbnail nvarchar(800),
+	@Image nvarchar(800),
+	@LinkUrl nvarchar(800),
+	@Summary nvarchar(1000),
+	@Description ntext,
+	@Field1 ntext,
+	@Field2 ntext,
+	@Field3 ntext,
+	@Field4 ntext,
+	@Field5 ntext,
+	@DisplayOrder int,
+	@PublishDate datetime,
+	@ExpireDate datetime,
+	@LastModifiedDate datetime,
+	@SubmitDate datetime,
+	@AuthedDate datetime,
+	@VideoFile nvarchar(2000),
+	@VideoPath nvarchar(2000),
+    @UrlMode nvarchar(10),
+	@Duration nvarchar(20),
+	@HttpType nvarchar(50),
+	@VideoType int,
+	@MasterVideoId int,
+	@SerialOrder int,
+	@MediaType int,
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@Views int,
+	@AllowComment bit,
+	@CommentRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@CommentCount int,
+	@AllowRating bit,
+	@RatingRoles nvarchar(200),
+	@RatingTotal int,
+	@RatingCount int,
+	@RatingAverage decimal(18, 2),
+	@AllowRecommend bit,
+	@RecommendRoles nvarchar(200),
+	@RecommendCount int,
+	@RecommendUp int,
+	@RecommendDown int,
+	@DownloadRoles nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+    @HasVideo bit,
+    @ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200),
+	@MapTitle nvarchar(2000),
+	@Longitude nvarchar(40),
+	@Latitude nvarchar(40),
+    @ViewRoles nvarchar(200),
+    @Categories nvarchar(200),
+    @Tags nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Video (
+	[TypeId],
+	[PortalId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Quote],
+	[Title],
+	[Author],
+	[Source],
+	[Thumbnail],
+	[Image],
+	[LinkUrl],
+	[Summary],
+	[Description],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+	[DisplayOrder],
+	[PublishDate],
+	[ExpireDate],
+	[LastModifiedDate],
+	[SubmitDate],
+	[AuthedDate],
+	[VideoFile],
+	[VideoPath],
+    [UrlMode],
+	[Duration],
+	[HttpType],
+	[VideoType],
+	[MasterVideoId],
+	[SerialOrder],
+	[MediaType],
+	[Active],
+	[Authed],
+	[Featured],
+	[Views],
+	[AllowComment],
+	[CommentRoles],
+	[AutoAuthComment],
+	[CommentCount],
+	[AllowRating],
+	[RatingRoles],
+	[RatingTotal],
+	[RatingCount],
+	[RatingAverage],
+	[AllowRecommend],
+	[RecommendRoles],
+	[RecommendCount],
+	[RecommendUp],
+	[RecommendDown],
+	[DownloadRoles],
+	[Private],
+	[Protected],
+	[ProtectPassword],
+    [HasVideo],
+    [ShareType],
+	[Friends],
+	[Followers],
+	[Groups],
+	[MapTitle],
+	[Longitude],
+	[Latitude]
+) VALUES (
+	@TypeId,
+	@PortalId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Quote,
+	@Title,
+	@Author,
+	@Source,
+	@Thumbnail,
+	@Image,
+	@LinkUrl,
+	@Summary,
+	@Description,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+	@DisplayOrder,
+	@PublishDate,
+	@ExpireDate,
+	GetDate(),
+	GetDate(),
+	@AuthedDate,
+	@VideoFile,
+	@VideoPath,
+    @UrlMode,
+	@Duration,
+	@HttpType,
+	@VideoType,
+	@MasterVideoId,
+	@SerialOrder,
+	@MediaType,
+	@Active,
+	@Authed,
+	@Featured,
+	0,
+	@AllowComment,
+	@CommentRoles,
+	@AutoAuthComment,
+	0,
+	@AllowRating,
+	@RatingRoles,
+	0,
+	0,
+	0,
+	@AllowRecommend,
+	@RecommendRoles,
+	0,
+	0,
+	0,
+	@DownloadRoles,
+	@Private,
+	@Protected,
+	@ProtectPassword,
+    @HasVideo,
+    @ShareType,
+	@Friends,
+	@Followers,
+	@Groups,
+	@MapTitle,
+	@Longitude,
+	@Latitude
+)
+
+DECLARE @VideoId INT	
+SET @VideoId = @@IDENTITY
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToTag SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Tags)
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToRole SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@ViewRoles)
+
+select @VideoId
+
+' 
+END
+GO
+
+
+

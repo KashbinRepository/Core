@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddType.Text" xml:space="preserve">
+    <value>Add Gallery</value>
+  </data>
+  <data name="ControlTitle_adminvideo_type.Text" xml:space="preserve">
+    <value>Media Galleries</value>
+  </data>
+  <data name="plName.Help" xml:space="preserve">
+    <value>Media gallery name</value>
+  </data>
+  <data name="lblName.Text" xml:space="preserve">
+    <value>Gallery Name</value>
+  </data>
+  <data name="plFieldEnable_Quote.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Quote.Text" xml:space="preserve">
+    <value>Enable "Quote" Field</value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Gallery Name</value>
+  </data>
+  <data name="lblOrder.Text" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="plDetailPage.Help" xml:space="preserve">
+    <value>Select which page to dispaly video/audio detail which belong to this gallery. You should put a CrossVideo_Detail sub module instance on that page and select its gallery to this item. Note, module will automatic fill this value when you put CrossVideo_Detail module instance on page first time.</value>
+  </data>
+  <data name="plDetailPage.Text" xml:space="preserve">
+    <value>CrossVideo_Detail module page</value>
+  </data>
+  <data name="plImage.Help" xml:space="preserve">
+    <value>Specify a image for this gallery (optional)</value>
+  </data>
+  <data name="plImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="plListPage.Help" xml:space="preserve">
+    <value>Select which page to dispaly media list which belong to this gallery when user search media or click media category. You should put a CrossVideo_List sub module instance on that page and select its gallery to this item. Note, module will automatic fill this value when you put CrossVideo_List module instance on page first time.</value>
+  </data>
+  <data name="plListPage.Text" xml:space="preserve">
+    <value>CrossVideo_List module page</value>
+  </data>
+  <data name="plOrder.Help" xml:space="preserve">
+    <value>Specify item order for sorting.</value>
+  </data>
+  <data name="plOrder.Text" xml:space="preserve">
+    <value>Sort Order</value>
+  </data>
+  <data name="btnDetailWizard.Text" xml:space="preserve">
+    <value>Run detail page setting wizards</value>
+  </data>
+  <data name="plEnableField.Help" xml:space="preserve">
+    <value>Specifications are detail description of videos which belong to this gallery. Module has a built-in fields,like "Video Detail" for all galleries.&lt;br/&gt;
+    Besides that, module also support up 5 additional specification fields which you can customize. You can enable them and specify their title and default value.&lt;br/&gt;
+    For example, if you publish information related notebook, besides "Video detail", you may want add "Technical Details"  specification for it.&lt;br/&gt;
+    Note, use these specification fields for long content (html or text based). If you want to customize short specific content, use  "Attributes" feature in CrossVideo_Admin module instead.&lt;br/&gt;</value>
+  </data>
+  <data name="plEnableField.Text" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="plFieldDefault.Help" xml:space="preserve">
+    <value>Default value for this specification. User can modify it to fit his videos/audios</value>
+  </data>
+  <data name="plFieldDefault.Text" xml:space="preserve">
+    <value>Default Value</value>
+  </data>
+  <data name="plFieldTitle.Help" xml:space="preserve">
+    <value>Enter title for this specification, like "Technical Details"</value>
+  </data>
+  <data name="plFieldTitle.Text" xml:space="preserve">
+    <value>Specification Title</value>
+  </data>
+  <data name="divSpecification_1.Text" xml:space="preserve">
+    <value>Specification 1</value>
+  </data>
+  <data name="divSpecification_2.Text" xml:space="preserve">
+    <value>Specification 2</value>
+  </data>
+  <data name="divSpecification_3.Text" xml:space="preserve">
+    <value>Specification 3</value>
+  </data>
+  <data name="divSpecification_4.Text" xml:space="preserve">
+    <value>Specification 4</value>
+  </data>
+  <data name="divSpecification_5.Text" xml:space="preserve">
+    <value>Specification 5</value>
+  </data>
+  <data name="divBasic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="plFieldEnable_Description.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Description.Text" xml:space="preserve">
+    <value>Enable "Detail" Field</value>
+  </data>
+  <data name="plFieldEnable_Author.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Author.Text" xml:space="preserve">
+    <value>Enable "Author" Field</value>
+  </data>
+  <data name="plFieldEnable_Image.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Image.Text" xml:space="preserve">
+    <value>Enable "Image" Field</value>
+  </data>
+  <data name="plFieldEnable_LinkUrl.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_LinkUrl.Text" xml:space="preserve">
+    <value>Enable "Link Url" Field</value>
+  </data>
+  <data name="plFieldEnable_Source.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Source.Text" xml:space="preserve">
+    <value>Enable "Source" Field</value>
+  </data>
+  <data name="plFieldEnable_Summary.Help" xml:space="preserve">
+    <value>Module has some built-in fields for video informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail". You can control whether to use them for each deparment. For example, if you uncheck "Enable Author Field" option for current gallery, then when post videos which belong to this deparment, the "Author" field will be hidden.&lt;br/&gt;Use this feature to hidden unwanted fields as your wish.</value>
+  </data>
+  <data name="plFieldEnable_Summary.Text" xml:space="preserve">
+    <value>Enable "Summary" Field</value>
+  </data>
+  <data name="divFieldEnable.Text" xml:space="preserve">
+    <value>Fields Enable</value>
+  </data>
+  <data name="Tip_FieldEnable.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Module has some built-in fields for video/audio informations. Like "Quote/Author/Image/Source/Summary/LinkUrl/Detail.......". You can control whether to use them for each gallery. For example, if you uncheck "Enable Author Field" option for current gallery, then when post media which belong to this gallery, the "Author" field will be hidden. It also will be hidden when display in CrossVideo_List and CrossVideo_Detail module.&lt;/p&gt;</value>
+  </data>
+  <data name="li_MediaType_Audio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="li_MediaType_Video.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="plMediaType.Help" xml:space="preserve">
+    <value>Select media type which gallery belong. If you select it as "Video", then user can only post videos (flv/mp4/webm video files, or YouTube url/ RTMP stream) to this gallery. If you select it as "Audio", then user can only post audios (mp3/aac/ogg file) to this gallery. Note, this value can't be changed after updated.
+&lt;br/&gt;&lt;br/&gt;
+Normally you need create 2 galleries (one "Media Type" property is "Video", the other "Media Type" is "Audio") to post both videos and audios on your site.</value>
+  </data>
+  <data name="plMediaType.Text" xml:space="preserve">
+    <value>Media Type</value>
+  </data>
+  <data name="Tip_MediaType.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Select media type which gallery belongs. If you select it as "Video", then user can only post video (flv/mp4/webm video files, or YouTube url/ RTMP stream) to this gallery. If you select it as "Audio", then user can only post audio (aac, m4a, f4a,mp3, ogg, oga files) to this gallery. Note, this value can't be changed after updated.
+&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;Normally you need create 2 galleries (one "Media Type" property is "Video", the other "Media Type" is "Audio") to post both videos and audios on your site.&lt;/p&gt;</value>
+  </data>
+  <data name="lblFieldDefault.Text" xml:space="preserve">
+    <value>Default value for this specification, author can modify it to fit his videos/audios while edit them.</value>
+  </data>
+  <data name="Tip_DetailPage.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Select which page to dispaly media detail which belong to this gallery. You should put a CrossVideo_Detail sub module instance on that page and select its gallery to this item.&lt;br/&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp; Note, module will automatic fill this value when you put CrossVideo_Detaill module instance on page first time. You can also click "Run detail page setting wizards" button to configure it at any time.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp; This setting is also vital to integrate with dnn built-in search mechanism. If you can't  search your videos/audios with dnn built-in search,  please check this setting.&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_ExtendField.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;Specifications are detail description of media which belongs to this gallery. Module already has a built-in fields: "Detail" for all galleries.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;Besides that, module also supports up 5 additional specification fields which you can customize. You can enable them and specify their title and default value.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp; For example, if you publish information related notebook, besides "Video detail", you may also want add "Technical Detail" specification for it. To do it, you can check on "Enable" option for "Specification 1", input "Technical Detail" as its title. Then author will see a "Technical Detail" field while edit videos (audios) which belong to current gallery. You can also specify "default value" for it so author can simply modify this default value while edit his media.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;Note, use these specification fields for long content (html based) only. If you want to customize short specific content, use  "Attributes" feature in CrossVideo_Admin module instead.&lt;br/&gt;</value>
+  </data>
+  <data name="Tip_ListPage.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Select which page to dispaly media which belong to this gallery when user search media or click media  category. You should put a CrossVideo_List sub module instance on that page and select its gallery to this item. &lt;br/&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Note, module will automatic fill this value when you put CrossVideo_List module instance on page first time.&lt;/p&gt;</value>
+  </data>
+  <data name="plAllowGoogleMap.Help" xml:space="preserve">
+    <value>Check this option to integrate with Google Maps. Media belongs to this gallery can provide its longitude and latitude and show in Google Maps.</value>
+  </data>
+  <data name="plAllowGoogleMap.Text" xml:space="preserve">
+    <value>Integrate with Google Maps</value>
+  </data>
+  <data name="Tip_AllowGoogleMap.Text" xml:space="preserve">
+    <value>Check this option to integrate with Google Maps. Media which belongs to this gallery can provide its longitude/latitude and show in Google Maps. This is useful when you publish map related videos/audios (e.g, park, city, hotel...etc).</value>
+  </data>
+</root>

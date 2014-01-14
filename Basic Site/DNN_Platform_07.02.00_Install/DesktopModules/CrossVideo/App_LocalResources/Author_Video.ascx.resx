@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Category.ErrorMessage" xml:space="preserve">
+    <value>Please provide at least 1 category (up to {0} categories) for this media.</value>
+  </data>
+  <data name="plTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="plDisplayOrder.Text" xml:space="preserve">
+    <value>Sort Index</value>
+  </data>
+  <data name="plDisplayOrder.Help" xml:space="preserve">
+    <value>Set video display order. The default is 1000, means don't set display order.</value>
+  </data>
+  <data name="plTitle.Help" xml:space="preserve">
+    <value>Video/audio title</value>
+  </data>
+  <data name="plImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="plImage.Help" xml:space="preserve">
+    <value>Video/audio image. Note, module will try to detect video/audio image if you don't specify it. For example, if you add a video named as Test.flv and there is another image named as Test.jpg in same directory, then module will automatic add Test.jpg as video image if you don't specify image for Test.flv.</value>
+  </data>
+  <data name="plAuthor.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="plAuthor.Help" xml:space="preserve">
+    <value>Video author</value>
+  </data>
+  <data name="plPublishDate.Text" xml:space="preserve">
+    <value>Publish Date</value>
+  </data>
+  <data name="plPublishDate.Help" xml:space="preserve">
+    <value>Video publish date</value>
+  </data>
+  <data name="plExpireDate.Text" xml:space="preserve">
+    <value>Expire Date</value>
+  </data>
+  <data name="plExpireDate.Help" xml:space="preserve">
+    <value>Video/Audio expire date</value>
+  </data>
+  <data name="Date.ErrorMessage" xml:space="preserve">
+    <value>Invalid date</value>
+  </data>
+  <data name="plAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="plAuthed.Help" xml:space="preserve">
+    <value>Authorize Video</value>
+  </data>
+  <data name="plFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="plFeatured.Help" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="plViewRoles.Text" xml:space="preserve">
+    <value>View Roles</value>
+  </data>
+  <data name="plViewRoles.Help" xml:space="preserve">
+    <value>View Roles</value>
+  </data>
+  <data name="plAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="plAllowRating.Help" xml:space="preserve">
+    <value>Choose whether allow rating</value>
+  </data>
+  <data name="plRatingRoles.Text" xml:space="preserve">
+    <value>Rating Roles</value>
+  </data>
+  <data name="plRatingRoles.Help" xml:space="preserve">
+    <value>Choose rating roles</value>
+  </data>
+  <data name="plAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="plAllowComment.Help" xml:space="preserve">
+    <value>Allow comment online</value>
+  </data>
+  <data name="plCommentRoles.Text" xml:space="preserve">
+    <value>Comment Roles</value>
+  </data>
+  <data name="plCommentRoles.Help" xml:space="preserve">
+    <value>Choose comment roles</value>
+  </data>
+  <data name="plAutoAuthComment.Text" xml:space="preserve">
+    <value>Auto authorize comment</value>
+  </data>
+  <data name="plAutoAuthComment.Help" xml:space="preserve">
+    <value>Auto authorize comment information</value>
+  </data>
+  <data name="chkAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="chkFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="lblAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="lblAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="lblAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="lblCreatedDate.Text" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="lblFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lblViews.Text" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="lblDisplayOrder.Text" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="plQuote.Help" xml:space="preserve">
+    <value>Choose this option if video is quoted from somewhere else, not created by yourself.</value>
+  </data>
+  <data name="plQuote.Text" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="plSource.Help" xml:space="preserve">
+    <value>If video/audio is quoted, input its original source.</value>
+  </data>
+  <data name="plSource.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="plLinkUrl.Help" xml:space="preserve">
+    <value>When user click video/audio, it will navigate to this link url. Leave it as blank if you don't want link to external url.</value>
+  </data>
+  <data name="plLinkUrl.Text" xml:space="preserve">
+    <value>Link Url</value>
+  </data>
+  <data name="chkActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="plActive.Help" xml:space="preserve">
+    <value>Set video as active. If a video is marked as inactive, it will not display to visitors.</value>
+  </data>
+  <data name="plActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ControlTitle_author_video.Text" xml:space="preserve">
+    <value>My stand alone videos/audios</value>
+  </data>
+  <data name="imgCopyAsNew.Text" xml:space="preserve">
+    <value>Copy as new item</value>
+  </data>
+  <data name="imgDelVideo.Text" xml:space="preserve">
+    <value>Delete Item</value>
+  </data>
+  <data name="imgEditVideo.Text" xml:space="preserve">
+    <value>Edit Item</value>
+  </data>
+  <data name="imgToggleActive.Text" xml:space="preserve">
+    <value>Toggle Active</value>
+  </data>
+  <data name="imgToggleAuthed.Text" xml:space="preserve">
+    <value>Toggle Authed</value>
+  </data>
+  <data name="imgToggleFeatured.Text" xml:space="preserve">
+    <value>Toggle Featured</value>
+  </data>
+  <data name="btnAddAttachment.Text" xml:space="preserve">
+    <value>Add Attachment</value>
+  </data>
+  <data name="imgDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="lblExpired.Text" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="lblId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="plAllowRecommend.Help" xml:space="preserve">
+    <value>Allow people to recommend this video.</value>
+  </data>
+  <data name="plAllowRecommend.Text" xml:space="preserve">
+    <value>Allow Recommend</value>
+  </data>
+  <data name="plAttachment.Help" xml:space="preserve">
+    <value>Select attachment of this video</value>
+  </data>
+  <data name="plAttachment.Text" xml:space="preserve">
+    <value>Attachment</value>
+  </data>
+  <data name="plDownloadRoles.Help" xml:space="preserve">
+    <value>Select roles which can download attachment of this video/audio.</value>
+  </data>
+  <data name="plPopularTag.Help" xml:space="preserve">
+    <value>Choose popular tags from drop down list box, click "Add Tag" button to add it to video tag list.</value>
+  </data>
+  <data name="plPopularTag.Text" xml:space="preserve">
+    <value>Popular Tags</value>
+  </data>
+  <data name="plRecommendRoles.Text" xml:space="preserve">
+    <value>Recommend Roles</value>
+  </data>
+  <data name="imgTogglePrivate.Text" xml:space="preserve">
+    <value>Toggle Private</value>
+  </data>
+  <data name="lblPortalDisableComment.Text" xml:space="preserve">
+    <value>Comment is disalbed by site administrator.</value>
+  </data>
+  <data name="lblPortalDisableRating.Text" xml:space="preserve">
+    <value>Rating is disalbed by site administrator.</value>
+  </data>
+  <data name="lblPortalDisableRecommend.Text" xml:space="preserve">
+    <value>Recommend is disalbed by site administrator.</value>
+  </data>
+  <data name="plDownloadRoles.Text" xml:space="preserve">
+    <value>Attachment download roles</value>
+  </data>
+  <data name="plRecommendRoles.Help" xml:space="preserve">
+    <value>Select roles which can recommend this video.</value>
+  </data>
+  <data name="btnAddImage.Text" xml:space="preserve">
+    <value>Add Image</value>
+  </data>
+  <data name="btnAddImageFromFolder.Text" xml:space="preserve">
+    <value>Add multiple images from folder</value>
+  </data>
+  <data name="btnAddVideo.Text" xml:space="preserve">
+    <value>Add Video/Audio</value>
+  </data>
+  <data name="btnBackToList.Text" xml:space="preserve">
+    <value>Back to video/audio list</value>
+  </data>
+  <data name="divBasic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="divCategory.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="divDetail.Text" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="divSummary.Text" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="divTag.Text" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="imgAttachment.Text" xml:space="preserve">
+    <value>Edit related documents</value>
+  </data>
+  <data name="imgImage.Text" xml:space="preserve">
+    <value>Edit related images</value>
+  </data>
+  <data name="lblAttachmentList.Text" xml:space="preserve">
+    <value>Attachments for "{0}"</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="lblImageList.Text" xml:space="preserve">
+    <value>Related images for "{0}"</value>
+  </data>
+  <data name="lblImagePath.Text" xml:space="preserve">
+    <value>Image Path</value>
+  </data>
+  <data name="lblImageTitle.Text" xml:space="preserve">
+    <value>Image Title</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page:</value>
+  </data>
+  <data name="lblVideoInfo.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="lblRelatedInfo.Text" xml:space="preserve">
+    <value>Related</value>
+  </data>
+  <data name="lblVideoTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="li_VideoStatus_All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="li_VideoStatus_Expired.Text" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="li_VideoStatus_Featured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="li_VideoStatus_UnActive.Text" xml:space="preserve">
+    <value>Not Active</value>
+  </data>
+  <data name="li_VideoStatus_UnAuthed.Text" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="MyFolder.Help" xml:space="preserve">
+    <value>You can add related files under selected folder by click "Add From Folder"</value>
+  </data>
+  <data name="MyFolder.Text" xml:space="preserve">
+    <value>My Folders</value>
+  </data>
+  <data name="plImageFile.Help" xml:space="preserve">
+    <value>Choose image file (jpe,jpeg,jpg,bmp,png). You can select video from your files. Or add from external url,for example,http://DnnModule.com/portals/0/test.jpg</value>
+  </data>
+  <data name="plImageFile.Text" xml:space="preserve">
+    <value>Image File</value>
+  </data>
+  <data name="plImageTitle.Help" xml:space="preserve">
+    <value>Enter image title,can't be null</value>
+  </data>
+  <data name="plImageTitle.Text" xml:space="preserve">
+    <value>Image Title</value>
+  </data>
+  <data name="plVideoDuration.Help" xml:space="preserve">
+    <value>Enter video duration (optional) ,hh:mm:ss format like 01:20:03. Note, module will automatic detect its duration if it is from local files and video encode feature is enabled in "General settings" of CrossVideo_Admin module.</value>
+  </data>
+  <data name="plVideoDuration.Text" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="plVideoFile.Help" xml:space="preserve">
+    <value>Choose video file (.flv or mp4). You can select video from your files. Or add from external url, for example, http://DnnModule.com/portals/0/test.flv. You can also type youtube url as external source, for example,http://www.youtube.com/watch?v=0klgLsSxGsU. Besides that, you can add video from embed code. Nearlly all video sites offer these embed code.</value>
+  </data>
+  <data name="plVideoFile.Text" xml:space="preserve">
+    <value>Video/Audio File</value>
+  </data>
+  <data name="SpecifyImage.Text" xml:space="preserve">
+    <value>Please specify a valid image.</value>
+  </data>
+  <data name="plImageFileDescription.Help" xml:space="preserve">
+    <value>Image description (optional)</value>
+  </data>
+  <data name="plImageFileDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="divPermission.Text" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="lblVideoCategory.Text" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="lblVideoStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="lblVideoTitle1.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>Gallery:</value>
+  </data>
+  <data name="lbtnAddTag.Text" xml:space="preserve">
+    <value>Add Tag</value>
+  </data>
+  <data name="lblPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="lblProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="li_VideoStatus_Private.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="li_VideoStatus_Protected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="imgToggleProtected.Text" xml:space="preserve">
+    <value>Toggle Protected</value>
+  </data>
+  <data name="liHttpType_vorbis.Text" xml:space="preserve">
+    <value>Vorbis audios (ogg, oga)</value>
+  </data>
+  <data name="liHttpType_mp3.Text" xml:space="preserve">
+    <value>MP3 audios(.mp3)</value>
+  </data>
+  <data name="liHttpType_aac.Text" xml:space="preserve">
+    <value>AAC audios(aac, m4a, f4a)</value>
+  </data>
+  <data name="liHttpType_webm.Text" xml:space="preserve">
+    <value>WebM videos (.webm)</value>
+  </data>
+  <data name="liHttpType_flv.Text" xml:space="preserve">
+    <value>FLV videos (.flv)</value>
+  </data>
+  <data name="liHttpType_mp4.Text" xml:space="preserve">
+    <value>MP4 videos (mp4, m4v, f4v, mov)</value>
+  </data>
+  <data name="liHttpType_default.Text" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="plHttpType.Help" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;The http url should point to the right address. The file type need to set correctly.&lt;br/&gt;&amp;nbsp;&amp;nbsp;For Example, if your want to play a flv stream which path is &lt;font color=red&gt;http://www.abc.com/watch.php?v=520s8B2ydNY&lt;/font&gt;. Then you should input http url  as &lt;font color=red&gt;http://whttp://www.abc.com/watch.php?v=520s8B2ydNY&lt;/font&gt; ,select file type as &lt;font color=red&gt;video&lt;/font&gt;. If you play a live stream from Lighttpd web serser, you should choose its http type as "FLV and MP4 streaming with the Lighttpd webserver".</value>
+  </data>
+  <data name="plHttpType.Text" xml:space="preserve">
+    <value>Http file type</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="plPrivate.Help" xml:space="preserve">
+    <value>Mark this video as private video. Private video can only be viewed by video owner and site administrators.</value>
+  </data>
+  <data name="plPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="plProtected.Help" xml:space="preserve">
+    <value>Mark this video as protected video. Normal vistors need to input valid password before view this video.</value>
+  </data>
+  <data name="plProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="plProtectPassword.Help" xml:space="preserve">
+    <value>Enter protect password for this video.</value>
+  </data>
+  <data name="plProtectPassword.Text" xml:space="preserve">
+    <value>Protect Password</value>
+  </data>
+  <data name="SpecifyVideo.Text" xml:space="preserve">
+    <value>Please specify a valid video/audio.</value>
+  </data>
+  <data name="Tip_ItemExceed.Text" xml:space="preserve">
+    <value>You have reached your video/audio count which specified by site administrator. Please contact site administrators to increase your video/audio count limit.</value>
+  </data>
+  <data name="Tip_RegModule.Text" xml:space="preserve">
+    <value>You are using a unregistered copy of Cross Video Gallery module which can add up to 50 video/audio items. Please register at "Help - Register" of CrossVideo_Admin module to remove this limitation. Thanks for your support.</value>
+  </data>
+  <data name="Tip_DurationAndImage.Text" xml:space="preserve">
+    <value>Note, module will automatic detect video/audio duration (and video image) if it is from local files and video convert feature is enabled in "CrossVideo_Admin module - Admin Control Panel - Global Settings" section .</value>
+  </data>
+  <data name="Tip_HttpType.Text" xml:space="preserve">
+    <value>The "Http file type" should be "Default" in most cases. However, if you play video/audio from http or CDN (Content Delivery Networks, like Akamai) stream, you should select it to related value, click "Video/Audio format support" tab for more details.</value>
+  </data>
+  <data name="Tip_ManagePermission.Text" xml:space="preserve">
+    <value>Note, only site administrators can access this tab. Normal user will use the default permission which specified in "CrossVideo_Admin sub module - Admin Control Panel - Configurations - Global Settings" section .</value>
+  </data>
+  <data name="Tip_SelectCategory.Text" xml:space="preserve">
+    <value>Select at least 1 category (up to {0} categories) for current media.</value>
+  </data>
+  <data name="Tip_Summary.Text" xml:space="preserve">
+    <value>Enter short description for this media (1000 characters limit).</value>
+  </data>
+  <data name="Tip_LinkUrl.Text" xml:space="preserve">
+    <value>Leave link url as "None" in most cases. If you specify it, module will navigate to that url when visitor click media in CrossVideo_List module.</value>
+  </data>
+  <data name="Tip_ViewOrder.Text" xml:space="preserve">
+    <value>The "Sort Index" is the first factor when display media. The default is 1000, means don't set special display order. However, if you have some important media which you want them always display first to public, you can set a lower sort index (e.g. 200).</value>
+  </data>
+  <data name="li_ShareType_FriendsAndGroup.Text" xml:space="preserve">
+    <value>Social - available for friends/followers and groups</value>
+  </data>
+  <data name="li_ShareType_Private.Text" xml:space="preserve">
+    <value>Private - available for media owner and site administrators only</value>
+  </data>
+  <data name="li_ShareType_Protected.Text" xml:space="preserve">
+    <value>Protected - visitors need input password before view this media</value>
+  </data>
+  <data name="li_ShareType_Public.Text" xml:space="preserve">
+    <value>Public - everyone can view this media</value>
+  </data>
+  <data name="plFollowers.Help" xml:space="preserve">
+    <value>Choose to allow followers view this media</value>
+  </data>
+  <data name="plFollowers.Text" xml:space="preserve">
+    <value>Followers</value>
+  </data>
+  <data name="plFriends.Help" xml:space="preserve">
+    <value>Choose to allow friends view this media</value>
+  </data>
+  <data name="plFriends.Text" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="plGroups.Help" xml:space="preserve">
+    <value>Choose which group can view this media</value>
+  </data>
+  <data name="plGroups.Text" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="plShareType.Help" xml:space="preserve">
+    <value>Choose media share type</value>
+  </data>
+  <data name="plShareType.Text" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Tip_ShareType.Text" xml:space="preserve">
+    <value>Choose how to share this media. Note, site administrators can view this media even it is private.</value>
+  </data>
+  <data name="lblNoGroup.Text" xml:space="preserve">
+    <value>No available groups</value>
+  </data>
+  <data name="divMap.Text" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="lblVideoQuota.Text" xml:space="preserve">
+    <value>Your media quota:{0}, Used {1}</value>
+  </data>
+  <data name="plLatitude.Help" xml:space="preserve">
+    <value>Enter latitude of your media.</value>
+  </data>
+  <data name="plLatitude.Text" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="plLongitude.Help" xml:space="preserve">
+    <value>Enter longitude of your media</value>
+  </data>
+  <data name="plLongitude.Text" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Tip_GoogleMap.Text" xml:space="preserve">
+    <value>&lt;p&gt;You can provide latitude and longitude of your media, and show it via Google Map. Please note:&lt;br/&gt;&lt;br/&gt;
+1. You must provide both latitude and longitude to show in Google Map.&lt;br/&gt;&lt;br/&gt;
+2. There are some free web services which can help you find latitude and longitude, e.g.&lt;a href="http://geocoder.us/" target="_blank"&gt;http://geocoder.us &lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+3. Latitude and longitude are both numeric fields. e.g. -83.022206 , 39.998264&lt;br/&gt;
+ &lt;/p&gt;</value>
+  </data>
+  <data name="plMapTitle.Help" xml:space="preserve">
+    <value>Map title whick display above the red air bubble (which indicates media position). Module will use media title instead if you don't specify it.</value>
+  </data>
+  <data name="plMapTitle.Text" xml:space="preserve">
+    <value>Map Title</value>
+  </data>
+  <data name="Tip_GoogleMap_Sample.Text" xml:space="preserve">
+    <value>Google map sample</value>
+  </data>
+  <data name="divMediaFormat.Text" xml:space="preserve">
+    <value>Video/Audio format support</value>
+  </data>
+  <data name="liHttpType_Akamai.Text" xml:space="preserve">
+    <value>CDN (Content Delivery Network) - Akamai</value>
+  </data>
+  <data name="liHttpType_CDNetworks.Text" xml:space="preserve">
+    <value>CDN - CDNetworks</value>
+  </data>
+  <data name="liHttpType_CloudFront.Text" xml:space="preserve">
+    <value>CDN - CloudFront (Amazon Web Services)</value>
+  </data>
+  <data name="liHttpType_Edgecast.Text" xml:space="preserve">
+    <value>CDN - Edgecast</value>
+  </data>
+  <data name="liHttpType_Limelight.Text" xml:space="preserve">
+    <value>CDN - Limelight</value>
+  </data>
+  <data name="liHttpType_rtmp.Text" xml:space="preserve">
+    <value>RTMP stream</value>
+  </data>
+  <data name="liHttpType_youtube.Text" xml:space="preserve">
+    <value>YouTube Video</value>
+  </data>
+  <data name="Tip_PublishDate.Text" xml:space="preserve">
+    <value>Media will be displayed between publish date and expire date. Leave expire date as blank if you don't want to limit it.</value>
+  </data>
+  <data name="Tip_ReadMediaFormat.Text" xml:space="preserve">
+    <value>Please read "Video/Audio format support" tab first before add your videos/audios.</value>
+  </data>
+</root>

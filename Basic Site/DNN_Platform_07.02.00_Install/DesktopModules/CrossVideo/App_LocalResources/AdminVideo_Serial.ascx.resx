@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="plCategory.Help" xml:space="preserve">
+    <value>Serial Categories,you must specify it.</value>
+  </data>
+  <data name="Category.ErrorMessage" xml:space="preserve">
+    <value>Please provide at least 1 category (up to {0} categories) for this serial.</value>
+  </data>
+  <data name="plSerialTitle.Text" xml:space="preserve">
+    <value>Serial Title</value>
+  </data>
+  <data name="plDisplayOrder.Text" xml:space="preserve">
+    <value>Sort Index</value>
+  </data>
+  <data name="plDisplayOrder.Help" xml:space="preserve">
+    <value>Set serial display order. The default is 1000, means don't set display order.</value>
+  </data>
+  <data name="plSerialTitle.Help" xml:space="preserve">
+    <value>Serial title</value>
+  </data>
+  <data name="plAuthor.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="plAuthor.Help" xml:space="preserve">
+    <value>Serial author</value>
+  </data>
+  <data name="plPublishDate.Text" xml:space="preserve">
+    <value>Publish Date</value>
+  </data>
+  <data name="plPublishDate.Help" xml:space="preserve">
+    <value>Serial publish date</value>
+  </data>
+  <data name="plExpireDate.Text" xml:space="preserve">
+    <value>Expire Date</value>
+  </data>
+  <data name="plExpireDate.Help" xml:space="preserve">
+    <value>Serial expire date</value>
+  </data>
+  <data name="Date.ErrorMessage" xml:space="preserve">
+    <value>Invalid date</value>
+  </data>
+  <data name="plAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="plAuthed.Help" xml:space="preserve">
+    <value>Authorize Serial</value>
+  </data>
+  <data name="plFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="plFeatured.Help" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="plViewRoles.Text" xml:space="preserve">
+    <value>View Roles</value>
+  </data>
+  <data name="plViewRoles.Help" xml:space="preserve">
+    <value>View Roles</value>
+  </data>
+  <data name="plAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="plAllowRating.Help" xml:space="preserve">
+    <value>Choose whether allow rating</value>
+  </data>
+  <data name="plRatingRoles.Text" xml:space="preserve">
+    <value>Rating Roles</value>
+  </data>
+  <data name="plRatingRoles.Help" xml:space="preserve">
+    <value>Choose rating roles</value>
+  </data>
+  <data name="plAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="plAllowComment.Help" xml:space="preserve">
+    <value>Allow comment online</value>
+  </data>
+  <data name="plCommentRoles.Text" xml:space="preserve">
+    <value>Comment Roles</value>
+  </data>
+  <data name="plCommentRoles.Help" xml:space="preserve">
+    <value>Choose comment roles</value>
+  </data>
+  <data name="plAutoAuthComment.Text" xml:space="preserve">
+    <value>Auto authorize comment</value>
+  </data>
+  <data name="plAutoAuthComment.Help" xml:space="preserve">
+    <value>Auto authorize comment information</value>
+  </data>
+  <data name="chkAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="chkFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="lblAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="lblAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="lblAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="lblCreatedDate.Text" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="lblFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="lblViews.Text" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="lblDisplayOrder.Text" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="plQuote.Help" xml:space="preserve">
+    <value>Choose this option if serial is quoted from somewhere else, not created by yourself.</value>
+  </data>
+  <data name="plQuote.Text" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="plSource.Help" xml:space="preserve">
+    <value>If serial is quoted, input its original source.</value>
+  </data>
+  <data name="plSource.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="plLinkUrl.Help" xml:space="preserve">
+    <value>When user click serial, it will navigate to this link url. Leave it as blank if you don't want link to external url.</value>
+  </data>
+  <data name="plLinkUrl.Text" xml:space="preserve">
+    <value>Link Url</value>
+  </data>
+  <data name="chkActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="plActive.Help" xml:space="preserve">
+    <value>Set serial as active. If a serial is marked as not active, it will not display to visitors.</value>
+  </data>
+  <data name="plActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ControlTitle_adminvideo_serial.Text" xml:space="preserve">
+    <value>Media serials manager</value>
+  </data>
+  <data name="imgToggleActive.Text" xml:space="preserve">
+    <value>Toggle Active</value>
+  </data>
+  <data name="imgToggleAuthed.Text" xml:space="preserve">
+    <value>Toggle Authed</value>
+  </data>
+  <data name="imgToggleFeatured.Text" xml:space="preserve">
+    <value>Toggle Featured</value>
+  </data>
+  <data name="lblAuthor.Text" xml:space="preserve">
+    <value>Creator:</value>
+  </data>
+  <data name="lblExpired.Text" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="lblFilePath.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="lblId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="plAllowRecommend.Help" xml:space="preserve">
+    <value>Allow people to recommend this serial.</value>
+  </data>
+  <data name="plAllowRecommend.Text" xml:space="preserve">
+    <value>Allow Recommend</value>
+  </data>
+  <data name="plDownloadRoles.Help" xml:space="preserve">
+    <value>Select roles which can download attachment of this serial.</value>
+  </data>
+  <data name="plPopularTag.Help" xml:space="preserve">
+    <value>Choose popular tags from drop down list box, click "Add Tag" button to add it to video tag list.</value>
+  </data>
+  <data name="plPopularTag.Text" xml:space="preserve">
+    <value>Popular Tags</value>
+  </data>
+  <data name="plRecommendRoles.Text" xml:space="preserve">
+    <value>Recommend Roles</value>
+  </data>
+  <data name="imgTogglePrivate.Text" xml:space="preserve">
+    <value>Toggle Private</value>
+  </data>
+  <data name="lblPortalDisableComment.Text" xml:space="preserve">
+    <value>Comment is disalbed by site administrator.</value>
+  </data>
+  <data name="lblPortalDisableRating.Text" xml:space="preserve">
+    <value>Rating is disalbed by site administrator.</value>
+  </data>
+  <data name="lblPortalDisableRecommend.Text" xml:space="preserve">
+    <value>Recommend is disalbed by site administrator.</value>
+  </data>
+  <data name="plDownloadRoles.Text" xml:space="preserve">
+    <value>Attachment download roles</value>
+  </data>
+  <data name="plRecommendRoles.Help" xml:space="preserve">
+    <value>Select roles which can recommend this serial.</value>
+  </data>
+  <data name="lblCreator.Text" xml:space="preserve">
+    <value>Creator</value>
+  </data>
+  <data name="btnBackToList.Text" xml:space="preserve">
+    <value>Back to serial list</value>
+  </data>
+  <data name="divBasic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="divCategory.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="divDetail.Text" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="divSummary.Text" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="divTag.Text" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="imgAttachment.Text" xml:space="preserve">
+    <value>Edit related documents</value>
+  </data>
+  <data name="imgImage.Text" xml:space="preserve">
+    <value>Edit related images</value>
+  </data>
+  <data name="lblAttachmentList.Text" xml:space="preserve">
+    <value>Attachments for "{0}"</value>
+  </data>
+  <data name="lblDuration.Text" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="lblImageList.Text" xml:space="preserve">
+    <value>Related images for "{0}"</value>
+  </data>
+  <data name="lblImagePath.Text" xml:space="preserve">
+    <value>Image Path</value>
+  </data>
+  <data name="lblImageTitle.Text" xml:space="preserve">
+    <value>Image Title</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page:</value>
+  </data>
+  <data name="lblVideoInfo.Text" xml:space="preserve">
+    <value>Serial Info</value>
+  </data>
+  <data name="lblRelatedInfo.Text" xml:space="preserve">
+    <value>Related</value>
+  </data>
+  <data name="lblVideoTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="li_VideoStatus_All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="li_VideoStatus_Expired.Text" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="li_VideoStatus_Featured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="li_VideoStatus_UnActive.Text" xml:space="preserve">
+    <value>Not Active</value>
+  </data>
+  <data name="li_VideoStatus_UnAuthed.Text" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="divPermission.Text" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="lblVideoCategory.Text" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="lblVideoStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="lblVideoTitle1.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>Gallery:</value>
+  </data>
+  <data name="lbtnAddTag.Text" xml:space="preserve">
+    <value>Add Tag</value>
+  </data>
+  <data name="lblPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="lblProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="li_VideoStatus_Private.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="li_VideoStatus_Protected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="imgToggleProtected.Text" xml:space="preserve">
+    <value>Toggle Protected</value>
+  </data>
+  <data name="lblDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="plPrivate.Help" xml:space="preserve">
+    <value>Mark this serial as private video. Private serial can only be viewed by serial owner and site administrators.</value>
+  </data>
+  <data name="plPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="plProtected.Help" xml:space="preserve">
+    <value>Mark this serial as protected video. Normal vistors needs to input valid password before view this serial.</value>
+  </data>
+  <data name="plProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="plProtectPassword.Help" xml:space="preserve">
+    <value>Enter protect password for this serial.</value>
+  </data>
+  <data name="plProtectPassword.Text" xml:space="preserve">
+    <value>Protect Password</value>
+  </data>
+  <data name="imgVideo.Text" xml:space="preserve">
+    <value>Edit videos/audios which belong to this serial</value>
+  </data>
+  <data name="lblVideoList.Text" xml:space="preserve">
+    <value>Videos/audios in serial "{0}"</value>
+  </data>
+  <data name="lblVideoPath.Text" xml:space="preserve">
+    <value>Video Path</value>
+  </data>
+  <data name="btnChangeVideoStatus.Text" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="lblChangeVideoStatus.Text" xml:space="preserve">
+    <value>Change selected items status as:</value>
+  </data>
+  <data name="li_ChangeVideoStatus_Active.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="li_ChangeVideoStatus_Authed.Text" xml:space="preserve">
+    <value>Authorized</value>
+  </data>
+  <data name="li_ChangeVideoStatus_Featured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="li_ChangeVideoStatus_Private.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="li_ChangeVideoStatus_Protected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="li_ChangeVideoStatus_UnActive.Text" xml:space="preserve">
+    <value>Not Active</value>
+  </data>
+  <data name="li_ChangeVideoStatus_UnAuthed.Text" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="li_ChangeVideoStatus_UnFeatured.Text" xml:space="preserve">
+    <value>Not Featured</value>
+  </data>
+  <data name="li_ChangeVideoStatus_UnPrivate.Text" xml:space="preserve">
+    <value>Public</value>
+  </data>
+  <data name="li_ChangeVideoStatus_UnProtected.Text" xml:space="preserve">
+    <value>Unprotected</value>
+  </data>
+  <data name="Tip_ManagePermission.Text" xml:space="preserve">
+    <value>Note, only site administrators can see this tab. Normal user will use the default permission which specified in "Admin Control Panel - Configurations - Global Settings" of CrossVideo_Admin module.</value>
+  </data>
+  <data name="Tip_SelectCategory.Text" xml:space="preserve">
+    <value>Select at least 1 category (up to {0} categories) for current serial.</value>
+  </data>
+  <data name="Tip_Summary.Text" xml:space="preserve">
+    <value>Enter short description for this serial (1000 characters limit).</value>
+  </data>
+  <data name="Tip_LinkUrl.Text" xml:space="preserve">
+    <value>Leave link url as "None" in most cases. If you specify it, module will navigate to that url when visitor click media in CrossVideo_List module.</value>
+  </data>
+  <data name="Tip_ViewOrder.Text" xml:space="preserve">
+    <value>The "Sort Index" is the first factor when display media. The default is 1000, means don't set special display order. However, if you have some important media which you want them always display first to public, you can set a lower sort index (e.g.200).</value>
+  </data>
+  <data name="divMap.Text" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="plLatitude.Help" xml:space="preserve">
+    <value>Enter latitude of your media.</value>
+  </data>
+  <data name="plLatitude.Text" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="plLongitude.Help" xml:space="preserve">
+    <value>Enter longitude of your media</value>
+  </data>
+  <data name="plLongitude.Text" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="Tip_GoogleMap.Text" xml:space="preserve">
+    <value>&lt;p&gt;You can provide latitude and longitude of your media, and show it via Google Map. Please note:&lt;br/&gt;&lt;br/&gt;
+1. You must provide both latitude and longitude to show in Google Map.&lt;br/&gt;&lt;br/&gt;
+2. There are some free web services which can help you find latitude and longitude, e.g.&lt;a href="http://geocoder.us/" target="_blank"&gt;http://geocoder.us &lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+3. Latitude and longitude are both numeric fields. e.g. -83.022206 , 39.998264&lt;br/&gt;
+ &lt;/p&gt;</value>
+  </data>
+  <data name="plMapTitle.Help" xml:space="preserve">
+    <value>Map title whick display above the red air bubble (which indicates media position). Module will use media title instead if you don't specify it.</value>
+  </data>
+  <data name="plMapTitle.Text" xml:space="preserve">
+    <value>Map Title</value>
+  </data>
+  <data name="Tip_GoogleMap_Sample.Text" xml:space="preserve">
+    <value>Google map sample</value>
+  </data>
+  <data name="Tip_PublishDate.Text" xml:space="preserve">
+    <value>Serial will be displayed between publish date and expire date. Leave expire date as blank if you don't want to limit it.</value>
+  </data>
+</root>

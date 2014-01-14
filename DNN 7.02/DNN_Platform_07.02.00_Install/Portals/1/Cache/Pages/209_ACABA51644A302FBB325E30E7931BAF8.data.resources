@@ -1,0 +1,6 @@
+<div id="dnn_ctr520_HtmlModule_lblContent" class="Normal">
+	Make sure you install the bootstrapper (AzureAppFrameworkSDK) in the "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages" (or v8.0A if present) of the machine which you are building the install package on.<br />
+the bootstrapper source folder is in this location: ".\AzureDepedencies\Bootstrapper\AzureAppFrameworkSDK_boostrapper"<br />
+If the bootstrapper needs to be modified, the base manifest file can be used by the Bootstrapper Manifest Generator "BMG2008Setup.msi" install.<br />
+Make sure all paths are reset to the appropriate drive and base paths, don't forget to edit the projects property as well.
+</div>

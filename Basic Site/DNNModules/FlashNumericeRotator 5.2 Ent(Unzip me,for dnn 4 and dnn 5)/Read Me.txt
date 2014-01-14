@@ -1,0 +1,57 @@
+This file is the Read Me.txt file for
+                             Flash Numeric Rotator Module 5.2  - For DNN
+
+Version history
+v5.0   3/10/2010
+         :Fully rewrote
+
+v4.3   5/19/2009
+         :New "numeric navigate(integrative)" play mode added.
+  
+
+v4.2   3/9/2009
+         :New "numeric navigate(black)" play mode added.
+         :Improve flash components load speed
+
+v4.1 10/7/2008
+      :Add template support
+
+v4.0  8/27/2008
+     Improvements
+     :Add link target option
+     :Use javascript to wrapper flash to avoid ¡°click to activate flash¡± tips in IE browser.
+
+     New features
+    :New play mode  - Numeric Navigate Extension
+    :New play list type ¨C Dynamic generate and using existing xml
+
+    
+v3.3.1
+     :Add background color setting option
+
+v3.3.0
+     :Full rewrite of v3.0.0
+     :New asp.net wizard interface
+     :Support up to 9 rotator files
+     :Add gif/png/swf file type support
+     :Batch add file link
+     :Add from folder/ add from zip file 
+     :UI improvement 
+
+V3.0.0
+     :First release on snowcovered.com
+
+
+
+The module will install in any (DNN 4.0.2 and above) version. As of the release of this file, we have tested the module up to and including the latest versions.
+
+
+
+Detailed assitance and support is available at: http://www.dnnmodules.cn/Modules/FlashNumericRotator.aspx
+
+
+If you have any special needs for this module or any other custom developed modules, please contact us at: xiaoqi98@msn.com
+
+
+Regards,
+DnnModules.cn  China - Development Team

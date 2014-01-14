@@ -1,0 +1,25 @@
+                              DnnModules.cn.END USER LICENSE AGREEMENT (EULA)
+
+This is a CONTRACT between you (either an individual or a single entity) and DnnModules.cn China. which covers your use of "Flash Numeric Rotator 5.2 Module" and related software components. All such software is referred to herein as the "Software Product." A software license issued to a designated user only by DnnModules.cn  China or its authorized agents is required for each user of the Software Product. If you do not agree to the terms of this EULA, then do not install or use the Software Product or the Software Product License. By explicitly accepting this End-User License Agreement (EULA) you are acknowledging and agreeing to be bound by the following terms:
+
+Summary of this EULA:
+1.             This module can be used in 
+                A. unlimited test dnn installation
+                B. unlimited dnn product installation with unlimited sub portals
+
+2.	Evaluation copies may only be used to determine suitability
+3.	License for use is non-exclusive, non transferable right
+              a.	User has the right to modify, alter, improve, or enhance the Software Product 
+              b.	Distribution of modified Software Product must be agreed upon between DnnModules.cn  China and the user prior to distribution
+              c.	Support of modified Software Product must be agreed upon between DnnModules.cn  China and the user prior to distribution
+   
+4.	The Software Product is owned by DnnModules.cn  China and is protected by  international copyright laws
+5.	You may not rent, lease, lend, or in any way distribute or transfer any rights in this EULA or the Software Product to third parties without DnnModules.cn  China's written approval
+6.	You hereby agree to indemnify DnnModules.cn  China against and hold harmless DnnModules.cn  China from any claims
+7.	Any software provided along with the Software Product that is associated with a separate license agreement
+8.	DnnModules.cn  China may provide you with support services related to the Software Product
+9.	DnnModules.cn  China may terminate this EULA if you fail to comply with any term or condition of this EULA
+
+
+
+     If you have any questions about this EULA, or if you want to contact  DnnModules.cn  China for any reason, please direct all correspondence to:  xiaoqi98@msn.com

@@ -1,0 +1,7034 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CP_Common_A3Folder](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Name] [nvarchar](50) NULL,
+ CONSTRAINT [PK_{objectQualifier}CP_Common_A3Folder] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CP_Common_A3File](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FolderId] [int] NOT NULL,
+	[PortalId] [int] NULL,
+	[UserId] [int] NULL,
+	[FileName] [nvarchar](200) NULL,
+	[Bucket] [nvarchar](200) NULL,
+	[A3Key] [nvarchar](200) NULL,
+	[Extension] [nvarchar](100) NULL,
+	[Size] [int] NULL,
+	[Width] [int] NULL,
+	[Height] [int] NULL,
+	[Duration] [nchar](10) NULL,
+	[ContentType] [nvarchar](200) NULL,
+	[CreatedDate] [datetime] NULL,
+	[LastModifiedDate] [datetime] NULL,
+ CONSTRAINT [PK_{objectQualifier}CP_Common_A3File] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CP_Common_A3Folder_Portals]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CP_Common_A3Folder]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CP_Common_A3Folder_Portals] FOREIGN KEY([PortalId])
+REFERENCES {databaseOwner}[{objectQualifier}Portals] ([PortalID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CP_Common_A3File_CP_Common_A3Folder]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CP_Common_A3File]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CP_Common_A3File_CP_Common_A3Folder] FOREIGN KEY([FolderId])
+REFERENCES {databaseOwner}[{objectQualifier}CP_Common_A3Folder] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+/******   Table {databaseOwner}[{objectQualifier}CrossPortalSetting]     12/15/2009 11:05:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSetting]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossPortalSetting](
+	[PortalID] [int] NOT NULL,
+	[SettingName] [nvarchar](300) NOT NULL,
+	[SettingValue] [nvarchar](2000) NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossArticle_PortalSetting] PRIMARY KEY CLUSTERED 
+(
+	[PortalID] ASC,
+	[SettingName] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/******   Tables    end ******/
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossPortalSetting_Portals]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSetting]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossPortalSetting]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossPortalSetting_Portals] FOREIGN KEY([PortalID])
+REFERENCES {databaseOwner}[{objectQualifier}Portals] ([PortalID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Author]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Author](
+	[UserId] [int] NOT NULL,
+	[AvatarEmail] [nvarchar](80) NULL,
+	[Biography] [text] NULL,
+	[Authed] [bit] NULL,
+	[ProtectPassword] [nvarchar](50) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Author] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Ticket]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Ticket](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[SubVideoId] [int] NULL,
+	[AuthorId] [int] NULL,
+	[AuthorName] [nvarchar](50) NULL,
+	[PortalId] [int] NULL,
+	[VideoTitle] [nvarchar](200) NULL,
+	[SubVideoTitle] [nvarchar](200) NULL,
+	[ClientId] [int] NULL,
+	[ClientName] [nvarchar](50) NULL,
+	[TicketNo] [nvarchar](100) NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedDate] [datetime] NULL,
+	[Title] [nvarchar](1000) NULL,
+	[Closed] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Ticket] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Abuse]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Abuse](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[SubVideoId] [int] NULL,
+	[AuthorId] [int] NULL,
+	[AuthorName] [nvarchar](50) NULL,
+	[PortalId] [int] NULL,
+	[VideoTitle] [nvarchar](200) NULL,
+	[SubVideoTitle] [nvarchar](200) NULL,
+	[ClientId] [int] NULL,
+	[ClientName] [nvarchar](50) NULL,
+	[ClientEmail] [nvarchar](50) NULL,
+	[AbuseNo] [nvarchar](100) NULL,
+	[CreatedDate] [datetime] NULL,
+	[UpdatedDate] [datetime] NULL,
+	[Title] [nvarchar](1000) NULL,
+	[Closed] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Abuse] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_UDField](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[FieldName] [nvarchar](50) NULL,
+	[FieldTitle] [nvarchar](50) NULL,
+	[Visible] [bit] NULL,
+	[FieldOrder] [int] NULL,
+	[FieldType] [varchar](20) NULL,
+	[Required] [bit] NULL,
+	[DefaultValue] [nvarchar](2000) NULL,
+	[OutputSettings] [nvarchar](2000) NULL,
+	[InputSettings] [nvarchar](2000) NULL,
+	[ValidationRule] [nvarchar](512) NULL,
+	[ValidationMessage] [nvarchar](512) NULL,
+	[NormalizeFlag] [bit] NULL,
+	[HelpText] [nvarchar](512) NULL,
+	[Searchable] [bit] NULL,
+	[ShowOnEdit] [bit] NULL,
+	[PrivateField] [bit] NULL,
+	[EditStyle] [nvarchar](512) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_UDField] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Type](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[Name] [nvarchar](80) NOT NULL,
+	[Thumbnail] [nvarchar](200) NULL,
+	[Image] [nvarchar](200) NULL,
+	[ListPage] [int] NULL,
+	[DetailPage] [int] NULL,
+	[DisplayOrder] [int] NULL,
+	[FieldEnable_Field1] [bit] NULL,
+	[Field1Title] [nvarchar](50) NULL,
+	[Field1Default] [ntext] NULL,
+	[FieldEnable_Field2] [bit] NULL,
+	[Field2Title] [nvarchar](50) NULL,
+	[Field2Default] [ntext] NULL,
+	[FieldEnable_Field3] [bit] NULL,
+	[Field3Title] [nvarchar](50) NULL,
+	[Field3Default] [ntext] NULL,
+	[FieldEnable_Field4] [bit] NULL,
+	[Field4Title] [nvarchar](50) NULL,
+	[Field4Default] [ntext] NULL,
+	[FieldEnable_Field5] [bit] NULL,
+	[Field5Title] [nvarchar](50) NULL,
+	[Field5Default] [ntext] NULL,
+	[FieldEnable_Quote] [bit] NULL,
+	[FieldEnable_Author] [bit] NULL,
+	[FieldEnable_Source] [bit] NULL,
+	[FieldEnable_Image] [bit] NULL,
+	[FieldEnable_Summary] [bit] NULL,
+	[FieldEnable_LinkUrl] [bit] NULL,
+	[FieldEnable_Description] [bit] NULL,
+	[MediaType] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Type] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Role](
+	[RoleId] [int] NOT NULL,
+	[RoleName] [nvarchar](200) NULL,
+	[PortalId] [int] NOT NULL,
+	[DiskQuote] [int] NULL,
+	[VideoCount] [int] NULL,
+	[AllowImport] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Role] PRIMARY KEY CLUSTERED 
+(
+	[RoleId] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Watch]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Watch](
+	[Id] [int] IDENTITY(1000,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[UserId] [int] NULL,
+	[VideoTitle] [nvarchar](200) NULL,
+	[Duration] [nchar](20) NULL,
+	[CreatedDate] [datetime] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Watch] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Image](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[Title] [nvarchar](200) NULL,
+	[Description] [ntext] NULL,
+	[Thumbnail] [nvarchar](200) NULL,
+	[ImageFile] [nvarchar](200) NULL,
+	[ImagePath] [nvarchar](200) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Views] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Image] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_History](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[UserId] [int] NULL,
+	[VideoTitle] [nvarchar](200) NULL,
+	[Duration] [nchar](20) NULL,
+	[CreatedDate] [datetime] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_History] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_UDData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[FieldId] [int] NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[FieldValue] [ntext] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_UDData] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Rating](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[VideoTitle] [nvarchar](200) NULL,
+	[AuthorId] [int] NULL,
+	[AuthorName] [nvarchar](50) NULL,
+	[ClientId] [int] NULL,
+	[ClientName] [nvarchar](100) NULL,
+	[Rating] [int] NULL,
+	[Info] [nvarchar](2000) NULL,
+	[Reply] [nvarchar](2000) NULL,
+	[UpdatedDate] [datetime] NULL,
+	[Authed] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Rating] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Recommend](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Recommend] [int] NOT NULL,
+	[CreatedDate] [datetime] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Recommend] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToCategory]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_VideoToCategory](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[CategoryId] [int] NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_VideoToCategory] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToRole]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_VideoToRole](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[RoleId] [int] NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_VideoToRole] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToTag]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_VideoToTag](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[TagId] [int] NOT NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_VideoToTag] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Attachment](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[VideoId] [int] NULL,
+	[FileName] [nvarchar](250) NULL,
+	[FilePath] [nvarchar](250) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Attachment] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Comment](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[VideoId] [int] NOT NULL,
+	[VideoTitle] [nvarchar](250) NULL,
+	[CreatedUser] [nvarchar](50) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Comment] [nvarchar](1000) NULL,
+	[Mail] [nvarchar](30) NULL,
+	[Url] [nvarchar](100) NULL,
+	[IsPrivate] [bit] NULL,
+	[Authed] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Comment] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Category](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[ParentId] [int] NOT NULL,
+	[Name] [nvarchar](80) NOT NULL,
+	[Thumbnail] [nvarchar](100) NULL,
+	[Image] [nvarchar](50) NULL,
+	[Order] [int] NULL,
+	[Level] [int] NULL,
+	[Description] [nvarchar](1000) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Category] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+Create Trigger  [{objectQualifier}CrossVideo_Category_OnDelete]
+On {databaseOwner}[{objectQualifier}CrossVideo_Category]
+for delete 
+as 
+   declare @id int
+   select @id=id from deleted del;
+
+   delete  from  {databaseOwner}{objectQualifier}CrossVideo_Category 
+   where ParentId=@id
+
+   delete from {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory
+   where CategoryId=@id
+
+
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Tag](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[PortalId] [int] NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+	[Tag] [nvarchar](200) NOT NULL,
+	[CreatedDate] [datetime] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Tag] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[PortalId] [int] NULL,
+	[UserId] [int] NOT NULL,
+	[UserName] [nvarchar](100) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Title] [nvarchar](200) NULL,
+	[RssType] [nvarchar](200) NULL,
+	[Standard_Type] [nvarchar](200) NULL,
+	[Standard_Region] [nvarchar](100) NULL,
+	[Standard_Time] [nvarchar](50) NULL,
+	[User_Account] [nvarchar](200) NULL,
+	[User_Specific] [nvarchar](200) NULL,
+	[User_PlayList_Title] [nvarchar](300) NULL,
+	[Customize_Category] [nvarchar](200) NULL,
+	[Customize_Tag] [nvarchar](200) NULL,
+	[Advanced_Search] [nvarchar](200) NULL,
+	[Advanced_Author] [nvarchar](200) NULL,
+	[Advanced_OrderBy] [nvarchar](50) NULL,
+	[MasterVideoId] [int] NULL,
+	[Active] [bit] NULL,
+	[Authed] [bit] NULL,
+	[Featured] [bit] NULL,
+	[ViewRoles] [nvarchar](200) NULL,
+	[AllowComment] [bit] NULL,
+	[CommentRoles] [nvarchar](200) NULL,
+	[AutoAuthComment] [bit] NULL,
+	[AllowRating] [bit] NULL,
+	[RatingRoles] [nvarchar](200) NULL,
+	[AllowRecommend] [bit] NULL,
+	[RecommendRoles] [nvarchar](200) NULL,
+	[DownloadRoles] [nvarchar](200) NULL,
+	[Private] [bit] NULL,
+	[Protected] [bit] NULL,
+	[ProtectPassword] [nvarchar](50) NULL,
+	[Default_Tag] [nvarchar](200) NULL,
+	[Default_Category] [nvarchar](200) NULL,
+	[Author] [nvarchar](200) NULL,
+	[Source] [nvarchar](200) NULL,
+	[Quote] [bit] NULL,
+	[MaxRecord] [int] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_YouTubeRss] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TypeId] [int] NOT NULL,
+	[PortalId] [int] NULL,
+	[UserId] [int] NOT NULL,
+	[UserName] [nvarchar](100) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Quote] [bit] NULL,
+	[Title] [nvarchar](200) NULL,
+	[Author] [nvarchar](200) NULL,
+	[Source] [nvarchar](200) NULL,
+	[Thumbnail] [nvarchar](100) NULL,
+	[Image] [nvarchar](50) NULL,
+	[LinkUrl] [nvarchar](200) NULL,
+	[Summary] [nvarchar](1000) NULL,
+	[Description] [ntext] NULL,
+	[Field1] [ntext] NULL,
+	[Field2] [ntext] NULL,
+	[Field3] [ntext] NULL,
+	[Field4] [ntext] NULL,
+	[Field5] [ntext] NULL,
+	[DisplayOrder] [int] NULL,
+	[PublishDate] [datetime] NULL,
+	[ExpireDate] [datetime] NULL,
+	[LastModifiedDate] [datetime] NULL,
+	[SubmitDate] [datetime] NULL,
+	[AuthedDate] [datetime] NULL,
+	[VideoFile] [nvarchar](2000) NULL,
+	[VideoPath] [nvarchar](2000) NULL,
+	[UrlMode] [nvarchar](10) NULL,
+	[Duration] [nvarchar](20) NULL,
+	[HttpType] [nvarchar](50) NULL,
+	[VideoType] [int] NULL,
+	[MasterVideoId] [int] NULL,
+	[SerialOrder] [int] NULL,
+	[MediaType] [int] NULL,
+	[Active] [bit] NULL,
+	[Authed] [bit] NULL,
+	[Featured] [bit] NULL,
+	[Views] [int] NULL,
+	[AllowComment] [bit] NULL,
+	[CommentRoles] [nvarchar](200) NULL,
+	[AutoAuthComment] [bit] NULL,
+	[CommentCount] [int] NULL,
+	[AllowRating] [bit] NULL,
+	[RatingRoles] [nvarchar](200) NULL,
+	[RatingTotal] [int] NULL,
+	[RatingCount] [int] NULL,
+	[RatingAverage] [decimal](18, 2) NULL,
+	[AllowRecommend] [bit] NULL,
+	[RecommendRoles] [nvarchar](200) NULL,
+	[RecommendCount] [int] NULL,
+	[RecommendUp] [int] NULL,
+	[RecommendDown] [int] NULL,
+	[DownloadRoles] [nvarchar](200) NULL,
+	[Private] [bit] NULL,
+	[Protected] [bit] NULL,
+	[ProtectPassword] [nvarchar](50) NULL,
+	[HasVideo] [bit] NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_Video] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[TicketId] [int] NOT NULL,
+	[UserId] [int] NULL,
+	[UserName] [nvarchar](50) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Title] [nvarchar](1000) NULL,
+	[Description] [nvarchar](4000) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_TicketDetail] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail]') AND type in (N'U'))
+BEGIN
+CREATE TABLE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[AbuseId] [int] NOT NULL,
+	[UserId] [int] NULL,
+	[UserName] [nvarchar](50) NULL,
+	[CreatedDate] [datetime] NULL,
+	[Title] [nvarchar](1000) NULL,
+	[Description] [nvarchar](4000) NULL,
+ CONSTRAINT [PK_{objectQualifier}CrossVideo_AbuseDetail] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Type_Portals]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Type]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Type_Portals] FOREIGN KEY([PortalId])
+REFERENCES {databaseOwner}[{objectQualifier}Portals] ([PortalID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Role_Portals]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Role]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Role_Portals] FOREIGN KEY([PortalId])
+REFERENCES {databaseOwner}[{objectQualifier}Portals] ([PortalID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Watch_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Watch]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Watch]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Watch_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Image_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Image]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Image_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_History_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_History]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_History_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_UDData_CrossVideo_UDField]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_UDData]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_UDData_CrossVideo_UDField] FOREIGN KEY([FieldId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_UDField] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_UDData_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_UDData]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_UDData_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Rating_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Rating]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Rating_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Recommend_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Recommend]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Recommend_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_VideoToCategory_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToCategory]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_VideoToCategory]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_VideoToCategory_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_VideoToRole_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToRole]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_VideoToRole]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_VideoToRole_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_VideoToTag_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToTag]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_VideoToTag]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_VideoToTag_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Attachment_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Attachment]  WITH NOCHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Attachment_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON DELETE CASCADE
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Attachment] CHECK CONSTRAINT [FK_{objectQualifier}CrossVideo_Attachment_CrossVideo_Video]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Comment_CrossVideo_Video]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Comment]  WITH NOCHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Comment_CrossVideo_Video] FOREIGN KEY([VideoId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Video] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Comment] CHECK CONSTRAINT [FK_{objectQualifier}CrossVideo_Comment_CrossVideo_Video]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Category_CrossVideo_Type]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Category]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Category_CrossVideo_Type] FOREIGN KEY([TypeId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Type] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Tag_CrossVideo_Type]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Tag]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Tag_CrossVideo_Type] FOREIGN KEY([TypeId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Type] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_YouTubeRss_CrossVideo_Type]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_YouTubeRss_CrossVideo_Type] FOREIGN KEY([TypeId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Type] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_Video_CrossVideo_Type]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_Video_CrossVideo_Type] FOREIGN KEY([TypeId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Type] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_TicketDetail_CrossVideo_Ticket]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_TicketDetail_CrossVideo_Ticket] FOREIGN KEY([TicketId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Ticket] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'{databaseOwner}[FK_{objectQualifier}CrossVideo_AbuseDetail_CrossVideo_Abuse]') AND parent_object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail]'))
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail]  WITH CHECK ADD  CONSTRAINT [FK_{objectQualifier}CrossVideo_AbuseDetail_CrossVideo_Abuse] FOREIGN KEY([AbuseId])
+REFERENCES {databaseOwner}[{objectQualifier}CrossVideo_Abuse] ([Id])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+
+
+/******   UserDefinedFunction {databaseOwner}[{objectQualifier}CrossVideo_CsvToInt]     12/15/2009 11:05:18 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_CsvToInt]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+BEGIN
+execute dbo.sp_executesql @statement = N'
+
+
+/*****************************************************/
+Create Function {databaseOwner}[{objectQualifier}CrossVideo_CsvToInt] ( @Array varchar(1000)) 
+returns @IntTable table 
+	(IntValue int)
+AS
+begin
+	declare @separator char(1)
+	set @separator = '',''
+	declare @separator_position int 
+	declare @array_value varchar(1000) 
+	
+	set @array = @array + '',''
+	
+	while patindex(''%,%'' , @array) <> 0 
+	begin
+	
+	  select @separator_position =  patindex(''%,%'' , @array)
+	  select @array_value = left(@array, @separator_position - 1)
+	
+		Insert @IntTable
+		Values (Cast(@array_value as int))
+	  select @array = stuff(@array, 1, @separator_position, '''')
+	end
+	return
+end
+
+' 
+END
+
+GO
+
+/******   Insert schedule item ******/
+
+Insert into {databaseOwner}[{objectQualifier}Schedule]
+(TypeFullName,TimeLapse,TimeLapseMeasurement,RetryTimeLapse,RetryTimeLapseMeasurement,RetainHistoryNum,AttachToEvent,CatchUpEnabled,Enabled,ObjectDependencies)
+values
+('Cross.Modules.Video.Business.Schedule,Cross.Dnn.Modules.Video',2,'h',30,'m',10,'',0,1,'')
+GO
+
+/******   Insert schedule item   end ******/
+
+
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_Get]    ScriptDate: 08/15/2010 21:56:51 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CP_Common_A3File
+WHERE
+	[Id] = @Id
+	
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_GetByFolder]    ScriptDate: 08/15/2010 21:56:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_GetByFolder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_GetByFolder]
+	@FolderId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CP_Common_A3File
+WHERE
+	[FolderId]=@FolderId
+Order by [FileName]
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_Delete]    ScriptDate: 08/15/2010 21:56:51 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CP_Common_A3File
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Get]    ScriptDate: 08/15/2010 21:56:51 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CP_Common_A3Folder
+WHERE
+	[Id] = @Id
+	
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Add]    ScriptDate: 08/15/2010 21:56:51 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Add]
+	@PortalId int,
+	@UserId int,
+	@Name nvarchar(50)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CP_Common_A3Folder (
+	[PortalId],
+	[UserId],
+	[Name]
+) VALUES (
+	@PortalId,
+	@UserId,
+	@Name
+)
+
+select SCOPE_IDENTITY()
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Update]    ScriptDate: 08/15/2010 21:56:52 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Update]
+	@Id int, 
+	@PortalId int, 
+	@UserId int, 
+	@Name nvarchar(50) 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CP_Common_A3Folder SET
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[Name] = @Name
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Delete]    ScriptDate: 08/15/2010 21:56:52 ******/
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3Folder_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CP_Common_A3Folder
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3Folder_GetByUser]    ScriptDate: 08/15/2010 21:56:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3Folder_GetByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3Folder_GetByUser]
+	@UserId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CP_Common_A3Folder
+WHERE
+	[UserId]=@UserId
+order by [Name]
+
+
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_Update]    ScriptDate: 08/15/2010 21:56:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_Update]
+	@Id int, 
+	@FolderId int, 
+	@PortalId int, 
+	@UserId int, 
+	@FileName nvarchar(200), 
+    @Bucket  nvarchar(200),
+	@A3Key nvarchar(200), 
+	@Extension nvarchar(100), 
+	@Size int, 
+	@Width int, 
+	@Height int, 
+    @Duration nchar(10),
+	@ContentType nvarchar(200), 
+	@CreatedDate datetime, 
+	@LastModifiedDate datetime 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CP_Common_A3File SET
+	[FolderId] = @FolderId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[FileName] = @FileName,
+    [Bucket]=@Bucket,
+	[A3Key] = @A3Key,
+	[Extension] = @Extension,
+	[Size] = @Size,
+	[Width] = @Width,
+	[Height] = @Height,
+    [Duration] = @Duration,
+	[ContentType] = @ContentType,
+	[CreatedDate] = @CreatedDate,
+	[LastModifiedDate] = GetDate()
+WHERE
+	[Id] = @Id
+
+
+
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_Add]    ScriptDate: 08/15/2010 21:56:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_Add]
+	@FolderId int,
+	@PortalId int,
+	@UserId int,
+	@FileName nvarchar(200),
+    @Bucket nvarchar(200),
+	@A3Key nvarchar(200),
+	@Extension nvarchar(100),
+	@Size int,
+	@Width int,
+	@Height int,
+    @Duration nchar(10),
+	@ContentType nvarchar(200),
+	@CreatedDate datetime,
+	@LastModifiedDate datetime
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CP_Common_A3File (
+	[FolderId],
+	[PortalId],
+	[UserId],
+	[FileName],
+    [Bucket],
+	[A3Key],
+	[Extension],
+	[Size],
+	[Width],
+	[Height],
+    [Duration],
+	[ContentType],
+	[CreatedDate],
+	[LastModifiedDate]
+) VALUES (
+	@FolderId,
+	@PortalId,
+	@UserId,
+	@FileName,
+    @Bucket,
+	@A3Key,
+	@Extension,
+	@Size,
+	@Width,
+	@Height,
+    @Duration,
+	@ContentType,
+	GetDate(),
+	GetDate()
+)
+
+select SCOPE_IDENTITY()
+
+
+
+' 
+END
+GO
+
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_GetSpaceUsedByUser]    ScriptDate: 08/15/2010 21:56:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_GetSpaceUsedByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_GetSpaceUsedByUser]
+	@UserId int
+AS
+
+Declare @RecordCount int
+Select @RecordCount=count(Id) 
+FROM {databaseOwner}{objectQualifier}CP_Common_A3File
+WHERE
+	(@UserId=-1 or [UserId] = @UserId)
+
+Declare @SumSize bigint
+
+if (@RecordCount>0) 
+       SELECT @SumSize=Sum([Size])
+       FROM {databaseOwner}{objectQualifier}CP_Common_A3File
+       WHERE
+	   (@UserId=-1 or [UserId] = @UserId)
+   else
+      select  @SumSize=0
+
+ SELECT @SumSize
+
+' 
+END
+GO
+/****** Object:  StoredProcedure {databaseOwner}[{objectQualifier}CP_Common_A3File_GetByA3Key]    ScriptDate: 08/15/2010 21:56:55 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CP_Common_A3File_GetByA3Key]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CP_Common_A3File_GetByA3Key]
+	@A3Key nvarchar(200)
+AS
+Set rowcount 1
+SELECT *
+FROM {databaseOwner}{objectQualifier}CP_Common_A3File
+WHERE
+	Lower([A3Key]) = Lower(@A3Key)
+	
+
+' 
+END
+GO
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingGetModuleTab]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+/******   StoredProcedure dbo.CrossPortalSetting_GetModuleTab     10/18/2007 01:56:59 ******/
+
+CREATE       PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingGetModuleTab]
+	@PortalId int,	
+	@ModuleDefName nvarchar(300)	
+AS
+
+Declare @TabId int
+
+      set @TabId= (select top 1 a.tabid 
+      from {databaseOwner}{objectQualifier}tabmodules a,{databaseOwner}{objectQualifier}modules b, {databaseOwner}{objectQualifier}moduledefinitions c,{databaseOwner}{objectQualifier}desktopmodules d
+      where d.modulename=@ModuleDefName and
+      b.PortalId=@PortalId and
+      a.moduleid=b.moduleid and
+      b.moduledefid= c.moduledefid and
+      c.desktopmoduleid=d.desktopmoduleid)
+
+if(@TabId is  null)
+begin
+   set @TabId=0
+end
+select @TabId
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingAdd]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+/******   StoredProcedure dbo.[{objectQualifier}CrossPortalSetting_Add]     10/18/2007 01:56:57 ******/
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingAdd]
+	@PortalID int,
+	@SettingName nvarchar(300),
+	@SettingValue nvarchar(2000)
+AS
+
+Declare @count int
+
+SELECT  @count=count([PortalID])
+FROM {databaseOwner}{objectQualifier}CrossPortalSetting
+WHERE
+	[PortalID] = @PortalID
+	AND [SettingName] = @SettingName
+
+if(@count=0)
+begin
+   INSERT INTO {databaseOwner}{objectQualifier}CrossPortalSetting 
+   (
+	[PortalID],
+	[SettingName],
+	[SettingValue]
+    ) 
+    VALUES 
+    (
+	@PortalID,
+	@SettingName,
+	@SettingValue
+    )
+   select SCOPE_IDENTITY()
+end
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingList]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+/******   StoredProcedure dbo.CrossPortalSetting_List    10/18/2007 01:56:59 ******/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingList]
+AS
+
+SELECT
+	[PortalID],
+	[SettingName],
+	[SettingValue]
+FROM {databaseOwner}{objectQualifier}CrossPortalSetting
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingUpdate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingUpdate]
+	@PortalID int, 
+	@SettingName nvarchar(300), 
+	@SettingValue nvarchar(2000) 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossPortalSetting SET
+	[SettingValue] = @SettingValue
+WHERE
+	[PortalID] = @PortalID
+	AND [SettingName] = @SettingName
+	
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingDelete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+/******   StoredProcedure dbo.CrossPortalSetting_Delete     10/18/2007 01:56:57 ******/
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingDelete]
+	@PortalID int,
+	@SettingName nvarchar(300)
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossPortalSetting
+WHERE
+	[PortalID] = @PortalID
+	AND [SettingName] = @SettingName
+
+' 
+END
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE   PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingExist]
+	@PortalID int,
+	@SettingName nvarchar(300)
+	
+AS
+
+SELECT  count([PortalID])
+	
+FROM {databaseOwner}{objectQualifier}CrossPortalSetting
+WHERE
+	[PortalID] = @PortalID
+	AND [SettingName] = @SettingName
+	
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingGet]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingGet]
+	@PortalID int,
+	@SettingName nvarchar(300)
+	
+AS
+
+SELECT
+	[PortalID],
+	[SettingName],
+	[SettingValue]
+FROM {databaseOwner}{objectQualifier}CrossPortalSetting
+WHERE
+	[PortalID] = @PortalID
+	AND [SettingName] = @SettingName
+	
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossPortalSettingGetByPortals]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossPortalSettingGetByPortals]
+	@PortalID int
+AS
+
+SELECT
+	[PortalID],
+	[SettingName],
+	[SettingValue]
+FROM {databaseOwner}{objectQualifier}CrossPortalSetting
+WHERE
+	[PortalID]=@PortalID
+	
+' 
+END
+GO
+/******   StoredProcedure    end ******/
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_GetByType]
+	@TypeId int,
+    @UserId int,
+    @UnAuthed bit=0,
+    @Featured bit=0,
+    @UnActive bit=0,
+    @IsPrivate bit=0,
+    @IsProtected bit=0,
+    @SearchTerm nvarchar(100),
+    @PageSize int, 
+    @PageIndex int
+AS
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss a
+   WHERE  (a.TypeId = @TypeId) --TypeId   
+     and (@UserId= -1 or a.UserId=@UserId) -- UserId
+     and (@UnAuthed=0 or a.Authed=0) --UnAuthed
+     and (@Featured =0 or a.Featured = 1)-- featured
+     and (@UnActive=0 or a.Active=0) --UnActive
+     and (@IsPrivate=0 or a.[Private]=1) --Private video
+     and (@IsProtected=0 or a.[Protected]=1) --Protected video
+     and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm 
+    ORDER BY a.[UserName] asc,
+	          a.[CreatedDate] desc
+
+     SELECT a.*
+     FROM {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+       ORDER BY c.IndexID
+	
+	     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex 
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_YTVideoExist]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_YTVideoExist]
+     @TypeId int,
+     @UserId int,
+	 @Title  nvarchar(200)
+AS
+   SELECT TotalRecords=Count(a.Id) 
+   From {databaseOwner}{objectQualifier}CrossVideo_Video a
+   where (a.[TypeId]=@TypeId)
+     and (a.[UserId]=@UserId)
+     and (a.Title=@Title)
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Abuse_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Abuse_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Abuse
+WHERE
+	[Id] = @Id
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Abuse_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Abuse_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Abuse
+WHERE
+	[Id] = @Id
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Abuse_List]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Abuse_List]
+    @PortalId int,
+    @AuthorId int,
+    @ClientId int,
+    @VideoId int,
+    @StartDate datetime,
+    @EndDate DateTime,
+    @SearchTerm nvarchar(100),
+    @AbuseNo nvarchar(100),
+    @PageSize int, 
+    @PageIndex int
+AS
+  Declare @PageLowerBound int
+  DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexId		int IdENTITY (1, 1) NOT NULL,
+	ItemId	int
+     )
+----Insert into temptable
+    insert into #PageIndex(ItemId)
+    SELECT
+	[id]
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Abuse a
+    WHERE (a.[PortalId]=@PortalId)
+    and(@AuthorId=-1 or a.[AuthorId]=@AuthorId)
+    and(@ClientId=-1 or a.[ClientId]=@ClientId)
+    and(@VideoId=-1 or a.[VideoId]=@VideoId)
+    and(a.[CreatedDate] between @StartDate and DateAdd(d,1,@EndDate))
+    and (@SearchTerm='''' or a.[Title] like ''%''+@SearchTerm+''%'') -- SearchTerm
+    and (@AbuseNo='''' or a.[AbuseNo] like ''%''+@AbuseNo+''%'') -- @AbuseNo
+    order by [id] desc
+
+---Get needs rows
+   SELECT
+	b.*
+    FROM #PageIndex a, {databaseOwner}{objectQualifier}CrossVideo_Abuse b
+    where b.[id]=a.[ItemId] 
+    and  a.[IndexId]> @PageLowerBound	
+    and	 a.[IndexId]< @PageUpperBound	  
+    ORDER BY a.IndexId
+	
+	 --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexId) FROM #PageIndex
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video
+WHERE
+	[Id] = @Id
+	
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Video
+WHERE
+	[Id] = @Id
+
+Delete FROM {databaseOwner}{objectQualifier}CrossVideo_Video
+WHERE ([MasterVideoId] = @Id)
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_History_Add]
+	@VideoId int,
+	@UserId int,
+	@VideoTitle nvarchar(200),
+	@Duration nchar(20),
+	@CreatedDate datetime
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_History (
+	[VideoId],
+	[UserId],
+	[VideoTitle],
+	[Duration],
+	[CreatedDate]
+) VALUES (
+	@VideoId,
+	@UserId,
+	@VideoTitle,
+	@Duration,
+	@CreatedDate
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_History_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_History
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_History_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_History
+WHERE
+	[Id] = @Id
+	
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History_GetByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_History_GetByUser]
+	@UserId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_History
+WHERE
+	[UserId]=@UserId
+order by CreatedDate desc
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_History_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_History_Update]
+	@Id int, 
+	@VideoId int, 
+	@UserId int, 
+	@VideoTitle nvarchar(200), 
+	@Duration nchar(20), 
+	@CreatedDate datetime 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_History SET
+	[VideoId] = @VideoId,
+	[UserId] = @UserId,
+	[VideoTitle] = @VideoTitle,
+	[Duration] = @Duration,
+	[CreatedDate] = @CreatedDate
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetByType]
+	 @TypeId   int,
+     @CategoryId   int,
+     @UserId int,
+     @VideoType int,
+     @UnAuthed bit=0,
+     @Featured bit=0,
+     @UnActive bit=0,
+     @Expired bit=0,
+     @IsPrivate bit=0,
+     @IsProtected bit=0,
+     @SearchTerm nvarchar(100),
+     @PageSize int, 
+     @PageIndex int
+AS
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+   WHERE  (a.TypeId = @TypeId) --TypeId   
+     and (@CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId=@CategoryId
+)) --CategoryId
+     and (@UserId= -1 or a.UserId=@UserId) -- UserId
+     and ( @VideoType=-1 or a.[VideoType]=@VideoType ) -- VideoType
+     and ( a.[VideoType]<>2 ) -- exclude slave video
+     and (@UnAuthed=0 or a.Authed=0) --UnAuthed
+     and (@Featured =0 or a.Featured = 1)-- featured
+     and (@UnActive=0 or a.Active=0) --UnActive
+     and (@Expired=0 or   IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) < CONVERT(CHAR(8), GETDATE(), 112)) -- Expired
+     and (@IsPrivate=0 or a.[Private]=1) --Private video
+     and (@IsProtected=0 or a.[Protected]=1) --Protected video
+     and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm 
+    ORDER BY a.[DisplayOrder] asc,
+	          a.[CreatedDate] desc
+
+SELECT a.*
+     FROM {databaseOwner}{objectQualifier}CrossVideo_Video a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+       ORDER BY c.IndexID
+	
+	     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex 
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetItemCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetItemCount]
+	@PortalId int,
+    @UserId int
+AS
+
+Declare @RecordCount int
+Select @RecordCount=0
+SELECT @RecordCount=count(Id) 
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (@PortalId=-1 or a.[PortalId] = @PortalId)
+and (@UserId=-1 or a.[UserId]=@UserId)
+
+Select @RecordCount
+	
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_DeleteByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_DeleteByUser]
+	@UserId int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Video
+WHERE
+	[UserId] = @UserId
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Comment
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_GetByVideo]
+	@VideoId int,
+     @PageSize int, 
+     @PageIndex int,
+     @Auth  bit,
+     @IsPrivate bit
+AS
+
+  Declare @PageLowerBound int
+  DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	CommentId	int
+     )
+----Insert into temptable
+    insert into #PageIndex(CommentId)
+    SELECT
+	[id]
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Comment
+    WHERE [VideoId]=@VideoId
+    and(@auth=1 or authed=1)
+    and(@IsPrivate=1 or IsPrivate=0)
+    order by [id] desc
+
+
+---Get needs rows
+   SELECT b.*
+    FROM #PageIndex a, {databaseOwner}{objectQualifier}CrossVideo_Comment b
+    where b.id=a.CommentId 
+    and  a.IndexID> @PageLowerBound	
+    and	 a.IndexID< @PageUpperBound	  
+    ORDER BY a.IndexID
+	
+	     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_GetByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+CREATE     PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_GetByUser]
+        @PortalId int,
+        @UserId int,
+        @ShowUnAuthedOnly bit,
+        @ShowPrivateOnly bit,
+        @PageSize int, 
+        @PageIndex int    
+AS
+ 
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+ insert into #PageIndex(RowId)
+ SELECT a.[id]
+ FROM {databaseOwner}{objectQualifier}CrossVideo_Comment a,{databaseOwner}{objectQualifier}CrossVideo_Video b
+ WHERE  (a.PortalId = @PortalId) --PortalId  
+      and ( a.VideoId=b.Id)
+      and (@UserId=-1 or b.UserId=@UserId) --UserId
+      and (@ShowUnAuthedOnly=0 or a.Authed=0) --UnAuthed
+      and (@ShowPrivateOnly=0 or a.IsPrivate=1) -- IsPrivate
+order by a. Id desc
+
+
+---Get needs rows
+   SELECT a.*
+    FROM  {databaseOwner}{objectQualifier}CrossVideo_Comment a,#PageIndex c
+    where (a.Id=c.RowId)
+       and   (c.IndexID> @PageLowerBound)	
+       and   (c.IndexID< @PageUpperBound)
+    ORDER BY c.IndexID
+  
+     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByVideo]
+	@VideoId int,
+    @PageSize int, 
+    @PageIndex int
+AS
+  Declare @PageLowerBound int
+  DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	ItemId	int
+     )
+----Insert into temptable
+    insert into #PageIndex(ItemId)
+    SELECT
+	[id]
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Rating
+    WHERE [VideoId]=@VideoId
+    order by [id] desc
+
+---Get needs rows
+   SELECT
+	b.*
+    FROM #PageIndex a, {databaseOwner}{objectQualifier}CrossVideo_Rating b
+    where b.id=a.ItemId
+    and  a.IndexID> @PageLowerBound	
+    and	 a.IndexID< @PageUpperBound	  
+    ORDER BY
+	a.IndexID
+	
+	     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByAuthor]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE     PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByAuthor]
+        @AuthorId int,
+        @VideoId int,
+        @PageSize int, 
+        @PageIndex int    
+AS
+ 
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+ insert into #PageIndex(RowId)
+ SELECT a.[id]
+ FROM {databaseOwner}{objectQualifier}CrossVideo_Rating a
+ WHERE  (a.AuthorId = @AuthorId)
+    and ((@VideoId=-1) or (a.VideoId=@VideoId)) 
+order by a. Id desc
+
+
+---Get needs rows
+   SELECT
+	    a.*
+    FROM  {databaseOwner}{objectQualifier}CrossVideo_Rating a,#PageIndex c
+    where (a.Id=c.RowId)
+       and   (c.IndexID> @PageLowerBound)	
+       and   (c.IndexID< @PageUpperBound)
+    ORDER BY c.IndexID
+  
+     --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Ticket_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Ticket_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Ticket
+WHERE
+	[Id] = @Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Ticket_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Ticket_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Ticket
+WHERE
+	[Id] = @Id
+	
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Ticket_List]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Ticket_List]
+    @PortalId int,
+    @AuthorId int,
+    @ClientId int,
+    @VideoId int,
+    @StartDate datetime,
+    @EndDate DateTime,
+    @SearchTerm nvarchar(100),
+    @TicketNo nvarchar(100),
+    @PageSize int, 
+    @PageIndex int
+AS
+  Declare @PageLowerBound int
+  DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexId		int IdENTITY (1, 1) NOT NULL,
+	ItemId	int
+     )
+----Insert into temptable
+    insert into #PageIndex(ItemId)
+    SELECT
+	[id]
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Ticket a
+    WHERE (a.[PortalId]=@PortalId)
+    and(@AuthorId=-1 or a.[AuthorId]=@AuthorId)
+    and(@ClientId=-1 or a.[ClientId]=@ClientId)
+    and(@VideoId=-1 or a.[VideoId]=@VideoId)
+    and(a.[CreatedDate] between @StartDate and DateAdd(d,1,@EndDate))
+    and (@SearchTerm='''' or a.[Title] like ''%''+@SearchTerm+''%'') -- SearchTerm
+    and (@TicketNo='''' or a.[TicketNo] like ''%''+@TicketNo+''%'') -- @TicketNo
+    order by [id] desc
+
+---Get needs rows
+   SELECT
+	b.*
+    FROM #PageIndex a, {databaseOwner}{objectQualifier}CrossVideo_Ticket b
+    where b.[id]=a.[ItemId] 
+    and  a.[IndexId]> @PageLowerBound	
+    and	 a.[IndexId]< @PageUpperBound	  
+    ORDER BY a.IndexId
+	
+	 --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexId) FROM #PageIndex
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetBySerial]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetBySerial]
+   @SerialId   int
+AS
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.[MasterVideoId] = @SerialId)
+order by a.[SerialOrder] asc, a.[CreatedDate] asc
+   
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_GetByList]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+/****** object:  StoredProcedure dbo.[CrossVideo_Type_GetByList]    Date: 10/18/2007 01:57:13 ******/
+CREATE      PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_GetByList]
+   @TypeList varchar(400)
+AS
+SELECT a.*,
+        ''VideoCounts''=
+       (Select count(b.Id)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_Video b
+        where b.TypeId=a.Id 
+        and b.Active=1 
+        and b.[Private]=0
+        and (b.[HasVideo]=1))
+FROM {databaseOwner}{objectQualifier}CrossVideo_Type a
+WHERE a.Id IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@TypeList))
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_GetModuleCategories]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+/****** object:  StoredProcedure dbo.[CrossVideo_Category_ListModuleCategories]    Date: 10/18/2007 01:57:13 ******/
+CREATE      PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_GetModuleCategories]
+   @Categories varchar(400)
+AS
+SELECT a.*,
+        ''VideoCounts''=
+       (Select count(b.VideoId)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory b,{databaseOwner}{objectQualifier}CrossVideo_Video c 
+        where (b.CategoryId=a.Id)
+        and (b.VideoId=c.Id) 
+        and (c.Active=1) 
+        and (c.Authed=1) 
+        and (c.[Private]=0)
+        and (c.[HasVideo]=1))
+FROM {databaseOwner}{objectQualifier}CrossVideo_Category a
+WHERE a.ID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories))
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetFlashImage]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE    PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetFlashImage]
+   @TypeId   int,
+   @CurrentUserId int,
+   @Categories varchar(100),
+   @RecordCount	int, 
+   @Featured	bit,
+   @SortField	varchar(100)
+AS
+   set rowcount @RecordCount
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.[TypeId] = @TypeId)
+  and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+  and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)))
+            ))--Categories    
+     and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)--private
+      and ( a.[HasVideo] = 1)  -- HasVideo 
+      and ( a.[VideoType]<>2 ) -- exclude slave video   
+      and (@Featured = 0 OR a.Featured = 1)--Featured
+      and ((a.Image is not null) and (a.Image<>''''))
+      and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Update]
+	@Id int, 
+	@TypeId int, 
+	@PortalId int, 
+	@UserId int, 
+	@UserName nvarchar(100), 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Thumbnail nvarchar(100), 
+	@Image nvarchar(50), 
+	@LinkUrl nvarchar(200), 
+	@Summary nvarchar(1000), 
+	@Description ntext, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext, 
+	@DisplayOrder int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@VideoFile nvarchar(2000), 
+	@VideoPath nvarchar(2000), 
+    @UrlMode nvarchar(10),
+	@Duration nvarchar(20), 
+	@HttpType nvarchar(50), 
+	@VideoType int, 
+	@MasterVideoId int, 
+	@SerialOrder int, 
+	@MediaType int, 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Views int, 
+	@AllowComment bit, 
+	@CommentRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@CommentCount int, 
+	@AllowRating bit, 
+	@RatingRoles nvarchar(200), 
+	@RatingTotal int, 
+	@RatingCount int, 
+	@RatingAverage decimal(18, 2), 
+	@AllowRecommend bit, 
+	@RecommendRoles nvarchar(200), 
+	@RecommendCount int, 
+	@RecommendUp int, 
+	@RecommendDown int, 
+	@DownloadRoles nvarchar(200), 
+	@Private bit, 
+	@Protected bit, 
+	@ProtectPassword nvarchar(50),
+    @HasVideo bit,
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Video SET
+	[TypeId] = @TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[LinkUrl] = @LinkUrl,
+	[Summary] = @Summary,
+	[Description] = @Description,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+	[DisplayOrder] = @DisplayOrder,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = @LastModifiedDate,
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[VideoFile] = @VideoFile,
+	[VideoPath] = @VideoPath,
+    [UrlMode] = @UrlMode,
+	[Duration] = @Duration,
+	[HttpType] = @HttpType,
+	[VideoType] = @VideoType,
+	[MasterVideoId] = @MasterVideoId,
+	[SerialOrder] = @SerialOrder,
+	[MediaType] = @MediaType,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Views] = @Views,
+	[AllowComment] = @AllowComment,
+	[CommentRoles] = @CommentRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[CommentCount] = @CommentCount,
+	[AllowRating] = @AllowRating,
+	[RatingRoles] = @RatingRoles,
+	[RatingTotal] = @RatingTotal,
+	[RatingCount] = @RatingCount,
+	[RatingAverage] = @RatingAverage,
+	[AllowRecommend] = @AllowRecommend,
+	[RecommendRoles] = @RecommendRoles,
+	[RecommendCount] = @RecommendCount,
+	[RecommendUp] = @RecommendUp,
+	[RecommendDown] = @RecommendDown,
+	[DownloadRoles] = @DownloadRoles,
+	[Private] = @Private,
+	[Protected] = @Protected,
+	[ProtectPassword] = @ProtectPassword,
+    [HasVideo] = @HasVideo
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+Begin
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)
+
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Tags)
+
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToRole WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@ViewRoles)
+end 
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Add]
+	@TypeId int,
+	@PortalId int,
+	@UserId int,
+	@UserName nvarchar(100),
+	@CreatedDate datetime,
+	@Quote bit,
+	@Title nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Thumbnail nvarchar(100),
+	@Image nvarchar(50),
+	@LinkUrl nvarchar(200),
+	@Summary nvarchar(1000),
+	@Description ntext,
+	@Field1 ntext,
+	@Field2 ntext,
+	@Field3 ntext,
+	@Field4 ntext,
+	@Field5 ntext,
+	@DisplayOrder int,
+	@PublishDate datetime,
+	@ExpireDate datetime,
+	@LastModifiedDate datetime,
+	@SubmitDate datetime,
+	@AuthedDate datetime,
+	@VideoFile nvarchar(2000),
+	@VideoPath nvarchar(2000),
+    @UrlMode nvarchar(10),
+	@Duration nvarchar(20),
+	@HttpType nvarchar(50),
+	@VideoType int,
+	@MasterVideoId int,
+	@SerialOrder int,
+	@MediaType int,
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@Views int,
+	@AllowComment bit,
+	@CommentRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@CommentCount int,
+	@AllowRating bit,
+	@RatingRoles nvarchar(200),
+	@RatingTotal int,
+	@RatingCount int,
+	@RatingAverage decimal(18, 2),
+	@AllowRecommend bit,
+	@RecommendRoles nvarchar(200),
+	@RecommendCount int,
+	@RecommendUp int,
+	@RecommendDown int,
+	@DownloadRoles nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+    @HasVideo bit,
+    @ViewRoles nvarchar(200),
+    @Categories nvarchar(200),
+    @Tags nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Video (
+	[TypeId],
+	[PortalId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Quote],
+	[Title],
+	[Author],
+	[Source],
+	[Thumbnail],
+	[Image],
+	[LinkUrl],
+	[Summary],
+	[Description],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+	[DisplayOrder],
+	[PublishDate],
+	[ExpireDate],
+	[LastModifiedDate],
+	[SubmitDate],
+	[AuthedDate],
+	[VideoFile],
+	[VideoPath],
+    [UrlMode],
+	[Duration],
+	[HttpType],
+	[VideoType],
+	[MasterVideoId],
+	[SerialOrder],
+	[MediaType],
+	[Active],
+	[Authed],
+	[Featured],
+	[Views],
+	[AllowComment],
+	[CommentRoles],
+	[AutoAuthComment],
+	[CommentCount],
+	[AllowRating],
+	[RatingRoles],
+	[RatingTotal],
+	[RatingCount],
+	[RatingAverage],
+	[AllowRecommend],
+	[RecommendRoles],
+	[RecommendCount],
+	[RecommendUp],
+	[RecommendDown],
+	[DownloadRoles],
+	[Private],
+	[Protected],
+	[ProtectPassword],
+    [HasVideo]
+) VALUES (
+	@TypeId,
+	@PortalId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Quote,
+	@Title,
+	@Author,
+	@Source,
+	@Thumbnail,
+	@Image,
+	@LinkUrl,
+	@Summary,
+	@Description,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+	@DisplayOrder,
+	@PublishDate,
+	@ExpireDate,
+	GetDate(),
+	GetDate(),
+	@AuthedDate,
+	@VideoFile,
+	@VideoPath,
+    @UrlMode,
+	@Duration,
+	@HttpType,
+	@VideoType,
+	@MasterVideoId,
+	@SerialOrder,
+	@MediaType,
+	@Active,
+	@Authed,
+	@Featured,
+	0,
+	@AllowComment,
+	@CommentRoles,
+	@AutoAuthComment,
+	0,
+	@AllowRating,
+	@RatingRoles,
+	0,
+	0,
+	0,
+	@AllowRecommend,
+	@RecommendRoles,
+	0,
+	0,
+	0,
+	@DownloadRoles,
+	@Private,
+	@Protected,
+	@ProtectPassword,
+    @HasVideo
+)
+
+DECLARE @VideoId INT	
+SET @VideoId = @@IDENTITY
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToTag SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Tags)
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToRole SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@ViewRoles)
+
+select @VideoId
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetByModuleSettings]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetByModuleSettings]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @Categories nvarchar(200),
+   @Authors nvarchar(100),
+   @VideoType int,
+   @FeaturedStatus int,
+   @ShowImageOnly bit,
+   @QuoteStatus int,
+   @ProtectedStatus int,
+   @SearchTerm nvarchar(100),
+   @SortField	nvarchar(100),
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+ WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Authors))) --Authors  
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)  --[Private]
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( @VideoType=-1 or a.[VideoType]=@VideoType ) -- VideoType
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+      and (@FeaturedStatus = 2 OR a.Featured = @FeaturedStatus)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+      and (@QuoteStatus = 2 OR a.Quote = @QuoteStatus)
+      and (@ProtectedStatus = 2 OR a.[Protected] = @ProtectedStatus)
+      and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm
+ ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT [id]
+   FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+   WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and ( @Categories = '''' OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryID IN (SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)))
+            ))--Categories      
+     and ( @Authors = '''' OR a.UserId in (
+             SELECT intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Authors))) --Authors  
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)  --[Private]
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( @VideoType=-1 or a.[VideoType]=@VideoType ) -- VideoType
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+      and (@FeaturedStatus = 2 OR a.Featured = @FeaturedStatus)
+      and (@ShowImageOnly=0 or ((a.Image is not null) and (a.Image<>'''')))
+      and (@QuoteStatus = 2 OR a.Quote = @QuoteStatus)
+      and (@ProtectedStatus = 2 OR a.[Protected] = @ProtectedStatus)
+      and (@searchTerm='''' or a.[Title] like ''%''+@searchTerm+''%'') -- Searchterm
+ ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+
+SELECT a.* 
+       FROM {databaseOwner}{objectQualifier}CrossVideo_Video a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Author_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Author_Get]
+	@UserId int
+AS
+   Select
+    a.UserId,
+    a.Username,
+    a.FirstName,
+    a.LastName,
+    a.DisplayName, 
+    a.Email,
+    b.AvatarEmail,
+    b.Authed,
+    b.Biography,
+    b.ProtectPassword,
+   ''VideoCounts''=
+       (Select count(e.Id)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_Video e
+        where (e.UserId=a.UserId) 
+        and (e.Authed=1) 
+        and (e.Active=1) 
+        and (e.[Private]=0))
+FROM {databaseOwner}{objectQualifier}Users a
+left join {databaseOwner}{objectQualifier}CrossVideo_Author b
+on a.UserId=b.UserId
+where (a.UserId = @UserId)
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Author_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Author_GetByType]
+@TypeId   int
+AS
+select distinct
+	a.UserId,
+    a.Username,
+    a.FirstName,
+    a.LastName,
+    a.DisplayName, 
+    a.Email,
+    b.AvatarEmail,
+    b.Authed,
+    b.ProtectPassword,
+    ''Biography''='''',
+   ''VideoCounts''=
+       (Select count(e.Id)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_Video e
+        where (e.UserId=a.UserId) 
+        and (e.Authed=1) 
+        and (e.Active=1) 
+        and (e.[Private]=0)
+        and (e.TypeId=@TypeId))
+FROM {databaseOwner}{objectQualifier}Users a
+left join {databaseOwner}{objectQualifier}CrossVideo_Author b
+on a.UserId=b.UserId
+Inner join {databaseOwner}{objectQualifier}CrossVideo_Video c
+on a.UserId=c.UserId
+where (c.TypeId = @TypeId)
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetByParm]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetByParm]
+   @TypeId   int,
+   @CurrentUserID	int,
+   @CategoryId int,
+   @TagId	int,
+   @UserId int,
+   @SearchTerm nvarchar(100),
+   @SortField	nvarchar(100),
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    and ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      and ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)-- private
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+     ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT [id]
+   FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    and ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      and ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)-- private
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+     ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+
+SELECT a.*
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Video a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+       ORDER BY c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetByDate]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetByDate]
+   @TypeId   int,
+   @CurrentUserId int,
+   @VideoDate datetime = null,
+   @SortField	nvarchar(100),
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+
+If @VideoDate IS NULL SET @VideoDate = GetUTCDate()
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT a.*
+    
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.[TypeId] = @TypeId)--TypeId
+      and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN @VideoDate and DateAdd( dd, 1, @VideoDate ) )--Video date
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)--private
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+      ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+  WHERE (a.[TypeId] = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+      and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN @VideoDate and DateAdd( dd, 1, @VideoDate ) )--Video date
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+     and (a.[Private]=0)--private
+     and ( a.[HasVideo] = 1)  -- HasVideo
+     and ( a.[VideoType]<>2 ) -- exclude slave video
+      ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+
+SELECT a.*
+       FROM {databaseOwner}{objectQualifier}CrossVideo_Video a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetRelatedRows]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetRelatedRows]
+   @TypeId   int,
+   @CurrentUserId   int,
+   @VideoId   int,
+   @RecordCount  int
+ AS
+    set rowcount @RecordCount
+  
+declare @categoryId int
+set @categoryId=(SELECT top 1 CategoryId
+from  {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory
+where {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.VideoId=@VideoId order by {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId desc)
+
+select a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+    WHERE (a.TypeId = @TypeId)
+    and(a.[Authed]=1)
+    and (a.[Active]=1)
+    and (a.[Private]=0)
+    and ( a.[HasVideo] = 1)  -- HasVideo
+    and ( a.[VideoType]<>2 ) -- exclude slave video
+    and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    and( a.id <>@VideoId)
+    and ( a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryID=@categoryId))
+            )--按照第一个目录分类 
+   ORDER BY CreatedDate desc 
+       
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetByMonth]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetByMonth]
+   @TypeId   int,
+   @CurrentUserId int,
+   @MonthDate datetime = null,
+   @SortField	nvarchar(100),
+   @MaxNumber	int,
+   @ShowPage	bit,
+   @PageSize int, 
+   @PageIndex int
+AS
+
+If @MonthDate IS NULL SET @MonthDate = GetUTCDate()
+
+if (@ShowPage=0) --if donn''t paging ,direct get record 
+BEGIN
+    set rowcount @MaxNumber
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.TypeId = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+    and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN DATEADD(month, DATEDIFF(month, 0, @MonthDate), 0)  and @MonthDate )--Video date
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+      and (a.[Private]=0)-- private
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+     ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+end 
+
+else--paging
+begin
+    Declare @PageLowerBound int
+    DECLARE @PageUpperBound int
+    -- Set the page bounds
+    SET @PageLowerBound = @PageSize * @PageIndex
+    SET @PageUpperBound = @PageLowerBound + @PageSize + 1
+
+-- Create a temp table to store the select results
+    CREATE TABLE #PageIndex 
+    (
+	IndexID		int IDENTITY (1, 1) NOT NULL,
+	RowId	int
+     )
+
+-----------Insert into temp table
+   insert into #PageIndex(RowId)
+   SELECT
+	[id]
+   FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+ WHERE (a.TypeId = @TypeId)--TypeId
+     and    (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+   and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+      and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.CreatedDate BETWEEN DATEADD(month, DATEDIFF(month, 0, @MonthDate), 0)  and @MonthDate )--Video date
+      and ( a.Authed = 1) -- Authorized
+      and ( a.Active = 1)  -- Active
+       and (a.[Private]=0)-- private
+       and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+     ORDER BY a.[DisplayOrder] asc,
+	   CASE @SortField 
+		WHEN ''Recent'' THEN a.CreatedDate 
+        when ''Views'' then a.[Views]
+        when ''Popular'' then a.Views+a.RatingTotal+a.CommentCount+a.RecommendCount
+        when ''Comment'' then a.CommentCount
+        when ''RecommendUp'' then a.[RecommendUp]
+        when ''Rating'' then a.[RatingAverage]
+        ELSE a.CreatedDate 
+	END DESC
+
+SELECT a.*
+       FROM {databaseOwner}{objectQualifier}CrossVideo_Video a,#PageIndex c
+       where c.RowId=a.Id 
+       and  c.IndexID> @PageLowerBound	
+       and  c.IndexID< @PageUpperBound	
+ 
+       ORDER BY
+	c.IndexID
+	   --Return the total number of records available 
+	SELECT TotalRecords = COUNT(IndexID) FROM #PageIndex
+
+end 
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetVideoDaysForMonth]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetVideoDaysForMonth]
+(
+	@TypeId int,
+	@VideoDate DateTime,
+    @CurrentUserId int
+)
+AS
+
+DECLARE @VideoMonth int
+DECLARE @VideoYear int
+SELECT @VideoMonth = 	DATEPART(mm, @VideoDate) 
+SELECT @VideoYear = 	DATEPART(yy, @VideoDate) 
+
+
+	SELECT
+		a.[ID] as VideoId,
+		a.[Title],
+		a.[CreatedDate] as AddedDate,
+        DATEPART(dd, a.CreatedDate) as AddedDay,
+		DATEPART(mm, a.CreatedDate) as AddedMonth,
+		DATEPART(yy, a.CreatedDate) as AddedYear
+	FROM   {databaseOwner}{objectQualifier}CrossVideo_Video a
+	WHERE (a.[TypeId] = @TypeId )and
+          (@CurrentUserId = -2 or a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 OR {databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId IN (SELECT RoleId FROM {databaseOwner}{objectQualifier}UserRoles WHERE UserID = @CurrentUserId))
+        ))--UserId
+       and ( a.[Authed]=1) 
+       and   ( a.[Active]=1) 
+       and   ( a.[Private]=0) 
+       and ( a.[HasVideo] = 1)  -- HasVideo
+       and ( a.[VideoType]<>2 ) -- exclude slave video
+       and (DATEPART(yy, a.CreatedDate) = @VideoYear) 
+       AND (DATEPART(mm, a.CreatedDate) = @VideoMonth)
+	ORDER BY a.CreatedDate
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_GetAuthorByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_GetAuthorByType]
+	@TypeId int
+AS
+   SELECT distinct
+	a.UserId,
+    a.UserName
+   FROM {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss a
+   WHERE  (a.[TypeId] = @TypeId)
+   ORDER BY a.[UserName] asc
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_GetByPortal]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_GetByPortal]
+	@PortalId int,
+    @UserId int
+AS
+   SELECT a.*
+   FROM {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss a
+   WHERE  (@PortalId= -1 or a.[PortalId] = @PortalId) --portal id 
+     and (@UserId= -1 or a.[UserId]=@UserId) -- UserId
+     and (a.[Authed]=1) 
+     and (a.[Active]=1)
+    ORDER BY a.[UserId] asc,
+	         a.[CreatedDate] desc
+
+   
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss
+WHERE
+	[Id] = @Id
+	
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Add]
+	@TypeId int,
+	@PortalId int,
+	@UserId int,
+	@UserName nvarchar(100),
+	@CreatedDate datetime,
+	@Title nvarchar(200),
+	@RssType nvarchar(200),
+	@Standard_Type nvarchar(200),
+	@Standard_Region nvarchar(100),
+	@Standard_Time nvarchar(50),
+	@User_Account nvarchar(200),
+	@User_Specific nvarchar(200),
+	@User_PlayList_Title nvarchar(300),
+	@Customize_Category nvarchar(200),
+	@Customize_Tag nvarchar(200),
+	@Advanced_Search nvarchar(200),
+	@Advanced_Author nvarchar(200),
+	@Advanced_OrderBy nvarchar(50),
+	@MasterVideoId int,
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@ViewRoles nvarchar(200),
+	@AllowComment bit,
+	@CommentRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@AllowRating bit,
+	@RatingRoles nvarchar(200),
+	@AllowRecommend bit,
+	@RecommendRoles nvarchar(200),
+	@DownloadRoles nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+	@Default_Tag nvarchar(200),
+	@Default_Category nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Quote bit,
+	@MaxRecord int
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss (
+	[TypeId],
+	[PortalId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Title],
+	[RssType],
+	[Standard_Type],
+	[Standard_Region],
+	[Standard_Time],
+	[User_Account],
+	[User_Specific],
+	[User_PlayList_Title],
+	[Customize_Category],
+	[Customize_Tag],
+	[Advanced_Search],
+	[Advanced_Author],
+	[Advanced_OrderBy],
+	[MasterVideoId],
+	[Active],
+	[Authed],
+	[Featured],
+	[ViewRoles],
+	[AllowComment],
+	[CommentRoles],
+	[AutoAuthComment],
+	[AllowRating],
+	[RatingRoles],
+	[AllowRecommend],
+	[RecommendRoles],
+	[DownloadRoles],
+	[Private],
+	[Protected],
+	[ProtectPassword],
+	[Default_Tag],
+	[Default_Category],
+	[Author],
+	[Source],
+	[Quote],
+	[MaxRecord]
+) VALUES (
+	@TypeId,
+	@PortalId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Title,
+	@RssType,
+	@Standard_Type,
+	@Standard_Region,
+	@Standard_Time,
+	@User_Account,
+	@User_Specific,
+	@User_PlayList_Title,
+	@Customize_Category,
+	@Customize_Tag,
+	@Advanced_Search,
+	@Advanced_Author,
+	@Advanced_OrderBy,
+	@MasterVideoId,
+	@Active,
+	@Authed,
+	@Featured,
+	@ViewRoles,
+	@AllowComment,
+	@CommentRoles,
+	@AutoAuthComment,
+	@AllowRating,
+	@RatingRoles,
+	@AllowRecommend,
+	@RecommendRoles,
+	@DownloadRoles,
+	@Private,
+	@Protected,
+	@ProtectPassword,
+	@Default_Tag,
+	@Default_Category,
+	@Author,
+	@Source,
+	@Quote,
+	@MaxRecord
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Update]
+	@Id int, 
+	@TypeId int, 
+	@PortalId int, 
+	@UserId int, 
+	@UserName nvarchar(100), 
+	@CreatedDate datetime, 
+	@Title nvarchar(200), 
+	@RssType nvarchar(200), 
+	@Standard_Type nvarchar(200), 
+	@Standard_Region nvarchar(100), 
+	@Standard_Time nvarchar(50), 
+	@User_Account nvarchar(200), 
+	@User_Specific nvarchar(200), 
+	@User_PlayList_Title nvarchar(300), 
+	@Customize_Category nvarchar(200), 
+	@Customize_Tag nvarchar(200), 
+	@Advanced_Search nvarchar(200), 
+	@Advanced_Author nvarchar(200), 
+	@Advanced_OrderBy nvarchar(50), 
+	@MasterVideoId int, 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@ViewRoles nvarchar(200), 
+	@AllowComment bit, 
+	@CommentRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@AllowRating bit, 
+	@RatingRoles nvarchar(200), 
+	@AllowRecommend bit, 
+	@RecommendRoles nvarchar(200), 
+	@DownloadRoles nvarchar(200), 
+	@Private bit, 
+	@Protected bit, 
+	@ProtectPassword nvarchar(50), 
+	@Default_Tag nvarchar(200), 
+	@Default_Category nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Quote bit, 
+	@MaxRecord int 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss SET
+	[TypeId] = @TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Title] = @Title,
+	[RssType] = @RssType,
+	[Standard_Type] = @Standard_Type,
+	[Standard_Region] = @Standard_Region,
+	[Standard_Time] = @Standard_Time,
+	[User_Account] = @User_Account,
+	[User_Specific] = @User_Specific,
+	[User_PlayList_Title] = @User_PlayList_Title,
+	[Customize_Category] = @Customize_Category,
+	[Customize_Tag] = @Customize_Tag,
+	[Advanced_Search] = @Advanced_Search,
+	[Advanced_Author] = @Advanced_Author,
+	[Advanced_OrderBy] = @Advanced_OrderBy,
+	[MasterVideoId] = @MasterVideoId,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[ViewRoles] = @ViewRoles,
+	[AllowComment] = @AllowComment,
+	[CommentRoles] = @CommentRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[AllowRating] = @AllowRating,
+	[RatingRoles] = @RatingRoles,
+	[AllowRecommend] = @AllowRecommend,
+	[RecommendRoles] = @RecommendRoles,
+	[DownloadRoles] = @DownloadRoles,
+	[Private] = @Private,
+	[Protected] = @Protected,
+	[ProtectPassword] = @ProtectPassword,
+	[Default_Tag] = @Default_Tag,
+	[Default_Category] = @Default_Category,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Quote] = @Quote,
+	[MaxRecord] = @MaxRecord
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_Delete]
+	@Id int
+AS
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Category
+WHERE
+	[Id] = @Id
+
+Delete from {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory
+where [CategoryId]=@Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_Get]
+	@Id int
+AS
+ SELECT 	a.*,
+            ''VideoCounts''=
+       (Select count(b.VideoId)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory b,{databaseOwner}{objectQualifier}CrossVideo_Video c 
+        where (b.CategoryId=a.Id) 
+        and (b.VideoId=c.Id) 
+        and (c.Active=1) 
+        and (c.[Private]=0)
+        and (c.[HasVideo]=1))
+   FROM  {databaseOwner}{objectQualifier}CrossVideo_Category a
+WHERE
+	[Id] = @Id
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_GetByParent]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+CREATE    PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_GetByParent]
+@TypeId int,
+@ParentId int
+AS
+   SELECT 	a.*,
+            ''VideoCounts''=
+       (Select count(b.VideoId)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory b,{databaseOwner}{objectQualifier}CrossVideo_Video c 
+        where (b.CategoryId=a.Id) 
+        and (b.VideoId=c.Id) 
+        and (c.Active=1) 
+        and (c.[Private]=0)
+        and (c.[HasVideo]=1))
+   FROM {databaseOwner}{objectQualifier}CrossVideo_Category a
+   WHERE (TypeId=@TypeId)
+    and	([ParentId] = @ParentId) 
+   ORDER BY	[Level] ASC,
+			[ParentId] ASC,
+			[Order] ASC
+			
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_GetByPortals]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_GetByPortals]
+	@PortalId int
+AS
+
+SELECT a.*,
+         ''VideoCounts''=
+       (Select count(b.VideoId)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory b,{databaseOwner}{objectQualifier}CrossVideo_Video c 
+        where (b.CategoryId=a.Id) 
+        and (b.VideoId=c.Id)
+        and (c.Active=1) 
+        and (c.Authed=1) 
+        and (c.[Private]=0)
+        and (c.[HasVideo]=1))
+FROM {databaseOwner}{objectQualifier}CrossVideo_Category a
+WHERE [PortalId]=@PortalId
+  ORDER BY	[Level] ASC,
+			[ParentId] ASC,
+			[Order] ASC
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE     PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_GetByType]
+	@TypeId int
+As 
+SELECT
+	a.*,
+    ''VideoCounts''=
+       (Select count(b.VideoId)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory b,{databaseOwner}{objectQualifier}CrossVideo_Video c 
+        where (b.CategoryId=a.Id) 
+        and (b.VideoId=c.Id) 
+        and (c.Active=1) 
+        and (c.[Private]=0)
+        and (c.[HasVideo]=1))
+FROM  {databaseOwner}{objectQualifier}CrossVideo_Category a
+WHERE  [TypeId]=@TypeId
+   ORDER BY	[Level] ASC,
+			[ParentId] ASC,
+			[Order] ASC
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToCategory_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_VideoToCategory_GetByVideo]
+	@VideoId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory
+WHERE
+	[VideoId]=@VideoId
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetRss]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetRss]
+   @TypeId   int,
+   @CategoryId int,
+   @TagId	int,
+   @UserId int,
+   @SearchTerm nvarchar(100),
+   @VideoDate datetime = null,
+   @DateType nvarchar(10)=''month'',
+   @ItemCount int
+AS
+set rowcount @ItemCount
+
+If (@VideoDate IS NULL) SET @VideoDate = GetUTCDate()
+if	(@DateType=''day'') 
+begin 
+    SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.TypeId = @TypeId)--TypeId
+     and   (a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 )))--only display view roles=-1
+    and ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      and ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+     and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.publishDate BETWEEN @VideoDate and DateAdd( dd, 1, @VideoDate ) )--Video date
+      and ( a.[Authed] = 1) -- Authorized
+      and ( a.[Active] = 1)  -- Active
+      and (a.[Private]=0)-- private  
+      and ( a.[HasVideo] = 1)  -- HasVideo  
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+      ORDER BY a.PublishDate  desc
+end
+else 
+  if	(@DateType=''month'') 
+  begin 
+    SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.TypeId = @TypeId)--TypeId
+     and   (a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 )))--only display view roles=-1
+     and ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      and ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+     and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and(a.publishDate BETWEEN DATEADD(month, DATEDIFF(month, 0, @VideoDate), 0)  AND @VideoDate )--Video date
+      and ( a.[Authed] = 1) -- Authorized
+      and ( a.[Active] = 1)  -- Active
+      and (a.[Private]=0)-- private 
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+      ORDER BY a.PublishDate  desc
+   end
+ else
+    begin 
+      SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.TypeId = @TypeId)--TypeId
+    and   (a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 )))--only display view roles=-1
+     and ( @CategoryId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory.CategoryId=@CategoryId )
+            )--CategoryId
+      and ( @TagId = -1 OR a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag 
+    WHERE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=@TagId )
+            )--TagId
+     and (@UserId=-1 or a.UserId=@UserId) -- UserId
+     and (@searchTerm='''' or a.Title like ''%''+@searchTerm+''%'') -- Searchterm
+     and (IsNull(a.PublishDate, 1) <= CONVERT(CHAR(8), GETDATE(), 112))
+     and (IsNull(a.ExpireDate, DateAdd(d, 1, GetDate())) > CONVERT(CHAR(8), GETDATE(), 112))
+     and ( a.[Authed] = 1) -- Authorized
+      and ( a.[Active] = 1)  -- Active
+      and (a.[Private]=0)-- private  
+      and ( a.[HasVideo] = 1)  -- HasVideo
+      and ( a.[VideoType]<>2 ) -- exclude slave video   
+      ORDER BY a.PublishDate  desc
+   end
+ 
+
+
+
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetByDnnSearch]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetByDnnSearch]
+   @TypeId   int
+AS
+    SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+WHERE (a.TypeId = @TypeId)--TypeId
+    and   (a.Id in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.RoleId = -1 )))--only display view roles=-1
+    and ( a.[Authed] = 1) -- Authorized
+    and ( a.[Active] = 1)  -- Active
+    and (a.[Private]=0)--private  
+    and ( a.[HasVideo] = 1)  -- HasVideo   
+    and ( a.[VideoType]<>2 ) -- exclude slave video
+    ORDER BY a.PublishDate  desc
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToRole_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_VideoToRole_GetByVideo]
+	@VideoId int
+AS
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole a
+WHERE
+	[VideoId]=@VideoId
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_VideoToTag_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_VideoToTag_GetByVideo]
+	@VideoId int
+AS
+
+SELECT a.*,
+       ''Tag''=(Select Tag from {databaseOwner}{objectQualifier}CrossVideo_Tag where {databaseOwner}{objectQualifier}CrossVideo_Tag.Id=a.TagId)
+FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag a
+WHERE
+	[VideoId]=@VideoId
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Tag_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Tag
+WHERE
+	[Id] = @Id
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToTag
+WHERE
+	[TagId] = @Id
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Tag_Get]
+	@Id int
+	
+AS
+
+SELECT a.*,
+       ''VideoCounts''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossVideo_VideoToTag where {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=a.Id)
+FROM {databaseOwner}{objectQualifier}CrossVideo_Tag a
+WHERE
+	[Id] = @Id
+	
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Tag_GetByType]
+	@TypeId int
+AS
+
+SELECT a.*,
+       ''VideoCounts''=
+     (select count(Id) from {databaseOwner}{objectQualifier}CrossVideo_VideoToTag where {databaseOwner}{objectQualifier}CrossVideo_VideoToTag.TagId=a.Id)
+FROM {databaseOwner}{objectQualifier}CrossVideo_Tag  a
+WHERE
+	[TypeId]=@TypeId
+order by CreatedDate desc
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Attachment_Add]
+	@VideoId int,
+    @FileName nvarchar(250),
+	@FilePath nvarchar(250)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Attachment (
+	[VideoId],
+    [FileName],
+	[FilePath]
+) VALUES (
+	@VideoId,
+    @FileName,
+	@FilePath
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Attachment_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Attachment
+WHERE
+	[Id] = @Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment_DeleteByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Attachment_DeleteByVideo]
+	@VideoId int
+AS
+
+delete FROM {databaseOwner}{objectQualifier}CrossVideo_Attachment
+WHERE
+	[VideoId]=@VideoId
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Attachment_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Attachment
+WHERE
+	[Id] = @Id
+	
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Attachment_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Attachment_GetByVideo]
+	@VideoId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Attachment
+WHERE
+	[VideoId]=@VideoId
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Author_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Author_Delete]
+	@UserId int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Author
+WHERE
+	[UserId] = @UserId
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Author_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Author_Update]
+	@UserId int, 
+	@AvatarEmail nvarchar(80), 
+	@Biography text, 
+	@Authed bit,
+    @ProtectPassword nvarchar(50) 
+AS
+Declare @RecordCount int
+Select @RecordCount=count(UserId) 
+from {databaseOwner}{objectQualifier}CrossVideo_Author
+where UserId=@UserId
+
+if (@RecordCount>0) 
+    begin
+     UPDATE {databaseOwner}{objectQualifier}CrossVideo_Author 
+     SET
+	    [AvatarEmail] = @AvatarEmail,
+	    [Biography] = @Biography,
+	    [Authed] = @Authed,
+        [ProtectPassword]= @ProtectPassword
+    WHERE
+	    [UserId] = @UserId
+end
+else
+   begin
+   INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Author (
+    [UserId],
+	[AvatarEmail],
+	[Biography],
+	[Authed],
+    [ProtectPassword]
+      ) VALUES 
+     (
+       @UserId,
+    	@AvatarEmail,
+    	@Biography,
+	    @Authed,
+        @ProtectPassword
+       )
+end
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Image_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Image
+WHERE
+	[Id] = @Id
+	
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Image_GetByVideo]
+	@VideoId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Image
+WHERE
+	[VideoId]=@VideoId
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Image_Update]
+	@Id int, 
+	@VideoId int, 
+	@Title nvarchar(200), 
+	@Description ntext, 
+	@Thumbnail nvarchar(200), 
+    @ImageFile nvarchar(200), 
+	@ImagePath nvarchar(200), 
+	@CreatedDate datetime, 
+	@Views int 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Image SET
+	[VideoId] = @VideoId,
+	[Title] = @Title,
+	[Description] = @Description,
+	[Thumbnail] = @Thumbnail,
+    [ImageFile]=@ImageFile,
+	[ImagePath] = @ImagePath,
+	[CreatedDate] = @CreatedDate,
+	[Views] = @Views
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Image_Add]
+	@VideoId int,
+	@Title nvarchar(200),
+	@Description ntext,
+	@Thumbnail nvarchar(200),
+    @ImageFile nvarchar(200),
+	@ImagePath nvarchar(200),
+	@CreatedDate datetime,
+	@Views int
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Image (
+	[VideoId],
+	[Title],
+	[Description],
+	[Thumbnail],
+    [ImageFile],
+	[ImagePath],
+	[CreatedDate],
+	[Views]
+) VALUES (
+	@VideoId,
+	@Title,
+	@Description,
+	@Thumbnail,
+    @ImageFile,
+	@ImagePath,
+	getdate(),
+	@Views
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Image_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Image_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Image
+WHERE
+	[Id] = @Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_Add]
+	@VideoId int,
+    @VideoTitle nvarchar(200),
+    @AuthorId int,
+    @AuthorName nvarchar(50),
+	@ClientId int,
+	@ClientName nvarchar(100),
+	@Rating int,
+	@Info nvarchar(2000),
+	@Reply nvarchar(2000),
+	@UpdatedDate datetime,
+	@Authed bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Rating (
+	[VideoId],
+    [VideoTitle],
+    [AuthorId],
+    [AuthorName],
+	[ClientId],
+	[ClientName],
+	[Rating],
+	[Info],
+	[Reply],
+	[UpdatedDate],
+	[Authed]
+) VALUES (
+	@VideoId,
+    @VideoTitle,
+    @AuthorId,
+    @AuthorName,
+	@ClientId,
+	@ClientName,
+	@Rating,
+	@Info,
+	@Reply,
+	GetDate(),
+	@Authed
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Rating
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_Get]
+	@Id int
+	
+AS
+
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Rating a
+WHERE (a.[Id] = @Id)
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByClient]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+CREATE     PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByClient]
+        @ClientId int,
+        @VideoId int
+AS
+---Get needs rows
+   SELECT a.*
+    FROM  {databaseOwner}{objectQualifier}CrossVideo_Rating a
+    where (a.ClientId=@ClientId)
+       and (@VideoId=-1 or a.[VideoId]=@VideoId)
+    ORDER BY a.Id desc
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_Update]
+	@Id int, 
+	@VideoId int,
+    @VideoTitle nvarchar(200),
+    @AuthorId int,
+    @AuthorName nvarchar(50),
+	@ClientId int,
+	@ClientName nvarchar(100),
+	@Rating int,
+	@Info nvarchar(2000),
+	@Reply nvarchar(2000),
+	@UpdatedDate datetime,
+	@Authed bit 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Rating SET
+	[VideoId] = @VideoId,
+    [VideoTitle]= @VideoTitle,
+    [AuthorId]=@AuthorId,
+    [AuthorName]=@AuthorName,
+	[ClientId] = @ClientId,
+	[ClientName] = @ClientName,
+	[Rating] = @Rating,
+	[Info] = @Info,
+	[Reply] = @Reply,
+	[UpdatedDate] = GetDate(),
+	[Authed] = @Authed
+WHERE
+	[Id] = @Id
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByVideoForStat]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Rating_GetByVideoForStat]
+	@VideoId int
+AS
+    SELECT *
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Rating
+    WHERE [VideoId]=@VideoId
+    order by [id] desc
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_Add]
+	@VideoId int,
+	@UserId int,
+	@Recommend int,
+	@CreatedDate datetime
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Recommend (
+	[VideoId],
+	[UserId],
+	[Recommend],
+	[CreatedDate]
+) VALUES (
+	@VideoId,
+	@UserId,
+	@Recommend,
+	@CreatedDate
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Recommend
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Recommend
+WHERE
+	[Id] = @Id
+	
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_GetByVideo]
+	@VideoId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Recommend
+WHERE
+	[VideoId]=@VideoId
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_GetByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_GetByUser]
+	@VideoId int,
+    @Userid int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Recommend
+WHERE ([VideoId]=@VideoId) 
+and ([UserId]=@UserId)
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_GetRecommendCount]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_GetRecommendCount]
+	@VideoId int,
+    @Recommend int
+	
+AS
+Declare @Count int
+SELECT @Count=Count(Id)
+FROM {databaseOwner}{objectQualifier}CrossVideo_Recommend
+WHERE
+	[VideoId] = @VideoId and
+    [Recommend]=@Recommend
+
+select @Count
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Recommend_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Recommend_Update]
+	@Id int, 
+	@VideoId int, 
+	@UserId int, 
+	@Recommend int, 
+	@CreatedDate datetime 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Recommend SET
+	[VideoId] = @VideoId,
+	[UserId] = @UserId,
+	[Recommend] = @Recommend,
+	[CreatedDate] = @CreatedDate
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Add]
+	@TicketId int,
+	@UserId int,
+	@UserName nvarchar(50),
+	@CreatedDate datetime,
+	@Title nvarchar(1000),
+	@Description nvarchar(4000)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_TicketDetail (
+	[TicketId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Title],
+	[Description]
+) VALUES (
+	@TicketId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Title,
+	@Description
+)
+
+select SCOPE_IDENTITY()
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_TicketDetail
+WHERE
+	[Id] = @Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_TicketDetail
+WHERE
+	[Id] = @Id
+	
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_GetByTicket]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_GetByTicket]
+	@TicketId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_TicketDetail
+WHERE
+	[TicketId]=@TicketId
+order by id asc
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_TicketDetail_Update]
+	@Id int, 
+	@TicketId int, 
+	@UserId int, 
+	@UserName nvarchar(50), 
+	@CreatedDate datetime, 
+	@Title nvarchar(1000), 
+	@Description nvarchar(4000) 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_TicketDetail SET
+	[TicketId] = @TicketId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Title] = @Title,
+	[Description] = @Description
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData_Copy]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDData_Copy]
+	@OriginalVideoId int, 
+	@newVideoId int
+AS
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_UDData (
+	        [FieldId],
+	        [VideoId],
+	        [FieldValue]
+            ) 
+     select FieldId,@newVideoId,FieldValue
+     from {databaseOwner}{objectQualifier}CrossVideo_UDData
+     where VideoId=@OriginalVideoId
+   
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDData_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_UDData
+WHERE
+	[Id] = @Id
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDData_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDData
+WHERE
+	[Id] = @Id
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_FillDefaultData]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+    CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_FillDefaultData]
+    @TypeId         INT,
+    @FieldId          INT, /* can be null for any field */
+    @DefaultValue	  nvarchar(2000), /*can be Null to copy default expression (no evaluation!) */
+    @OriginalDefaultValue nvarchar(2000) /*original default value */
+    AS
+    IF @DefaultValue is not Null and @DefaultValue<>''''
+      begin
+       /*find out rows which not have field and videoid yet */
+       Insert into {databaseOwner}{objectQualifier}CrossVideo_UDData(FieldId,VideoId,FieldValue)
+       select @FieldId,a.Id,@DefaultValue
+       from {databaseOwner}{objectQualifier}CrossVideo_Video a
+       where (a.TypeId=@TypeId) and
+             (a.Id not in ( SELECT DISTINCT VideoId from {databaseOwner}{objectQualifier}CrossVideo_UDData where {databaseOwner}{objectQualifier}CrossVideo_UDData.FieldId=@FieldId))
+    
+     IF @OriginalDefaultValue is not Null and @OriginalDefaultValue<>''''
+      begin
+       /*find out rows which have previous default value specified */
+       Update {databaseOwner}{objectQualifier}CrossVideo_UDData
+       set FieldValue=@DefaultValue
+       where FieldId=@FieldId
+       and   Cast(FieldValue as nvarchar)=@OriginalDefaultValue
+     end
+  end
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData_GetByVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDData_GetByVideo]
+	@VideoId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDData
+WHERE
+	[VideoId]=@VideoId
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData_GetByFieldAndVideo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDData_GetByFieldAndVideo]
+	@FieldId int,
+    @VideoId int
+	
+AS
+set rowcount 1
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDData
+WHERE
+	[FieldId] = @FieldId and
+    [VideoId]=@VideoId
+	
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDData_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDData_Update]
+	@FieldId int, 
+	@VideoId int, 
+	@FieldValue ntext 
+AS
+Declare @RecordCount int
+
+Select @RecordCount=count(Id) 
+from {databaseOwner}{objectQualifier}CrossVideo_UDData
+where FieldId=@FieldId and
+      VideoId=@VideoId
+
+if (@RecordCount>0) 
+    begin
+    UPDATE {databaseOwner}{objectQualifier}CrossVideo_UDData 
+    SET [FieldValue] = @FieldValue
+    WHERE FieldId=@FieldId and
+          VideoId=@VideoId
+    end
+else
+   begin
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_UDData (
+	        [FieldId],
+	        [VideoId],
+	        [FieldValue]
+            ) VALUES (
+	        @FieldId,
+	        @VideoId,
+	        @FieldValue
+            )
+    end
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Role_Delete]
+	@RoleId int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Role
+WHERE
+	[RoleId] = @RoleId
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Role_Get]
+	@RoleId int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Role
+WHERE
+	[RoleId] = @RoleId
+	
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role_GetByPortals]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Role_GetByPortals]
+	@PortalId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Role
+WHERE
+	[PortalId]=@PortalId
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Role_Add]
+    @RoleId int,
+	@RoleName nvarchar(200),
+	@PortalId int,
+	@DiskQuote int,
+	@VideoCount int,
+	@AllowImport bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Role (
+    [RoleId],
+	[RoleName],
+	[PortalId],
+	[DiskQuote],
+	[VideoCount],
+	[AllowImport]
+) VALUES (
+    @RoleId,
+	@RoleName,
+	@PortalId,
+	@DiskQuote,
+	@VideoCount,
+	@AllowImport
+)
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Role_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Role_Update]
+	@RoleId int, 
+	@RoleName nvarchar(200), 
+	@PortalId int, 
+	@DiskQuote int, 
+	@VideoCount int, 
+	@AllowImport bit 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Role SET
+	[RoleName] = @RoleName,
+	[PortalId] = @PortalId,
+	[DiskQuote] = @DiskQuote,
+	[VideoCount] = @VideoCount,
+	[AllowImport] = @AllowImport
+WHERE
+	[RoleId] = @RoleId
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Watch_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Watch_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Watch
+WHERE
+	[Id] = @Id
+	
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Watch_GetByUser]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Watch_GetByUser]
+	@UserId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_Watch
+WHERE
+	[UserId]=@UserId
+order by id desc
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Watch_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Watch_Add]
+	@VideoId int,
+	@UserId int,
+	@VideoTitle nvarchar(200),
+	@Duration nchar(20),
+	@CreatedDate datetime
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Watch (
+	[VideoId],
+	[UserId],
+	[VideoTitle],
+	[Duration],
+	[CreatedDate]
+) VALUES (
+	@VideoId,
+	@UserId,
+	@VideoTitle,
+	@Duration,
+	@CreatedDate
+)
+
+select SCOPE_IDENTITY()
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Watch_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Watch_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Watch
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetVideoMonths]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetVideoMonths]
+(
+	@TypeId int
+)
+AS
+	SELECT
+	     DATEPART(mm, a.CreatedDate) as AddedMonth,
+	     DATEPART(yy, a.CreatedDate) as AddedYear
+	FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+	WHERE (a.TypeId = @TypeId )
+      and (a.Authed=1) 
+      and (a.Active=1)
+	  and (a.[Private]=0)
+      and (a.[HasVideo]=1) -- has video
+      and ( a.[VideoType]<>2 ) -- exclude slave video
+	group by DATEPART(m, a.CreatedDate), DATEPART(yy, a.CreatedDate)
+	order by AddedYear DESC, AddedMonth DESC
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Add]
+	@AbuseId int,
+	@UserId int,
+	@UserName nvarchar(50),
+	@CreatedDate datetime,
+	@Title nvarchar(1000),
+	@Description nvarchar(4000)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_AbuseDetail (
+	[AbuseId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Title],
+	[Description]
+) VALUES (
+	@AbuseId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Title,
+	@Description
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_AbuseDetail
+WHERE
+	[Id] = @Id
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER OFF
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_AbuseDetail
+WHERE
+	[Id] = @Id
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_GetByAbuse]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_GetByAbuse]
+	@AbuseId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_AbuseDetail
+WHERE
+	[AbuseId]=@AbuseId
+order by id asc
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_AbuseDetail_Update]
+	@Id int, 
+	@AbuseId int, 
+	@UserId int, 
+	@UserName nvarchar(50), 
+	@CreatedDate datetime, 
+	@Title nvarchar(1000), 
+	@Description nvarchar(4000) 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_AbuseDetail SET
+	[AbuseId] = @AbuseId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Title] = @Title,
+	[Description] = @Description
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Add]
+	@PortalId int,
+	@Name nvarchar(80),
+	@Thumbnail nvarchar(200),
+	@Image nvarchar(200),
+	@ListPage int,
+	@DetailPage int,
+	@DisplayOrder int,
+	@FieldEnable_Field1 bit,
+	@Field1Title nvarchar(50),
+	@Field1Default ntext,
+	@FieldEnable_Field2 bit,
+	@Field2Title nvarchar(50),
+	@Field2Default ntext,
+	@FieldEnable_Field3 bit,
+	@Field3Title nvarchar(50),
+	@Field3Default ntext,
+	@FieldEnable_Field4 bit,
+	@Field4Title nvarchar(50),
+	@Field4Default ntext,
+	@FieldEnable_Field5 bit,
+	@Field5Title nvarchar(50),
+	@Field5Default ntext,
+	@FieldEnable_Quote bit,
+	@FieldEnable_Author bit,
+	@FieldEnable_Source bit,
+	@FieldEnable_Image bit,
+	@FieldEnable_Summary bit,
+	@FieldEnable_LinkUrl bit,
+	@FieldEnable_Description bit,
+    @MediaType int
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Type (
+	[PortalId],
+	[Name],
+	[Thumbnail],
+	[Image],
+	[ListPage],
+	[DetailPage],
+	[DisplayOrder],
+	[FieldEnable_Field1],
+	[Field1Title],
+	[Field1Default],
+	[FieldEnable_Field2],
+	[Field2Title],
+	[Field2Default],
+	[FieldEnable_Field3],
+	[Field3Title],
+	[Field3Default],
+	[FieldEnable_Field4],
+	[Field4Title],
+	[Field4Default],
+	[FieldEnable_Field5],
+	[Field5Title],
+	[Field5Default],
+	[FieldEnable_Quote],
+	[FieldEnable_Author],
+	[FieldEnable_Source],
+	[FieldEnable_Image],
+	[FieldEnable_Summary],
+	[FieldEnable_LinkUrl],
+	[FieldEnable_Description],
+    [MediaType]
+) VALUES (
+	@PortalId,
+	@Name,
+	@Thumbnail,
+	@Image,
+	@ListPage,
+	@DetailPage,
+	@DisplayOrder,
+	@FieldEnable_Field1,
+	@Field1Title,
+	@Field1Default,
+	@FieldEnable_Field2,
+	@Field2Title,
+	@Field2Default,
+	@FieldEnable_Field3,
+	@Field3Title,
+	@Field3Default,
+	@FieldEnable_Field4,
+	@Field4Title,
+	@Field4Default,
+	@FieldEnable_Field5,
+	@Field5Title,
+	@Field5Default,
+	@FieldEnable_Quote,
+	@FieldEnable_Author,
+	@FieldEnable_Source,
+	@FieldEnable_Image,
+	@FieldEnable_Summary,
+	@FieldEnable_LinkUrl,
+	@FieldEnable_Description,
+    @MediaType
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Update]
+	@Id int, 
+	@PortalId int, 
+	@Name nvarchar(80), 
+	@Thumbnail nvarchar(200), 
+	@Image nvarchar(200), 
+	@ListPage int, 
+	@DetailPage int, 
+	@DisplayOrder int, 
+	@FieldEnable_Field1 bit, 
+	@Field1Title nvarchar(50), 
+	@Field1Default ntext, 
+	@FieldEnable_Field2 bit, 
+	@Field2Title nvarchar(50), 
+	@Field2Default ntext, 
+	@FieldEnable_Field3 bit, 
+	@Field3Title nvarchar(50), 
+	@Field3Default ntext, 
+	@FieldEnable_Field4 bit, 
+	@Field4Title nvarchar(50), 
+	@Field4Default ntext, 
+	@FieldEnable_Field5 bit, 
+	@Field5Title nvarchar(50), 
+	@Field5Default ntext, 
+	@FieldEnable_Quote bit, 
+	@FieldEnable_Author bit, 
+	@FieldEnable_Source bit, 
+	@FieldEnable_Image bit, 
+	@FieldEnable_Summary bit, 
+	@FieldEnable_LinkUrl bit, 
+	@FieldEnable_Description bit,
+    @MediaType int 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Type SET
+	[PortalId] = @PortalId,
+	[Name] = @Name,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[ListPage] = @ListPage,
+	[DetailPage] = @DetailPage,
+	[DisplayOrder] = @DisplayOrder,
+	[FieldEnable_Field1] = @FieldEnable_Field1,
+	[Field1Title] = @Field1Title,
+	[Field1Default] = @Field1Default,
+	[FieldEnable_Field2] = @FieldEnable_Field2,
+	[Field2Title] = @Field2Title,
+	[Field2Default] = @Field2Default,
+	[FieldEnable_Field3] = @FieldEnable_Field3,
+	[Field3Title] = @Field3Title,
+	[Field3Default] = @Field3Default,
+	[FieldEnable_Field4] = @FieldEnable_Field4,
+	[Field4Title] = @Field4Title,
+	[Field4Default] = @Field4Default,
+	[FieldEnable_Field5] = @FieldEnable_Field5,
+	[Field5Title] = @Field5Title,
+	[Field5Default] = @Field5Default,
+	[FieldEnable_Quote] = @FieldEnable_Quote,
+	[FieldEnable_Author] = @FieldEnable_Author,
+	[FieldEnable_Source] = @FieldEnable_Source,
+	[FieldEnable_Image] = @FieldEnable_Image,
+	[FieldEnable_Summary] = @FieldEnable_Summary,
+	[FieldEnable_LinkUrl] = @FieldEnable_LinkUrl,
+	[FieldEnable_Description] = @FieldEnable_Description,
+    [MediaType]=@MediaType
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_Type
+WHERE [Id] = @Id
+
+Delete from {databaseOwner}{objectQualifier}CrossVideo_UDField
+Where [TypeId]= @Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_Get]
+	@Id int
+AS
+SELECT a.*,
+        ''VideoCounts''=
+       (Select count(b.Id)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_Video b
+        where b.[TypeId]=a.Id and b.[Active]=1 and b.[Private]=0)
+FROM {databaseOwner}{objectQualifier}CrossVideo_Type a
+WHERE
+	[Id] = @Id
+	
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Type_GetByPortals]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Type_GetByPortals]
+	@PortalId int
+AS
+
+SELECT a.*,
+        ''VideoCounts''=
+       (Select count(b.Id)   from 
+        {databaseOwner}{objectQualifier}CrossVideo_Video b 
+        where b.[TypeId]=a.Id 
+        and b.[Active]=1 
+        and b.[Private]=0
+        and (b.[HasVideo]=1))
+FROM {databaseOwner}{objectQualifier}CrossVideo_Type a
+WHERE [PortalId]=@PortalId
+order by [DisplayOrder]
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Ticket_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Ticket_Add]
+	@VideoId int,
+    @SubVideoId int,
+	@AuthorId int,
+	@AuthorName nvarchar(50),
+	@PortalId int,
+	@VideoTitle nvarchar(200),
+    @SubVideoTitle nvarchar(200),
+	@ClientId int,
+	@ClientName nvarchar(50),
+	@TicketNo nvarchar(100),
+	@CreatedDate datetime,
+	@UpdatedDate datetime,
+	@Title nvarchar(1000),
+	@Closed bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Ticket (
+	[VideoId],
+    [SubVideoId],
+	[AuthorId],
+	[AuthorName],
+	[PortalId],
+	[VideoTitle],
+    [SubVideoTitle],
+	[ClientId],
+	[ClientName],
+	[TicketNo],
+	[CreatedDate],
+	[UpdatedDate],
+	[Title],
+	[Closed]
+) VALUES (
+	@VideoId,
+    @SubVideoId,
+	@AuthorId,
+	@AuthorName,
+	@PortalId,
+	@VideoTitle,
+    @SubVideoTitle,
+	@ClientId,
+	@ClientName,
+	@TicketNo,
+	GetDate(),
+	GetDate(),
+	@Title,
+	@Closed
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Ticket_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Ticket_Update]
+	@Id int, 
+	@VideoId int, 
+    @SubVideoId int, 
+	@AuthorId int, 
+	@AuthorName nvarchar(50), 
+	@PortalId int, 
+	@VideoTitle nvarchar(200), 
+    @SubVideoTitle nvarchar(200), 
+	@ClientId int, 
+	@ClientName nvarchar(50), 
+	@TicketNo nvarchar(100), 
+	@CreatedDate datetime, 
+	@UpdatedDate datetime, 
+	@Title nvarchar(1000), 
+	@Closed bit 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Ticket SET
+	[VideoId] = @VideoId,
+    [SubVideoId] = @SubVideoId,
+	[AuthorId] = @AuthorId,
+	[AuthorName] = @AuthorName,
+	[PortalId] = @PortalId,
+	[VideoTitle] = @VideoTitle,
+    [SubVideoTitle] = @SubVideoTitle,
+	[ClientId] = @ClientId,
+	[ClientName] = @ClientName,
+	[TicketNo] = @TicketNo,
+	[CreatedDate] = @CreatedDate,
+	[UpdatedDate] = GetDate(),
+	[Title] = @Title,
+	[Closed] = @Closed
+WHERE
+	[Id] = @Id
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Abuse_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Abuse_Add]
+	@VideoId int,
+	@SubVideoId int,
+	@AuthorId int,
+	@AuthorName nvarchar(50),
+	@PortalId int,
+	@VideoTitle nvarchar(200),
+	@SubVideoTitle nvarchar(200),
+	@ClientId int,
+	@ClientName nvarchar(50),
+    @ClientEmail nvarchar(50),
+	@AbuseNo nvarchar(100),
+	@CreatedDate datetime,
+	@UpdatedDate datetime,
+	@Title nvarchar(1000),
+	@Closed bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Abuse (
+	[VideoId],
+	[SubVideoId],
+	[AuthorId],
+	[AuthorName],
+	[PortalId],
+	[VideoTitle],
+	[SubVideoTitle],
+	[ClientId],
+	[ClientName],
+    [ClientEmail],
+	[AbuseNo],
+	[CreatedDate],
+	[UpdatedDate],
+	[Title],
+	[Closed]
+) VALUES (
+	@VideoId,
+	@SubVideoId,
+	@AuthorId,
+	@AuthorName,
+	@PortalId,
+	@VideoTitle,
+	@SubVideoTitle,
+	@ClientId,
+	@ClientName,
+    @ClientEmail,
+	@AbuseNo,
+	GetDate(),
+	GetDate(),
+	@Title,
+	@Closed
+)
+
+select SCOPE_IDENTITY()
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Abuse_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Abuse_Update]
+	@Id int, 
+	@VideoId int, 
+	@SubVideoId int, 
+	@AuthorId int, 
+	@AuthorName nvarchar(50), 
+	@PortalId int, 
+	@VideoTitle nvarchar(200), 
+	@SubVideoTitle nvarchar(200), 
+	@ClientId int, 
+	@ClientName nvarchar(50), 
+    @ClientEmail nvarchar(50), 
+	@AbuseNo nvarchar(100), 
+	@CreatedDate datetime, 
+	@UpdatedDate datetime, 
+	@Title nvarchar(1000), 
+	@Closed bit 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Abuse SET
+	[VideoId] = @VideoId,
+	[SubVideoId] = @SubVideoId,
+	[AuthorId] = @AuthorId,
+	[AuthorName] = @AuthorName,
+	[PortalId] = @PortalId,
+	[VideoTitle] = @VideoTitle,
+	[SubVideoTitle] = @SubVideoTitle,
+	[ClientId] = @ClientId,
+	[ClientName] = @ClientName,
+    [ClientEmail] = @ClientEmail,
+	[AbuseNo] = @AbuseNo,
+	[CreatedDate] = @CreatedDate,
+	[UpdatedDate] = @UpdatedDate,
+	[Title] = @Title,
+	[Closed] = @Closed
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_GetByVideoForStat]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_GetByVideoForStat]
+	@VideoId int
+AS
+    SELECT a.*
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Comment a
+    WHERE (a.[VideoId]=@VideoId)
+    and(a.[Authed]=1)
+    and(a.[IsPrivate]=0)
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_Add]
+	@UserId int,
+	@PortalId int,
+	@VideoId int,
+    @VideoTitle nvarchar(250),
+	@CreatedUser nvarchar(50),
+	@CreatedDate datetime,
+	@Comment nvarchar(1000),
+	@Mail nvarchar(30),
+	@Url nvarchar(100),
+	@IsPrivate bit,
+	@Authed bit
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Comment (
+	[UserId],
+	[PortalId],
+	[VideoId],
+    [VideoTitle],
+	[CreatedUser],
+	[CreatedDate],
+	[Comment],
+	[Mail],
+	[Url],
+	[IsPrivate],
+	[Authed]
+) VALUES (
+	@UserId,
+	@PortalId,
+	@VideoId,
+    @VideoTitle,
+	@CreatedUser,
+	@CreatedDate,
+	@Comment,
+	@Mail,
+	@Url,
+	@IsPrivate,
+	@Authed
+)
+
+select SCOPE_IDENTITY()
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_Get]
+	@Id int
+	
+AS
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_Comment a
+WHERE (a.[Id] = @Id)
+	
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Comment_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Comment_Update]
+	@Id int, 
+	@UserId int, 
+	@PortalId int, 
+	@VideoId int, 
+    @VideoTitle nvarchar(250), 
+	@CreatedUser nvarchar(50), 
+	@CreatedDate datetime, 
+	@Comment nvarchar(1000), 
+	@Mail nvarchar(30), 
+	@Url nvarchar(100), 
+	@IsPrivate bit, 
+	@Authed bit 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Comment SET
+	[UserId] = @UserId,
+	[PortalId] = @PortalId,
+	[VideoId] = @VideoId,
+    [VideoTitle] = @VideoTitle,
+	[CreatedUser] = @CreatedUser,
+	[CreatedDate] = @CreatedDate,
+	[Comment] = @Comment,
+	[Mail] = @Mail,
+	[Url] = @Url,
+	[IsPrivate] = @IsPrivate,
+	[Authed] = @Authed
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_Add]
+	@PortalId int,
+    @TypeId int,
+	@parentId int,
+	@Name nvarchar(80),
+	@Thumbnail nvarchar(100),
+	@Image nvarchar(50),
+	@Order int,
+	@Level int,
+	@Description nvarchar(1000)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Category (
+	[PortalId],
+    [TypeId],
+	[parentId],
+	[Name],
+	[Thumbnail],
+	[Image],
+	[Order],
+	[Level],
+	[Description]
+) VALUES (
+	@PortalId,
+    @TypeId,
+	@parentId,
+	@Name,
+	@Thumbnail,
+	@Image,
+	@Order,
+	@Level,
+	@Description
+)
+
+select SCOPE_IDENTITY()
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_UpdateLevel]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_UpdateLevel]
+@Id int,
+@Level int
+AS
+Update {databaseOwner}{objectQualifier}CrossVideo_Category
+SET [Level] = @Level
+WHERE  [id] = @Id
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_UpdateOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_UpdateOrder]
+@Id int,
+@Order int
+AS
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Category
+SET [Order] = @Order
+WHERE [id] = @Id
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Category_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Category_Update]
+	@Id int, 
+	@PortalId int, 
+    @TypeId int,
+	@parentId int, 
+	@Name nvarchar(80), 
+	@Thumbnail nvarchar(100), 
+	@Image nvarchar(50), 
+	@Order int, 
+	@Level int, 
+	@Description nvarchar(1000) 
+AS
+
+UPDATE  {databaseOwner}{objectQualifier}CrossVideo_Category 
+ SET
+	[PortalId] = @PortalId,
+    [TypeId]=@TypeId,
+	[parentId] = @parentId,
+	[Name] = @Name,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[Order] = @Order,
+	[Level] = @Level,
+	[Description] = @Description
+WHERE
+	[Id] = @Id
+
+
+' 
+END
+GO
+SET ANSI_NULLS OFF
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Tag_Update]
+	@Id int, 
+    @TypeId int,
+	@PortalId int, 
+	@UserId int, 
+	@Tag nvarchar(200), 
+	@CreatedDate datetime 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Tag SET
+    [TypeId]=@TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[Tag] = @Tag,
+	[CreatedDate] = @CreatedDate
+WHERE
+	[Id] = @Id
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag_GetByTag]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Tag_GetByTag]
+	@Tag nvarchar(200),
+    @TypeId int
+AS
+Set rowcount 1
+
+SELECT a.*,
+       ''VideoCounts''=0
+FROM {databaseOwner}{objectQualifier}CrossVideo_Tag a
+WHERE
+    TypeId=@TypeId and
+	Upper([Tag]) = Upper(@Tag)
+	
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Tag_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Tag_Add]
+    @TypeId int,
+	@PortalId int,
+	@UserId int,
+	@Tag nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Tag (
+    [TypeId],
+	[PortalId],
+	[UserId],
+	[Tag],
+	[CreatedDate]
+) VALUES (
+    @TypeId,
+	@PortalId,
+	@UserId,
+	@Tag,
+	getdate()
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_Update]
+	@Id int, 
+	@PortalId int, 
+    @TypeId int,
+	@FieldName nvarchar(50), 
+	@FieldTitle nvarchar(50), 
+	@Visible bit, 
+	@FieldOrder int, 
+	@FieldType varchar(20), 
+	@Required bit, 
+	@DefaultValue nvarchar(2000), 
+	@OutputSettings nvarchar(2000), 
+	@InputSettings nvarchar(2000), 
+	@ValidationRule nvarchar(512), 
+	@ValidationMessage nvarchar(512), 
+	@NormalizeFlag bit, 
+	@HelpText nvarchar(512), 
+	@Searchable bit, 
+	@ShowOnEdit bit, 
+	@PrivateField bit, 
+	@EditStyle nvarchar(512) 
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_UDField SET
+	[PortalId] = @PortalId,
+    [TypeId]=@TypeId,
+	[FieldName] = @FieldName,
+	[FieldTitle] = @FieldTitle,
+	[Visible] = @Visible,
+	[FieldOrder] = @FieldOrder,
+	[FieldType] = @FieldType,
+	[Required] = @Required,
+	[DefaultValue] = @DefaultValue,
+	[OutputSettings] = @OutputSettings,
+	[InputSettings] = @InputSettings,
+	[ValidationRule] = @ValidationRule,
+	[ValidationMessage] = @ValidationMessage,
+	[NormalizeFlag] = @NormalizeFlag,
+	[HelpText] = @HelpText,
+	[Searchable] = @Searchable,
+	[ShowOnEdit] = @ShowOnEdit,
+	[PrivateField] = @PrivateField,
+	[EditStyle] = @EditStyle
+WHERE
+	[Id] = @Id
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_SwapOrder]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+    CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_SwapOrder]
+    @FirstId   INT,
+    @SecondId   INT
+    AS
+    DECLARE @Pos1 INT
+    DECLARE @Pos2 INT
+    SET @Pos1 = (SELECT FieldOrder FROM {databaseOwner}{objectQualifier}CrossVideo_UDField WHERE Id = @FirstId)
+    SET @Pos2 = (SELECT FieldOrder FROM {databaseOwner}{objectQualifier}CrossVideo_UDField WHERE Id = @SecondId)
+
+    UPDATE {databaseOwner}{objectQualifier}CrossVideo_UDField SET FieldOrder = -1    WHERE Id = @SecondId
+    UPDATE {databaseOwner}{objectQualifier}CrossVideo_UDField SET FieldOrder = @Pos2 WHERE Id = @FirstId
+    UPDATE {databaseOwner}{objectQualifier}CrossVideo_UDField SET FieldOrder = @Pos1 WHERE Id = @SecondId
+    
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_GetByType]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+Create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_GetByType]
+	@TypeId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDField
+WHERE
+	[TypeId]=@TypeId
+ORDER BY FieldOrder
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_GetByName]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+
+create PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_GetByName]
+	@FieldName nvarchar(50),
+    @TypeId int
+AS
+Set rowcount 1
+
+SELECT a.*
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDField a
+WHERE
+    [TypeId]=@TypeId and
+	Upper([FieldName]) = Upper(@FieldName)
+	
+
+
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_GetByPortals]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_GetByPortals]
+	@PortalId int
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDField
+WHERE
+	[PortalId]=@PortalId
+ORDER BY FieldOrder
+
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_Add]
+	@PortalId int,
+    @TypeId int,
+	@FieldName nvarchar(50),
+	@FieldTitle nvarchar(50),
+	@Visible bit,
+	@FieldOrder int,
+	@FieldType varchar(20),
+	@Required bit,
+	@DefaultValue nvarchar(2000),
+	@OutputSettings nvarchar(2000),
+	@InputSettings nvarchar(2000),
+	@ValidationRule nvarchar(512),
+	@ValidationMessage nvarchar(512),
+	@NormalizeFlag bit,
+	@HelpText nvarchar(512),
+	@Searchable bit,
+	@ShowOnEdit bit,
+	@PrivateField bit,
+	@EditStyle nvarchar(512)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_UDField (
+	[PortalId],
+    [TypeId],
+	[FieldName],
+	[FieldTitle],
+	[Visible],
+	[FieldOrder],
+	[FieldType],
+	[Required],
+	[DefaultValue],
+	[OutputSettings],
+	[InputSettings],
+	[ValidationRule],
+	[ValidationMessage],
+	[NormalizeFlag],
+	[HelpText],
+	[Searchable],
+	[ShowOnEdit],
+	[PrivateField],
+	[EditStyle]
+) VALUES (
+	@PortalId,
+    @TypeId,
+	@FieldName,
+	@FieldTitle,
+	@Visible,
+	@FieldOrder,
+	@FieldType,
+	@Required,
+	@DefaultValue,
+	@OutputSettings,
+	@InputSettings,
+	@ValidationRule,
+	@ValidationMessage,
+	@NormalizeFlag,
+	@HelpText,
+	@Searchable,
+	@ShowOnEdit,
+	@PrivateField,
+	@EditStyle
+)
+
+select SCOPE_IDENTITY()
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_Get]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_Get]
+	@Id int
+	
+AS
+
+SELECT *
+FROM {databaseOwner}{objectQualifier}CrossVideo_UDField
+WHERE
+	[Id] = @Id
+	
+
+
+
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_UDField_Delete]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_UDField_Delete]
+	@Id int
+AS
+
+DELETE FROM {databaseOwner}{objectQualifier}CrossVideo_UDField
+WHERE
+	[Id] = @Id
+
+
+
+
+' 
+END
+
+

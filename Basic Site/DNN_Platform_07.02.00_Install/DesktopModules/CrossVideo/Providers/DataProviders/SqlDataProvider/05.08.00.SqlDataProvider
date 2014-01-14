@@ -1,0 +1,31 @@
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_GetBySiteMap]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_GetBySiteMap]
+   @TypeId   int
+AS
+    SELECT a.*
+    FROM {databaseOwner}{objectQualifier}CrossVideo_Video a
+    WHERE (a.[TypeId] = @TypeId)--TypeId
+    and   (a.[Id] in (
+	SELECT DISTINCT VideoId FROM {databaseOwner}{objectQualifier}CrossVideo_VideoToRole
+	WHERE ({databaseOwner}{objectQualifier}CrossVideo_VideoToRole.[RoleId] = -1 )))--only display view roles=-1
+    and ( a.[Authed] = 1) -- Authorized
+    and ( a.[Active] = 1)  -- Active
+    and (a.[Private]=0)   --not private 
+    and (a.[Protected]=0)  --not protected 
+    and ( a.[HasVideo] = 1)  -- HasVideo   
+    and ( a.[VideoType]<>2 ) -- exclude Serial Slave video
+    and ( (a.[UrlMode] is null) or (a.[UrlMode] <>''E'')) -- exclude embed video
+    ORDER BY a.[CreatedDate]  desc
+
+' 
+END
+Go
+

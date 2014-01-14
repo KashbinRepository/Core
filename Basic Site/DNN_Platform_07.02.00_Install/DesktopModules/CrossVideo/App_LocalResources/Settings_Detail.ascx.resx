@@ -1,0 +1,616 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plRatingImage.Text" xml:space="preserve">
+    <value>Rating Image</value>
+  </data>
+  <data name="plRatingImage.Help" xml:space="preserve">
+    <value>Rating Image</value>
+  </data>
+  <data name="plRelatedVideoRow.Text" xml:space="preserve">
+    <value>Related video rows</value>
+  </data>
+  <data name="plRelatedVideoRow.Help" xml:space="preserve">
+    <value>Related video rows</value>
+  </data>
+  <data name="plShowRelatedVideo.Text" xml:space="preserve">
+    <value>Show related video/audios</value>
+  </data>
+  <data name="plShowRelatedVideo.Help" xml:space="preserve">
+    <value>Check to display related video/audios</value>
+  </data>
+  <data name="plShowViews.Help" xml:space="preserve">
+    <value>Check to show video view numbers</value>
+  </data>
+  <data name="plShowViews.Text" xml:space="preserve">
+    <value>Show view numbers</value>
+  </data>
+  <data name="plShowTags.Help" xml:space="preserve">
+    <value>Check to show video tags</value>
+  </data>
+  <data name="plShowTags.Text" xml:space="preserve">
+    <value>Show Tags</value>
+  </data>
+  <data name="plShowAuthor.Help" xml:space="preserve">
+    <value>Show video author. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowAuthor.Text" xml:space="preserve">
+    <value>Show author</value>
+  </data>
+  <data name="plShowSource.Help" xml:space="preserve">
+    <value>Show video source. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSource.Text" xml:space="preserve">
+    <value>Show Source</value>
+  </data>
+  <data name="plShowTitle.Help" xml:space="preserve">
+    <value>Show video title</value>
+  </data>
+  <data name="plShowTitle.Text" xml:space="preserve">
+    <value>Show Title</value>
+  </data>
+  <data name="plShowSummary.Help" xml:space="preserve">
+    <value>Show video summary. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSummary.Text" xml:space="preserve">
+    <value>Show Summary</value>
+  </data>
+  <data name="plShowUserName.Help" xml:space="preserve">
+    <value>Show video/audio creator</value>
+  </data>
+  <data name="plShowUserName.Text" xml:space="preserve">
+    <value>Show Creator</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Media detail settings</value>
+  </data>
+  <data name="plCommentRowCount.Help" xml:space="preserve">
+    <value>Enter comment rows per page which displayed after video detail.</value>
+  </data>
+  <data name="plCommentRowCount.Text" xml:space="preserve">
+    <value>Comment per page</value>
+  </data>
+  <data name="plImageWidth.Help" xml:space="preserve">
+    <value>Specify the maximum width of video image when display in detail. If video image width is bigger than this value,module will use this value as image width.</value>
+  </data>
+  <data name="plImageWidth.Text" xml:space="preserve">
+    <value>Image width</value>
+  </data>
+  <data name="plTemplate.Help" xml:space="preserve">
+    <value>Detail template locates under desktopmodules/crossvideo/template/detail, you can customize your own.</value>
+  </data>
+  <data name="plTemplate.Text" xml:space="preserve">
+    <value>Detail Template</value>
+  </data>
+  <data name="plShowDescription.Help" xml:space="preserve">
+    <value>Show video/audio description. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowDescription.Text" xml:space="preserve">
+    <value>Show Description</value>
+  </data>
+  <data name="plShowCreatedDate.Text" xml:space="preserve">
+    <value>Show created date</value>
+  </data>
+  <data name="plShowCreatedDate.Help" xml:space="preserve">
+    <value>Check to display video created date</value>
+  </data>
+  <data name="plShowSocialBookmarks.Help" xml:space="preserve">
+    <value>Check to display show social bookmarks</value>
+  </data>
+  <data name="plShowSocialBookmarks.Text" xml:space="preserve">
+    <value>Show social bookmarks</value>
+  </data>
+  <data name="plShowAuthorAvatar.Help" xml:space="preserve">
+    <value>Check to show creator avatar in author information</value>
+  </data>
+  <data name="plShowAuthorAvatar.Text" xml:space="preserve">
+    <value>Show creator avatar</value>
+  </data>
+  <data name="plShowAuthorBiography.Help" xml:space="preserve">
+    <value>Check to display creator biography as "About author"</value>
+  </data>
+  <data name="plShowCommentAvatar.Help" xml:space="preserve">
+    <value>Show comment avatar using user email.</value>
+  </data>
+  <data name="plShowCommentAvatar.Text" xml:space="preserve">
+    <value>Show comment avatar</value>
+  </data>
+  <data name="plTagsPerRow.Help" xml:space="preserve">
+    <value>Enter tags which will be displayed per row.</value>
+  </data>
+  <data name="plTagsPerRow.Text" xml:space="preserve">
+    <value>Tags per row</value>
+  </data>
+  <data name="plShowAuthorBiography.Text" xml:space="preserve">
+    <value>Show creator biography</value>
+  </data>
+  <data name="plShowAddFavorite.Help" xml:space="preserve">
+    <value>Check to display a "add favorite" button to let user add this page as favorite.</value>
+  </data>
+  <data name="plShowAddFavorite.Text" xml:space="preserve">
+    <value>Show "Add Favorite" button</value>
+  </data>
+  <data name="plShowPrint.Help" xml:space="preserve">
+    <value>Check to display a "print" button to let user print this page.</value>
+  </data>
+  <data name="plShowPrint.Text" xml:space="preserve">
+    <value>Show "Print" button</value>
+  </data>
+  <data name="plShowReturn.Help" xml:space="preserve">
+    <value>Check to display a "return" button to let user navigate back.</value>
+  </data>
+  <data name="plShowReturn.Text" xml:space="preserve">
+    <value>Show "Return" button</value>
+  </data>
+  <data name="secGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plCheckXhtmlDocType.Help" xml:space="preserve">
+    <value>Module needs a skin which doctype is xhtml compitable (this is the recommend settings in dnn skins). If your skin is not xhmtl compitable, check this option to let module fix it.</value>
+  </data>
+  <data name="plCheckXhtmlDocType.Text" xml:space="preserve">
+    <value>Check xhtml compitable</value>
+  </data>
+  <data name="plRelatedImagePerRow.Help" xml:space="preserve">
+    <value>Column per row when display Image list</value>
+  </data>
+  <data name="plRelatedImagePerRow.Text" xml:space="preserve">
+    <value>Column per row</value>
+  </data>
+  <data name="plRelatedImageWidth.Help" xml:space="preserve">
+    <value>Related image width while displaying in list. default value is 120.</value>
+  </data>
+  <data name="plRelatedImageWidth.Text" xml:space="preserve">
+    <value>Related image width</value>
+  </data>
+  <data name="plShowAddTicket.Help" xml:space="preserve">
+    <value>Check to show a "add help ticket" button to let user add help ticket</value>
+  </data>
+  <data name="plShowAddTicket.Text" xml:space="preserve">
+    <value>Show "Add Ticket" button</value>
+  </data>
+  <data name="plShowAddWatch.Help" xml:space="preserve">
+    <value>Check to show "Add To Play List" button</value>
+  </data>
+  <data name="plShowAddWatch.Text" xml:space="preserve">
+    <value>Show "Add To Play List" button</value>
+  </data>
+  <data name="plShowAttachment.Help" xml:space="preserve">
+    <value>Check to show video related attachments in detail (if exist)</value>
+  </data>
+  <data name="plShowAttachment.Text" xml:space="preserve">
+    <value>Show Attachments</value>
+  </data>
+  <data name="plShowField.Help" xml:space="preserve">
+    <value>Check to show {0} in detail</value>
+  </data>
+  <data name="plShowField.Text" xml:space="preserve">
+    <value>Show {0}</value>
+  </data>
+  <data name="plShowRelatedImage.Help" xml:space="preserve">
+    <value>Show related Image list (if exist)</value>
+  </data>
+  <data name="plShowRelatedImage.Text" xml:space="preserve">
+    <value>Show related Images</value>
+  </data>
+  <data name="plTabStyle.Help" xml:space="preserve">
+    <value>Choose tab css style while display video information in detail. Css package locate under desktopmodules/CrossVideo/css/jquery folder, you can customize your own.</value>
+  </data>
+  <data name="plTabStyle.Text" xml:space="preserve">
+    <value>Tab Css</value>
+  </data>
+  <data name="plType.Help" xml:space="preserve">
+    <value>Select video/audio gallery which will display their detail.</value>
+  </data>
+  <data name="plType.Text" xml:space="preserve">
+    <value>Media Gallery</value>
+  </data>
+  <data name="plUDFieldList.Help" xml:space="preserve">
+    <value>Choose user defined fields which will be displayed in built in template. Note, it works only when "Use built in template" option is checked.</value>
+  </data>
+  <data name="plUDFieldList.Text" xml:space="preserve">
+    <value>Show Fields</value>
+  </data>
+  <data name="plUDField_ImageHeight.Help" xml:space="preserve">
+    <value>Control the image height of user defined fields.</value>
+  </data>
+  <data name="plUDField_ImageHeight.Text" xml:space="preserve">
+    <value>User defined image height</value>
+  </data>
+  <data name="plUDField_ImageWidth.Help" xml:space="preserve">
+    <value>Control the image width of user defined fields. </value>
+  </data>
+  <data name="plUDField_ImageWidth.Text" xml:space="preserve">
+    <value>User defined image width</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Help" xml:space="preserve">
+    <value>Use built in tempate to display user defined fields. Uncheck this option if you want to display user defined fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Text" xml:space="preserve">
+    <value>Use built in template</value>
+  </data>
+  <data name="secRelatedImage.Text" xml:space="preserve">
+    <value>Related Images</value>
+  </data>
+  <data name="secRelatedVideo.Text" xml:space="preserve">
+    <value>Related Videos/Audios</value>
+  </data>
+  <data name="secUDField.Text" xml:space="preserve">
+    <value>Customized Attributes</value>
+  </data>
+  <data name="plShowComment.Help" xml:space="preserve">
+    <value>Check to show video comment in detail.</value>
+  </data>
+  <data name="plShowComment.Text" xml:space="preserve">
+    <value>Show Comment</value>
+  </data>
+  <data name="plShowRating.Help" xml:space="preserve">
+    <value>Check to show video rating in detail.</value>
+  </data>
+  <data name="plShowRating.Text" xml:space="preserve">
+    <value>Show Rating</value>
+  </data>
+  <data name="plShowReportAbuse.Text" xml:space="preserve">
+    <value>Show "Report Abuse" button</value>
+  </data>
+  <data name="secPlayer.Text" xml:space="preserve">
+    <value>HTML5 &amp; Flash Video/Audio Player</value>
+  </data>
+  <data name="plJw66_Fallback.Text" xml:space="preserve">
+    <value>Enable Fallback</value>
+  </data>
+  <data name="secPlayer_General.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plRelatedVideoColumn.Text" xml:space="preserve">
+    <value>Column per row</value>
+  </data>
+  <data name="plRelatedVideoColumn.Help" xml:space="preserve">
+    <value>Column per row when display related video list</value>
+  </data>
+  <data name="plShowRelatedVideoImage.Help" xml:space="preserve">
+    <value>Show related video images</value>
+  </data>
+  <data name="plShowRelatedVideoImage.Text" xml:space="preserve">
+    <value>Show Image</value>
+  </data>
+  <data name="plShowRelatedVideoView.Help" xml:space="preserve">
+    <value>Show related video views</value>
+  </data>
+  <data name="plShowRelatedVideoView.Text" xml:space="preserve">
+    <value>Show Views</value>
+  </data>
+  <data name="plShowWatchHistory.Help" xml:space="preserve">
+    <value>Check to show visitor watch history in detail page (for register users only)</value>
+  </data>
+  <data name="plShowWatchHistory.Text" xml:space="preserve">
+    <value>Show watch history</value>
+  </data>
+  <data name="plWatchHistoryCount.Help" xml:space="preserve">
+    <value>Enter watch history count which will be displayed. Note, if you enter a value which bigger than the "watch history keep count" specified in site settings, module will ingore your value.</value>
+  </data>
+  <data name="plWatchHistoryCount.Text" xml:space="preserve">
+    <value>Watch history count</value>
+  </data>
+  <data name="plJw66_Mute.Help" xml:space="preserve">
+    <value>Whether to have the sound muted on startup or not. Can be false (default) or true.</value>
+  </data>
+  <data name="secWatchHistory.Text" xml:space="preserve">
+    <value>Watch History</value>
+  </data>
+  <data name="plShowDownload.Help" xml:space="preserve">
+    <value>Display a "download" button to let visitor download video/audio (not for embed video/rtmp video)</value>
+  </data>
+  <data name="plShowDownload.Text" xml:space="preserve">
+    <value>Show "Download" link</value>
+  </data>
+  <data name="secPlayer_PlayBack.Text" xml:space="preserve">
+    <value>Playback</value>
+  </data>
+  <data name="plRatingRowCount.Help" xml:space="preserve">
+    <value>Enter rating rows per page which displayed after video detail.</value>
+  </data>
+  <data name="plRatingRowCount.Text" xml:space="preserve">
+    <value>Rating per page</value>
+  </data>
+  <data name="plShowReportAbuse.Help" xml:space="preserve">
+    <value>Show "Report Abuse" button to let user submit abuse report.</value>
+  </data>
+  <data name="Tip_TabStyle.Text" xml:space="preserve">
+    <value>Choose jquery tab css style while display media information in detail. Css package locate under desktopmodules/CrossVideo/css/jquery folder, you can customize your own.</value>
+  </data>
+  <data name="Tip_UdField.Text" xml:space="preserve">
+    <value>Customized attributes are created in "CrossVideo_Admin module - Admin Control Panel - Configurations - Data Manager - Attributes". You can use built in tempate to display these defined fields. Uncheck this option if you want to display user defined fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Help" xml:space="preserve">
+    <value>If you use check box list to display your customized attributes, they will display as disabled by default to avoid visitor select. However, if they look too dim, you can check on this option to enable it.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Text" xml:space="preserve">
+    <value>Check box list enabled</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Help" xml:space="preserve">
+    <value>If you use check box list to display your customized attributes, they will display as 1 column per row by default. You can specify more columns per row to let it looks good.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Text" xml:space="preserve">
+    <value>Check box list repeat</value>
+  </data>
+  <data name="plJw66_Controls.Help" xml:space="preserve">
+    <value>Whether to display the video controls (controlbar, icons and dock).</value>
+  </data>
+  <data name="plJw66_Controls.Text" xml:space="preserve">
+    <value>Show Controlbar</value>
+  </data>
+  <data name="plJw66_Skin.Help" xml:space="preserve">
+    <value>Which skin to use for styling the player (we call the default Six).</value>
+  </data>
+  <data name="plJw66_Skin.Text" xml:space="preserve">
+    <value>Player Skin</value>
+  </data>
+  <data name="plJw66_Width.Help" xml:space="preserve">
+    <value>Width of the player. Defaults to 480 pixels. We recommend setting this to at least 320 pixels, since otherwise certain UI elements may not fit. </value>
+  </data>
+  <data name="plJw66_Width.Text" xml:space="preserve">
+    <value>Player Width</value>
+  </data>
+  <data name="Tip_PlayerWidth.Text" xml:space="preserve">
+    <value>Width of the player. Defaults to 480 pixels. We recommend setting this to at least 320 pixels, since otherwise certain UI elements may not fit.</value>
+  </data>
+  <data name="chkJw66_EnableAspectratio.Text" xml:space="preserve">
+    <value>Enable Aspect Ratio</value>
+  </data>
+  <data name="plJw66_Aspectratio.Help" xml:space="preserve">
+    <value>This option, used to setup Player for Responsive Design, is set to the video display aspect ratio, for example "16:9". When the width of the player changes, it then automatically scales its height accordingly. When the "Enable Aspect Ratio" is checked, the "Player Height" option is ignored.</value>
+  </data>
+  <data name="plJw66_Aspectratio.Text" xml:space="preserve">
+    <value>Aspect Ratio</value>
+  </data>
+  <data name="Tip_Aspectratio.Text" xml:space="preserve">
+    <value>The "Aspect Ratio" option, used to setup Player for Responsive Design, is set to the video display aspect ratio, for example "16:9". When the width of the player changes, it then automatically scales its height accordingly. When the "Enable Aspect Ratio" is checked, the "Player Height" option is ignored.</value>
+  </data>
+  <data name="Tip_PlayerHeight.Text" xml:space="preserve">
+    <value>Height of the player in pixels. We recommend setting this to at least 180, so all UI elements will fit. However, it can be set to a small size (e.g. 40) for audio-only playback. Defaults to 270.</value>
+  </data>
+  <data name="Tip_AutoStart.Text" xml:space="preserve">
+    <value>Automatically start playing the video on page load. Note, auto start does not work on mobile devices like iOS and Android.</value>
+  </data>
+  <data name="plJw66_Height.Help" xml:space="preserve">
+    <value>Player Height</value>
+  </data>
+  <data name="plJw66_Height.Text" xml:space="preserve">
+    <value>Player Height</value>
+  </data>
+  <data name="plJw66_AutoStart.Help" xml:space="preserve">
+    <value>Automatically start playing the video on page load. Note, auto start does not work on mobile devices like iOS and Android.</value>
+  </data>
+  <data name="plJw66_AutoStart.Text" xml:space="preserve">
+    <value>Auto Start</value>
+  </data>
+  <data name="plJw66_Fallback.Help" xml:space="preserve">
+    <value>Whether to render a nice download link for the video if HTML5 and/or Flash are not supported. Can be true (a fallback is rendered) or false (the original HTML is not touched). Defaults to true.</value>
+  </data>
+  <data name="plJw66_Mute.Text" xml:space="preserve">
+    <value>Start As Mute</value>
+  </data>
+  <data name="secYouTubePlayer.Text" xml:space="preserve">
+    <value>YouTube video player</value>
+  </data>
+  <data name="Tip_BuiltInPlayer.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cross Video Gallery module supports both HTML5 &amp; Flash player to play your videos/audios. It automatically selects the best playback for your viewer's device and browser, so you deliver unparalleled video/audio experience on iPhone, iPad, Android, Mobile, and the Desktop. &lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You can control the layout and playback of player here. Note, the "Primary Rendering Mode" is set as "html5" by default, it works better in most cases. However, if you enable a .mp4 advertisement video in "CrossVideo_Admin sub module - Admin control panel - Global Settings - Advertisement Video" section, but you also have other video format (e.g, .flv videos) to play, you need select "Primary Rending Mode" as "Flash".&lt;/p&gt;</value>
+  </data>
+  <data name="plJw66_Primary.Text" xml:space="preserve">
+    <value>Primary Rendering Mode</value>
+  </data>
+  <data name="secComment.Text" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="secRating.Text" xml:space="preserve">
+    <value>Ratings</value>
+  </data>
+  <data name="secTag.Text" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="Tip_Primary.Text" xml:space="preserve">
+    <value>Which rendering mode to try first for rendering the player. Can be html5 (default) or flash.</value>
+  </data>
+  <data name="plGoogleMapStyle.Help" xml:space="preserve">
+    <value>The container style for hosting Google Map. You can change its width/height to provide different space to show Google map.</value>
+  </data>
+  <data name="plGoogleMapStyle.Text" xml:space="preserve">
+    <value>Container Style</value>
+  </data>
+  <data name="plGoogleMapZoom.Help" xml:space="preserve">
+    <value>The initial resolution at which to display the map is set by the zoom property, where zoom 0 corresponds to a map of the Earth fully zoomed out, and higher zoom levels zoom in at a higher resolution.</value>
+  </data>
+  <data name="plGoogleMapZoom.Text" xml:space="preserve">
+    <value>Map Zoom</value>
+  </data>
+  <data name="plShowGoogleMap.Help" xml:space="preserve">
+    <value>Check to show Google Maps in media detail if related data available.</value>
+  </data>
+  <data name="plShowGoogleMap.Text" xml:space="preserve">
+    <value>Show Google Maps</value>
+  </data>
+  <data name="secGoogleMap.Text" xml:space="preserve">
+    <value>Google Maps</value>
+  </data>
+  <data name="Tip_GoogleMapStyle.Text" xml:space="preserve">
+    <value>The container style for hosting Google Map. You can change its width/height to provide different space to show Google map.</value>
+  </data>
+  <data name="Tip_GoogleMapZoom.Text" xml:space="preserve">
+    <value>The initial resolution at which to display the map is set by the zoom property, where zoom 0 corresponds to a map of the Earth fully zoomed out, and higher zoom levels zoom in at a higher resolution.</value>
+  </data>
+  <data name="MustBetween0To18.Text" xml:space="preserve">
+    <value>Value must between 0 - 18</value>
+  </data>
+  <data name="liPrimary_flash.Text" xml:space="preserve">
+    <value>Flash</value>
+  </data>
+  <data name="liPrimary_html5.Text" xml:space="preserve">
+    <value>Html5</value>
+  </data>
+  <data name="liSkin_Five.Text" xml:space="preserve">
+    <value>Five</value>
+  </data>
+  <data name="liSkin_Six.Text" xml:space="preserve">
+    <value>Six (default skin)</value>
+  </data>
+  <data name="liStretching_exactfit.Text" xml:space="preserve">
+    <value>exactfit (stretch disproportionally)</value>
+  </data>
+  <data name="liStretching_fill.Text" xml:space="preserve">
+    <value>fill (stretch proportionally; parts cut off)</value>
+  </data>
+  <data name="liStretching_none.Text" xml:space="preserve">
+    <value>none (keep original dimensions)</value>
+  </data>
+  <data name="liStretching_uniform.Text" xml:space="preserve">
+    <value>uniform (stretch proportionally; black borders)</value>
+  </data>
+  <data name="plJw66_DisplayTitle.Help" xml:space="preserve">
+    <value>By default, player will display the title of an audio/video file inside the play icon in the middle of the display when set. If you have set a title, but don't want it to display here, set this option to false.</value>
+  </data>
+  <data name="plJw66_DisplayTitle.Text" xml:space="preserve">
+    <value>Display Title</value>
+  </data>
+  <data name="plJw66_Primary.Help" xml:space="preserve">
+    <value>Which rendering mode to try first for rendering the player. Can be html5 (default) or flash.</value>
+  </data>
+  <data name="plJw66_Repeat.Help" xml:space="preserve">
+    <value>Whether to loop playback of the playlist or not. Can be true (keep playing forever) or false (stop playback when completed). Defaults to false.</value>
+  </data>
+  <data name="plJw66_Repeat.Text" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="plJw66_StageVideo.Help" xml:space="preserve">
+    <value>Set this flag to false to disable GPU-accelerated image compositing in the Flash rendering mode. With some combinations of H264 parameters and GPU cards, we see inconsistent issues with rendering of the video image. Disabling Stage Video fixes this issue.</value>
+  </data>
+  <data name="plJw66_StageVideo.Text" xml:space="preserve">
+    <value>Stage Video</value>
+  </data>
+  <data name="plJw66_Stretching.Help" xml:space="preserve">
+    <value>Choose Stretching</value>
+  </data>
+  <data name="plJw66_Stretching.Text" xml:space="preserve">
+    <value>Stretching</value>
+  </data>
+  <data name="Tip_Stretching.Text" xml:space="preserve">
+    <value>How to resize the poster and video to fit the display. Can be none (keep original dimensions), exactfit (stretch disproportionally), uniform (stretch proportionally; black borders) or fill (stretch proportionally; parts cut off). Defaults to uniform.</value>
+  </data>
+</root>

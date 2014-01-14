@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ControlTitle_.Text" xml:space="preserve">
+    <value>Cross Video Gallery Admin</value>
+  </data>
+  <data name="lblAdminGeneral_Settings.Text" xml:space="preserve">
+    <value>Manage general settings, like video convert, file storage (local or Amazon S3), seo optimization, Google web sitemap, Google video sitemap, ad video, video view/comment/rating roles, photo watermark/thumbnail generate, abuse report, dnn builit-in journal/Google Maps integration, etc.</value>
+  </data>
+  <data name="lbtnAdminVideo_Category.Text" xml:space="preserve">
+    <value>Categoires</value>
+  </data>
+  <data name="lbtnAdminGeneral_Settings.Text" xml:space="preserve">
+    <value>Global Settings</value>
+  </data>
+  <data name="lblAdminVideo_Author.Text" xml:space="preserve">
+    <value>Edit users who have posted videos/audios on your site.&lt;br/&gt;&lt;br/&gt;
+Note, you can use CrossVideo_Author sub module to show authors to public.</value>
+  </data>
+  <data name="lblAdminVideo_UDT.Text" xml:space="preserve">
+    <value>Each gallery can has its own attributes. For example, when you publish video, you may want to specify its "Director". When you publish audio, you may want to specify its "Composer".&lt;br/&gt;&lt;br/&gt;Media attributes (e.g. "Director" or "Actor") are used to create these inter-dependant variations. After create an attribute, author can then enter specific attribute values for an individual video/audio (e.g. "Bruce Lee", "Jack Chen", "Sylvester Stallone").</value>
+  </data>
+  <data name="lblNoPermission.Text" xml:space="preserve">
+    <value>You don't have permission to view this module, please register or login in.</value>
+  </data>
+  <data name="lbtnAdminVideo_Video.Text" xml:space="preserve">
+    <value>Stand Alone Videos &amp; Audios</value>
+  </data>
+  <data name="lbtnAdminVideo_Tag.Text" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="secReader.Text" xml:space="preserve">
+    <value>My Feedback</value>
+  </data>
+  <data name="lbtnAdminVideo_Type.Text" xml:space="preserve">
+    <value>Galleries</value>
+  </data>
+  <data name="lblAdminVideo_Type.Text" xml:space="preserve">
+    <value>Galleries are top-level unit to organize data. Each gallery has its own categories / attributes / tags / videos (or audios), you must create at least 1 gallery before post videos (or audios). You can also hide unwanted fields or create extend fields for each gallery. &lt;br/&gt;&lt;br/&gt;
+Please note the "Media Type" property while creating galleries. Normally you need create 2 galleries (one "Media Type" property is "Video", the other "Media Type" is "Audio") to post both videos and audios. After galleries creation, you can use CrossVideo_Type sub module to display them to public.</value>
+  </data>
+  <data name="lblAdminVideo_Category.Text" xml:space="preserve">
+    <value>Categories allow you to group videos/audios easier. Cross Video Gallery supports unlimited level categoires. A video/audio can belong to multiple categories. &lt;br/&gt;&lt;br/&gt;
+Note, you must create at least 1 category for each gallery before post videos/audios. After categoires creation, you can use CrossVideo_Category sub module to show them to public.</value>
+  </data>
+  <data name="lblAdminVideo_Video.Text" xml:space="preserve">
+    <value>Manage stand alone videos/audios which created by all authors. These videos/audios are single media which don't belong to any serials. If you want to post new video/audio, click "My Videos &amp; Audios - My stand alone videos &amp; audios" instead.&lt;br/&gt;&lt;br/&gt;
+Note, you can use CrossVideo_List (and CrossVideo_ListDashboard) sub module to show videos/audios (include standard alone media and serials) to public. You can also add other sub modules (like CrossVideo_Search, CrossVideo_Archive, CrossVideo_WatchHistory...) to let visitors search videos/audios easily.</value>
+  </data>
+  <data name="lbtnAdminVideo_Author.Text" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="lbtnAdminVideo_UDT.Text" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="lblAdminVideo_Tag.Text" xml:space="preserve">
+    <value>Author can add multiple tags to a video/audio while edit it, click here to manage these tags. &lt;br/&gt;&lt;br/&gt;
+Note, you can use CrossVideo_TagList (and CrossVideo_TagDashboard) sub module to show tags to public.</value>
+  </data>
+  <data name="secAdmin.Text" xml:space="preserve">
+    <value>Admin Control Panel</value>
+  </data>
+  <data name="secAdminGeneral.Text" xml:space="preserve">
+    <value>Configurations</value>
+  </data>
+  <data name="secAdminVideo.Text" xml:space="preserve">
+    <value>Data Manager</value>
+  </data>
+  <data name="lblAuthor_File.Text" xml:space="preserve">
+    <value>Your files (videos/audios/images/documents, etc), upload them before attach with your videos (or audios). We recommend you create sub folders first, then upload related files under them.</value>
+  </data>
+  <data name="lblAuthor_Folder.Text" xml:space="preserve">
+    <value>Your folders, configure them before upload files.</value>
+  </data>
+  <data name="lblAuthor_Profile.Text" xml:space="preserve">
+    <value>Your biography, avartar email, and video/audio default protect password.</value>
+  </data>
+  <data name="lblAuthor_Comment.Text" xml:space="preserve">
+    <value>Visitor comments to your videos/audios.</value>
+  </data>
+  <data name="lblAuthor_Video.Text" xml:space="preserve">
+    <value>Add/edit your stand alone videos/audios here. These videos/audios are single media which don't belong to any serials. After add a media, you can attach multiple images/documents with it.&lt;br/&gt;&lt;br/&gt;
+Cross Video Gallery module supports both HTML5 &amp; Flash player to play your videos/audios. It automatically selects the best playback for your viewer's device and browser, so you deliver unparalleled video/audio experience on iPhone, iPad, Android, Mobile, and the Desktop. You will see a "Video/Audio format support" tab while adding videos/audios, please read  it first before add your media.</value>
+  </data>
+  <data name="lblAuthor_Ticket.Text" xml:space="preserve">
+    <value>Help ticket is a one-to-one help mechanism between you and visitors. Click here to view visitors submitted help tickets to your videos/audios.</value>
+  </data>
+  <data name="lbtnAuthor_File.Text" xml:space="preserve">
+    <value>My Files</value>
+  </data>
+  <data name="lbtnAuthor_Folder.Text" xml:space="preserve">
+    <value>My Folders</value>
+  </data>
+  <data name="lbtnAuthor_Profile.Text" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="lbtnAuthor_Comment.Text" xml:space="preserve">
+    <value>Comments</value>
+  </data>
+  <data name="lbtnAuthor_Video.Text" xml:space="preserve">
+    <value>My Stand Alone Videos &amp; Audios</value>
+  </data>
+  <data name="lbtnAuthor_Ticket.Text" xml:space="preserve">
+    <value>Help Tickets</value>
+  </data>
+  <data name="secAuthor.Text" xml:space="preserve">
+    <value>My Videos &amp; Audios</value>
+  </data>
+  <data name="lblReader_Ticket.Text" xml:space="preserve">
+    <value>Help ticket is a one-to-one help mechanism between you and media authors. Click here to view your submitted help tickets.</value>
+  </data>
+  <data name="lblReader_Watch.Text" xml:space="preserve">
+    <value>Your video/audio play list, you can submit help ticket to them.</value>
+  </data>
+  <data name="lbtnReader_Ticket.Text" xml:space="preserve">
+    <value>My Help Tickets</value>
+  </data>
+  <data name="lbtnReader_Watch.Text" xml:space="preserve">
+    <value>My Play List</value>
+  </data>
+  <data name="lblAdminGeneral_Role.Text" xml:space="preserve">
+    <value>Specify roles which can post videos/audios and manage their files. Users belong to these roles can access "CrossVideo_Admin module - My Videos &amp; Audios" section to post videos/audios. Note, site administrators can post videos/audios and manage their files by default.</value>
+  </data>
+  <data name="lbtnAdminGeneral_Role.Text" xml:space="preserve">
+    <value>Author Roles</value>
+  </data>
+  <data name="lblHelp_MimeType.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Module needs a few mime type support to work. You can add them as following if not available. Take flash video (.flv) as example.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.On the Windows 2003 server, open the Internet Information Services Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.Expand the Local Computer Server.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3.Right-click the local computer server and select Properties.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4.Select the MIME Types tab.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5.Click the New... button and enter the following information:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6.Associated Extension box: .FLV.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7.MIME Type box: flv-application/octet-stream&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;8.Click Ok.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;9.Restart the World Wide Web Publishing service.&lt;/p&gt;
+&lt;p&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You need also add below mime types using the same steps.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .xap                            mime -type: application/x-silverlight-app, for upload files&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .mp4                           mime -type: video/mp4, for playing mp4 videos&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .mp3                            mime -type: audio/mpeg,for playing mp3 music&lt;/p&gt;
+&lt;p&gt;Here is a list of the related file extension and its mime type,they are not necessary,just for reference.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .rbs                             mime type: application/octet-stream. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .3gp                            mime -type: video/3gpp&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .m4v                            mime -type: video/x-m4v &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .m4a                            mime -type: audio/x-m4a&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .m4b                            mime -type: audio/m4b&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .wmv                            mime -type: video/x-ms-wmv&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .avi                            mime -type: video/x-msvideo&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;    .asf                            mime -type: video/x-ms-asf&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .mov                            mime -type: video/quicktime&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;   .webm                            mime -type: video/webm&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="secHelp_MimeType.Text" xml:space="preserve">
+    <value>Flash video (.flv)/H.264 (.mp4) and Silverlight upload control mime type</value>
+  </data>
+  <data name="secHelp_VideoConvert_Online.Text" xml:space="preserve">
+    <value>Online Video Convert</value>
+  </data>
+  <data name="ConfigTip_A3Auth.Text" xml:space="preserve">
+    <value>Please configure your Amazon A3 information in "Admin Control Panel - Configuration - Global Settings" first.</value>
+  </data>
+  <data name="ConfigTip_VideoType.Text" xml:space="preserve">
+    <value>Please create at least 1 gallery in "Admin Control Panel - Data Manager - Galleries" first.</value>
+  </data>
+  <data name="ConfigTip_VideoCategory.Text" xml:space="preserve">
+    <value>There are some galleries (for example, the "{0}" gallery) which have no categories associated. Please add at least 1 category for each gallery in "Admin Control Panel - Data Manager - Categories" first.</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="plDescription.Help" xml:space="preserve">
+    <value>Enter description of your site (600 character limit)</value>
+  </data>
+  <data name="plDescription.Text" xml:space="preserve">
+    <value>Your Site Description</value>
+  </data>
+  <data name="plLogo.Help" xml:space="preserve">
+    <value>Enter your site logo url (gif/jpg/png files)</value>
+  </data>
+  <data name="plLogo.Text" xml:space="preserve">
+    <value>Your Site Logo</value>
+  </data>
+  <data name="plName.Help" xml:space="preserve">
+    <value>Enter your site name, can't be null</value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Your Site Name</value>
+  </data>
+  <data name="plUrl.Help" xml:space="preserve">
+    <value>Enter your site url, it is better to enter full url which contains the CrossVideo_List module instance.</value>
+  </data>
+  <data name="plUrl.Text" xml:space="preserve">
+    <value>Your Site Url</value>
+  </data>
+  <data name="Register_Status_NotRegister.Text" xml:space="preserve">
+    <value>Not Registered</value>
+  </data>
+  <data name="Register_Status_Ok.Text" xml:space="preserve">
+    <value>Register success</value>
+  </data>
+  <data name="lblSuccess.Text" xml:space="preserve">
+    <value>Submit success,thanks for your support</value>
+  </data>
+  <data name="btnAddShowcase.Text" xml:space="preserve">
+    <value>Add Showcase</value>
+  </data>
+  <data name="plInvoiceId.Help" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You currently have Cross Video standard edition, please enter your invoice id while bought this module and click "Register". Note, don't click "Register" button if you just want to test this module on your site!!&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Normally vendor will send invoice id to your mail address when you buy module. You can also login to site where you bought this module to find invoice id. If you bought it from snowcovered.com, click "My Account" after login to snowcovered.com. If you bought it from http://DnnModule.com, visit http://DnnModule.com/store.aspx and click "My orders" to find invoice id.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Contact xiaoqi98@msn.com if you have any problem while register this module.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thanks for your support.</value>
+  </data>
+  <data name="plInvoiceId.Text" xml:space="preserve">
+    <value>Invoice Id</value>
+  </data>
+  <data name="lblHelp_Online.Text" xml:space="preserve">
+    <value>Visit &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt; to get online help</value>
+  </data>
+  <data name="secHelp_Online.Text" xml:space="preserve">
+    <value>Online Help</value>
+  </data>
+  <data name="secHelp_Faqs.Text" xml:space="preserve">
+    <value>Faqs</value>
+  </data>
+  <data name="secHelp_VideoConvert_Offline.Text" xml:space="preserve">
+    <value>Offline Video Convert</value>
+  </data>
+  <data name="lbtnAdminVideo_Import.Text" xml:space="preserve">
+    <value>YouTube Video RSS Feeds</value>
+  </data>
+  <data name="lblAuthor_Serial.Text" xml:space="preserve">
+    <value>Serial is a group of videos/audios. After add a serial, you can put multiple videos/audios into it so visitor can watch/listen them together. You can also attach multiple images/documents with it.</value>
+  </data>
+  <data name="lbtnAuthor_Serial.Text" xml:space="preserve">
+    <value>My Serials</value>
+  </data>
+  <data name="lblAuthor_YouTubeRss.Text" xml:space="preserve">
+    <value>If you have multiple videos which hosted by YouTube.com and you want to show them on this site, you can create YouTube RSS items here.
+Module will check your RSS items periodically and automatic imports related videos into your stand alone videos (or into your serials).&lt;br/&gt;&lt;br/&gt;
+
+Cross Video Gallery allows you create RSS items base YouTube standard feeds, user upload/user favorite/user play list, or search from YouTube category and tag, etc. 
+For example, you can create a RSS item based your YouTube user account, so whenever you upload a new video on YouTube.com, it will also be imported into this site automatically.</value>
+  </data>
+  <data name="lbtnAuthor_YouTubeRss.Text" xml:space="preserve">
+    <value>My YouTube RSS</value>
+  </data>
+  <data name="lblAuthor_Review.Text" xml:space="preserve">
+    <value>Visitor reviews to your videos/audios.</value>
+  </data>
+  <data name="lbtnAuthor_Review.Text" xml:space="preserve">
+    <value>My Reviews</value>
+  </data>
+  <data name="lblAdminVideo_Serial.Text" xml:space="preserve">
+    <value>Manage serials which created by all authors. Serial is a group of videos/audios. Author can put multiple videos/audios into a serial so visitor can watch/listen them together. If you want to post new serial, click "My Videos &amp; Audios - My Serials" instead.</value>
+  </data>
+  <data name="lblAdminVideo_YouTubeRss.Text" xml:space="preserve">
+    <value>Manage YouTube RSS items which created by all authors. Author can create RSS items from YouTube (base YouTube standard feeds, user upload/user favorite/user play list, or search from YouTube category and tag, etc.). If you want to create new RSS item, click "My Videos &amp; Audios - My YouTube RSS" instead.&lt;br/&gt;&lt;br/&gt; By default, module will automatic check these RSS items and import videos every 2 hours. You can change retrieve period by click dnn built-in "Host - Schedule" menu.</value>
+  </data>
+  <data name="lbtnAdminVideo_Serial.Text" xml:space="preserve">
+    <value>Serials</value>
+  </data>
+  <data name="lbtnAdminVideo_YouTubeRss.Text" xml:space="preserve">
+    <value>YouTube RSS</value>
+  </data>
+  <data name="lblAdminVideo_Abuse.Text" xml:space="preserve">
+    <value>If a visitor feels a video/audio is inappropriate, he can submit a abuse report to site administrators. Click here to view these reports.</value>
+  </data>
+  <data name="lbtnAdminVideo_Abuse.Text" xml:space="preserve">
+    <value>Abuse Reports</value>
+  </data>
+  <data name="lblReader_Review.Text" xml:space="preserve">
+    <value>Your reviews to watched videos/audios.</value>
+  </data>
+  <data name="lbtnReader_Review.Text" xml:space="preserve">
+    <value>My Reviews</value>
+  </data>
+  <data name="lblReader_Abuse.Text" xml:space="preserve">
+    <value>If you feel a video/audio is inappropriate, you can submit a abuse report to site administrators. Click here to view your abuse reports and site administrator's response.</value>
+  </data>
+  <data name="lbtnReader_Abuse.Text" xml:space="preserve">
+    <value>My Abuse Reports</value>
+  </data>
+  <data name="secHelp_HowToStart.Text" xml:space="preserve">
+    <value>How to start</value>
+  </data>
+  <data name="secHelp_YouTubeIntegration.Text" xml:space="preserve">
+    <value>YouTube Integration</value>
+  </data>
+  <data name="secHelp_SendReceiveMail.Text" xml:space="preserve">
+    <value>How to send &amp; receive mail notification</value>
+  </data>
+  <data name="secRegister.Text" xml:space="preserve">
+    <value>Register Cross Video Gallery Module</value>
+  </data>
+  <data name="secShowcase.Text" xml:space="preserve">
+    <value>Showcase of Cross Video Gallery module</value>
+  </data>
+  <data name="plSiteMap.Help" xml:space="preserve">
+    <value>Video sitemap url for your site, you can submit to Google webmaster tools to let Google index your videos more easily.</value>
+  </data>
+  <data name="plSiteMap.Text" xml:space="preserve">
+    <value>Your video sitemap</value>
+  </data>
+  <data name="secHelp_VideoSiteMap.Text" xml:space="preserve">
+    <value>How to submit your video sitemap to Google</value>
+  </data>
+  <data name="lblTrialExpired.Text" xml:space="preserve">
+    <value>Your trial version of Cross Video Gallery module is expired, please upgrade to official version at &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt;, thanks. Note,  your data will keep exist after re-install using the official version.&lt;br/&gt;</value>
+  </data>
+  <data name="lblTrialTips.Text" xml:space="preserve">
+    <value>You currently have 60 days trial version of Cross Video Gallery module, please buy official version at &lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt;, thanks.&lt;br/&gt;</value>
+  </data>
+  <data name="Tip_ForAdministratorAndManageRole.Text" xml:space="preserve">
+    <value>This section is available for site administrators and roles which are specified in "CrossVideo_Admin sub module - Admin control panel - Configurations - Global Settings - General - Data Manage Roles".</value>
+  </data>
+  <data name="Tip_ForAdministratorOnly.Text" xml:space="preserve">
+    <value>This section is available for site administrators only.</value>
+  </data>
+  <data name="Tip_ForAuthor.Text" xml:space="preserve">
+    <value>This section is available for site administrators and roles which are specified in "CrossVideo_Admin module - Admin Control Panel - Configurations - Author Roles".</value>
+  </data>
+  <data name="Tip_ForRegisterUser.Text" xml:space="preserve">
+    <value>This section is available for all registered users</value>
+  </data>
+  <data name="secHelp_Charge.Text" xml:space="preserve">
+    <value>I want to charge money before allow author post their videos, how to do that?</value>
+  </data>
+  <data name="secHelp_MediaFormat.Text" xml:space="preserve">
+    <value>Video/Audio format support</value>
+  </data>
+</root>

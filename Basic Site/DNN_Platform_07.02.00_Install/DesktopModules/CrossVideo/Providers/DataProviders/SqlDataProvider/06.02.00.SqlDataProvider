@@ -1,0 +1,673 @@
+
+
+/******   alter  tables CrossVideo_Video   begin ******/
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [ShareType] [smallint] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [Friends] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [Followers] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_Video] ADD [Groups] [nvarchar](200) NULL
+
+GO
+/******   alter  tables  CrossVideo_Video  end ******/
+
+/******   alter  tables CrossVideo_YouTubeRss   begin ******/
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss] ADD [ShareType] [smallint] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss] ADD [Friends] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss] ADD [Followers] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss] ADD [Groups] [nvarchar](200) NULL
+GO
+/******   alter  tables  CrossVideo_YouTubeRss  end ******/
+
+/******   drop  procedure    begin ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Add]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Update]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Add]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Add]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Update]') AND type in (N'P', N'PC'))
+DROP PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Update]
+GO
+/******   drop  procedure    end ******/
+
+/******   create  procedure    begin ******/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Update]
+	@Id int, 
+	@TypeId int, 
+	@PortalId int, 
+	@UserId int, 
+	@UserName nvarchar(100), 
+	@CreatedDate datetime, 
+	@Quote bit, 
+	@Title nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Thumbnail nvarchar(100), 
+	@Image nvarchar(50), 
+	@LinkUrl nvarchar(200), 
+	@Summary nvarchar(1000), 
+	@Description ntext, 
+	@Field1 ntext, 
+	@Field2 ntext, 
+	@Field3 ntext, 
+	@Field4 ntext, 
+	@Field5 ntext, 
+	@DisplayOrder int, 
+	@PublishDate datetime, 
+	@ExpireDate datetime, 
+	@LastModifiedDate datetime, 
+	@SubmitDate datetime, 
+	@AuthedDate datetime, 
+	@VideoFile nvarchar(2000), 
+	@VideoPath nvarchar(2000), 
+    @UrlMode nvarchar(10),
+	@Duration nvarchar(20), 
+	@HttpType nvarchar(50), 
+	@VideoType int, 
+	@MasterVideoId int, 
+	@SerialOrder int, 
+	@MediaType int, 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@Views int, 
+	@AllowComment bit, 
+	@CommentRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@CommentCount int, 
+	@AllowRating bit, 
+	@RatingRoles nvarchar(200), 
+	@RatingTotal int, 
+	@RatingCount int, 
+	@RatingAverage decimal(18, 2), 
+	@AllowRecommend bit, 
+	@RecommendRoles nvarchar(200), 
+	@RecommendCount int, 
+	@RecommendUp int, 
+	@RecommendDown int, 
+	@DownloadRoles nvarchar(200), 
+	@Private bit, 
+	@Protected bit, 
+	@ProtectPassword nvarchar(50),
+    @HasVideo bit,
+    @ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200),
+    @ViewRoles nvarchar(200), 
+    @Categories nvarchar(200),
+	@Tags nvarchar(200),
+    @RefreshRelation bit
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_Video SET
+	[TypeId] = @TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Quote] = @Quote,
+	[Title] = @Title,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Thumbnail] = @Thumbnail,
+	[Image] = @Image,
+	[LinkUrl] = @LinkUrl,
+	[Summary] = @Summary,
+	[Description] = @Description,
+	[Field1] = @Field1,
+	[Field2] = @Field2,
+	[Field3] = @Field3,
+	[Field4] = @Field4,
+	[Field5] = @Field5,
+	[DisplayOrder] = @DisplayOrder,
+	[PublishDate] = @PublishDate,
+	[ExpireDate] = @ExpireDate,
+	[LastModifiedDate] = @LastModifiedDate,
+	[SubmitDate] = @SubmitDate,
+	[AuthedDate] = @AuthedDate,
+	[VideoFile] = @VideoFile,
+	[VideoPath] = @VideoPath,
+    [UrlMode] = @UrlMode,
+	[Duration] = @Duration,
+	[HttpType] = @HttpType,
+	[VideoType] = @VideoType,
+	[MasterVideoId] = @MasterVideoId,
+	[SerialOrder] = @SerialOrder,
+	[MediaType] = @MediaType,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[Views] = @Views,
+	[AllowComment] = @AllowComment,
+	[CommentRoles] = @CommentRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[CommentCount] = @CommentCount,
+	[AllowRating] = @AllowRating,
+	[RatingRoles] = @RatingRoles,
+	[RatingTotal] = @RatingTotal,
+	[RatingCount] = @RatingCount,
+	[RatingAverage] = @RatingAverage,
+	[AllowRecommend] = @AllowRecommend,
+	[RecommendRoles] = @RecommendRoles,
+	[RecommendCount] = @RecommendCount,
+	[RecommendUp] = @RecommendUp,
+	[RecommendDown] = @RecommendDown,
+	[DownloadRoles] = @DownloadRoles,
+	[Private] = @Private,
+	[Protected] = @Protected,
+	[ProtectPassword] = @ProtectPassword,
+    [HasVideo] = @HasVideo,
+    [ShareType] = @ShareType,
+	[Friends] = @Friends,
+	[Followers] = @Followers,
+	[Groups] = @Groups
+WHERE
+	[Id] = @Id
+
+If (@RefreshRelation=1)
+Begin
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)
+
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToTag WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToTag SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Tags)
+
+     DELETE {databaseOwner}{objectQualifier}CrossVideo_VideoToRole WHERE VideoId = @Id
+     INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToRole SELECT @Id, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@ViewRoles)
+end 
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_Video_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_Video_Add]
+	@TypeId int,
+	@PortalId int,
+	@UserId int,
+	@UserName nvarchar(100),
+	@CreatedDate datetime,
+	@Quote bit,
+	@Title nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Thumbnail nvarchar(100),
+	@Image nvarchar(50),
+	@LinkUrl nvarchar(200),
+	@Summary nvarchar(1000),
+	@Description ntext,
+	@Field1 ntext,
+	@Field2 ntext,
+	@Field3 ntext,
+	@Field4 ntext,
+	@Field5 ntext,
+	@DisplayOrder int,
+	@PublishDate datetime,
+	@ExpireDate datetime,
+	@LastModifiedDate datetime,
+	@SubmitDate datetime,
+	@AuthedDate datetime,
+	@VideoFile nvarchar(2000),
+	@VideoPath nvarchar(2000),
+    @UrlMode nvarchar(10),
+	@Duration nvarchar(20),
+	@HttpType nvarchar(50),
+	@VideoType int,
+	@MasterVideoId int,
+	@SerialOrder int,
+	@MediaType int,
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@Views int,
+	@AllowComment bit,
+	@CommentRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@CommentCount int,
+	@AllowRating bit,
+	@RatingRoles nvarchar(200),
+	@RatingTotal int,
+	@RatingCount int,
+	@RatingAverage decimal(18, 2),
+	@AllowRecommend bit,
+	@RecommendRoles nvarchar(200),
+	@RecommendCount int,
+	@RecommendUp int,
+	@RecommendDown int,
+	@DownloadRoles nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+    @HasVideo bit,
+    @ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200),
+    @ViewRoles nvarchar(200),
+    @Categories nvarchar(200),
+    @Tags nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_Video (
+	[TypeId],
+	[PortalId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Quote],
+	[Title],
+	[Author],
+	[Source],
+	[Thumbnail],
+	[Image],
+	[LinkUrl],
+	[Summary],
+	[Description],
+	[Field1],
+	[Field2],
+	[Field3],
+	[Field4],
+	[Field5],
+	[DisplayOrder],
+	[PublishDate],
+	[ExpireDate],
+	[LastModifiedDate],
+	[SubmitDate],
+	[AuthedDate],
+	[VideoFile],
+	[VideoPath],
+    [UrlMode],
+	[Duration],
+	[HttpType],
+	[VideoType],
+	[MasterVideoId],
+	[SerialOrder],
+	[MediaType],
+	[Active],
+	[Authed],
+	[Featured],
+	[Views],
+	[AllowComment],
+	[CommentRoles],
+	[AutoAuthComment],
+	[CommentCount],
+	[AllowRating],
+	[RatingRoles],
+	[RatingTotal],
+	[RatingCount],
+	[RatingAverage],
+	[AllowRecommend],
+	[RecommendRoles],
+	[RecommendCount],
+	[RecommendUp],
+	[RecommendDown],
+	[DownloadRoles],
+	[Private],
+	[Protected],
+	[ProtectPassword],
+    [HasVideo],
+    [ShareType],
+	[Friends],
+	[Followers],
+	[Groups]
+) VALUES (
+	@TypeId,
+	@PortalId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Quote,
+	@Title,
+	@Author,
+	@Source,
+	@Thumbnail,
+	@Image,
+	@LinkUrl,
+	@Summary,
+	@Description,
+	@Field1,
+	@Field2,
+	@Field3,
+	@Field4,
+	@Field5,
+	@DisplayOrder,
+	@PublishDate,
+	@ExpireDate,
+	GetDate(),
+	GetDate(),
+	@AuthedDate,
+	@VideoFile,
+	@VideoPath,
+    @UrlMode,
+	@Duration,
+	@HttpType,
+	@VideoType,
+	@MasterVideoId,
+	@SerialOrder,
+	@MediaType,
+	@Active,
+	@Authed,
+	@Featured,
+	0,
+	@AllowComment,
+	@CommentRoles,
+	@AutoAuthComment,
+	0,
+	@AllowRating,
+	@RatingRoles,
+	0,
+	0,
+	0,
+	@AllowRecommend,
+	@RecommendRoles,
+	0,
+	0,
+	0,
+	@DownloadRoles,
+	@Private,
+	@Protected,
+	@ProtectPassword,
+    @HasVideo,
+    @ShareType,
+	@Friends,
+	@Followers,
+	@Groups
+)
+
+DECLARE @VideoId INT	
+SET @VideoId = @@IDENTITY
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToCategory SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Categories)
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToTag SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@Tags)
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_VideoToRole SELECT @VideoId, intValue FROM {databaseOwner}{objectQualifier}CrossVideo_CsvToInt(@ViewRoles)
+
+select @VideoId
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Add]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Add]
+	@TypeId int,
+	@PortalId int,
+	@UserId int,
+	@UserName nvarchar(100),
+	@CreatedDate datetime,
+	@Title nvarchar(200),
+	@RssType nvarchar(200),
+	@Standard_Type nvarchar(200),
+	@Standard_Region nvarchar(100),
+	@Standard_Time nvarchar(50),
+	@User_Account nvarchar(200),
+	@User_Specific nvarchar(200),
+	@User_PlayList_Title nvarchar(300),
+	@Customize_Category nvarchar(200),
+	@Customize_Tag nvarchar(200),
+	@Advanced_Search nvarchar(200),
+	@Advanced_Author nvarchar(200),
+	@Advanced_OrderBy nvarchar(50),
+	@MasterVideoId int,
+	@Active bit,
+	@Authed bit,
+	@Featured bit,
+	@ViewRoles nvarchar(200),
+	@AllowComment bit,
+	@CommentRoles nvarchar(200),
+	@AutoAuthComment bit,
+	@AllowRating bit,
+	@RatingRoles nvarchar(200),
+	@AllowRecommend bit,
+	@RecommendRoles nvarchar(200),
+	@DownloadRoles nvarchar(200),
+	@Private bit,
+	@Protected bit,
+	@ProtectPassword nvarchar(50),
+	@Default_Tag nvarchar(200),
+	@Default_Category nvarchar(200),
+	@Author nvarchar(200),
+	@Source nvarchar(200),
+	@Quote bit,
+	@MaxRecord int,
+    @ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200)
+AS
+
+INSERT INTO {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss (
+	[TypeId],
+	[PortalId],
+	[UserId],
+	[UserName],
+	[CreatedDate],
+	[Title],
+	[RssType],
+	[Standard_Type],
+	[Standard_Region],
+	[Standard_Time],
+	[User_Account],
+	[User_Specific],
+	[User_PlayList_Title],
+	[Customize_Category],
+	[Customize_Tag],
+	[Advanced_Search],
+	[Advanced_Author],
+	[Advanced_OrderBy],
+	[MasterVideoId],
+	[Active],
+	[Authed],
+	[Featured],
+	[ViewRoles],
+	[AllowComment],
+	[CommentRoles],
+	[AutoAuthComment],
+	[AllowRating],
+	[RatingRoles],
+	[AllowRecommend],
+	[RecommendRoles],
+	[DownloadRoles],
+	[Private],
+	[Protected],
+	[ProtectPassword],
+	[Default_Tag],
+	[Default_Category],
+	[Author],
+	[Source],
+	[Quote],
+	[MaxRecord],
+    [ShareType],
+	[Friends],
+	[Followers],
+	[Groups]
+) VALUES (
+	@TypeId,
+	@PortalId,
+	@UserId,
+	@UserName,
+	GetDate(),
+	@Title,
+	@RssType,
+	@Standard_Type,
+	@Standard_Region,
+	@Standard_Time,
+	@User_Account,
+	@User_Specific,
+	@User_PlayList_Title,
+	@Customize_Category,
+	@Customize_Tag,
+	@Advanced_Search,
+	@Advanced_Author,
+	@Advanced_OrderBy,
+	@MasterVideoId,
+	@Active,
+	@Authed,
+	@Featured,
+	@ViewRoles,
+	@AllowComment,
+	@CommentRoles,
+	@AutoAuthComment,
+	@AllowRating,
+	@RatingRoles,
+	@AllowRecommend,
+	@RecommendRoles,
+	@DownloadRoles,
+	@Private,
+	@Protected,
+	@ProtectPassword,
+	@Default_Tag,
+	@Default_Category,
+	@Author,
+	@Source,
+	@Quote,
+	@MaxRecord,
+    @ShareType,
+	@Friends,
+	@Followers,
+	@Groups
+)
+
+select SCOPE_IDENTITY()
+
+' 
+END
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Update]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CrossVideo_YouTubeRss_Update]
+	@Id int, 
+	@TypeId int, 
+	@PortalId int, 
+	@UserId int, 
+	@UserName nvarchar(100), 
+	@CreatedDate datetime, 
+	@Title nvarchar(200), 
+	@RssType nvarchar(200), 
+	@Standard_Type nvarchar(200), 
+	@Standard_Region nvarchar(100), 
+	@Standard_Time nvarchar(50), 
+	@User_Account nvarchar(200), 
+	@User_Specific nvarchar(200), 
+	@User_PlayList_Title nvarchar(300), 
+	@Customize_Category nvarchar(200), 
+	@Customize_Tag nvarchar(200), 
+	@Advanced_Search nvarchar(200), 
+	@Advanced_Author nvarchar(200), 
+	@Advanced_OrderBy nvarchar(50), 
+	@MasterVideoId int, 
+	@Active bit, 
+	@Authed bit, 
+	@Featured bit, 
+	@ViewRoles nvarchar(200), 
+	@AllowComment bit, 
+	@CommentRoles nvarchar(200), 
+	@AutoAuthComment bit, 
+	@AllowRating bit, 
+	@RatingRoles nvarchar(200), 
+	@AllowRecommend bit, 
+	@RecommendRoles nvarchar(200), 
+	@DownloadRoles nvarchar(200), 
+	@Private bit, 
+	@Protected bit, 
+	@ProtectPassword nvarchar(50), 
+	@Default_Tag nvarchar(200), 
+	@Default_Category nvarchar(200), 
+	@Author nvarchar(200), 
+	@Source nvarchar(200), 
+	@Quote bit, 
+	@MaxRecord int,
+    @ShareType smallint,
+	@Friends bit,
+	@Followers bit,
+	@Groups nvarchar(200)
+AS
+
+UPDATE {databaseOwner}{objectQualifier}CrossVideo_YouTubeRss SET
+	[TypeId] = @TypeId,
+	[PortalId] = @PortalId,
+	[UserId] = @UserId,
+	[UserName] = @UserName,
+	[CreatedDate] = @CreatedDate,
+	[Title] = @Title,
+	[RssType] = @RssType,
+	[Standard_Type] = @Standard_Type,
+	[Standard_Region] = @Standard_Region,
+	[Standard_Time] = @Standard_Time,
+	[User_Account] = @User_Account,
+	[User_Specific] = @User_Specific,
+	[User_PlayList_Title] = @User_PlayList_Title,
+	[Customize_Category] = @Customize_Category,
+	[Customize_Tag] = @Customize_Tag,
+	[Advanced_Search] = @Advanced_Search,
+	[Advanced_Author] = @Advanced_Author,
+	[Advanced_OrderBy] = @Advanced_OrderBy,
+	[MasterVideoId] = @MasterVideoId,
+	[Active] = @Active,
+	[Authed] = @Authed,
+	[Featured] = @Featured,
+	[ViewRoles] = @ViewRoles,
+	[AllowComment] = @AllowComment,
+	[CommentRoles] = @CommentRoles,
+	[AutoAuthComment] = @AutoAuthComment,
+	[AllowRating] = @AllowRating,
+	[RatingRoles] = @RatingRoles,
+	[AllowRecommend] = @AllowRecommend,
+	[RecommendRoles] = @RecommendRoles,
+	[DownloadRoles] = @DownloadRoles,
+	[Private] = @Private,
+	[Protected] = @Protected,
+	[ProtectPassword] = @ProtectPassword,
+	[Default_Tag] = @Default_Tag,
+	[Default_Category] = @Default_Category,
+	[Author] = @Author,
+	[Source] = @Source,
+	[Quote] = @Quote,
+	[MaxRecord] = @MaxRecord,
+    [ShareType] = @ShareType,
+	[Friends] = @Friends,
+	[Followers] = @Followers,
+	[Groups] = @Groups
+WHERE
+	[Id] = @Id
+
+' 
+END
+
+
+/******   create  procedure    end ******/

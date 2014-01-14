@@ -1,5 +1,0 @@
-D:\GitHubKashbin\Core\Source\DNN7\bin\MICROS.Modules.MyCentralBanner.dll
-D:\GitHubKashbin\Core\Source\DNN7\bin\MICROS.Modules.MyCentralBanner.pdb
-D:\GitHubKashbin\Core\Source\DNN7\DesktopModules\MyCentral\MyCentralBanner\obj\Debug\ResolveAssemblyReference.cache
-D:\GitHubKashbin\Core\Source\DNN7\DesktopModules\MyCentral\MyCentralBanner\obj\Debug\MICROS.Modules.MyCentralBanner.dll
-D:\GitHubKashbin\Core\Source\DNN7\DesktopModules\MyCentral\MyCentralBanner\obj\Debug\MICROS.Modules.MyCentralBanner.pdb

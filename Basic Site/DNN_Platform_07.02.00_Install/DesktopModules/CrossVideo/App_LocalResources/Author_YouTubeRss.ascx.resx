@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Choose Category</value>
+  </data>
+  <data name="plCategory.Help" xml:space="preserve">
+    <value>Choose YouTube video category</value>
+  </data>
+  <data name="Category.ErrorMessage" xml:space="preserve">
+    <value>Please provide at least 1 category (up to {0} categories) for this RSS.</value>
+  </data>
+  <data name="plTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="plTitle.Help" xml:space="preserve">
+    <value>RSS Title, value can't be null</value>
+  </data>
+  <data name="plAuthor.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="plAuthor.Help" xml:space="preserve">
+    <value>Default video author, videos retrieve from current RSS item will use the this value as its "Author".</value>
+  </data>
+  <data name="plAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="plAuthed.Help" xml:space="preserve">
+    <value>Authorize RSS item, RSS item must be authorized before retrieve videos.</value>
+  </data>
+  <data name="plFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="plFeatured.Help" xml:space="preserve">
+    <value>Mark videos which retrieve by current RSS item as featured.</value>
+  </data>
+  <data name="plViewRoles.Text" xml:space="preserve">
+    <value>View Roles</value>
+  </data>
+  <data name="plViewRoles.Help" xml:space="preserve">
+    <value>Default view roles for videos which retrieved from current RSS item</value>
+  </data>
+  <data name="plAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="plAllowRating.Help" xml:space="preserve">
+    <value>Choose whether allow rating for videos which retrieve by current RSS item.</value>
+  </data>
+  <data name="plRatingRoles.Text" xml:space="preserve">
+    <value>Rating Roles</value>
+  </data>
+  <data name="plRatingRoles.Help" xml:space="preserve">
+    <value>Choose rating roles for videos which retrieved from current RSS item.</value>
+  </data>
+  <data name="plAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="plAllowComment.Help" xml:space="preserve">
+    <value>Allow comment online for videos which retrieve by current RSS item.</value>
+  </data>
+  <data name="plCommentRoles.Text" xml:space="preserve">
+    <value>Comment Roles</value>
+  </data>
+  <data name="plCommentRoles.Help" xml:space="preserve">
+    <value>Choose comment roles for videos which retrieve by current RSS item.</value>
+  </data>
+  <data name="plAutoAuthComment.Text" xml:space="preserve">
+    <value>Auto authorize comment</value>
+  </data>
+  <data name="plAutoAuthComment.Help" xml:space="preserve">
+    <value>Auto authorize comment information for videos which retrieve by current RSS item.</value>
+  </data>
+  <data name="chkAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="chkFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="lblAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="lblAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="lblAuthed.Text" xml:space="preserve">
+    <value>Authed</value>
+  </data>
+  <data name="lblCreatedDate.Text" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="lblFeatured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="plQuote.Help" xml:space="preserve">
+    <value>Choose this option if videos which retrieved from current RSS item is quoted from somewhere else, not created by yourself.</value>
+  </data>
+  <data name="plQuote.Text" xml:space="preserve">
+    <value>Quote</value>
+  </data>
+  <data name="plSource.Help" xml:space="preserve">
+    <value>If video/audio is quoted, input its original source. Videos retrieve from current RSS item will use the this value as its "Source".</value>
+  </data>
+  <data name="plSource.Text" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="secStandardFeeds.Text" xml:space="preserve">
+    <value>Standard Feeds</value>
+  </data>
+  <data name="chkActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="plActive.Help" xml:space="preserve">
+    <value>Set RSS item as active. If a RSS item is marked as inactive, it will not used to retrieved videos</value>
+  </data>
+  <data name="plActive.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ControlTitle_author_youtuberss.Text" xml:space="preserve">
+    <value>My YouTube RSS</value>
+  </data>
+  <data name="imgToggleActive.Text" xml:space="preserve">
+    <value>Toggle Active</value>
+  </data>
+  <data name="imgToggleAuthed.Text" xml:space="preserve">
+    <value>Toggle Authed</value>
+  </data>
+  <data name="imgToggleFeatured.Text" xml:space="preserve">
+    <value>Toggle Featured</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add RSS</value>
+  </data>
+  <data name="lblId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="plAllowRecommend.Help" xml:space="preserve">
+    <value>Allow people to recommend for videos which retrieve by current RSS item.</value>
+  </data>
+  <data name="plAllowRecommend.Text" xml:space="preserve">
+    <value>Allow Recommend</value>
+  </data>
+  <data name="plDownloadRoles.Help" xml:space="preserve">
+    <value>Select roles which can download attachment for videos which retrieve by current RSS item.</value>
+  </data>
+  <data name="plPopularTag.Help" xml:space="preserve">
+    <value>Choose popular tags from drop down list box, click "Add Tag" button to add it to video tag list. Videos which retrieve by current RSS item will use these tags.</value>
+  </data>
+  <data name="plPopularTag.Text" xml:space="preserve">
+    <value>Popular Tags</value>
+  </data>
+  <data name="plRecommendRoles.Text" xml:space="preserve">
+    <value>Recommend Roles</value>
+  </data>
+  <data name="imgTogglePrivate.Text" xml:space="preserve">
+    <value>Toggle Private</value>
+  </data>
+  <data name="lblPortalDisableComment.Text" xml:space="preserve">
+    <value>Comment is disalbed by site administrator.</value>
+  </data>
+  <data name="lblPortalDisableRating.Text" xml:space="preserve">
+    <value>Rating is disalbed by site administrator.</value>
+  </data>
+  <data name="lblPortalDisableRecommend.Text" xml:space="preserve">
+    <value>Recommend is disalbed by site administrator.</value>
+  </data>
+  <data name="plDownloadRoles.Text" xml:space="preserve">
+    <value>Attachment download roles</value>
+  </data>
+  <data name="plRecommendRoles.Help" xml:space="preserve">
+    <value>Select roles which can recommend videos which retrieved from current RSS item</value>
+  </data>
+  <data name="divBasic.Text" xml:space="preserve">
+    <value>Basic</value>
+  </data>
+  <data name="divCategory.Text" xml:space="preserve">
+    <value>Default Categories</value>
+  </data>
+  <data name="divTag.Text" xml:space="preserve">
+    <value>Default Tags</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page:</value>
+  </data>
+  <data name="lblItemInfo.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="lblRssTitle.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="li_RssStatus_All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="li_RssStatus_Expired.Text" xml:space="preserve">
+    <value>Expired</value>
+  </data>
+  <data name="li_RssStatus_Featured.Text" xml:space="preserve">
+    <value>Featured</value>
+  </data>
+  <data name="li_RssStatus_UnActive.Text" xml:space="preserve">
+    <value>Not Active</value>
+  </data>
+  <data name="li_RssStatus_UnAuthed.Text" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="plStandardFeedsType.Help" xml:space="preserve">
+    <value>Choose YouTube standard feeds type</value>
+  </data>
+  <data name="plStandardFeedsType.Text" xml:space="preserve">
+    <value>Standard Feeds Type</value>
+  </data>
+  <data name="plBelongToSerial.Help" xml:space="preserve">
+    <value>If you choose a serial, then all videos which retrieve from current RSS item will be put into that serial, and you don't need to specify categories for current RSS item. If you choose "None Specified", then all videos will be retrieved as stand alone videos, and you need specify categories for current RSS item.</value>
+  </data>
+  <data name="plBelongToSerial.Text" xml:space="preserve">
+    <value>Belong to serial</value>
+  </data>
+  <data name="plMaxRecord.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;In "Max Records" , enter how many videos you want to retrieve each time. The default value is 50, you can change its value according video type you choosen. Normally, "standards feeds" contains not more than 100 videos. User specific contains not more than 50 videos. And "customize category and tag" allows you retrieve maximum 999 videos. &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note, if input value is bigger than actual videos, module will take actual count.&lt;/p&gt;</value>
+  </data>
+  <data name="plMaxRecord.Text" xml:space="preserve">
+    <value>Max Records</value>
+  </data>
+  <data name="divPermission.Text" xml:space="preserve">
+    <value>Default Permissions</value>
+  </data>
+  <data name="lblRssStatus.Text" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="lblRssTitle1.Text" xml:space="preserve">
+    <value>Title:</value>
+  </data>
+  <data name="lblType.Text" xml:space="preserve">
+    <value>Select Gallery</value>
+  </data>
+  <data name="lbtnAddTag.Text" xml:space="preserve">
+    <value>Add Tag</value>
+  </data>
+  <data name="lblPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="lblProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="li_RssStatus_Private.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="li_RssStatus_Protected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="imgToggleProtected.Text" xml:space="preserve">
+    <value>Toggle Protected</value>
+  </data>
+  <data name="plPrivate.Help" xml:space="preserve">
+    <value>Mark videos retrieve from current RSS item as private video. Private video can only be viewed by video owner and site administrators.</value>
+  </data>
+  <data name="plPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="plProtected.Help" xml:space="preserve">
+    <value>Mark videos retrieve from current RSS item  as protected video. Normal vistors needs to input valid password before view this video.</value>
+  </data>
+  <data name="plProtected.Text" xml:space="preserve">
+    <value>Protected</value>
+  </data>
+  <data name="plProtectPassword.Help" xml:space="preserve">
+    <value>Enter protected password for videos which retrieved from current RSS item.</value>
+  </data>
+  <data name="plProtectPassword.Text" xml:space="preserve">
+    <value>Protect Password</value>
+  </data>
+  <data name="Tip_VideoImport.Text" xml:space="preserve">
+    <value>Successfully import {0} videos from your RSS items. You can view them by click "My stand alone videos &amp; audios" of CrossVideo_Admin module (or click "My Serials" if your RSS items belong to a serial).</value>
+  </data>
+  <data name="btnImportNow.Text" xml:space="preserve">
+    <value>Retrieve videos now</value>
+  </data>
+  <data name="Tip_RssType.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=red&gt;Standard Feeds&lt;/font&gt;  contain lists of videos that either reflect YouTube user behavior, such as top-rated 
+and most viewed video feeds, or were selected by YouTube staff, such as recently featured and mobile video feeds. Many of these feeds are shown on the 
+Videos tab of the YouTube website. Standard feeds are updated every few minutes. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=red&gt;User Specific&lt;/font&gt; allows you retrieve a user uploads videos or his/her favorite videos. It also lets you retrieve play lists of specic user.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=red&gt;Customize Category And Tag&lt;/font&gt; allows  you filter videos by category and tag.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;In "Max Records" , enter how many videos you want to retrieve each time. The default value is 50, you can change its value according video type you choosen. Normally, "standards feeds" contains not more than 100 videos. User specific contains not more than 50 videos. And "customize category and tag" allows you retrieve maximum 999 videos. &lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note, if input value is bigger than actual videos, module will take actual count.&lt;/p&gt;</value>
+  </data>
+  <data name="li_All_time.Text" xml:space="preserve">
+    <value>All Time</value>
+  </data>
+  <data name="li_Animals.Text" xml:space="preserve">
+    <value>Pets &amp; Animals</value>
+  </data>
+  <data name="li_Australia.Text" xml:space="preserve">
+    <value>Australia</value>
+  </data>
+  <data name="li_Autos.Text" xml:space="preserve">
+    <value>Cars &amp; Vehicles</value>
+  </data>
+  <data name="li_Brazil.Text" xml:space="preserve">
+    <value>Brazil</value>
+  </data>
+  <data name="li_Canada.Text" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="li_Comedy.Text" xml:space="preserve">
+    <value>Comedy</value>
+  </data>
+  <data name="li_Education.Text" xml:space="preserve">
+    <value>Education</value>
+  </data>
+  <data name="li_Entertainment.Text" xml:space="preserve">
+    <value>Entertainment</value>
+  </data>
+  <data name="li_Film.Text" xml:space="preserve">
+    <value>Film &amp; Animation</value>
+  </data>
+  <data name="li_France.Text" xml:space="preserve">
+    <value>France</value>
+  </data>
+  <data name="li_Germany.Text" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="li_GreatBritain.Text" xml:space="preserve">
+    <value>Great Britain</value>
+  </data>
+  <data name="li_Holland.Text" xml:space="preserve">
+    <value>Holland</value>
+  </data>
+  <data name="li_HongKong.Text" xml:space="preserve">
+    <value>Hong Kong</value>
+  </data>
+  <data name="li_Howto.Text" xml:space="preserve">
+    <value>Howto &amp; Style</value>
+  </data>
+  <data name="li_Ireland.Text" xml:space="preserve">
+    <value>Ireland</value>
+  </data>
+  <data name="li_Italy.Text" xml:space="preserve">
+    <value>Italy</value>
+  </data>
+  <data name="li_Japan.Text" xml:space="preserve">
+    <value>Japan</value>
+  </data>
+  <data name="li_Mexico.Text" xml:space="preserve">
+    <value>Mexico</value>
+  </data>
+  <data name="li_Music.Text" xml:space="preserve">
+    <value>Music</value>
+  </data>
+  <data name="li_News.Text" xml:space="preserve">
+    <value>News &amp; Politics.</value>
+  </data>
+  <data name="li_NewZealand.Text" xml:space="preserve">
+    <value>New Zealand</value>
+  </data>
+  <data name="li_Nonprofit.Text" xml:space="preserve">
+    <value>Non-profits &amp; Activism</value>
+  </data>
+  <data name="li_People.Text" xml:space="preserve">
+    <value>People &amp; Blogs</value>
+  </data>
+  <data name="li_RssType_CustomizeCategoryAndTag.Text" xml:space="preserve">
+    <value>Customize category and tag</value>
+  </data>
+  <data name="li_RssType_StandardFeeds.Text" xml:space="preserve">
+    <value>Standard Feeds</value>
+  </data>
+  <data name="li_RssType_UserSpecific.Text" xml:space="preserve">
+    <value>User Specific</value>
+  </data>
+  <data name="li_Poland.Text" xml:space="preserve">
+    <value>Poland</value>
+  </data>
+  <data name="li_Published.Text" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="li_Rating.Text" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="li_Relevance.Text" xml:space="preserve">
+    <value>Relevance</value>
+  </data>
+  <data name="li_Russia.Text" xml:space="preserve">
+    <value>Russia</value>
+  </data>
+  <data name="li_SouthKorea.Text" xml:space="preserve">
+    <value>South Korea</value>
+  </data>
+  <data name="li_Spain.Text" xml:space="preserve">
+    <value>Spain</value>
+  </data>
+  <data name="li_Sports.Text" xml:space="preserve">
+    <value>Sports</value>
+  </data>
+  <data name="li_StandardFeeds_MostDiscussed.Text" xml:space="preserve">
+    <value>Most Discussed</value>
+  </data>
+  <data name="li_StandardFeeds_MostLinked.Text" xml:space="preserve">
+    <value>Most Linked</value>
+  </data>
+  <data name="li_StandardFeeds_MostPopular.Text" xml:space="preserve">
+    <value>Most Popular</value>
+  </data>
+  <data name="li_StandardFeeds_MostRecent.Text" xml:space="preserve">
+    <value>Most Recent</value>
+  </data>
+  <data name="li_StandardFeeds_MostResponded.Text" xml:space="preserve">
+    <value>Most Responded</value>
+  </data>
+  <data name="li_StandardFeeds_MostViewed.Text" xml:space="preserve">
+    <value>Most Viewed</value>
+  </data>
+  <data name="li_StandardFeeds_RecentlyFeatured.Text" xml:space="preserve">
+    <value>Recently Featured</value>
+  </data>
+  <data name="li_StandardFeeds_TopFavorites.Text" xml:space="preserve">
+    <value>Top Favorites</value>
+  </data>
+  <data name="li_StandardFeeds_TopRated.Text" xml:space="preserve">
+    <value>Top Rated</value>
+  </data>
+  <data name="li_StandardFeeds_WatchOnMobile.Text" xml:space="preserve">
+    <value>Watch on mobile</value>
+  </data>
+  <data name="li_Taiwan.Text" xml:space="preserve">
+    <value>Taiwan</value>
+  </data>
+  <data name="li_Tech.Text" xml:space="preserve">
+    <value>Science &amp; Technology</value>
+  </data>
+  <data name="li_This_month.Text" xml:space="preserve">
+    <value>This Month</value>
+  </data>
+  <data name="li_This_week.Text" xml:space="preserve">
+    <value>This Week</value>
+  </data>
+  <data name="li_Today.Text" xml:space="preserve">
+    <value>Today</value>
+  </data>
+  <data name="li_Travel.Text" xml:space="preserve">
+    <value>Travel</value>
+  </data>
+  <data name="li_UnitedStates.Text" xml:space="preserve">
+    <value>United States</value>
+  </data>
+  <data name="li_ViewCount.Text" xml:space="preserve">
+    <value>View Counts</value>
+  </data>
+  <data name="li_UserSpecific_Favorites.Text" xml:space="preserve">
+    <value>User Favorites</value>
+  </data>
+  <data name="li_UserSpecific_PlayLists.Text" xml:space="preserve">
+    <value>User play lists</value>
+  </data>
+  <data name="li_UserSpecific_Uploads.Text" xml:space="preserve">
+    <value>User Uploads</value>
+  </data>
+  <data name="plRssType.Help" xml:space="preserve">
+    <value>Choose YouTube video type, diffent type will have diffent settings</value>
+  </data>
+  <data name="plRssType.Text" xml:space="preserve">
+    <value>YouTube video type</value>
+  </data>
+  <data name="Tip_SelectCategory.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Specify default categories for videos which retrieved from current RSS item.&lt;br/&gt;&amp;nbsp;&amp;nbsp;Note, you don't need specify it if current RSS item belong to a video serial.&lt;/p&gt;</value>
+  </data>
+  <data name="plOrderBy.Help" xml:space="preserve">
+    <value>Choose order by style</value>
+  </data>
+  <data name="plOrderBy.Text" xml:space="preserve">
+    <value>Order By</value>
+  </data>
+  <data name="plRegionSpecific.Help" xml:space="preserve">
+    <value>YouTube enables you to retrieve region-specific standard feeds by select a region ID. The default value is none_specific, means don't specifc region.</value>
+  </data>
+  <data name="plRegionSpecific.Text" xml:space="preserve">
+    <value>Region Specific</value>
+  </data>
+  <data name="plSearchTerm.Help" xml:space="preserve">
+    <value>YouTube will search all video metadata for videos matching the term. Video metadata includes titles, keywords, descriptions, authors' usernames, and categories.</value>
+  </data>
+  <data name="plSearchTerm.Text" xml:space="preserve">
+    <value>Search Term</value>
+  </data>
+  <data name="plTags.Help" xml:space="preserve">
+    <value>Enter video tags, YouTube uses the term "tag" to identify a keyword relevant to a video.</value>
+  </data>
+  <data name="plTags.Text" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="plTimeSpecific.Help" xml:space="preserve">
+    <value>All standard feeds support the time query parameter, which allows you to restrict the feed to only contain relevant results from the previous day, week or month.</value>
+  </data>
+  <data name="plTimeSpecific.Text" xml:space="preserve">
+    <value>Time Specific</value>
+  </data>
+  <data name="plUserAccount.Help" xml:space="preserve">
+    <value>Enter user YouTube account. Please specify a valid user account, otherwise module can't retrieve his/her videos.</value>
+  </data>
+  <data name="plUserAccount.Text" xml:space="preserve">
+    <value>User Account</value>
+  </data>
+  <data name="plUserPlayList.Help" xml:space="preserve">
+    <value>If you retrieve videos from user play list, you can specify certain play list title here. For example, if you input "Guitar 2009",then module will only retrieve videos from "Guitar 2009" play list. You can specify multiple play list which separate by comma (;). For example, specify "Guitar 2009;Prison Break;Nba;" to retrieve videos from "Guitar 2009", "Prision Break" and "Nba" play list. If you leave this value as blank, then module will retrieve videos from all play list.</value>
+  </data>
+  <data name="plUserPlayList.Text" xml:space="preserve">
+    <value>Play List Title</value>
+  </data>
+  <data name="plUserSpecific.Help" xml:space="preserve">
+    <value>Choose user specific type</value>
+  </data>
+  <data name="plUserSpecific.Text" xml:space="preserve">
+    <value>Specific Type</value>
+  </data>
+  <data name="plVideoAuthor.Help" xml:space="preserve">
+    <value>Specify video author, note this value will be ignored when you select "User Specific" video type.</value>
+  </data>
+  <data name="plVideoAuthor.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="secAdvanced.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="secCustomizeCategoryAndTag.Text" xml:space="preserve">
+    <value>Customize category and tag</value>
+  </data>
+  <data name="secUserSpecific.Text" xml:space="preserve">
+    <value>User Specific</value>
+  </data>
+  <data name="Tip_AddTag.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Specify default tags for videos which will be retrieved from current RSS item. You can enter tags below (one tag per line) or click "Add Tag" button to add existing popular tags.&lt;br/&gt;&amp;nbsp;&amp;nbsp;Note, you don't need specify it if current RSS item belongs to a video serial.&lt;p&gt;</value>
+  </data>
+  <data name="plRssStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="plRssStatus.Help" xml:space="preserve">
+    <value>Check item status</value>
+  </data>
+  <data name="Tip_BelongToSerial.Text" xml:space="preserve">
+    <value>If you choose a serial, then all videos which will be retrieved from current RSS item will be put into that serial, and you don't need to specify categories for current RSS item. If you choose "None Specified", then all videos will be retrieved as stand alone videos, and you need specify categories for current RSS item.</value>
+  </data>
+  <data name="Tip_DefaultValue.Text" xml:space="preserve">
+    <value>Enter default value below (Author/Source, etc). Videos which retrieve from current RSS item will use these values. You can modify them later if necessary.</value>
+  </data>
+  <data name="Tip_ManagePermission.Text" xml:space="preserve">
+    <value>Specify default permission for videos which will retrieve from current RSS item. Note, only site administrators can access this tab. Normal user will use the default permission which specified in "CrossVideo_Admin sub module - Admin Control Panel - Configurations - Global Settings" section .</value>
+  </data>
+  <data name="Tip_UserPlayList.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;If you retrieve videos from user play list, you can specify certain play list title here. For example, if you input Guitar 2009, then module will only retrieve videos from "Guitar 2009" play list. You can specify multiple play list which separate by comma (;). For example,specify Guitar 2009;Prison Break;Nba; to retrieve videos from "Guitar 2009", "Prision Break" and "Nba" play list. If you leave this value as blank, then module will retrieve videos from all play list.&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_VideoAuthor.Text" xml:space="preserve">
+    <value>Specify video author, note this value will be ignored when you select "User Specific" video type.</value>
+  </data>
+  <data name="plFollowers.Help" xml:space="preserve">
+    <value>Choose to allow followers view this media</value>
+  </data>
+  <data name="plFollowers.Text" xml:space="preserve">
+    <value>Followers</value>
+  </data>
+  <data name="plFriends.Help" xml:space="preserve">
+    <value>Choose to allow friends view this media</value>
+  </data>
+  <data name="plFriends.Text" xml:space="preserve">
+    <value>Friends</value>
+  </data>
+  <data name="plGroups.Help" xml:space="preserve">
+    <value>Choose which group can view this media</value>
+  </data>
+  <data name="plGroups.Text" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="plShareType.Help" xml:space="preserve">
+    <value>Choose video share type</value>
+  </data>
+  <data name="plShareType.Text" xml:space="preserve">
+    <value>Video Share</value>
+  </data>
+  <data name="Tip_ShareType.Text" xml:space="preserve">
+    <value>Choose the default share property for videos which will be imported from this RSS.</value>
+  </data>
+  <data name="li_ShareType_FriendsAndGroup.Text" xml:space="preserve">
+    <value>Social - available for friends/followers and groups</value>
+  </data>
+  <data name="li_ShareType_Private.Text" xml:space="preserve">
+    <value>Private - available for video owner and site administrators only</value>
+  </data>
+  <data name="li_ShareType_Protected.Text" xml:space="preserve">
+    <value>Protected - visitors need input password before view this video</value>
+  </data>
+  <data name="li_ShareType_Public.Text" xml:space="preserve">
+    <value>Public - everyone can view this video</value>
+  </data>
+  <data name="lblNoGroup.Text" xml:space="preserve">
+    <value>No available groups</value>
+  </data>
+</root>

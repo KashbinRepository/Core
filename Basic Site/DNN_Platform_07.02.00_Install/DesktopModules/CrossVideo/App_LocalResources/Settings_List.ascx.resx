@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="secGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plImageWidth.Text" xml:space="preserve">
+    <value>Image Width</value>
+  </data>
+  <data name="plImageWidth.Help" xml:space="preserve">
+    <value>Set video image width(px), it works when "Force image width" option is checked.</value>
+  </data>
+  <data name="plTemplate.Text" xml:space="preserve">
+    <value>List Template </value>
+  </data>
+  <data name="plTemplate.Help" xml:space="preserve">
+    <value>Select which template is used to display media list</value>
+  </data>
+  <data name="plShowImageOnly.Text" xml:space="preserve">
+    <value>Records with image only</value>
+  </data>
+  <data name="plShowImageOnly.Help" xml:space="preserve">
+    <value>Check to only show videos which has image specified</value>
+  </data>
+  <data name="plShowImage.Text" xml:space="preserve">
+    <value>Show media image</value>
+  </data>
+  <data name="plShowImage.Help" xml:space="preserve">
+    <value>show media image in list.</value>
+  </data>
+  <data name="plMoreVideosLink.Help" xml:space="preserve">
+    <value>Select link page when more videos/audios link clicked.</value>
+  </data>
+  <data name="plMoreVideosLink.Text" xml:space="preserve">
+    <value>More videos/audios link</value>
+  </data>
+  <data name="plFeaturedStatus.Text" xml:space="preserve">
+    <value>Featured Status</value>
+  </data>
+  <data name="plFeaturedStatus.Help" xml:space="preserve">
+    <value>Choose video/audio featured status which will be displayed.</value>
+  </data>
+  <data name="plMoreVideosText.Help" xml:space="preserve">
+    <value>Enter the text you want displayed for the More Videos Link (e.g. Archived Videos, ...)</value>
+  </data>
+  <data name="plPaging.Text" xml:space="preserve">
+    <value>Paging</value>
+  </data>
+  <data name="plPaging.Help" xml:space="preserve">
+    <value>Display paging navigation</value>
+  </data>
+  <data name="plRowCount.Text" xml:space="preserve">
+    <value>Rows per page</value>
+  </data>
+  <data name="plRowCount.Help" xml:space="preserve">
+    <value>Rows per page</value>
+  </data>
+  <data name="plColCount.Text" xml:space="preserve">
+    <value>Columns per row</value>
+  </data>
+  <data name="plColCount.Help" xml:space="preserve">
+    <value>Columns per row</value>
+  </data>
+  <data name="plPageSpan.Text" xml:space="preserve">
+    <value>Paging navigate span</value>
+  </data>
+  <data name="plPageSpan.Help" xml:space="preserve">
+    <value>Paging navigate span</value>
+  </data>
+  <data name="plRoll.Text" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="plRoll.Help" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="plMarHeight.Text" xml:space="preserve">
+    <value>Marquee Height</value>
+  </data>
+  <data name="plMarHeight.Help" xml:space="preserve">
+    <value>Marquee Height</value>
+  </data>
+  <data name="plScrollAmount.Text" xml:space="preserve">
+    <value>Scroll Amount</value>
+  </data>
+  <data name="plScrollAmount.Help" xml:space="preserve">
+    <value>Set Scroll Amount,high value reprent high speed</value>
+  </data>
+  <data name="plDirection.Text" xml:space="preserve">
+    <value>Roll Directiont</value>
+  </data>
+  <data name="plDirection.Help" xml:space="preserve">
+    <value>Roll Directiont</value>
+  </data>
+  <data name="plMoreVideos.Text" xml:space="preserve">
+    <value>Display more videos/audios link</value>
+  </data>
+  <data name="plMoreVideosText.Text" xml:space="preserve">
+    <value>More videos text</value>
+  </data>
+  <data name="plShowSearch.Help" xml:space="preserve">
+    <value>Check to display the search box at the top of the video list.</value>
+  </data>
+  <data name="plShowSearch.Text" xml:space="preserve">
+    <value>Show Search</value>
+  </data>
+  <data name="plShowTitle.Text" xml:space="preserve">
+    <value>Show Title</value>
+  </data>
+  <data name="plShowTitle.Help" xml:space="preserve">
+    <value>Check to show media title</value>
+  </data>
+  <data name="plSortField.Text" xml:space="preserve">
+    <value>Sort By</value>
+  </data>
+  <data name="plSortField.Help" xml:space="preserve">
+    <value>Sort Fields</value>
+  </data>
+  <data name="plMoreVideos.Help" xml:space="preserve">
+    <value>Check to display a "more videos" link at the bottom of the videos list. The link will link go to  the page specified in the "more videos link".</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Media list settings</value>
+  </data>
+  <data name="secCategory.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="secImage.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="secPaging.Text" xml:space="preserve">
+    <value>Paging</value>
+  </data>
+  <data name="secRoll.Text" xml:space="preserve">
+    <value>Roll</value>
+  </data>
+  <data name="secContent.Text" xml:space="preserve">
+    <value>Display Contents</value>
+  </data>
+  <data name="secMoreVideos.Text" xml:space="preserve">
+    <value>More Videos/Audios</value>
+  </data>
+  <data name="plLinkTarget.Text" xml:space="preserve">
+    <value>Link Target</value>
+  </data>
+  <data name="plLinkTarget.Help" xml:space="preserve">
+    <value>Set how to display video detail.</value>
+  </data>
+  <data name="plVideoType.Text" xml:space="preserve">
+    <value>Video/Audio Type</value>
+  </data>
+  <data name="plVideoType.Help" xml:space="preserve">
+    <value>Choose video/audio type</value>
+  </data>
+  <data name="li_ListStyle_Grid.Text" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="li_ListStyle_List.Text" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="plListType.Help" xml:space="preserve">
+    <value>Select video list style</value>
+  </data>
+  <data name="plListType.Text" xml:space="preserve">
+    <value>List Style</value>
+  </data>
+  <data name="plShowCreatedDate.Text" xml:space="preserve">
+    <value>Show created date</value>
+  </data>
+  <data name="plShowFeaturedField.Text" xml:space="preserve">
+    <value>Show featured status</value>
+  </data>
+  <data name="plShowViews.Text" xml:space="preserve">
+    <value>Show Views</value>
+  </data>
+  <data name="chkForceImageHeight.Text" xml:space="preserve">
+    <value>Force Image Height</value>
+  </data>
+  <data name="chkForceImageWidth.Text" xml:space="preserve">
+    <value>Force Image Width</value>
+  </data>
+  <data name="plImageHeight.Help" xml:space="preserve">
+    <value>Set video image height(px), it works when "Force image height" option is checked.</value>
+  </data>
+  <data name="plImageHeight.Text" xml:space="preserve">
+    <value>Image Height</value>
+  </data>
+  <data name="plShowUserName.Help" xml:space="preserve">
+    <value>Check to show create creator in media list</value>
+  </data>
+  <data name="plShowUserName.Text" xml:space="preserve">
+    <value>Show Creator</value>
+  </data>
+  <data name="plShowAuthor.Help" xml:space="preserve">
+    <value>Check to show video author in list. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowAuthor.Text" xml:space="preserve">
+    <value>Show Author</value>
+  </data>
+  <data name="plShowSummary.Help" xml:space="preserve">
+    <value>Check to show summary in media list. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSummary.Text" xml:space="preserve">
+    <value>Show Summary</value>
+  </data>
+  <data name="plShowCreatedDate.Help" xml:space="preserve">
+    <value>Show video created date</value>
+  </data>
+  <data name="plShowFeaturedField.Help" xml:space="preserve">
+    <value>Show video featured status</value>
+  </data>
+  <data name="plShowViews.Help" xml:space="preserve">
+    <value>Show number of views in list</value>
+  </data>
+  <data name="Required.Text" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="plShowSource.Help" xml:space="preserve">
+    <value>Show media source in list. Note, if current gallery disable this field, then module will not display it even this option is checked.</value>
+  </data>
+  <data name="plShowSource.Text" xml:space="preserve">
+    <value>Show Source</value>
+  </data>
+  <data name="plRatingImage.Help" xml:space="preserve">
+    <value>Choose rating image.</value>
+  </data>
+  <data name="plRatingImage.Text" xml:space="preserve">
+    <value>Rating Image</value>
+  </data>
+  <data name="plShowRating.Help" xml:space="preserve">
+    <value>Show media rating result.</value>
+  </data>
+  <data name="plShowRating.Text" xml:space="preserve">
+    <value>Show Rating</value>
+  </data>
+  <data name="MoreVideos.Text" xml:space="preserve">
+    <value>More..</value>
+  </data>
+  <data name="plShowPageInfo.Help" xml:space="preserve">
+    <value>Check this option to show paging detail information (record counts, page size, page count, page counts, etc.)</value>
+  </data>
+  <data name="plShowPageInfo.Text" xml:space="preserve">
+    <value>Show page info</value>
+  </data>
+  <data name="plDetailTab.Help" xml:space="preserve">
+    <value>Select which page to display media detail, that page should have a CrossVideo_Detail module instance on it. If you don't specify it, module will use the default detail tab to display.</value>
+  </data>
+  <data name="plDetailTab.Text" xml:space="preserve">
+    <value>CrossVideo_Detail module page</value>
+  </data>
+  <data name="plShowRecommend.Help" xml:space="preserve">
+    <value>Show recommend information in list.</value>
+  </data>
+  <data name="plShowRecommend.Text" xml:space="preserve">
+    <value>Show Recommend</value>
+  </data>
+  <data name="plSummaryLength.Help" xml:space="preserve">
+    <value>Enter sumary length while display, enter 0 to display full summary.</value>
+  </data>
+  <data name="plSummaryLength.Text" xml:space="preserve">
+    <value>Summary Length</value>
+  </data>
+  <data name="plAcceptSearchParm.Help" xml:space="preserve">
+    <value>Select whether to response url parameter like VideoSearchTerm/VideoCategoryId/VideoTagId. For example, if this option is checked and user pass a "VideoSearchTerm" like http://DnnModule.com/tabid/23/default.aspx?VideoSearchTerm=dnn. Then module will display video list which title contains "dnn".</value>
+  </data>
+  <data name="plAcceptSearchParm.Text" xml:space="preserve">
+    <value>Accept search parm</value>
+  </data>
+  <data name="plTitleLength.Help" xml:space="preserve">
+    <value>Enter media title length while display, enter 0 to display full title.</value>
+  </data>
+  <data name="plTitleLength.Text" xml:space="preserve">
+    <value>Title Length</value>
+  </data>
+  <data name="plDisplayRss.Help" xml:space="preserve">
+    <value>Display RSS link below artilce list.</value>
+  </data>
+  <data name="plDisplayRss.Text" xml:space="preserve">
+    <value>Display RSS</value>
+  </data>
+  <data name="secRss.Text" xml:space="preserve">
+    <value>RSS</value>
+  </data>
+  <data name="plCategory.Help" xml:space="preserve">
+    <value>Specifies the categories from which videos are displayed. Uncheck all of them will display videos from all categories</value>
+  </data>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="plType.Help" xml:space="preserve">
+    <value>Select gallery which video/audio belongs.</value>
+  </data>
+  <data name="plType.Text" xml:space="preserve">
+    <value>Gallery</value>
+  </data>
+  <data name="plUDFieldList.Help" xml:space="preserve">
+    <value>Choose user defined fields which will be displayed in built in template. Note, it works only when "Use built in template" option is checked.</value>
+  </data>
+  <data name="plUDFieldList.Text" xml:space="preserve">
+    <value>Display Fields</value>
+  </data>
+  <data name="plUDField_ImageHeight.Help" xml:space="preserve">
+    <value>Control the image height of user defined fields.</value>
+  </data>
+  <data name="plUDField_ImageHeight.Text" xml:space="preserve">
+    <value>User defined image height</value>
+  </data>
+  <data name="plUDField_ImageWidth.Help" xml:space="preserve">
+    <value>Control the image width of user defined fields. </value>
+  </data>
+  <data name="plUDField_ImageWidth.Text" xml:space="preserve">
+    <value>User defined image width</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Help" xml:space="preserve">
+    <value>Use built in tempate to display user defined fields. Uncheck this option if you want to display user defined fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUseBuiltInTemplate.Text" xml:space="preserve">
+    <value>Use built in template</value>
+  </data>
+  <data name="plAuthor.Help" xml:space="preserve">
+    <value>Specifies the authors from which videos are displayed. Uncheck all items will display videos from all authors.</value>
+  </data>
+  <data name="plAuthor.Text" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="secUDField.Text" xml:space="preserve">
+    <value>Customized Attributes</value>
+  </data>
+  <data name="secAuthor.Text" xml:space="preserve">
+    <value>Authors</value>
+  </data>
+  <data name="li_FeaturedStatus_Featured.Text" xml:space="preserve">
+    <value>Featured Only</value>
+  </data>
+  <data name="li_FeaturedStatus_UnFeatured.Text" xml:space="preserve">
+    <value>Unfeatured Only</value>
+  </data>
+  <data name="li_ProtectedStatus_Protected.Text" xml:space="preserve">
+    <value>Protected Only</value>
+  </data>
+  <data name="li_ProtectedStatus_UnProtected.Text" xml:space="preserve">
+    <value>UnProtected Only</value>
+  </data>
+  <data name="li_QuotedStatus_Quoted.Text" xml:space="preserve">
+    <value>Quoted Only</value>
+  </data>
+  <data name="li_QuotedStatus_UnQuoted.Text" xml:space="preserve">
+    <value>UnQuoted Only</value>
+  </data>
+  <data name="li_VideoType_Serial.Text" xml:space="preserve">
+    <value>Serials video/audio only</value>
+  </data>
+  <data name="li_VideoType_Single.Text" xml:space="preserve">
+    <value>Standard alone video/audio only</value>
+  </data>
+  <data name="plProtectedStatus.Help" xml:space="preserve">
+    <value>Choose video/audio protected status which will be displayed.</value>
+  </data>
+  <data name="plProtectedStatus.Text" xml:space="preserve">
+    <value>Protected Status</value>
+  </data>
+  <data name="plQuotedStatus.Help" xml:space="preserve">
+    <value>Choose video/audio quoted status which will be displayed.</value>
+  </data>
+  <data name="plQuotedStatus.Text" xml:space="preserve">
+    <value>Quoted Status</value>
+  </data>
+  <data name="plShowDuration.Help" xml:space="preserve">
+    <value>Check to show video/audio duration in list</value>
+  </data>
+  <data name="plShowDuration.Text" xml:space="preserve">
+    <value>Show Duration</value>
+  </data>
+  <data name="plShowSortInSearch.Help" xml:space="preserve">
+    <value>Show sort list to let visitor choose sort method for search result.</value>
+  </data>
+  <data name="plShowSortInSearch.Text" xml:space="preserve">
+    <value>Show sort in search</value>
+  </data>
+  <data name="plShowComments.Help" xml:space="preserve">
+    <value>Show comments in list</value>
+  </data>
+  <data name="plShowComments.Text" xml:space="preserve">
+    <value>Show Comments</value>
+  </data>
+  <data name="Tip_Author.Text" xml:space="preserve">
+    <value>Specifies the authors from which media are displayed. Uncheck all items will display media from all authors.</value>
+  </data>
+  <data name="Tip_Category.Text" xml:space="preserve">
+    <value>Specifies the categories from which media are displayed. Uncheck all of them will display media from all categories</value>
+  </data>
+  <data name="Tip_DetailTab.Text" xml:space="preserve">
+    <value>Select which page to display media detail, that page should have a CrossVideo_Detail module instance on it. If you don't specify it, module will use the default detail tab for selected gallery (which specified in "CrossVideo_Admin- Data Manager - Galleries") to display.</value>
+  </data>
+  <data name="Tip_DisplayContent.Text" xml:space="preserve">
+    <value>Choose fields which will display in media list below.</value>
+  </data>
+  <data name="Tip_MoreVideo.Text" xml:space="preserve">
+    <value>Use "More Videos" feature to link videos/audios which in different pages. For example, if you use CrossVideo_List module to display a few videos in "Home"page,  and you want to user view all videos at "Video" page (which also has a CrossVideo_List module to show more videos). You can check on "Display more videos link" option and set "More videos link" to "Video" page. </value>
+  </data>
+  <data name="Tip_AcceptSearchParm.Text" xml:space="preserve">
+    <value>Select whether to response url parameter like VideoSearchTerm/VideoCategoryId/VideoTagId/VideoTypeId. For example, if this option is checked and user pass a "VideoSearchTerm" like http://DnnModule.com/tabid/23/default.aspx?VideoSearchTerm=dnn. Then module will display video list which title contains "dnn".</value>
+  </data>
+  <data name="Tip_UdField.Text" xml:space="preserve">
+    <value>Customized attributes are created in "CrossVideo_Admin module - Admin Control Panel - Configurations - Data Manager - Attributes". You can use built in tempate to display these defined fields. Uncheck this option if you want to display user defined fields via your own tempaltes. For more detail about customize template, please see user guide document.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Help" xml:space="preserve">
+    <value>If you use check box list to display your customized attributes, they will display as disabled by default to avoid visitor select. However,if they look too dim, you can check on this option to enable it.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_Enabled.Text" xml:space="preserve">
+    <value>Check box list enabled</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Help" xml:space="preserve">
+    <value>If you use check box list to display your customized attributes, they will display as 1 column per row by default. You can specify more columns per row to let it looks good.</value>
+  </data>
+  <data name="plUDField_CheckBoxList_RepeatColumns.Text" xml:space="preserve">
+    <value>Check box list repeat</value>
+  </data>
+</root>

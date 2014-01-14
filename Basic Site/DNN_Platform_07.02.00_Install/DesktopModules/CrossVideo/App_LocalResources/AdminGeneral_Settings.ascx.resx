@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblVideoConvertTips.Text" xml:space="preserve">
+    <value>Video convert options only available for host account (super user). Please login with host account if you want to change them.</value>
+  </data>
+  <data name="plA3Bucket.Text" xml:space="preserve">
+    <value>Amazon S3 bucket</value>
+  </data>
+  <data name="plA3Bucket.Help" xml:space="preserve">
+    <value>If you choose store file via Amazon S3, enter a bucket which will store files. </value>
+  </data>
+  <data name="lblPermissionCheckDeny.Text" xml:space="preserve">
+    <value>Video convert permission check failed, please contact your host provider.</value>
+  </data>
+  <data name="lblPermissionCheckOk.Text" xml:space="preserve">
+    <value>Video convert permission check ok, congratulation!</value>
+  </data>
+  <data name="li_VideoConvert_Type_H264.Text" xml:space="preserve">
+    <value>H.264 (.mp4), iPhone/iPad/Andriod/Mobile compatible.</value>
+  </data>
+  <data name="li_VideoConvert_Type_Flv.Text" xml:space="preserve">
+    <value>.Flv</value>
+  </data>
+  <data name="secVideoConvert_Online.Text" xml:space="preserve">
+    <value>Online video convert </value>
+  </data>
+  <data name="li_FileStorage_A3.Text" xml:space="preserve">
+    <value>Amazon Simple Storage Services (Amazon S3)</value>
+  </data>
+  <data name="li_FileStorage_Local.Text" xml:space="preserve">
+    <value>Under portal root</value>
+  </data>
+  <data name="plA3AccessKey.Text" xml:space="preserve">
+    <value>Amazon S3 access key</value>
+  </data>
+  <data name="plA3AccessKey.Help" xml:space="preserve">
+    <value>If you choose store file via Amazon S3, enter access key of your account.</value>
+  </data>
+  <data name="plVideoConvert_Type.Text" xml:space="preserve">
+    <value>Video convert format</value>
+  </data>
+  <data name="plVideoConvert_Type.Help" xml:space="preserve">
+    <value>Select video format which will be converted. H.264 (.mp4) offers better quality but it also consume more cpu resources while converting, its size also big than .flv format.</value>
+  </data>
+  <data name="secGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="plA3SecretKey.Help" xml:space="preserve">
+    <value>If you choose store file via Amazon S3, enter secret key of your account.</value>
+  </data>
+  <data name="plA3SecretKey.Text" xml:space="preserve">
+    <value>Amazon S3 secret key</value>
+  </data>
+  <data name="plGenerateThumb.Help" xml:space="preserve">
+    <value>If this option is checked, module will automatic generate thubmnail image if necessary. For example, if video image is Cpu.jpg, then module will generate a thunbmail named thumb_Cpu.jpg. It will improve performance greatly while display images in list.</value>
+  </data>
+  <data name="plGenerateThumb.Text" xml:space="preserve">
+    <value>Generate Thumbnail?</value>
+  </data>
+  <data name="plThumbnailSize.Help" xml:space="preserve">
+    <value>Enter thumbnail image size to be generated.</value>
+  </data>
+  <data name="plThumbnailSize.Text" xml:space="preserve">
+    <value>Thumbnail Size</value>
+  </data>
+  <data name="ControlTitle_admingeneral_settings.Text" xml:space="preserve">
+    <value>Cross Video Gallery - Global Settings</value>
+  </data>
+  <data name="plFileStorage.Help" xml:space="preserve">
+    <value>Choose user file storage. For small and medium sites,store files under portal root is enough. However,if you have large amout files to handle, then store them via Amazon Simple Storage Services (Amazon S3) will be a better solution. Check http://aws.amazon.com/s3/ for more detail.</value>
+  </data>
+  <data name="plFileStorage.Text" xml:space="preserve">
+    <value>File Storage</value>
+  </data>
+  <data name="plPermissionCheck.Help" xml:space="preserve">
+    <value>To convert videos, web server must give execute permission to DesktopModules\CrossVideo\Exe folder (or its parent folder). Contact your host provider if you don't pass video convert permission check. For more detail, please see "Help - video convert permission" section in CrossVideo_Admin sub module.</value>
+  </data>
+  <data name="plPermissionCheck.Text" xml:space="preserve">
+    <value>Permission Check</value>
+  </data>
+  <data name="plVideoConvert.Help" xml:space="preserve">
+    <value>Check this option to convert user upload videos to .flv or h264 (.mp4) format. Note, you must pass the "permission check" to convert videos successfully.</value>
+  </data>
+  <data name="plVideoConvert.Text" xml:space="preserve">
+    <value>Enable video convert</value>
+  </data>
+  <data name="plVideoConvert_Width.Help" xml:space="preserve">
+    <value>Choose video width which will be converted. If source video width is small than this value, video will keep its own width after convert. If source video width is bigger than this value,its width will changed after convert. Default value is 480, this is the H.264 video format width of YouTube.com. Choose "use existing video width" option will not change source video width.</value>
+  </data>
+  <data name="plVideoConvert_Width.Text" xml:space="preserve">
+    <value>Convert Width</value>
+  </data>
+  <data name="li_VideoConvert_Width_UseExisting.Text" xml:space="preserve">
+    <value>Use existing video width</value>
+  </data>
+  <data name="secFileStorage.Text" xml:space="preserve">
+    <value>File Storage</value>
+  </data>
+  <data name="plUseSeoFriendlyUrl.Help" xml:space="preserve">
+    <value>If this option is checked, module will generate item detail url using item name. For example,if a video name is Cross Video 5.5,then its detail url will be like http://www.youdomainname.com/tabid/453/videoid/232/Cross-Video-5-5.aspx. This will improve seo friendly. We recommend you check this option if your information is written by English.  However, for other language like Chinese, it is better to turn this option off.</value>
+  </data>
+  <data name="plUseSeoFriendlyUrl.Text" xml:space="preserve">
+    <value>Enable seo friendly url</value>
+  </data>
+  <data name="secSeo.Text" xml:space="preserve">
+    <value>Seo Optimize</value>
+  </data>
+  <data name="A3AuthFailed.Text" xml:space="preserve">
+    <value>Please check your Amazon A3 access key, secrect key and bucket name,make sure they are correct.</value>
+  </data>
+  <data name="plProcessExitTime.Help" xml:space="preserve">
+    <value>Video convert process time limit (millisecond). If convert time exceed value,process will terminate and your video will not continue to convert. Default value is 1800000 (30 minutes),this value will let you convert a video which size bigger than 1G in normal computer. Increase this value if you want to handle very big videos (e.g. dvd files more than 10g). Decrease this value if you don't want user upload big videos.</value>
+  </data>
+  <data name="plProcessExitTime.Text" xml:space="preserve">
+    <value>Process time limit</value>
+  </data>
+  <data name="secVideoConvert_Offline.Text" xml:space="preserve">
+    <value>Offline video convert</value>
+  </data>
+  <data name="MustBetween1To10.Text" xml:space="preserve">
+    <value>Please input a value between 1 and 10.</value>
+  </data>
+  <data name="plAllowComment.Help" xml:space="preserve">
+    <value>Allow visitors to post comment. If this option is not checked, user can't post comments to all videos.
+If this option is checked, visitors can post comments by default, but each video can disable its own comments if necessary.</value>
+  </data>
+  <data name="plAllowComment.Text" xml:space="preserve">
+    <value>Allow Comment</value>
+  </data>
+  <data name="plAllowRating.Help" xml:space="preserve">
+    <value>Allow visitors to rating video. If this option is not checked, user can't rating to all videos.
+If this option is checked, visitors can rating by default, but each video can disable its own rating if necessary.</value>
+  </data>
+  <data name="plAllowRating.Text" xml:space="preserve">
+    <value>Allow Rating</value>
+  </data>
+  <data name="plAllowRecommend.Help" xml:space="preserve">
+    <value>Allow visitors to recommend video. If this option is not checked, user can't recommend to all videos.
+If this option is checked, visitors can recommend by default, but each video can disable its own recommend if necessary.</value>
+  </data>
+  <data name="plAllowRecommend.Text" xml:space="preserve">
+    <value>Allow Recommend</value>
+  </data>
+  <data name="plAutoAuthComment.Help" xml:space="preserve">
+    <value>Auto authorize user comment. Unauthorized comments will not display to normal visitors.</value>
+  </data>
+  <data name="plAutoAuthComment.Text" xml:space="preserve">
+    <value>Auto authorize comment</value>
+  </data>
+  <data name="plCategorySelectCount.Help" xml:space="preserve">
+    <value>Enter how many video categories a video can belong to. Value must between 1 and 10.</value>
+  </data>
+  <data name="plCategorySelectCount.Text" xml:space="preserve">
+    <value>Category selection counts</value>
+  </data>
+  <data name="plCommentRoles.Help" xml:space="preserve">
+    <value>Select roles which can post comments by default. Note, each video can has its own comment roles.</value>
+  </data>
+  <data name="plCommentRoles.Text" xml:space="preserve">
+    <value>Default comment roles</value>
+  </data>
+  <data name="plDownloadRoles.Help" xml:space="preserve">
+    <value>Select roles which can download video attached files by default. Note, each video can has its own attachment download roles.</value>
+  </data>
+  <data name="plDownloadRoles.Text" xml:space="preserve">
+    <value>Default attachment download roles</value>
+  </data>
+  <data name="plRatingRoles.Help" xml:space="preserve">
+    <value>Select roles which can ratings by default. Note, each video can has its own rating roles.</value>
+  </data>
+  <data name="plRatingRoles.Text" xml:space="preserve">
+    <value>Default rating Roles</value>
+  </data>
+  <data name="plRecommendRoles.Help" xml:space="preserve">
+    <value>Select roles which can post comments by default. Note,each video can has its own recommend roles.</value>
+  </data>
+  <data name="plRecommendRoles.Text" xml:space="preserve">
+    <value>Default recommend Roles</value>
+  </data>
+  <data name="plRequireApproval.Help" xml:space="preserve">
+    <value>Check this to require videos/audios to be approved before being displayed to visitors.</value>
+  </data>
+  <data name="plRequireApproval.Text" xml:space="preserve">
+    <value>Approval media before display</value>
+  </data>
+  <data name="plTagSelectCount.Help" xml:space="preserve">
+    <value>Enter how many tags a video can belong to. Value must between 1 and 10.</value>
+  </data>
+  <data name="plTagSelectCount.Text" xml:space="preserve">
+    <value>Tag selection counts</value>
+  </data>
+  <data name="plUserFolderRoot.Help" xml:space="preserve">
+    <value>Enter folder root which store user upload files. Default value is "CrossUserFile", means that user upload files will store under portals/[portalID]/CrossUserFile folder. You can change them to meet you needs. For example, if you also use our Classified Pro module, you can change it as "CrossClassified" so Cross Video Gallery module will use the same folder root as Classified Pro module.</value>
+  </data>
+  <data name="plUserFolderRoot.Text" xml:space="preserve">
+    <value>Local folder root</value>
+  </data>
+  <data name="plViewRoles.Help" xml:space="preserve">
+    <value>You can control which roles can view videos/audios by default. Note, each video/audio can has its own view roles.</value>
+  </data>
+  <data name="plViewRoles.Text" xml:space="preserve">
+    <value>Default media view roles</value>
+  </data>
+  <data name="secComment.Text" xml:space="preserve">
+    <value>Media Comment</value>
+  </data>
+  <data name="secDownload.Text" xml:space="preserve">
+    <value>Media Attachment Download</value>
+  </data>
+  <data name="secRating.Text" xml:space="preserve">
+    <value>Media Rating</value>
+  </data>
+  <data name="secRecommend.Text" xml:space="preserve">
+    <value>Media Recommend</value>
+  </data>
+  <data name="plRssItemCounts.Help" xml:space="preserve">
+    <value>Enter how many items are displayed to RSS feeds.</value>
+  </data>
+  <data name="plRssItemCounts.Text" xml:space="preserve">
+    <value>RSS item counts</value>
+  </data>
+  <data name="plReportEmail.Help" xml:space="preserve">
+    <value>Enter a email address which will receive abuse report notice. If you leave it as blank, module will not send email notice when visitor submit abuse report.</value>
+  </data>
+  <data name="plReportEmail.Text" xml:space="preserve">
+    <value>Abuse report Email</value>
+  </data>
+  <data name="plWatchHistoryCount.Help" xml:space="preserve">
+    <value>Visitor watch history records which will keep in database. Value must between 1-10.</value>
+  </data>
+  <data name="plWatchHistoryCount.Text" xml:space="preserve">
+    <value>Watch history counts</value>
+  </data>
+  <data name="MustBetween0To100.Text" xml:space="preserve">
+    <value>Value should be in 0 - 100.</value>
+  </data>
+  <data name="plAdVideo_Enalbe.Help" xml:space="preserve">
+    <value>Check to play a ad video before play the actual video.</value>
+  </data>
+  <data name="plAdVideo_Enalbe.Text" xml:space="preserve">
+    <value>Enable Ad Video</value>
+  </data>
+  <data name="plAdVideo_File.Help" xml:space="preserve">
+    <value>Choose a ad video which will play before the actual video. It is better to provide a .mp4 video and should be a smaller video.</value>
+  </data>
+  <data name="plAdVideo_File.Text" xml:space="preserve">
+    <value>Ad Video</value>
+  </data>
+  <data name="plAdVideo_Probability.Help" xml:space="preserve">
+    <value>Enter ad video play probability. Enter 100 will always play ad video. Enter 0 will not play ad video. Enter a value between 0-100 will play ad video randomly. For example,if you enter 60, then it will play ad video using 0.6 probability.</value>
+  </data>
+  <data name="plAdVideo_Probability.Text" xml:space="preserve">
+    <value>Ad video play probability</value>
+  </data>
+  <data name="secAdvertisement.Text" xml:space="preserve">
+    <value>Advertisement Video</value>
+  </data>
+  <data name="plEnableDocument.Help" xml:space="preserve">
+    <value>Check this option to enable user attach documents to his videos/audios.</value>
+  </data>
+  <data name="plEnableDocument.Text" xml:space="preserve">
+    <value>Enable attach documents</value>
+  </data>
+  <data name="plEnableImage.Help" xml:space="preserve">
+    <value>Check this option to enable user attach images to his videos/audios.</value>
+  </data>
+  <data name="plEnableImage.Text" xml:space="preserve">
+    <value>Enable attach images</value>
+  </data>
+  <data name="Tip_AdVideo.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You can choose a ad video which will play before the actual video. It must be .flv or .mp4 format and should be a small video. You can also control its play probability. Enter 100 will always play ad video. Enter 0 will not play ad video. Enter a value between 0-100 will play ad video randomly.  For example, if you enter 60, then it will play ad video using 0.6 probability.&lt;br/&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note: 1. Choose .mp4 (h264 format) video if you want to support iPhone/iPad/Andriod/Mobile. 2. Ad video can only be played with videos which from local site, it will be ignored when the actual video comes from embed code/YouTube/external sites, or RTMP stream.&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_ReportEmail.Text" xml:space="preserve">
+    <value>Enter a email address which will receive abuse report notification. If you leave it as blank, module will not send email notification when visitor submit an abuse report.</value>
+  </data>
+  <data name="Tip_SeoUrl.Text" xml:space="preserve">
+    <value>If this option is checked, module will generate media detail url using its title. For example, if a video title is Cross Video 5.5, then its detail url will be like http://www.youdomainname.com/tabid/453/videoid/232/Cross-Video-5-5.aspx. This will improve seo friendly. We recommend you check this option if your information is written by English. However, for other language like Chinese, it is better to turn this option off.</value>
+  </data>
+  <data name="Tip_UserFolderRoot.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Enter folder root which store user upload files. Default value is "CrossUserFile", means that user upload files will be stored under portals/[portalID]/CrossUserFile/[UserID] folder. For example, if portal id is 0 and a user id is 1, then his files will be stored under portals/0/CrossUserFile/1 folder.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You can change folder root to meet you needs. For example, if you also use our Classified Pro module, you can change it as "CrossClassified" so Cross Video Gallery module will use the same folder root as Classified Pro module.&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_A3.Text" xml:space="preserve">
+    <value>To store files on Amazon S3, you must provide below informations: Access key, Secret Key and S3 bucket.</value>
+  </data>
+  <data name="plManageRoles.Help" xml:space="preserve">
+    <value>Choose roles which can use "Data Manager" section in CrossVideo_Admin module to manage data. Note, site administrators can manage data by default.</value>
+  </data>
+  <data name="plManageRoles.Text" xml:space="preserve">
+    <value>Data manager roles</value>
+  </data>
+  <data name="Tip_EnableRelated.Text" xml:space="preserve">
+    <value>You can prevent user add related images/documents to video/audio by uncheck below options.</value>
+  </data>
+  <data name="Tip_ManageRoles.Text" xml:space="preserve">
+    <value>Choose roles which can access "CrossVideo_Admin sub module - Data Manager" section to manage data. Note, site administrators can manage data by default.</value>
+  </data>
+  <data name="plSiteMap.Help" xml:space="preserve">
+    <value>Video sitemap url for your site, you can submit to Google webmaster tools to let Google index your videos more easily.</value>
+  </data>
+  <data name="plSiteMap.Text" xml:space="preserve">
+    <value>Your video sitemap</value>
+  </data>
+  <data name="secVideoSiteMap.Text" xml:space="preserve">
+    <value>Submitting your video sitemap to Google</value>
+  </data>
+  <data name="plDnnSitemap.Help" xml:space="preserve">
+    <value>Check on this option to integrate with dnn built-in web sitemap</value>
+  </data>
+  <data name="plDnnSitemap.Text" xml:space="preserve">
+    <value>Integrate with dnn built-in web sitemap</value>
+  </data>
+  <data name="plYourSitemap.Help" xml:space="preserve">
+    <value>Your web sitemap url</value>
+  </data>
+  <data name="plYourSitemap.Text" xml:space="preserve">
+    <value>Your web sitemap</value>
+  </data>
+  <data name="secHelp_DnnSitemap.Text" xml:space="preserve">
+    <value>Integrate with Google web sitemap</value>
+  </data>
+  <data name="Tip_DnnSitemapIntegration.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;As we know, dnn provides a web sitemap which can be submitted to &lt;a href="https://www.google.com/webmasters/tools/home" target="_blank"&gt;&lt;font color="red"&gt;Google webmaster tools&lt;/font&gt;&lt;/a&gt; to let Google index your site more easily. You can configure your web sitemap url by click dnn standrd menu "Admin - Search engine sitemap". It is a great way to improve your site seo.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;By default, dnn only list your web pages as sitemap urls. However, you can check on below option to let Cross Video Gallery module also includes your video/audio urls in web sitemap urls. It is a must do action if you want to your media be searched more easily.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;We &lt;font color="red"&gt;strongly reommend&lt;/font&gt; you check on "Integrate with dnn built-in web sitemap" option and submit your web sitemap to Google. Note, if you don't find your media url in your sitemap urls, you need delete Portals/[Portal ID]/Sitemap/sitemap.xml file first to clear existing cache.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;You can follow below steps to submit your web sitemap.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Before you begin, make sure you have the your site added and verified in your Webmaster Tools account.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. On the Webmaster Tools home page, click your site.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Under Site configuration, click Sitemaps.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Click "Submit a Sitemap".&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;5. In the text box, copy your web sitemap url below and click "Submit Sitemap".&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;Note, there is no conflict between your web sitemap and your Google video sitemap. We strongly reommend you submit both of them to Google if possible.&lt;br/&gt;&lt;br/&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="plJournal_Enabled.Help" xml:space="preserve">
+    <value>Check to integrate with dnn built-in journal.</value>
+  </data>
+  <data name="plJournal_Enabled.Text" xml:space="preserve">
+    <value>Enable Integration</value>
+  </data>
+  <data name="secJournal.Text" xml:space="preserve">
+    <value>Integrate with dnn built-in journal </value>
+  </data>
+  <data name="Tip_JournalIntegration.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Check on below options to integrate with dnn built-in journal. When author post a video/audio/comment, module will automatic add a record to his journals.&lt;/p&gt;</value>
+  </data>
+  <data name="AuthFailed_WatermarkImage.Text" xml:space="preserve">
+    <value>Please provide a valid .gif image as watermark file, or uncheck the "Add Watermark" option.</value>
+  </data>
+  <data name="li_WatermarkPosition_BottomLeft.Text" xml:space="preserve">
+    <value>Bottom Left</value>
+  </data>
+  <data name="li_WatermarkPosition_BottomRight.Text" xml:space="preserve">
+    <value>Bottom Right</value>
+  </data>
+  <data name="li_WatermarkPosition_TopLeft.Text" xml:space="preserve">
+    <value>Top Left</value>
+  </data>
+  <data name="li_WatermarkPosition_TopRight.Text" xml:space="preserve">
+    <value>Top Right</value>
+  </data>
+  <data name="li_WatermarkType_Image.Text" xml:space="preserve">
+    <value>.gif image</value>
+  </data>
+  <data name="li_WatermarkType_Text.Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="plAddWatermark.Help" xml:space="preserve">
+    <value>Control whether to add watermark to user uploaded photos. The watermark can be a text, or a small image (.gif file).</value>
+  </data>
+  <data name="plAddWatermark.Text" xml:space="preserve">
+    <value>Add Watermark</value>
+  </data>
+  <data name="plGoogleMapApi.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;To integrate Google maps with your videos, you need provide a api key. Cross Video Gallery module already creates a key for you. If you want to use your own, you can sign up a new key at &lt;a href="https://code.google.com/apis/console" target="_blank"&gt;&lt;font color="red"&gt;https://code.google.com/apis/console&lt;/font&gt;&lt;/a&gt; and enter it. Check &lt;a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank"&gt;&lt;font color="red"&gt;https://developers.google.com/maps/documentation/javascript/tutorial&lt;/font&gt;&lt;/a&gt; for more detail.
+&lt;/p&gt;</value>
+  </data>
+  <data name="plGoogleMapApi.Text" xml:space="preserve">
+    <value>Google Maps Api Key</value>
+  </data>
+  <data name="plWatermark.Help" xml:space="preserve">
+    <value>Select a watermark file (.gif) which will be posted to videos.</value>
+  </data>
+  <data name="plWatermark.Text" xml:space="preserve">
+    <value>Watermark</value>
+  </data>
+  <data name="plWatermarkImage.Help" xml:space="preserve">
+    <value>Choose a .gif file as watermark image.</value>
+  </data>
+  <data name="plWatermarkImage.Text" xml:space="preserve">
+    <value>Watermark Image</value>
+  </data>
+  <data name="plWatermarkPosition.Help" xml:space="preserve">
+    <value>Watermark Position, can be put on top left/top right/bottom left/bottom right.</value>
+  </data>
+  <data name="plWatermarkPosition.Text" xml:space="preserve">
+    <value>Watermark Position</value>
+  </data>
+  <data name="plWatermarkText.Help" xml:space="preserve">
+    <value>Watermark Text</value>
+  </data>
+  <data name="plWatermarkText.Text" xml:space="preserve">
+    <value>Watermark Text</value>
+  </data>
+  <data name="plWatermarkType.Help" xml:space="preserve">
+    <value>The watermark can be a text, or a small image (.gif file).</value>
+  </data>
+  <data name="plWatermarkType.Text" xml:space="preserve">
+    <value>Watermark Type</value>
+  </data>
+  <data name="secGoogleMap.Text" xml:space="preserve">
+    <value>Integrate with Google Maps</value>
+  </data>
+  <data name="secWatermark.Text" xml:space="preserve">
+    <value>Photo thumbnail and watermark</value>
+  </data>
+  <data name="Tip_GenerateThumb.Text" xml:space="preserve">
+    <value>If this option is checked, module will automatic generate thubmnail image if necessary. For example, if video image is Cpu.jpg, then module will generate a thunbmail named thumb_Cpu.jpg. It will improve performance greatly while display images in list.</value>
+  </data>
+  <data name="Tip_GoogleMapApi.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;To integrate Google maps with your videos, you need provide a api key. Cross Video Gallery module already creates a key for you. If you want to use your own, you can sign up a new key at &lt;a href="https://code.google.com/apis/console" target="_blank"&gt;&lt;font color="red"&gt;https://code.google.com/apis/console&lt;/font&gt;&lt;/a&gt; and enter it. Check &lt;a href="https://developers.google.com/maps/documentation/javascript/tutorial" target="_blank"&gt;&lt;font color="red"&gt;https://developers.google.com/maps/documentation/javascript/tutorial&lt;/font&gt;&lt;/a&gt; for more details.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_Watermark.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Control whether to add watermark to user uploaded photos. The watermark can be a text, or a small image (.gif file). Please note:&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Module will try to optimize photo after add watermark. In most cases, this process will keep same photo quality but will reduce photo size.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. If you want to generate watermark based gif image, please make sure it is not a animation file. We also recommend you choose a gif image which has transparent background.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. See below sample images as a reference.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_Watermark_Sample_Gif.Text" xml:space="preserve">
+    <value>Sample image with gif watermark.</value>
+  </data>
+  <data name="Tip_Watermark_Sample_Text.Text" xml:space="preserve">
+    <value>Sample image with text watermark.</value>
+  </data>
+  <data name="plTextFontBgColor.Help" xml:space="preserve">
+    <value>Watermakr text background color, default is #000000</value>
+  </data>
+  <data name="plTextFontBgColor.Text" xml:space="preserve">
+    <value>Text background color</value>
+  </data>
+  <data name="plTextFontColor.Help" xml:space="preserve">
+    <value>Watermakr text color,default is #EBEBEB</value>
+  </data>
+  <data name="plTextFontColor.Text" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="plTextFontFamily.Help" xml:space="preserve">
+    <value>Text font family, default is "Arial". You can change to other font family, but make sure it is a valid font.</value>
+  </data>
+  <data name="plTextFontFamily.Text" xml:space="preserve">
+    <value>Text font family</value>
+  </data>
+  <data name="plShowSettingActionButton.Help" xml:space="preserve">
+    <value>Show setting button in other 11 sub modules, this is useful if you are not familiar with Cross Video Gallery module.</value>
+  </data>
+  <data name="plShowSettingActionButton.Text" xml:space="preserve">
+    <value>Show setting button in sub modules</value>
+  </data>
+  <data name="plShowCopyright.Help" xml:space="preserve">
+    <value>Select this to add the Cross Video Gallery module copyright credits to the page source.</value>
+  </data>
+  <data name="plShowCopyright.Text" xml:space="preserve">
+    <value>Show Copyright Credits</value>
+  </data>
+  <data name="li_AdVideo_PlayOrder_After.Text" xml:space="preserve">
+    <value>After the actual video ends</value>
+  </data>
+  <data name="li_AdVideo_PlayOrder_Before.Text" xml:space="preserve">
+    <value>Before the actual video starts</value>
+  </data>
+  <data name="plAdVideo_PlayOrder.Help" xml:space="preserve">
+    <value>Choose the ad video play order</value>
+  </data>
+  <data name="plAdVideo_PlayOrder.Text" xml:space="preserve">
+    <value>Ad video play order</value>
+  </data>
+</root>

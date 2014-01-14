@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PageCountInfo.Text" xml:space="preserve">
+    <value>Sum:[RecordCount] Size:[PageSize] Page:[PageNumber] of [PageCount]</value>
+  </data>
+  <data name="NoRecord.Text" xml:space="preserve">
+    <value>No Record</value>
+  </data>
+  <data name="Browse.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="Message.NotConfigured" xml:space="preserve">
+    <value>Not Configured Yet</value>
+  </data>
+  <data name="InvalidCaptcha.Text" xml:space="preserve">
+    <value>Invalid Verification Code</value>
+  </data>
+  <data name="CaptchaText.Text" xml:space="preserve">
+    <value>Verification  Code</value>
+  </data>
+  <data name="MustBeInteger.Text" xml:space="preserve">
+    <value>Value must be integer</value>
+  </data>
+  <data name="Required.Text" xml:space="preserve">
+    <value>Value can't be null</value>
+  </data>
+  <data name="Search.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchResult.Text" xml:space="preserve">
+    <value>Search Result</value>
+  </data>
+  <data name="DeleteConfirm_Related.Text" xml:space="preserve">
+    <value>Delete item will also delete all related data with it, are you sure to do it?</value>
+  </data>
+  <data name="imgDel.Text" xml:space="preserve">
+    <value>Delete this item</value>
+  </data>
+  <data name="imgEdit.Text" xml:space="preserve">
+    <value>Edit this item</value>
+  </data>
+  <data name="NoRecords.Text" xml:space="preserve">
+    <value>No Record</value>
+  </data>
+  <data name="Multi_DeleteConfirm_Related.Text" xml:space="preserve">
+    <value>Delete these items will also delete all related information with them, are you sure to do it?</value>
+  </data>
+  <data name="btnAdminHome.Text" xml:space="preserve">
+    <value>Return to control panel</value>
+  </data>
+  <data name="btnDeleteSelected.Text" xml:space="preserve">
+    <value>Delete Selected</value>
+  </data>
+  <data name="Finish.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="StepNextButton.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="StepPreviousButton.Text" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="DeleteItem.Text" xml:space="preserve">
+    <value>Are you sure to delete this item?</value>
+  </data>
+  <data name="DeleteItems.Text" xml:space="preserve">
+    <value>Are you sure to delete these items?</value>
+  </data>
+  <data name="imgDown.Text" xml:space="preserve">
+    <value>Move item down</value>
+  </data>
+  <data name="imgUp.Text" xml:space="preserve">
+    <value>Move item up</value>
+  </data>
+  <data name="li_LinkTarget_Blank.Text" xml:space="preserve">
+    <value>New Window</value>
+  </data>
+  <data name="li_LinkTarget_Self.Text" xml:space="preserve">
+    <value>Self Window</value>
+  </data>
+  <data name="btnMyAccount.Text" xml:space="preserve">
+    <value>Return to control panel</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="MustBeDecimal.Text" xml:space="preserve">
+    <value>Value must be decimal</value>
+  </data>
+  <data name="lblPageSize.Text" xml:space="preserve">
+    <value>Page Size:</value>
+  </data>
+  <data name="lblHelp_UploadFileExtension.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Control file types which allow user upload as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Login in as host account, click "Host - Host Settings".&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand to "Advanced Settings - Other Settings - Allowable File Extensions", add file extension which allow user to upload. For example, if you enable user to upload real player video (.rm), then add "rm" to it. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Click "Update" to save settings.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. If you enable video convert, make sure "flv" and "mp4" file extension are in allowable file extensions. Otherwise, you can't see them in "File Manage" page even they are converted successfully.&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp_UploadFileExtension.Text" xml:space="preserve">
+    <value>How to configure allowable upload file extensions</value>
+  </data>
+  <data name="Help_Faqs.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;A. How to upgrade from trial version to official version?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;Q. Simply re-install official version to overwrite existing trial version, then module will work and keep your existing data. 
+Note, dnn will display a red message "The package is already Installed." while you re-install using the official package, in this case, just check the "Repair Install" option to continue.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;A. How to register my module?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;Q: If you bought standard edition for Cross Video Gallery module, you need register your copy by provide your invoice id. As follows:&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. In "CrossVideo_Admin" sub module, click "Register Cross Video Gallery Module", enter your invoice id while bought this module, then click “Register”.&lt;br/&gt;
+ &amp;nbsp;&amp;nbsp;2.If you install module on test site, don’t register it. &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Unregistered copy of standard edition can only add up to 50 video items. &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Enterprise edition and enterprise + source edition don’t need register.&lt;br/&gt;
+&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;A.The captcha image doesn’t show in video detail, how to solve it?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;Q: It occurs in some dnn version with asp.net 4.0, check dnn forum at http://www.dotnetnuke.com/Resources/Forums/tabid/795/forumid/190/postid/394250/scope/posts/Default.aspx#394250. to see how to fix it.
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: I don't want to see some fields (e.g. the "source" field) while adding video/audio information, how can I hide it?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "Admin Control Panel - Data Manager - Galleries ", uncheck "Enable 'Source' Field:" option while edit gallery, 
+then the "source" fields will not dispear in video edit interface. &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: How can I create additional fields for video/audio?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "Admin Control Panel - Data Manager - Attributes".&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: How can I post audios?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: To post audios, you must create a gallery which "media type" value is set as "Audio" first. Other steps are the same as "How to start"  help section.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: When I click video item in CrossVideo_List sub module, it doesn't show its detail, why?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Make sure your provide a valid "Detail Page" for current video gallery. That page must have a CrossVideo_Detail sub module instance on 
+it and its "Gallery" must be same as CrossVideo_List module instance. You can click "Run detail page setting wizards" to configure it.
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: When I click category item in CrossVideo_Category sub module, it doesn't show videos in CrossVideo_List module, why?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Make sure your provide a valid "List Page" for current video gallery. That page must have a CrossVideo_List module instance on it and 
+its "Gallery" must be same as CrossVideo_List sub module instance. Module will automatic specify "List Page" when you first add a CrossVideo_List module instance for current gallery, 
+however,if you delete it, you need re-configure it in "CrossVideo_Admin sub module - Admin Control Panel - Data Manager - Galleries ".&lt;/p&gt;
+
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: How can I view a video/audio if it is marked as private?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: A private video/audio can only be watched/listened by site administrators and video/audio owner. It will not displayed to public. 
+You can view them by click "CrossVideo_Admin sub module - My Videos &amp; Audios - My stand alone videos &amp; audios " and click video/audio titile to watch/listen it. 
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;Q: How to play a ad video before play the actual video?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossVideo_Admin sub module - Admin Control Panel - Configuration - General Settings", 
+expand "Advertisement video " section, you can specify a ad video and its play probability.  
+&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Q: I want to approve videos/audios before display to public, how can I do that?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossVideo_Admin sub module - Admin Control Panel - Global Settings", check on "General - Approval before display:" option.&lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Q: I don't want to author attach images/documents to his videos/audios, how can I do that?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp;A: Click "CrossVideo_Admin sub module - Admin Control Panel - Global Settings", 
+you will see "Enable attach documents/Enable attach images " options under "General" section,uncheck them will hide related functions. 
+For example, if you uncheck "Enable attach documents" option, then "upload related documents" button will disappear while author edit his videos/audios. &lt;/p&gt;
+
+&lt;p&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;Q: Why I can't search videos under dnn built-in search box?&lt;br/&gt;
+      &amp;nbsp;&amp;nbsp; A: Make sure your provide a valid "CrossVideo_Detail module Page" for every video gallery. 
+That page must have a CrossVideo_Detail module instance on it and its "gallery" must be same as selected gallery. 
+You can click "Run detail page setting wizards" to configure it.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_VideoConvert_Offline.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;We also provide a windows appliation which lets you convert videos in your own computer. You can get it as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Visit &lt;a href="http://DnnModule.com/FreeDownload.aspx" target="_blank"&gt;http://DnnModule.com/FreeDownload.aspx&lt;/a&gt;, download "Video convert windows application" file.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Unzip your download files to your cumputer.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Click "VideoConvert.exe" to run it.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note, you must have .net framework installed on your computer to run it. You can install .net framework via windows update or other ways. Search Google for more information.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You can also download &lt;a href="http://handbrake.fr/" target="_blank"&gt;HandBrake&lt;/a&gt;. It is a free desktop tool for Linux, MAC and Windows that contains many settings beyond the scope of this guide.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_VideoConvert_Online.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;As we find with images (JPG, PNG, GIF) and sounds (WAV, MP3, AAC), videos are available in many different formats today: MP4, FLV, AVI, WebM, MOV, et cetera. 
+For more information, please visit &lt;a href="http://dnnmodule.com/Forum/tabid/57/forumid/23/threadid/707/scope/posts/Default.aspx" target="_blank"&gt;our support forum&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Since Cross Video Gallery supports both Flash and HTML5 on desktops, MP4 is the single format that can be used to serve all browsers (Chrome, IE, Firefox, etc) and devices (iOS, Android, etc).
+So it is necessary to convert other video formats to MP4 format. We offer two ways to help you do that: Online convert and Offline convert.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;To convert videos online, first you need download execute packages:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Visit &lt;a href="http://DnnModule.com/FreeDownload.aspx" target="_blank"&gt;http://DnnModule.com/FreeDownload.aspx&lt;/a&gt;, download "Video convert binary package" file.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Unzip your download files to your cumputer.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Copy ffmpeg and mencoder folder and all files under them to DesktopModules\CrossVideo\Exe directory of your site.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Second, web server must give execute permission to DesktopModules\CrossVideo\Exe folder, see sample image below. If you can access web server, configure it as follows:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. On the Windows 2003 server, open the Internet Information Services Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand your site directory to DesktopModules\CrossVideo\exe folder, right click it, select "Properties", change its execute permission as "Scripts and Execute".&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Contact your hosting provider if you can't access web server.&lt;/p&gt;</value>
+  </data>
+  <data name="li_All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="li_Direction_Down.Text" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="li_Direction_Left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="li_Direction_Right.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="li_Direction_Up.Text" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Anonymous.Text" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="li_SortField_Comment.Text" xml:space="preserve">
+    <value>Most Commented</value>
+  </data>
+  <data name="li_SortField_Popular.Text" xml:space="preserve">
+    <value>Most Popular (Views+Rating Total+Comment Count+Recommend Count)</value>
+  </data>
+  <data name="li_SortField_Rating.Text" xml:space="preserve">
+    <value>Most Rating</value>
+  </data>
+  <data name="li_SortField_Recent.Text" xml:space="preserve">
+    <value>Recent Published</value>
+  </data>
+  <data name="li_SortField_RecommendUp.Text" xml:space="preserve">
+    <value>Most Recommend</value>
+  </data>
+  <data name="li_SortField_Views.Text" xml:space="preserve">
+    <value>Views</value>
+  </data>
+  <data name="Help_HowToStart.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Please follow below steps to post your videos/audios &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Add CrossVideo_Admin sub module to a page to manage data. CrossVideo_Admin module is used to manage all data in Cross Video Gallery package, you should put only 1 instance per portal.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Create at least 1 gallery in "CrossVideo_Admin module - Admin Control Panel  - Data Manager - Galleries ", a detail page wizard will be displayed after you update gallery information. We recommend you choose "Yes, create a new page and add CrossVideo_Detail sub module instance for me." option to let module configure for you. &lt;br/&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Please note the "Media Type" property while creating galleries. Normally you need create 2 galleries (one "Media Type" property is "Video", the other "Media Type" is "Audio") to post both videos and audios. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Create at least 1 category in "CrossVideo_Admin module - Admin Control Panel  - Data Manager - Categories " for your gallery. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Upload a video (flv, mp4, webm, etc) or audio (mp3, aac..) file in "CrossVideo_Admin module - My Videos &amp; Audios  - My Files". If you want to play video from embed code of external sites, you can skip this step. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. Now you can add your videos in "CrossVideo_Admin module - My Videos &amp; Audios  - My stand alone videos &amp; audios". &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Put "CrossVideo_List" sub module in a separate page, then you will see your videos. &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7. There are 12 sub modules in Cross Video Gallery package. Besides CrossVideo_Admin sub module, the other 11 sub modules are all used to display data. For example, you can put "CrossVideo_Tag" module on a separate page to show video tags, put "CrossVideo_Category" module to show  categories...etc. Unlike CrossVideo_Admin sub module, you can add multiple instances of other 11 sub modules to different pages (or on same page if you wish). &lt;br/&gt;
+ &lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;8. If you upgrade from trial version to official version, simply re-install official package to overwrite trial version, your existing data will be kept after upgrade. &lt;br/&gt;
+ &lt;/p&gt;</value>
+  </data>
+  <data name="Help_YouTubeIntegration.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You can create RSS items from YouTube (base YouTube standard feeds, User upload/user favorite/user play list, or search based YouTube category and tag, etc). Module will automatic import videos based your RSS items. For example, if you create a youtube RSS item which based your YouTube account upload, then when you upload a new video to YouTube, module will automatic import it in Cross Video Gallery. However, there are something you need to know about this procedure:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1.YouTube.com must be accessible before retrieve videos.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2.By default, module will check YouTube RSS items every 2 hours. You can change this time period by login in as Super User, click dnn standard menu "Host - Schedue", edit "Import youtube videos" item. &lt;/p&gt;
+</value>
+  </data>
+  <data name="Help_SilverlightUploadControl.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You need add mime type support before use Silverlight upload control, as follows.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. On the Windows 2003 server, open the Internet Information Services Manager.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Expand the Local Computer Server.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. Right-click the local computer server and select Properties.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;4. Select the MIME Types tab.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;5. Click the New... button and enter the following information:&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;6. Associated Extension box: .xap.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;7. MIME Type box: application/x-silverlight-app&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;8. Click Ok.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;9. Restart the World Wide Web Publishing service.&lt;/p&gt;</value>
+  </data>
+  <data name="secHelp_UploadControl.Text" xml:space="preserve">
+    <value>Silverlight upload control doesn't display? Expand here to see how enable it</value>
+  </data>
+  <data name="lblTagTip.Text" xml:space="preserve">
+    <value>Enter tag below (one tag per line) or click "Add Tag" button to add existing popular tag.</value>
+  </data>
+  <data name="lblAction.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="StepFinishButton.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="Tip_ListPage.Text" xml:space="preserve">
+    <value>Select when click a item, which page will display related videos (audios). That page should have a CrossVideo_List module instance on it. If you don't specify, module will use the default list page for selected gallery (which specified in "CrossVideo_Admin- Data Manager - Galleries") to display.</value>
+  </data>
+  <data name="Help_SendReceiveMail.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Mail notification is everywhere in Cross Video Gallery module, whenever you create a help ticket/submit ratings/create abuse report, module will send related mails. To send &amp; receive these mail notification, please check below information.&lt;br/&gt;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1, First, please login in as Host account, then click "Host - Host Settings - Advanced Settings - SMTP Server Settings" to see if your Smtp server is configured correctly. See image below.&lt;br/&gt;&lt;br/&gt;
+     &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2, Make sure your abuse report email/author email/visitor email address are valid.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 3, Sometimes module doesn't send mails while running on localhost domain, don't worry about it. It will work on official domain names.&lt;br/&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="Help_Register.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You currently have Cross Video Gallery standard edition,please enter your invoice id while bought this module and click "Register".Note,don't click "Register" button if you just want to test this module on your site!!&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Normally vendor will send invoice id to your mail address when you buy module.You can also login to site where you bought this module to find invoice id. If you bought it from snowcovered.com, click "My Account" after login to snowcovered.com. If you bought it from http://DnnModule.com, visit http://DnnModule.com/store.aspx and click "My orders" to find invoice id.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Unregisted version only allows you add up to 50 videos.Contact xiaoqi98@msn.com if you have any problem while register this module.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thanks for your support.&lt;/p&gt;</value>
+  </data>
+  <data name="Help_Showcase.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;If you want to be a showcase of our Cross Video Gallery module,please fill your site information and click "Add Showcase", we will include your site in our showcase list (http://DnnModule.com/Showcase.aspx) and add a link to your site.This will also improve your site seo performance because external site link is vital to your Google page rank.&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Thanks for your support.&lt;/p&gt;</value>
+  </data>
+  <data name="Tip_Template.Text" xml:space="preserve">
+    <value>All sub modules on Cross Video Gallery package are template based, you can customize your desired display effect by create different templates. See "Cross Video Gallery user guide.pdf" for more detail.</value>
+  </data>
+  <data name="Tip_VideoSiteMap.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Besides web sitemap, Google also lets you submit video sitemap to its webmaster tools to help Google index your videos easily. It is a must do action if you want to your videos be searched more easily. For more information, please check &lt;a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=80472" target="_blank"&gt;http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=80472&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;Please follow below steps to submit your video sitemap. Note, module will not list your private (and protected) videos in sitemap to protect your privacy.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Before you begin, make sure you have the your site added and verified in your Webmaster Tools account. And you also have some videos added in Cross Video Gallery module.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. On the Webmaster Tools home page, click your site.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Under Site configuration, click Sitemaps.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Click "Submit a Sitemap".&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;5. In the text box, copy your video sitemap url below and click "Submit Sitemap".&lt;br/&gt;&lt;br/&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="lblLegend.Text" xml:space="preserve">
+    <value>Legend</value>
+  </data>
+  <data name="Help_ReadUserGuide.Text" xml:space="preserve">
+    <value>Click &lt;a href="{0}" target="_blank"&gt;&lt;font color="red"&gt;here to read Cross_Video_Gallery_User_Guide.pdf&lt;/font&gt;&lt;/a&gt; for more detail.</value>
+  </data>
+  <data name="secHowtostart.Text" xml:space="preserve">
+    <value>New to Cross Video Gallery module? Expand here to see how to start</value>
+  </data>
+  <data name="Tip_InvalidEmail.Text" xml:space="preserve">
+    <value>Invalid mail address.</value>
+  </data>
+  <data name="Tip_DeleteSuccess.Text" xml:space="preserve">
+    <value>Deleted Successfully.</value>
+  </data>
+  <data name="Tip_UpdateSuccess.Text" xml:space="preserve">
+    <value>Updated Successfully!</value>
+  </data>
+  <data name="Help_Charge.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;Cross Video Gallery doesn't support online payment. However, you can charge money before allow author post their videos by use our Classiifed Pro module (check &lt;font color="red"&gt;&lt;a href="http://DnnModule.com" target="_blank"&gt;http://DnnModule.com&lt;/a&gt;&lt;/font&gt; for it). As follows:&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;1. Create a role by click dnn standard menu "Admin - Security Roles", name it as your wish (like "Video Composer", make sure the "Public" and "Auto Assign" options are not checked while create it.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;2. Use Classified Pro module to sell that role. Classified Pro module allows you charge recursive (via PayPal subscribe). For more details, please refer "Classified Pro user guide.pdf".&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;3. Click "CrossVideo_Admin sub module - Admin control panel - Author Roles", add "Video Composer" to author roles.&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;4. Now when a user paid for "Video Composer" subscribe from Classified Pro module, he can access "CrossVideo_Admin sub module - My Videos &amp; Audios" to post videos/audios on your site.&lt;br/&gt;&lt;br/&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="Unlimited.Text" xml:space="preserve">
+    <value>[Unlimited]</value>
+  </data>
+  <data name="lblDurationTip.Text" xml:space="preserve">
+    <value>(hh:mm:ss, e.g. 4:02:08, 2:10:33)</value>
+  </data>
+  <data name="Help_MediaFormat.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Cross Video Gallery module supports both HTML5 &amp; Flash player to play your videos/audios. It automatically selects the best playback for your viewer's device and browser, 
+so you deliver unparalleled video/audio experience on iPhone, iPad, Android, Mobile, and the Desktop.
+Click &lt;a href="http://dnnmodule.com/Forum/tabid/57/forumid/23/threadid/709/scope/posts/Default.aspx" target="_blank"&gt;Browser &amp; Device Support in our forum&lt;/a&gt; for more details. &lt;/p&gt;
+
+
+&lt;p&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The video source can come from followings:&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Local File, MP4 videos (files with .mp4/.m4v/.f4v/mov extensions), FLV videos(file with .flv extension) and WebM videos (file with .webm extension) which you uploaded to site. &lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note: (1) MP4 (mp4,m4v,f4v,mov) videos works on devices, on browsers in Flash and on half the browsers in HTML5. WebM only works on half the browsers in HTML5. FLV only works on browsers in Flash.
+&lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Since Cross Video Gallery supports both Flash and HTML5 on desktops, MP4 is the single format that can be used to serve all browsers (Chrome, IE, Firefox, etc) and devices (iOS, Android, etc).
+So it is necessary to convert other video formats to MP4 format. We offer two ways to help you do that: Online convert and Offline convert.
+Click &lt;a href="http://dnnmodule.com/Forum/tabid/57/forumid/23/threadid/707/scope/posts/Default.aspx" target="_blank"&gt;
+MP4 Video Encoding in our forum&lt;/a&gt; for more details.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(2) Module will automatic generate video thumbnail, and detect video duration if "CrossVideo_Admin sub module - Admin control panel - Global Settings - Online video convert" feature is enabled.
+
+&lt;br/&gt;&lt;br/&gt;
+
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Embed Code, embed code from other video share sites, e.g. YouTube.com/YouKu.com, etc.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. External Url, include follows&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(A): Video file in exernal site, e.g. http://DnnModule.com/portals/0/test.mp4&lt;br/&gt;&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(B): Http stream, e.g. http://http://DnnModule.com/video.aspx?videoid=3. In this case, you need also specify its "Http file type". For example, if http://http://DnnModule.com/video.aspx?videoid=3
+point to a mp4 video file, you need select its "Http file type" as "mp4".&lt;br/&gt;&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(C): YouTube video url, e.g. &lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;http://www.youtube.com/watch?v=ylLzyHk54Z0&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;http://www.youtube.com/watch#!v=ylLzyHk54Z0&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;http://www.youtube.com/v/ylLzyHk54Z0&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;http://youtu.be/ylLzyHk54Z0.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note the YouTube API requires the Flash plugin at present. Therefore, it is supported only on desktop browsers. YouTube's experimental iFrame API will likely introduce full HTML5 support in the future.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Some additional notes on YouTube support:&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;If no image is provided, module will automatically load a poster image from YouTube.&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;YouTube videos are mostly available in multiple qualities, which means a quality selector is automatically displayed in the controlbar.&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;YouTube may place ads over the video during playback. These ads can not be disabled. Neither can the YouTube logo in the bottom right corner.&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;You can also create YouTube RSS in "CrossVideo_Admin sub module - My Videos &amp; Audios - My YouTube RSS" to let module automatic retireve your YouTube videos periodically.&lt;br/&gt;&lt;br/&gt;
+
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(D): RTMP (Real Time Messaging Protocol) streaming. Cross Video Gallery supports both Wowza Media Server and Adobe Media Server (the two major RTMP servers in the world).
+ &lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The following CDNs (Content Delivery Networks) support RTMP and are also tested to work great with Cross Video Gallery module. They all support dynamic streaming and, with the exception of CloudFront, live streaming too:&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Akamai&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;CDNetworks&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;CloudFront (Amazon Web Services)&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Edgecast&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Limelight&lt;br/&gt;&lt;br/&gt;
+ 
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Technically, an RTMP stream consists of two pieces:&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The application path (e.g. rtmp://example.com/vod/).&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The stream identifier (e.g. mp4:myFolder/video.mp4).&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;In Cross Video Gallery 6.4, these two pieces are rolled up into a single URL. The module determines the split between application and stream based upon the location of the mp4, flv or mp3 prefix:&lt;br/&gt;&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;An mp4: prefix is required for MP4/M4V/MOV/F4V videos:&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rtmp://example.com/vod/mp4:myFolder/myVideo.mp4&lt;br/&gt;&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;An flv: prefix is required for FLV videos or live streams (with FLV container):&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rtmp://example.com/vod/flv:myFolder/myVideo.flv&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rtmp://example.com/live/flv:myFolder/myLiveStream&lt;br/&gt;&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;An mp3: prefix is required for MP3 audio:&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rtmp://example.com/vod/mp3:myFolder/mySong.mp3&lt;br/&gt;&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;An mp4: prefix is also required for M4A/F4A/AAC audio files:&lt;br/&gt;
+
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;rtmp://example.com/vod/mp4:myFolder/mySong.m4a&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;In addition to loading a single RTMP stream, Cross Video Gallery also supports loading dynamic streams. 
+Dynamic streams have to be set up using so-called SMIL manifests. 
+These are simple XML files that contain the location of the RTMP application, plus the path to (one or more) streams stored on the RTMP server. 
+The player always presume a file with the extension .smil is an RTMP SMIL manifest: e.g. http://hwcdn.net/i5z8g9f7/fms/highdef_FLV/4329528.flv.smil. &lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Note: (1)RTMP only works in Flash and not in HTML5, this means it can't be played in iPhone/iPad/Andriod/Mobile.&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(2): When you enter RTMP stream url which comes from Akamai, Edgecast or Limelight CDNs, please select "Http file type" to related CDN. For example, when a rtmp stream is comes from Edgecast CDN,
+you need choose "Http file type" as "Edgecast CDN".
+&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;The audio source can come from followings:&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;1. Local File, AAC audios (files with .aac/.m4a/.f4a extensions), MP3 audios (file with .mp3 extension) and Vorbis audios (files with .ogg/.oga extensions) which you uploaded to site. &lt;br/&gt;&lt;br/&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;2. Embed Code, embed code from other audio share sites.&lt;br/&gt;&lt;br/&gt;
+
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;3. External Url, include follows&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(A): Audio file in exernal site, e.g. http://DnnModule.com/portals/0/test.mp3&lt;br/&gt;&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(B): Http stream, e.g. http://http://DnnModule.com/audio.aspx?audioid=3. In this case, you need also specify its "Http file type". For example, if http://http://DnnModule.com/audio.aspx?audioid=3
+point to a mp3 audio file, you need select its "Http file type" as "mp3".&lt;br/&gt;&lt;br/&gt;
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;(C): RTMP streaming, e.g rtmp://example.com/vod/mp3:myFolder/mySong.mp3.
+&lt;/p&gt;</value>
+  </data>
+</root>
