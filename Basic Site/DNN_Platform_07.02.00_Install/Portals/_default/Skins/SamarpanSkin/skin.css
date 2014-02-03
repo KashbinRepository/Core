@@ -615,14 +615,14 @@ a.altButton:hover {
 /* SITE HEADER */
 /*------------------------------------------------*/
 #siteHeadouter {
-    background: #fff;
+    background: #E2EDDD;
     /* CSS3 */
     -webkit-box-shadow: 1px 50px 100px 0px #cacaca;
     box-shadow: 1px 50px 100px 0px #cacaca;
 }
 
 #siteHeadinner {
-    padding: 36px 0;
+    padding: 0px 0;
 }
 
 #logo {
@@ -861,6 +861,7 @@ a.altButton:hover {
     padding-bottom: 12px;
     margin-bottom: 25px;
     border-bottom: solid 1px #c0c0c0;
+	display:none;
 }
 
     #Breadcrumb img {
@@ -2199,4 +2200,19 @@ ul.footerConnect {
         .status-expanded-container .profile-topContainer > .dnnRight > ul.profile-statistics > li {width:33%;}
         .status-expanded-container .profile-topContainer > .dnnRight > ul.profile-statistics{ width:200px;}
         .dnnSocialLink .profile-link {margin-top:50px;}
+}
+
+
+
+
+.container:before, .container:after {
+margin:5px 0px;
+}
+
+#copyright{
+display:none;
+}
+
+hr{
+border:none;
 }

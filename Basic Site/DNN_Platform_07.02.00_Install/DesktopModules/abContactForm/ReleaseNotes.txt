@@ -1,0 +1,21 @@
+﻿<h3>ContactForm</h3>
+<p class="Contributor">
+	AllenBosch LLC <br />
+	<a href="mailto:info@allenbosch.com">info@allenbosch.com</a><br />
+	<a href=http://www.allenbosch.com>http://www.allenbosch.com</a><br />
+</p>
+<hr/>
+<div class="License">
+	<h3>About the ContactForm</h3>
+	<p class="Owner">
+		<b>Version 01.00.00</b><br /><br />
+	</p>
+	<p>This is the first release of this Module 'ContactForm' by AllenBosch LLC.</p>
+	
+	<h4>Bug Fixes</h4>
+	<ul>
+			<li>There are no known bugs at the time of release.</li>
+			<li>June 30th, 2012</li>
+	</ul>
+	
+</div>

@@ -3,3 +3,11 @@
 /Source/DNN7/bin/*.XML
 /Source/DNN7/bin/*.dll
 /Source/DNN7/App_Data
+/Source/DNN7/Portals/0/Caches/Pages
+
+/Basic Site/DNN_Platform_07.02.00_Install/Install/Temp
+/Basic Site/DNN_Platform_07.02.00_Install/App_Data/*.*
+/Basic Site/DNN_Platform_07.02.00_Install/Portals/0/Cache/Pages/*.resources
+
+*.resources
+*.zip

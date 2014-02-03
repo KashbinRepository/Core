@@ -1,0 +1,40 @@
+﻿<dotnetnuke type="ResourceFile" version="5.0">
+  <files>
+    <file>
+      <path />
+      <name>EditCalendar.ascx</name>
+    </file>
+    <file>
+      <path />
+      <name>ViewCalendar.ascx</name>
+    </file>
+    <file>
+      <path>App_LocalResources/</path>
+      <name>EditCalendar.ascx.resx</name>
+    </file>
+    <file>
+      <path>css/</path>
+      <name>calendar.css</name>
+    </file>
+    <file>
+      <path>css/</path>
+      <name>custom_2.css</name>
+    </file>
+    <file>
+      <path>css/</path>
+      <name>demo.css</name>
+    </file>
+    <file>
+      <path>images/</path>
+      <name>bg.jpg</name>
+    </file>
+    <file>
+      <path>js/</path>
+      <name>jquery.calendario.js</name>
+    </file>
+    <file>
+      <path>js/</path>
+      <name>modernizr.custom.63321.js</name>
+    </file>
+  </files>
+</dotnetnuke>
