@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Samarpan Nepali Christian Church</title>
+
+	<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+	
+
+	<script type="text/javascript">
+	
+	var youTubeChannelURL = "https://www.youtube.com/user/samarpanNepalichurch";
+	
+	//optional parameters-----------------------------------------------
+	var youTubePlaylistURL = "https://www.youtube.com/playlist?list=UUaJMi51AQ7ppL0P7pTFditg";
+	var youmaxDefaultTab = "featured";
+	var youmaxColumns = 3;	
+	var youmaxWidgetWidth = 900;
+	//var youmaxWidgetHeight = 1000;
+	var showFeaturedVideoOnLoad = false;
+	var showVideoInLightbox = false;
+
+	
+	function goClicked() {
+		youmaxFeaturedPlaylistId = null;
+		prepareYoumax();
+	}
+	
+	$(window).load(function(){$('#youmax-header>img').wrap('<a href="'+youTubeChannelURL+'" target="_blank" />');});
+
+	</script>
+
+	</head>
+  <body onload="goClicked();">		
+<div id="youmax"></div>
+  </body>
+</html>
+
+
+
