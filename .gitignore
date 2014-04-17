@@ -8,6 +8,8 @@
 /Basic Site/DNN_Platform_07.02.00_Install/Install/Temp
 /Basic Site/DNN_Platform_07.02.00_Install/App_Data/*.*
 /Basic Site/DNN_Platform_07.02.00_Install/Portals/0/Cache/Pages/*.resources
+/Basic Site/DNN_Platform_07.02.00_Install/Portals/1/Cache/Pages/*.resources
+/Basic Site/DNN_Platform_07.02.00_Install/Portals/2/Cache/Pages/*.resources
 
 *.resources
 *.zip

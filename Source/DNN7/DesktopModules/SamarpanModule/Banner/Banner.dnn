@@ -13,21 +13,21 @@
           <cachetime>0</cachetime>
           <controls>
             <control>
-              <src>DesktopModules/MyCentral/Banner/ViewBanner.ascx</src>
+              <src>DesktopModules/SamarpanModule/Banner/ViewBanner.ascx</src>
               <type>View</type>
               <helpurl></helpurl>
             </control>
             <control>
               <key>Settings</key>
               <title>Banner Settings</title>
-              <src>DesktopModules/MyCentral/Banner/Settings.ascx</src>
+              <src>DesktopModules/SamarpanModule/Banner/Settings.ascx</src>
               <type>Edit</type>
               <helpurl></helpurl>
             </control>
             <control>
               <key>ModuleStyleEditor</key>
               <title>Banner StyleSettings</title>
-              <src>DesktopModules/MyCentral/MyCentralSiteConfiguration/ModuleStyleEditor.ascx</src>
+              <src>DesktopModules/SamarpanModule/MyCentralSiteConfiguration/ModuleStyleEditor.ascx</src>
               <type>Anonymous</type>
               <helpurl></helpurl>
               <SupportsPopUps>true</SupportsPopUps>
