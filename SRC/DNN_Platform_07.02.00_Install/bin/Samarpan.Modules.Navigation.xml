@@ -1,0 +1,832 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Samarpan.Modules.Navigation</name>
+    </assembly>
+    <members>
+        <member name="T:Samarpan.Modules.Navigation.NavigationSettings">
+            <summary>
+            Provides strong typed access to settings used by module
+            </summary>
+        </member>
+        <member name="M:Samarpan.Modules.Navigation.NavigationSettings.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Samarpan.Modules.Navigation.NavigationSettings.ReadSetting``1(System.String,``0)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Samarpan.Modules.Navigation.NavigationSettings.WriteSetting(System.String,System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.LoadByItSelf">
+            <summary>
+            Load itself
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecLoginLink">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecSignOutRedirectLink">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.SecNavLink10">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.NavText10">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink3">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink5">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink6">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink7">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink9">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.NavigationSettings.HideAnonymousLink10">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Samarpan.Modules.Navigation.Settings">
+            ----------------------------------------------------------------------------- 
+            <summary> 
+            The Settings class manages Module Settings 
+            </summary> 
+            <remarks> 
+            </remarks> 
+            <history> 
+            </history> 
+            ----------------------------------------------------------------------------- 
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.lblLoadByItSelf">
+            <summary>
+            lblLoadByItSelf control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkLoadByItSelf">
+            <summary>
+            chkLoadByItSelf control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.lblLoginLink">
+            <summary>
+            lblLoginLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtLoginLink">
+            <summary>
+            txtLoginLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.lblSignOutRedirectLink">
+            <summary>
+            lblSignOutRedirectLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtSignOutRedirectLink">
+            <summary>
+            txtSignOutRedirectLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.lblNavText">
+            <summary>
+            lblNavText control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.lblNavLink">
+            <summary>
+            lblNavLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.lblAnonymous">
+            <summary>
+            lblAnonymous control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText1">
+            <summary>
+            txtNavText1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink1">
+            <summary>
+            txtNavLink1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink1">
+            <summary>
+            chkAnonymousLink1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText2">
+            <summary>
+            txtNavText2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink2">
+            <summary>
+            txtNavLink2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink2">
+            <summary>
+            chkAnonymousLink2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText3">
+            <summary>
+            txtNavText3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink3">
+            <summary>
+            txtNavLink3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink3">
+            <summary>
+            chkAnonymousLink3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText4">
+            <summary>
+            txtNavText4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink4">
+            <summary>
+            txtNavLink4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink4">
+            <summary>
+            chkAnonymousLink4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText5">
+            <summary>
+            txtNavText5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink5">
+            <summary>
+            txtNavLink5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink5">
+            <summary>
+            chkAnonymousLink5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText6">
+            <summary>
+            txtNavText6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink6">
+            <summary>
+            txtNavLink6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink6">
+            <summary>
+            chkAnonymousLink6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText7">
+            <summary>
+            txtNavText7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink7">
+            <summary>
+            txtNavLink7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink7">
+            <summary>
+            chkAnonymousLink7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText8">
+            <summary>
+            txtNavText8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink8">
+            <summary>
+            txtNavLink8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink8">
+            <summary>
+            chkAnonymousLink8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText9">
+            <summary>
+            txtNavText9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink9">
+            <summary>
+            txtNavLink9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink9">
+            <summary>
+            chkAnonymousLink9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavText10">
+            <summary>
+            txtNavText10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.txtNavLink10">
+            <summary>
+            txtNavLink10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.Settings.chkAnonymousLink10">
+            <summary>
+            chkAnonymousLink10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Samarpan.Modules.Navigation.Settings.LoadSettings">
+            ----------------------------------------------------------------------------- 
+            <summary> 
+            LoadSettings loads the settings from the Database and displays them 
+            </summary> 
+            <remarks> 
+            </remarks> 
+            <history> 
+            </history> 
+            ----------------------------------------------------------------------------- 
+        </member>
+        <member name="M:Samarpan.Modules.Navigation.Settings.UpdateSettings">
+            ----------------------------------------------------------------------------- 
+            <summary> 
+            UpdateSettings saves the modified settings to the Database 
+            </summary> 
+            <remarks> 
+            </remarks> 
+            <history> 
+            </history> 
+            ----------------------------------------------------------------------------- 
+        </member>
+        <member name="T:Samarpan.Modules.Navigation.ViewNavigation">
+            ----------------------------------------------------------------------------- 
+            <summary> 
+            The ViewMyCentralNavigation class displays the content 
+            </summary> 
+            <remarks> 
+            </remarks> 
+            <history> 
+            </history> 
+            ----------------------------------------------------------------------------- 
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnLoadByItSelf">
+            <summary>
+            hdnLoadByItSelf control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnLoginLink">
+            <summary>
+            hdnLoginLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnSignOutRedirectLink">
+            <summary>
+            hdnSignOutRedirectLink control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink1">
+            <summary>
+            hdnNavLink1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink2">
+            <summary>
+            hdnNavLink2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink3">
+            <summary>
+            hdnNavLink3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink4">
+            <summary>
+            hdnNavLink4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink5">
+            <summary>
+            hdnNavLink5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink6">
+            <summary>
+            hdnNavLink6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink7">
+            <summary>
+            hdnNavLink7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink8">
+            <summary>
+            hdnNavLink8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink9">
+            <summary>
+            hdnNavLink9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavLink10">
+            <summary>
+            hdnNavLink10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText1">
+            <summary>
+            hdnNavText1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText2">
+            <summary>
+            hdnNavText2 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText3">
+            <summary>
+            hdnNavText3 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText4">
+            <summary>
+            hdnNavText4 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText5">
+            <summary>
+            hdnNavText5 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText6">
+            <summary>
+            hdnNavText6 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText7">
+            <summary>
+            hdnNavText7 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText8">
+            <summary>
+            hdnNavText8 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText9">
+            <summary>
+            hdnNavText9 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnNavText10">
+            <summary>
+            hdnNavText10 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnIsSecurePage">
+            <summary>
+            hdnIsSecurePage control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:Samarpan.Modules.Navigation.ViewNavigation.hdnIsAnonymousUser">
+            <summary>
+            hdnIsAnonymousUser control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Samarpan.Modules.Navigation.ViewNavigation.Page_Load(System.Object,System.EventArgs)">
+            ----------------------------------------------------------------------------- 
+            <summary> 
+            Page_Load runs when the control is loaded 
+            </summary> 
+            ----------------------------------------------------------------------------- 
+        </member>
+        <member name="P:Samarpan.Modules.Navigation.ViewNavigation.ModuleActions">
+            ----------------------------------------------------------------------------- 
+            <summary> 
+            Registers the module actions required for interfacing with the portal framework 
+            </summary> 
+            <value></value> 
+            <returns></returns> 
+            <remarks></remarks> 
+            <history> 
+            </history> 
+            ----------------------------------------------------------------------------- 
+        </member>
+    </members>
+</doc>
