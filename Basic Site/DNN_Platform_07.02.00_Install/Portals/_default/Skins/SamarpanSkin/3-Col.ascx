@@ -68,11 +68,9 @@
             </div>
             <div id="footer">
                 <div class="row-fluid">
-        	        <div id="footerLeftOuterPane" class="span2 footerPane" runat="server"></div>
-                    <div id="footerLeftPane" class="span2 footerPane" runat="server"></div>
-                    <div id="footerCenterPane" class="span2 footerPane" runat="server"></div>
-                    <div id="footerRightPane" class="span2 footerPane" runat="server"></div>
-                    <div id="footerRightOuterPane" class="span2 offset2 footerPaneRight" runat="server"></div>
+        	     
+                    <div id="footerCenterPane" class="" runat="server"></div>
+                   
                 </div>
                 <div class="row-fluid">
                     <hr class="span12"/>
