@@ -1,0 +1,22 @@
+﻿<h3>GP_Hosting_ContactForm</h3>
+<p class="Contributor">
+	Bradley Petersen (GP Hosting) <br />
+	<a href="mailto:info@gphosting.co.za">bradley@gphosting.co.za</a><br />
+	<a href="http://www.gphosting.co.za" target="_blank">www.gphosting.co.za</a><br />
+</p>
+<hr/>
+<div class="License">
+	<h3>About the GP Hosting Contact Form</h3>
+	<p class="Owner">
+		<b>Version 2.0.2</b><br /><br />
+	</p>
+	<p>Description about version.</p>
+	
+	<h4>Bug Fixes</h4>
+	<ul>
+			<li>On settings load, google recapture theme could not be found.</li>
+			<li>On form submit google recature would throw an error saying that the private key was not set even when recapture was disabled.</li>
+			
+	</ul>
+	
+</div>

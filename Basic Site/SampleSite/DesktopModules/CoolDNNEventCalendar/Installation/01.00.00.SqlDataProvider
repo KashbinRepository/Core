@@ -1,0 +1,35 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table CoolDNN_EventCalendar **/
+
+/* =====================================================================================
+/   TABLE: {databaseOwner}{objectQualifier}CoolDNN_EventCalendar
+/  ===================================================================================== */
+
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}CoolDNN_EventCalendar]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE [dbo].[CoolDNN_EventCalendar](
+			[CalendarID] [int] IDENTITY(1,1) NOT NULL,
+			[ModuleID] [int] NULL,
+			[Event] [nvarchar](250) NULL,
+			[EventDate] [varchar](50) NULL,
+			[Position] [int] NULL,
+			[IsActive] [bit] NULL,
+		 CONSTRAINT [PK_CoolDNN_EventCalendar] PRIMARY KEY CLUSTERED 
+		(
+			[CalendarID] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+	END
+GO
+
+

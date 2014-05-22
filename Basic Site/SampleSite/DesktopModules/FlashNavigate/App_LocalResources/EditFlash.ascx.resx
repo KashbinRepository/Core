@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="secImageList.Text" xml:space="preserve">
+    <value>Image List</value>
+  </data>
+  <data name="MustBeInteger.Text" xml:space="preserve">
+    <value>Value must be integer</value>
+  </data>
+  <data name="lblTextHeightTips.Text" xml:space="preserve">
+    <value>Set it to zero if you don't want to show image title</value>
+  </data>
+  <data name="plFlashWidth.Text" xml:space="preserve">
+    <value>Flash Width</value>
+  </data>
+  <data name="plFlashWidth.Help" xml:space="preserve">
+    <value>set flash width,the value must be integer.Recommend set it as even.</value>
+  </data>
+  <data name="plFlashHeight.Text" xml:space="preserve">
+    <value>Flash Height</value>
+  </data>
+  <data name="plFlashHeight.Help" xml:space="preserve">
+    <value>set flash height,the value must be integer.Recommend set it as even.</value>
+  </data>
+  <data name="plTextHeight.Text" xml:space="preserve">
+    <value>Image Title Height</value>
+  </data>
+  <data name="plTextHeight.Help" xml:space="preserve">
+    <value>Image title height,Set it to zero if you don't want to show image title.Recommend set it as even.</value>
+  </data>
+  <data name="imgUp.Help" xml:space="preserve">
+    <value>Move Image Up</value>
+  </data>
+  <data name="imgDown.Help" xml:space="preserve">
+    <value>Move Image Down</value>
+  </data>
+  <data name="imgRemove.Help" xml:space="preserve">
+    <value>Remove Image</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;P&gt;A Flash Navigate module from www.DnnModules.cn</value>
+  </data>
+  <data name="ControlTitle_edit.Text" xml:space="preserve">
+    <value>Flash settings wizard</value>
+  </data>
+  <data name="StepNextButton.Text" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="StepPreviousButton.Text" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="lblGeneral.Text" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="wsGeneral.Text" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="btnAddFile.Text" xml:space="preserve">
+    <value>Add File</value>
+  </data>
+  <data name="wsFinish.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="lblAddFile.Text" xml:space="preserve">
+    <value>Add File</value>
+  </data>
+  <data name="lblFailure.Text" xml:space="preserve">
+    <value>Submit failure,Please check it if you have playlist file supplied.</value>
+  </data>
+  <data name="lblFinish.Text" xml:space="preserve">
+    <value>Click "Finish" button to save data</value>
+  </data>
+  <data name="lblId.Text" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="lblLink.Text" xml:space="preserve">
+    <value>Link Url</value>
+  </data>
+  <data name="lblPic.Text" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="plFile.Help" xml:space="preserve">
+    <value>Choose File</value>
+  </data>
+  <data name="plFile.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="plLink.Help" xml:space="preserve">
+    <value>Choose Link Url</value>
+  </data>
+  <data name="plLink.Text" xml:space="preserve">
+    <value>Link Url</value>
+  </data>
+  <data name="plText.Help" xml:space="preserve">
+    <value>Image title</value>
+  </data>
+  <data name="plText.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Required.Text" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="secPlayBack.Text" xml:space="preserve">
+    <value>Playback Settings</value>
+  </data>
+  <data name="imgDelete.Text" xml:space="preserve">
+    <value>Delete this item</value>
+  </data>
+  <data name="imgDown.Text" xml:space="preserve">
+    <value>Move item down</value>
+  </data>
+  <data name="imgEdit.Text" xml:space="preserve">
+    <value>Edit this item</value>
+  </data>
+  <data name="imgUp.Text" xml:space="preserve">
+    <value>Move item up</value>
+  </data>
+  <data name="btnAddFolder.Text" xml:space="preserve">
+    <value>Add Folder</value>
+  </data>
+  <data name="cmdAddZipFile.Text" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="plAddZipFile.Help" xml:space="preserve">
+    <value>You can upload zip file</value>
+  </data>
+  <data name="plAddZipFile.Text" xml:space="preserve">
+    <value>Upload Zip File</value>
+  </data>
+  <data name="plFolder.Help" xml:space="preserve">
+    <value>Select folder</value>
+  </data>
+  <data name="plFolder.Text" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="secAddFile.Text" xml:space="preserve">
+    <value>Add File</value>
+  </data>
+  <data name="secAddFolder.Text" xml:space="preserve">
+    <value>Add Folder</value>
+  </data>
+  <data name="Root.Text" xml:space="preserve">
+    <value>/</value>
+  </data>
+  <data name="secPlayList.Text" xml:space="preserve">
+    <value>Play List</value>
+  </data>
+  <data name="liFlashAlign_center.Text" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="liFlashAlign_left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="liFlashAlign_right.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="plFlashAlign.Help" xml:space="preserve">
+    <value>Choose Flash Align</value>
+  </data>
+  <data name="plFlashAlign.Text" xml:space="preserve">
+    <value>Flash Align</value>
+  </data>
+  <data name="liTextAlign_center.Text" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="liTextAlign_left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="liTextAlign_right.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="plIntervalTime.Help" xml:space="preserve">
+    <value>Image rotator time,default value is 5,set it to zero to stop rotator</value>
+  </data>
+  <data name="plIntervalTime.Text" xml:space="preserve">
+    <value>Rotator Interval(sec)</value>
+  </data>
+  <data name="plTextAlign.Help" xml:space="preserve">
+    <value>Choose image text alignment</value>
+  </data>
+  <data name="plTextAlign.Text" xml:space="preserve">
+    <value>Text Align</value>
+  </data>
+  <data name="NoRecords.Text" xml:space="preserve">
+    <value>No Record</value>
+  </data>
+  <data name="btnLinkToOriginalFile.Text" xml:space="preserve">
+    <value>Set empty link url to original file</value>
+  </data>
+  <data name="InvalidHex.Text" xml:space="preserve">
+    <value>Invalid Hex Value</value>
+  </data>
+  <data name="plFlashBgColor.Help" xml:space="preserve">
+    <value>Pick flash background color,default value is 0xFFFFFF</value>
+  </data>
+  <data name="plFlashBgColor.Text" xml:space="preserve">
+    <value>Flash background color</value>
+  </data>
+  <data name="lblFlashNavigateExSettings.Text" xml:space="preserve">
+    <value>Numeric navigate(extension) settings</value>
+  </data>
+  <data name="lblFlashNavigateSettings.Text" xml:space="preserve">
+    <value>Numeric navigate(classical) settings</value>
+  </data>
+  <data name="liChangImageMode_click.Text" xml:space="preserve">
+    <value>Click</value>
+  </data>
+  <data name="liChangImageMode_hover.Text" xml:space="preserve">
+    <value>Hover</value>
+  </data>
+  <data name="liFlashWmode_opaque.Text" xml:space="preserve">
+    <value>Opaque</value>
+  </data>
+  <data name="liFlashWmode_transparent.Text" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="liFlashWmode_window.Text" xml:space="preserve">
+    <value>Window</value>
+  </data>
+  <data name="liLinkTarget_Blank.Text" xml:space="preserve">
+    <value>New Window</value>
+  </data>
+  <data name="liLinkTarget_Self.Text" xml:space="preserve">
+    <value>Self Window</value>
+  </data>
+  <data name="liPlayModeList_ImageNavigate.Text" xml:space="preserve">
+    <value>Numeric navigate (classical)</value>
+  </data>
+  <data name="liPlayModeList_ImageNavigateEx.Text" xml:space="preserve">
+    <value>Numeric navigate (extension)</value>
+  </data>
+  <data name="liScaleMode_exactFil.Text" xml:space="preserve">
+    <value>Exactly Fill</value>
+  </data>
+  <data name="liScaleMode_noBorder.Text" xml:space="preserve">
+    <value>No Border</value>
+  </data>
+  <data name="liScaleMode_noScale.Text" xml:space="preserve">
+    <value>No Scale</value>
+  </data>
+  <data name="liScaleMode_showAll.Text" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="liTransform_alpha.Text" xml:space="preserve">
+    <value>Alpha</value>
+  </data>
+  <data name="liTransform_blur.Text" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="liTransform_bottom.Text" xml:space="preserve">
+    <value>Bottom to top</value>
+  </data>
+  <data name="liTransform_breathe.Text" xml:space="preserve">
+    <value>Breathe</value>
+  </data>
+  <data name="liTransform_breatheBlur.Text" xml:space="preserve">
+    <value>Breathe and blur</value>
+  </data>
+  <data name="liTransform_left.Text" xml:space="preserve">
+    <value>Left to right</value>
+  </data>
+  <data name="liTransform_right.Text" xml:space="preserve">
+    <value>Right to left</value>
+  </data>
+  <data name="liTransform_top.Text" xml:space="preserve">
+    <value>Top to bottom</value>
+  </data>
+  <data name="plAutoPlayTime.Help" xml:space="preserve">
+    <value>Image rotator time(sec),default is 8</value>
+  </data>
+  <data name="plAutoPlayTime.Text" xml:space="preserve">
+    <value>Image Rotator Time(sec)</value>
+  </data>
+  <data name="plBtnAlpha.Help" xml:space="preserve">
+    <value>Button alpha,default is 0.7</value>
+  </data>
+  <data name="plBtnAlpha.Text" xml:space="preserve">
+    <value>Button Alpha</value>
+  </data>
+  <data name="plBtnDefaultColor.Help" xml:space="preserve">
+    <value>Pick button default color,default is 0x1B3433</value>
+  </data>
+  <data name="plBtnDefaultColor.Text" xml:space="preserve">
+    <value>Button Default Color</value>
+  </data>
+  <data name="plBtnDistance.Help" xml:space="preserve">
+    <value>Enter button distance, default value is 20</value>
+  </data>
+  <data name="plBtnDistance.Text" xml:space="preserve">
+    <value>Button Distance</value>
+  </data>
+  <data name="plBtnFocusColor.Help" xml:space="preserve">
+    <value>Pick button focus color,default is 0xFF6600</value>
+  </data>
+  <data name="plBtnFocusColor.Text" xml:space="preserve">
+    <value>Button Focus Color</value>
+  </data>
+  <data name="plBtnHoverColor.Help" xml:space="preserve">
+    <value>Pick button hover color, default is 0xFF9900</value>
+  </data>
+  <data name="plBtnHoverColor.Text" xml:space="preserve">
+    <value>Button Hover Color</value>
+  </data>
+  <data name="plBtnSetMargin.Help" xml:space="preserve">
+    <value>Enter button margin via css style.default value is "auto 5 5 auto",represent top,right,bottom,left distance to player.Note,values are separated by space. Use "auto" if you don't want specify a value.</value>
+  </data>
+  <data name="plBtnSetMargin.Text" xml:space="preserve">
+    <value>Button Margin</value>
+  </data>
+  <data name="plBtnTextColor.Help" xml:space="preserve">
+    <value>Pick button text color,default is 0xFFFFFF</value>
+  </data>
+  <data name="plBtnTextColor.Text" xml:space="preserve">
+    <value>Button text color</value>
+  </data>
+  <data name="plChangImageMode.Help" xml:space="preserve">
+    <value>Choose image change mode</value>
+  </data>
+  <data name="plChangImageMode.Text" xml:space="preserve">
+    <value>Image change mode</value>
+  </data>
+  <data name="plFlashWmode.Help" xml:space="preserve">
+    <value>Choose flash wmode option, default value is transparent</value>
+  </data>
+  <data name="plFlashWmode.Text" xml:space="preserve">
+    <value>Flash wmode option</value>
+  </data>
+  <data name="plIsHeightQuality.Help" xml:space="preserve">
+    <value>Use high quality while scaling images</value>
+  </data>
+  <data name="plIsHeightQuality.Text" xml:space="preserve">
+    <value>High Quality</value>
+  </data>
+  <data name="plIsShowBtn.Help" xml:space="preserve">
+    <value>Check to show image navigate button</value>
+  </data>
+  <data name="plIsShowBtn.Text" xml:space="preserve">
+    <value>Show Botton</value>
+  </data>
+  <data name="plIsShowTitle.Help" xml:space="preserve">
+    <value>Check to show image title</value>
+  </data>
+  <data name="plIsShowTitle.Text" xml:space="preserve">
+    <value>Show Title</value>
+  </data>
+  <data name="plLinkTarget.Help" xml:space="preserve">
+    <value>Choose link target,it doesn't apply to "Numeric navigate (black)" play mode.</value>
+  </data>
+  <data name="plLinkTarget.Text" xml:space="preserve">
+    <value>Link Target</value>
+  </data>
+  <data name="plPlayMode.Help" xml:space="preserve">
+    <value> &amp;nbsp;&amp;nbsp;"Numeric navigate (classical)" supports up to 9 image items. "Numeric navigate (black)" and "Numeric Navigate Extension" has no image item limitation. Note, currently "Numeric navigate (black)" can only open link url in new window.</value>
+  </data>
+  <data name="plPlayMode.Text" xml:space="preserve">
+    <value>Choose play mode</value>
+  </data>
+  <data name="plRoundCorner.Help" xml:space="preserve">
+    <value>Check to make flash coner round</value>
+  </data>
+  <data name="plRoundCorner.Text" xml:space="preserve">
+    <value>Round Coner</value>
+  </data>
+  <data name="plScaleMode.Help" xml:space="preserve">
+    <value>Choose image scale mode.</value>
+  </data>
+  <data name="plScaleMode.Text" xml:space="preserve">
+    <value>Scale Mode</value>
+  </data>
+  <data name="plTitleBgAlpha.Help" xml:space="preserve">
+    <value>Enter title background alpha,default value is 0.75</value>
+  </data>
+  <data name="plTitleBgAlpha.Text" xml:space="preserve">
+    <value>Title Background Alpha</value>
+  </data>
+  <data name="plTitleBgColor.Help" xml:space="preserve">
+    <value>Pick title background color,default is 0xFF6600
+</value>
+  </data>
+  <data name="plTitleBgColor.Text" xml:space="preserve">
+    <value>Title Background Color</value>
+  </data>
+  <data name="plTitleFont.Help" xml:space="preserve">
+    <value>Enter title font, defalut value is "Times New Roman"</value>
+  </data>
+  <data name="plTitleFont.Text" xml:space="preserve">
+    <value>Title Font</value>
+  </data>
+  <data name="plTitleMoveDuration.Help" xml:space="preserve">
+    <value>Title move duration, default is 1</value>
+  </data>
+  <data name="plTitleMoveDuration.Text" xml:space="preserve">
+    <value>Title Move Duration(sec)</value>
+  </data>
+  <data name="plTitleTextColor.Help" xml:space="preserve">
+    <value>Pick title text color,default is 0xFFFFFF
+</value>
+  </data>
+  <data name="plTitleTextColor.Text" xml:space="preserve">
+    <value>Title Text Color</value>
+  </data>
+  <data name="plTransDuration.Help" xml:space="preserve">
+    <value>Enter image transform duration,default is 1 </value>
+  </data>
+  <data name="plTransDuration.Text" xml:space="preserve">
+    <value>Transform Duration(sec)</value>
+  </data>
+  <data name="plTransform.Help" xml:space="preserve">
+    <value>Choose transform style</value>
+  </data>
+  <data name="plTransform.Text" xml:space="preserve">
+    <value>Transform Style</value>
+  </data>
+  <data name="secNavigateExBotton.Text" xml:space="preserve">
+    <value>Navigate Button</value>
+  </data>
+  <data name="secNavigateExGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="secNavigateExTitle.Text" xml:space="preserve">
+    <value>Image Title</value>
+  </data>
+  <data name="wsFlashSettings.Text" xml:space="preserve">
+    <value>Flash Settings</value>
+  </data>
+  <data name="wsPlayLists.Text" xml:space="preserve">
+    <value>Play Lists</value>
+  </data>
+  <data name="DeleteSelectedItem.Text" xml:space="preserve">
+    <value>Are you sure to delete selected images?</value>
+  </data>
+  <data name="lblPortalFolderTips.Text" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=red&gt;Dynamic Generate &lt;/font&gt;mode enables you create gallery more quickly. It will  automatically scan a specified folder and its sub directories(if recursive option is checked), picking up all  related files. Whenever files are changed,it will automatic refresh. It makes things more easy because all you need to do is select a specific folder , and then maintain its  files through other tools(like ftp software), item list will automatic changed.&lt;/p&gt;       
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Check "recursive" option to scan recursive. If you want to exclude some folders while retrieving,input its name in exclude folder field.Use comma to separate multiple folders.For example ,enter "Album1,Album2" to exclude these two folder while generating gallery.&lt;/p&gt;</value>
+  </data>
+  <data name="liPlayListType_Customize.Text" xml:space="preserve">
+    <value>Customize</value>
+  </data>
+  <data name="liPlayListType_DynamicGenerate.Text" xml:space="preserve">
+    <value>Dynamic generate from portal folder</value>
+  </data>
+  <data name="liPlayListType_UsingExistXml.Text" xml:space="preserve">
+    <value>Existing Xml</value>
+  </data>
+  <data name="plExcludeFolder.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Check "recursive folder" option to scan recursive. If you want to exclude some folders while retrieving,input its name in exclude folder field.Use comma to separate multiple folders.For example ,enter "Album1,Album2" to exclude these two folder while generating gallery.&lt;/p&gt;</value>
+  </data>
+  <data name="plExcludeFolder.Text" xml:space="preserve">
+    <value>Exclude Folder</value>
+  </data>
+  <data name="plExistXml.Help" xml:space="preserve">
+    <value>Choose existing xml which generated by other instances.It should named like Cross_ImageNavigate + ModuleId.xml , like Cross_ImageNavigate320.xml</value>
+  </data>
+  <data name="plExistXml.Text" xml:space="preserve">
+    <value>Existing Xml</value>
+  </data>
+  <data name="plGalleryFolder.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;font color=red&gt;Dynamic Generate &lt;/font&gt;mode enables you create gallery more quickly. It will  automatically scan a specified folder and its sub directories(if recursive option is checked), picking up all  related files. Whenever files are changed,it will automatic refresh. It makes things more easy because all you need to do is select a specific folder , and then maintain its  files through other tools(like ftp software), item list will automatic changed.&lt;/p&gt;       
+
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Check "recursive" option to scan recursive. If you want to exclude some folders while retrieving,input its name in exclude folder field.Use comma to separate multiple folders.For example ,enter "Album1,Album2" to exclude these two folder while generating gallery.&lt;/p&gt;</value>
+  </data>
+  <data name="plGalleryFolder.Text" xml:space="preserve">
+    <value>Portal Folder</value>
+  </data>
+  <data name="plPlayListType.Help" xml:space="preserve">
+    <value>Choose play list type.</value>
+  </data>
+  <data name="plPlayListType.Text" xml:space="preserve">
+    <value>Play list type</value>
+  </data>
+  <data name="plRecursiveFolder.Help" xml:space="preserve">
+    <value>&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Check "recursive folder" option to scan recursive. If you want to exclude some folders while retrieving,input its name in exclude folder field.Use comma to separate multiple folders.For example ,enter "Album1,Album2" to exclude these two folder while generating gallery.&lt;/p&gt;</value>
+  </data>
+  <data name="plRecursiveFolder.Text" xml:space="preserve">
+    <value>Recursive</value>
+  </data>
+  <data name="secPortalFolder.Text" xml:space="preserve">
+    <value>Dynamic generate from folder</value>
+  </data>
+  <data name="plLinkToImage.Help" xml:space="preserve">
+    <value>Check this option to link to original file when user double click image.</value>
+  </data>
+  <data name="plLinkToImage.Text" xml:space="preserve">
+    <value>Link To Image</value>
+  </data>
+  <data name="NoExistXml.Text" xml:space="preserve">
+    <value>Submit failure,please select a valid xml file.</value>
+  </data>
+  <data name="NoPlayItem.Text" xml:space="preserve">
+    <value>Submit failure,you need provide at least one image item.</value>
+  </data>
+  <data name="NullGalleryFolder.Text" xml:space="preserve">
+    <value>Submit failure,please select a valid folder.</value>
+  </data>
+  <data name="lblPlayModeTips.Text" xml:space="preserve">
+    <value> &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"Numeric navigate (classical)" supports up to 9 image items. The other four has no image item limitation. Note, currently "Numeric navigate (black)" can only open link url in new window.</value>
+  </data>
+  <data name="secPlayModeTips.Text" xml:space="preserve">
+    <value>Play  mode selection tips</value>
+  </data>
+  <data name="plViewTemplate.Help" xml:space="preserve">
+    <value>Templates locate under desktopmodules/FlashNavigate/Template/View, you can customize your own display templates.</value>
+  </data>
+  <data name="plViewTemplate.Text" xml:space="preserve">
+    <value>View Template</value>
+  </data>
+  <data name="lblFlashNavigateBlackSettings.Text" xml:space="preserve">
+    <value>Numeric navigate(black) settings.</value>
+  </data>
+  <data name="lblImageNavigate_Black.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Screen shot of numeric navigate (black),supports unlimited image items.Currently the link target can only open link url in new window</value>
+  </data>
+  <data name="lblImageNavigate_Classical.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Screen shot of numeric navigate (classical),supports 9 image items.</value>
+  </data>
+  <data name="lblImageNavigate_Extension.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Screen shot of numeric navigate (extension),supports unlimited image items.</value>
+  </data>
+  <data name="liPlayModeList_ImageNavigateBlack.Text" xml:space="preserve">
+    <value>Numeric navigate (black)</value>
+  </data>
+  <data name="plNavigateBlack_Speed.Help" xml:space="preserve">
+    <value>Enter image rotator speed(millisecond).</value>
+  </data>
+  <data name="plNavigateBlack_Speed.Text" xml:space="preserve">
+    <value>Rotator Speed</value>
+  </data>
+  <data name="lblFlashNavigateIntegrativeSettings.Text" xml:space="preserve">
+    <value>Numeric navigate(integrative) settings</value>
+  </data>
+  <data name="lblImageNavigate_Integrative.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Screen shot of numeric navigate (integrative),supports unlimited image items.</value>
+  </data>
+  <data name="liPlayModeList_ImageNavigateIntegrative.Text" xml:space="preserve">
+    <value>Numeric navigate (integrative)</value>
+  </data>
+  <data name="plNavigateIntegrative_BtnBg.Help" xml:space="preserve">
+    <value>Select button focus color, default value is 0xD52100.</value>
+  </data>
+  <data name="plNavigateIntegrative_BtnBg.Text" xml:space="preserve">
+    <value>Button focus color</value>
+  </data>
+  <data name="plNavigateIntegrative_BtnColor.Help" xml:space="preserve">
+    <value>Select button color, default value is 0x958683.</value>
+  </data>
+  <data name="plNavigateIntegrative_BtnColor.Text" xml:space="preserve">
+    <value>Button Color</value>
+  </data>
+  <data name="plNavigateIntegrative_Speed.Help" xml:space="preserve">
+    <value>Enter image rotator speed(millisecond),default value is 4000.</value>
+  </data>
+  <data name="plNavigateIntegrative_Speed.Text" xml:space="preserve">
+    <value>Rotator Speed</value>
+  </data>
+  <data name="plNavigateIntegrative_TextSize.Help" xml:space="preserve">
+    <value>Text size, default value is 12.</value>
+  </data>
+  <data name="plNavigateIntegrative_TextSize.Text" xml:space="preserve">
+    <value>Text Size</value>
+  </data>
+  <data name="plNavigateIntegrative_TxtColor.Help" xml:space="preserve">
+    <value>Select text color,default value is 0xFFFFFF.</value>
+  </data>
+  <data name="plNavigateIntegrative_TxtColor.Text" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="btnDeleteSelected.Text" xml:space="preserve">
+    <value>Delete selected images</value>
+  </data>
+  <data name="lblFlashNavigateButtonFreeSettings.Text" xml:space="preserve">
+    <value>Numeric navigate(button free) settings</value>
+  </data>
+  <data name="lblImageNavigate_ButtonFree.Text" xml:space="preserve">
+    <value>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Screen shot of numeric navigate (button free),supports unlimited images.The navigate button can be put to bottom left/bottom right/top left/top right.</value>
+  </data>
+  <data name="liPlayModeList_ImageNavigateButtonFree.Text" xml:space="preserve">
+    <value>Numeric navigate (button free)</value>
+  </data>
+  <data name="li_FileCompareMode_FileLengthAsc.Text" xml:space="preserve">
+    <value>File size ascending</value>
+  </data>
+  <data name="li_FileCompareMode_FileLengthDesc.Text" xml:space="preserve">
+    <value>File size descending</value>
+  </data>
+  <data name="li_FileCompareMode_FileNameAsc.Text" xml:space="preserve">
+    <value>File name ascending</value>
+  </data>
+  <data name="li_FileCompareMode_FileNameDesc.Text" xml:space="preserve">
+    <value>File name descending</value>
+  </data>
+  <data name="li_FileCompareMode_ModifyDateAsc.Text" xml:space="preserve">
+    <value>Modify date ascending</value>
+  </data>
+  <data name="li_FileCompareMode_ModifyDateDesc.Text" xml:space="preserve">
+    <value>Modify date descending</value>
+  </data>
+  <data name="li_NavigateButtonFree_Button_Pos_Buttom.Text" xml:space="preserve">
+    <value>Top Right</value>
+  </data>
+  <data name="li_NavigateButtonFree_Button_Pos_Left.Text" xml:space="preserve">
+    <value>Bottom Left</value>
+  </data>
+  <data name="li_NavigateButtonFree_Button_Pos_Right.Text" xml:space="preserve">
+    <value>Bottom Right</value>
+  </data>
+  <data name="li_NavigateButtonFree_Button_Pos_Top.Text" xml:space="preserve">
+    <value>Top Left</value>
+  </data>
+  <data name="plNavigateButtonFree_BgColor.Help" xml:space="preserve">
+    <value>Flash background color,default is 0xDDDDDD</value>
+  </data>
+  <data name="plNavigateButtonFree_BgColor.Text" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="plNavigateButtonFree_Button_Pos.Help" xml:space="preserve">
+    <value>Navigate button can be put to top left/top right/bottom left/bottom right.</value>
+  </data>
+  <data name="plNavigateButtonFree_Button_Pos.Text" xml:space="preserve">
+    <value>Navigate button position</value>
+  </data>
+  <data name="plNavigateButtonFree_Show_Text.Help" xml:space="preserve">
+    <value>Show image text in flash.</value>
+  </data>
+  <data name="plNavigateButtonFree_Show_Text.Text" xml:space="preserve">
+    <value>Show Text</value>
+  </data>
+  <data name="plNavigateButtonFree_Stop_Time.Help" xml:space="preserve">
+    <value>Enter image rotator speed. 1000 = 1 second</value>
+  </data>
+  <data name="plNavigateButtonFree_Stop_Time.Text" xml:space="preserve">
+    <value>Rotator Speed</value>
+  </data>
+  <data name="plNavigateButtonFree_TxtColor.Help" xml:space="preserve">
+    <value>Text color, default is 0x424242</value>
+  </data>
+  <data name="plNavigateButtonFree_TxtColor.Text" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="plFileCompareMode.Help" xml:space="preserve">
+    <value>Choose how to sort files.</value>
+  </data>
+  <data name="plFileCompareMode.Text" xml:space="preserve">
+    <value>File Sort</value>
+  </data>
+  <data name="plCheckXhtml.Help" xml:space="preserve">
+    <value>The "Navigate extension" feature require Xhtml compatible.Check this option to automatic add xhtml doctype declaration.Uncheck this option to use default doctype of current skin file.</value>
+  </data>
+  <data name="plCheckXhtml.Text" xml:space="preserve">
+    <value>Check xhtml compatible.</value>
+  </data>
+</root>

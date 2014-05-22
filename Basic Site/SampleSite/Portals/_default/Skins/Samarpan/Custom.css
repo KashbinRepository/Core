@@ -1,0 +1,32 @@
+﻿
+
+#Body { background: #fff;}
+
+#userControls{display:none;}
+#siteHeadouter {
+    background: #fff;
+    /* CSS3 */
+    -webkit-box-shadow: 1px 50px 100px 0px #fff;
+    box-shadow: 1px 50px 100px 0px #fff;
+}
+#siteHeadinner {
+    background: #E2EDDD;
+	}
+
+.threeColRightPane{float:right;}
+.container{ background:#E0EBEB;}
+.row-fluid{}
+
+
+#BibleVerse{float:right;}
+#footer{background:#fff;margin:0 auto;width:1172px; height:35px;}
+
+/* Module CSS*/
+
+/* OnyakTechWordConverter */
+
+.ModOnyakTechWordConverterC{padding:15px;}
+
+.Footer_Pad{clear:both;}
+.FooterCopyright{width:300px;float:left;}
+.Footerfacebook, .FooterYouTube {float:right;margin:0 5px;}
