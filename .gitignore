@@ -2,7 +2,10 @@
 /Source/DNN7/bin/*.pdb
 /Source/DNN7/bin/*.XML
 /Source/DNN7/bin/*.dll
+/Source/App_Data
 /Source/DNN7/App_Data
+/Source/DNN7/obj
+/Source/DNN7/DesktopModules/SamarpanModule
 /Source/DNN7/Portals/0/Caches/Pages
 
 /Basic Site/DNN_Platform_07.02.00_Install/Install/Temp
@@ -12,4 +15,7 @@
 /Basic Site/DNN_Platform_07.02.00_Install/Portals/2/Cache/Pages/*.resources
 
 *.resources
-*.zip
+*.obj
+*.Debug
+
+/SRC/App_Data

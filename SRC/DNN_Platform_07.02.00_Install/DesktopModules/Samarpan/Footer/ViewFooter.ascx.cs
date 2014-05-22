@@ -23,6 +23,8 @@ using System.Web.UI;
 using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Exceptions;
+using Samarpan.Providers.Messaging.Transport;
+using Samarpan.Providers.Messaging.Transport.Email.SimpleMailTransferProtocol;
 
 namespace Samarpan.Modules.Footer
 {
@@ -128,6 +130,20 @@ namespace Samarpan.Modules.Footer
                     true, false);
                 return Actions;
             }
+        }
+
+
+
+
+        public void ContactUs()
+        {
+            IMessageConfiguration config=new MessageConfiguration();
+
+            Provider smtp = new Provider(config);
+          // IMessageRequest request = new MessageRequest();
+            //request.Attributes.Add("From", "test@micros.com");
+           // smtp.SendMessage(request);
+
         }
 
         #endregion

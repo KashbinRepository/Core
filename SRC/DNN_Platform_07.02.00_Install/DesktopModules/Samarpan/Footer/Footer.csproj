@@ -99,6 +99,16 @@
     <Content Include="Settings.ascx" />
     <Content Include="ViewFooter.ascx" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Provider\Samarpan.Providers.Messaging.Transport\Samarpan.Providers.Messaging.Transport.csproj">
+      <Project>{0CAA1B92-882D-4BBD-850F-7F75AFB56058}</Project>
+      <Name>Samarpan.Providers.Messaging.Transport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Provider\Samarpan.SimpleMailTransferProtocol\Samarpan.SimpleMailTransferProtocol.csproj">
+      <Project>{0900C81D-6486-4AA7-A648-0846F26E41B8}</Project>
+      <Name>Samarpan.SimpleMailTransferProtocol</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

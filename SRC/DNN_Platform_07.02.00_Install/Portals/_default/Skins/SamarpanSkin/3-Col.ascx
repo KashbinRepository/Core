@@ -20,6 +20,8 @@
 <dnn:DnnJsInclude ID="bootstrapJS" runat="server" FilePath="bootstrap/js/bootstrap.min.js" PathNameAlias="SkinPath" />
 <dnn:DnnJsInclude ID="customJS" runat="server" FilePath="js/scripts.js" PathNameAlias="SkinPath" />
 
+
+
 <div id="siteWrapper">
     <div id="userControls" class="container">
         <div class="row-fluid">
@@ -66,7 +68,10 @@
             <div class="row-fluid">
 		        <div id="ContentPane" class="span12 contentPane" runat="server"></div>
             </div>
-            <div id="footer">
+     
+        </div>
+	</div><!--/contentWrapper-->
+	       <div id="footer">
                 <div class="row-fluid">
         	     
                     <div id="footerCenterPane" class="" runat="server"></div>
@@ -75,17 +80,8 @@
                 <div class="row-fluid">
                     <hr class="span12"/>
                 </div>
-                <div id="copyright" class="row-fluid">
-				    <dnn:COPYRIGHT ID="dnnCopyright" runat="server" CssClass="span5 pull-left" />
-				    <div class="span5 pull-right">
-					    <dnn:LINKTOMOBILE ID="dnnLinkToMobile" runat="server" />
-					    <dnn:TERMS ID="dnnTerms" runat="server" /> |
-					    <dnn:PRIVACY ID="dnnPrivacy" runat="server" />
-				    </div>
-                </div><!--/copyright-->
+            
             </div><!--/footer-->
-        </div>
-	</div><!--/contentWrapper-->
 </div><!--/siteWrapper-->
 
     	

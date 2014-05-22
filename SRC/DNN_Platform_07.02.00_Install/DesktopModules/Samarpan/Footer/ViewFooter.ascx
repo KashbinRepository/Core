@@ -30,6 +30,9 @@
      <div id="FooterYouTube" class="FooterYouTube">
     </div>
 
+    <form method="post"  name="contact" action="submitForm(this); return false;">
+    <input type="submit" value="send Email" name="btnMail" />
+    </form>
 </div>
 <script type="text/javascript" language="javascript">
     $(document).ready(function () {
@@ -87,4 +90,24 @@
         }
 
     });
+
+
+
+    function submitForm(form) {
+        // This can use AJAX to submit the values to a PHP script
+
+        $.ajax({
+            type: 'POST',
+            url: '/path/to/processForm.php',
+            data: $('#yourForm').serialize(),
+            success: function (output) {
+                if (output) { // You can do whatever JS action you want in here
+                    alert(output);
+                } else {
+                    return true; // this will redirect you to the action defined in your form tag, since no output was found.
+                }
+            }
+        });
+        return false;
+    }
 </script>
