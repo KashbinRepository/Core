@@ -224,6 +224,13 @@
     display: none;
     font-size: 22px;
 }
+
+.fc-calendar .fc-row > div > div span {
+    display:block;
+    font-size: 10px;
+}
+
+
 @media screen and (max-width: 300px) {
 .fc-calendar-container {
     -moz-box-sizing: border-box;
