@@ -736,6 +736,7 @@ namespace DotNetNuke.Framework
             ClientResourceManager.RegisterIEStylesheet(this, Globals.HostPath + "ie.css");
 
             ClientResourceManager.RegisterStyleSheet(this, ctlSkin.SkinPath + "skin.css", FileOrder.Css.SkinCss);
+			 ClientResourceManager.RegisterStyleSheet(this, ctlSkin.SkinPath + "Custom.css", FileOrder.Css.SkinCss);
             ClientResourceManager.RegisterStyleSheet(this, ctlSkin.SkinSrc.Replace(".ascx", ".css"), FileOrder.Css.SpecificSkinCss);
 
             //add skin to page

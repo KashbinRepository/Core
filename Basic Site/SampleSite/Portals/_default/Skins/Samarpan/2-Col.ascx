@@ -83,11 +83,14 @@
                     <div id="rightPane" class="twoColRightPane" runat="server"></div>
                 </div>
             </div>
-             <div class="row-fluid">
-		        <div id="FooterPane" class="contentPane" runat="server"></div>
-            </div>
+          
         </div>
+		  <div class="row-fluid">
+		        <div id="FooterPane" class="FooterPane" runat="server"></div>
+            </div>
+		
 	</div><!--/contentWrapper-->
+	 
 </div><!--/siteWrapper-->
 
     	

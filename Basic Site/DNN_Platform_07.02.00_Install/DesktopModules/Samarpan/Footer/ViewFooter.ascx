@@ -74,7 +74,7 @@
             var hdnFacebook = $("#<%= hdnFacebook.ClientID %>").val();
             if (hdnFacebook != null && hdnFacebook != '') {
                 $('#Footerfacebook').empty();
-                $('#Footerfacebook').append('<a target="_blank" href="' + hdnFacebook + '"> <img src="' + hdnSkinPath + 'Images/smiley.gif" width="42" height="42"/></a>');
+                $('#Footerfacebook').append('<a target="_blank" href="' + hdnFacebook + '"> <img src="' + hdnSkinPath + 'Images/facebook.jpg" width="42" height="42"/></a>');
             }
         }
 
@@ -82,7 +82,7 @@
             var hdnYoutube = $("#<%= hdnYoutube.ClientID %>").val();
             if (hdnYoutube != null && hdnYoutube != '') {
                 $('#FooterYouTube').empty();
-                $('#FooterYouTube').append('<a target="_blank" href="' + hdnYoutube + '"> <img src="' + hdnSkinPath + 'Images/smiley.gif" width="42" height="42"/></a>');
+                $('#FooterYouTube').append('<a target="_blank" href="' + hdnYoutube + '"> <img src="' + hdnSkinPath + 'Images/youtube.jpg" width="42" height="42"/></a>');
             }
         }
 

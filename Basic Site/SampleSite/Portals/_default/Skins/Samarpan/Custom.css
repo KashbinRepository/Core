@@ -14,7 +14,7 @@
 	}
 
 .threeColRightPane{float:right;}
-.container{ background:#E0EBEB;}
+.container{ background:#E0EBEB; padding:10px;}
 .row-fluid{}
 
 
@@ -23,10 +23,33 @@
 
 /* Module CSS*/
 
+/* Contact US */
+
+.contact_table{width:600px;}
+.ModGPHostingContactFormC input[type="text"]{width:200px; }
+.ModGPHostingContactFormC textarea{width:300px;height:200px}
+.ModGPHostingContactFormC input{width:100px;}
+
+
+.ModFlashNumericRotatorC{margin-left:25px;}
+
+/* Event*/
+
+
+
+/*Videos */
+
+#youmax #youmax-tabs span{background:#990000; padding:10px;margin:0px 10px;}
+#youmax #youmax-video-list-div { font-size:15px;margin:15px 0;}
+
+#youmax #youmax-video-tnail-box{}
 /* OnyakTechWordConverter */
 
 .ModOnyakTechWordConverterC{padding:15px;}
 
-.Footer_Pad{clear:both;}
+.FooterPane{width:1170px;margin:0 auto;padding-top:15px;}
 .FooterCopyright{width:300px;float:left;}
 .Footerfacebook, .FooterYouTube {float:right;margin:0 5px;}
+
+
+/*Html Modules*/
