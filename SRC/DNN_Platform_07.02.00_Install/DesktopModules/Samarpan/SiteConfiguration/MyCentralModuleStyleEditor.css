@@ -1,0 +1,51 @@
+﻿/*body{background:#F1EEDB;}*/
+
+#MyCentralModuleStyleSetting{
+	min-height:520px;
+	width:870px;
+	/*margin: 5px 10px;*/
+	/* No padding allowed */
+}
+
+#MyCentralModuleStyleSetting_MenuDiv
+{
+    font-size:medium;
+    width:300px;
+    height:500px;
+    position:fixed;
+    top:10px;
+    left:20px; 
+    overflow:auto;
+    
+}
+#MyCentralModuleStyleSetting_SettingDiv
+{
+    font-size:medium;
+    width:550px;
+    height:500px;
+    position:fixed;
+    top:10px;
+    left:320px;
+    overflow:auto;    
+}
+
+#MyCentralSiteConfiguration_ActionButtonesDiv
+{
+    margin:auto;
+    width:90%;
+    display:none;
+}
+
+#MyCentralModuleStyleSetting_FileLoaderDiv
+{
+    display:none;
+}
+
+.MyCentralSiteConfiguration_ActionButtons{width:200px; color:Black}
+
+
+.ulSiteStyleGroup{list-style-type:square}
+.ulSiteStyleSubGroup{list-style-type:circle}
+.liSiteStyleGroup{font-size:larger; font-weight:bold}
+.liSiteStyleSubGroup{font-size:large;}
+.liSiteStyle{color:Blue; font-size:medium;}

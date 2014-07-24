@@ -1,0 +1,22 @@
+﻿.MyCentralSiteConfiguration_StyleEditorArea{float:left; width:1400px; min-height:1100px}
+.MyCentralSiteConfiguration_TreeViewArea{float:left;margin-left: 5px;width: 300px;padding-bottom:20px;}
+.MyCentralSiteConfiguration_dnnTreePages{border-right: 1px solid #ccc; margin-bottom:20px;margin-top:10px}
+.MyCentralSiteConfiguration_SettingArea{float:left;width:1050px;margin: 10px 0 0 20px;}
+.MyCentralSiteConfiguration_DemoPage{width:1050px; height:700px;}
+.MyCentralSiteConfiguration_PropertyEditor{float:left; width:700px; margin-top:10px}
+#MyCentralSiteConfiguration_PropertyEditorTable{width:700px}
+.MyCentralSiteConfiguration_PropertyEditorTableNameColumn{width:200px; font-size:medium}
+.MyCentralSiteConfiguration_PropertyEditorTableValueColumn{width:550px; font-size:medium}
+.MyCentralSiteConfiguration_PropertyEditorTableValue2Column{width:300px; font-size:medium}
+.MyCentralSiteConfiguration_ActionButtons{width:200px; color:Black}
+.MyCentralSiteConfiguration_valueInput{width:550px;height:25px}
+.MyCentralSiteConfiguration_textInput{width:550px;height:25px}
+.MyCentralSiteConfiguration_colorInput{width:550px;height:25px}
+.MyCentralSiteConfiguration_FontSelector{width:550px;height:25px; font-size:medium}
+.MyCentralSiteConfiguration_FontFamilySelector{width:554px;height:20px; font-size:medium}
+.MyCentralSiteConfiguration_SizeInput{width:550px;height:25px; font-size:medium}
+#MyCentralSiteConfiguration_DemoFrame{width: 1300px; height: 870px; border: 1px solid black; zoom: 0.80; -moz-transform: scale(0.80); -moz-transform-origin: 0 0;}
+#MyCentralSiteConfiguration_DemoPageSelectDiv{float:left; width:500px; padding-top:10px; padding-bottom:10px}
+#MyCentralSiteConfiguration_DemoPageSelect{float:left; width:300px;}
+#MyCentralSiteConfiguration_DemoPageSelectLable{float:left;}
+.MyCentralSiteConfiguration_ImageFileInput{width:550px;height:0px; font-size:medium}

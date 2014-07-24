@@ -3,15 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footer", "Footer\Footer.csproj", "{F9C72F1E-6865-490E-832D-4445CFD8ADB2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{3E252F51-6D56-4093-9819-2CCDE36BB587}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactUS", "ContactUS\ContactUS.csproj", "{3FA23526-521E-4520-A277-5F901EA7A75B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samarpan.SimpleMailTransferProtocol", "Provider\Samarpan.SimpleMailTransferProtocol\Samarpan.SimpleMailTransferProtocol.csproj", "{0900C81D-6486-4AA7-A648-0846F26E41B8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samarpan.Providers.Messaging.Transport", "Provider\Samarpan.Providers.Messaging.Transport\Samarpan.Providers.Messaging.Transport.csproj", "{0CAA1B92-882D-4BBD-850F-7F75AFB56058}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCentralSiteConfiguration", "SiteConfiguration\MyCentralSiteConfiguration.csproj", "{086F3BE1-F744-4000-9D35-FF38F8F3A43B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Videos", "Videos\Videos.csproj", "{8CE30155-0F15-46DA-B2F9-C431BA924D32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,42 +32,6 @@ Global
 		{F9C72F1E-6865-490E-832D-4445CFD8ADB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9C72F1E-6865-490E-832D-4445CFD8ADB2}.Release|x64.ActiveCfg = Release|Any CPU
 		{F9C72F1E-6865-490E-832D-4445CFD8ADB2}.Release|x86.ActiveCfg = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Payment Providers|Any CPU.ActiveCfg = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Payment Providers|Any CPU.Build.0 = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Payment Providers|x64.ActiveCfg = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Payment Providers|x86.ActiveCfg = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Release|x64.ActiveCfg = Release|Any CPU
-		{3FA23526-521E-4520-A277-5F901EA7A75B}.Release|x86.ActiveCfg = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Payment Providers|Any CPU.ActiveCfg = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Payment Providers|Any CPU.Build.0 = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Payment Providers|x64.ActiveCfg = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Payment Providers|x86.ActiveCfg = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Release|x64.ActiveCfg = Release|Any CPU
-		{0900C81D-6486-4AA7-A648-0846F26E41B8}.Release|x86.ActiveCfg = Release|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Payment Providers|Any CPU.ActiveCfg = Payment Providers|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Payment Providers|Any CPU.Build.0 = Payment Providers|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Payment Providers|x64.ActiveCfg = Payment Providers|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Payment Providers|x86.ActiveCfg = Payment Providers|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Release|x64.ActiveCfg = Release|Any CPU
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058}.Release|x86.ActiveCfg = Release|Any CPU
 		{086F3BE1-F744-4000-9D35-FF38F8F3A43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{086F3BE1-F744-4000-9D35-FF38F8F3A43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086F3BE1-F744-4000-9D35-FF38F8F3A43B}.Debug|x64.ActiveCfg = Debug|x64
@@ -90,12 +48,20 @@ Global
 		{086F3BE1-F744-4000-9D35-FF38F8F3A43B}.Release|x64.Build.0 = Release|x64
 		{086F3BE1-F744-4000-9D35-FF38F8F3A43B}.Release|x86.ActiveCfg = Release|x86
 		{086F3BE1-F744-4000-9D35-FF38F8F3A43B}.Release|x86.Build.0 = Release|x86
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Payment Providers|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Payment Providers|Any CPU.Build.0 = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Payment Providers|x64.ActiveCfg = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Payment Providers|x86.ActiveCfg = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Release|x64.ActiveCfg = Release|Any CPU
+		{8CE30155-0F15-46DA-B2F9-C431BA924D32}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{0900C81D-6486-4AA7-A648-0846F26E41B8} = {3E252F51-6D56-4093-9819-2CCDE36BB587}
-		{0CAA1B92-882D-4BBD-850F-7F75AFB56058} = {3E252F51-6D56-4093-9819-2CCDE36BB587}
 	EndGlobalSection
 EndGlobal

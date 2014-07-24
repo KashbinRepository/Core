@@ -24,20 +24,19 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Modules.Actions;
 using DotNetNuke.Services.Exceptions;
 
-
-namespace Samarpan.Modules.Footer
+namespace Samarpan.Modules.Videos
 {
 
     /// ----------------------------------------------------------------------------- 
     /// <summary> 
-    /// The ViewFooter class displays the content 
+    /// The ViewVideos class displays the content 
     /// </summary> 
     /// <remarks> 
     /// </remarks> 
     /// <history> 
     /// </history> 
     /// ----------------------------------------------------------------------------- 
-    partial class ViewFooter : PortalModuleBase, IActionable
+    partial class ViewVideos : PortalModuleBase, IActionable
     {
 
         #region "Event Handlers"
@@ -54,48 +53,31 @@ namespace Samarpan.Modules.Footer
                 //SessionServiceFactory.InitializeModule(Request.ApplicationPath, Request.RawUrl);
                 DotNetNuke.Framework.jQuery.RequestRegistration();
 
-                FooterSettings settingsData = new FooterSettings(this.TabModuleId);
+                VideosSettings settingsData = new VideosSettings(this.TabModuleId);
 
-                if (!string.IsNullOrEmpty(settingsData.ShowCopyright))
+                if (!string.IsNullOrEmpty(settingsData.youTubeChannelURL))
                 {
-                    this.hdnFooterCopyright.Value = settingsData.ShowCopyright;
+                    this.hdnyouTubeChannelURL.Value = settingsData.youTubeChannelURL;
                 }
-                if (!string.IsNullOrEmpty(settingsData.CopyrightText))
+                if (!string.IsNullOrEmpty(settingsData.youTubePlaylistURL))
                 {
-                    this.hdnFooterCopyrightText.Value = settingsData.CopyrightText;
+                    this.hdnyouTubePlaylistURL.Value = settingsData.youTubePlaylistURL;
                 }
-                if (!string.IsNullOrEmpty(settingsData.ShowPrivacy))
+                if (!string.IsNullOrEmpty(settingsData.youmaxDefaultTab))
                 {
-                    this.hdnFooterPrivacy.Value = settingsData.ShowPrivacy;
+                    this.hdnyoumaxDefaultTab.Value = settingsData.youmaxDefaultTab;
                 }
-                if (!string.IsNullOrEmpty(settingsData.SecLinkToPrivacy))
+                if (!string.IsNullOrEmpty(settingsData.showFeaturedVideoOnLoad))
                 {
-                    this.hdnFooterPrivacyLink.Value = settingsData.SecLinkToPrivacy;
+                    this.hdnshowFeaturedVideoOnLoad.Value = settingsData.showFeaturedVideoOnLoad;
                 }
-                if (!string.IsNullOrEmpty(settingsData.ShowContactUs))
+                if (!string.IsNullOrEmpty(settingsData.showVideoInLightbox))
                 {
-                    this.hdnFooterContactUs.Value = settingsData.ShowContactUs;
+                    this.hdnshowVideoInLightbox.Value = settingsData.showVideoInLightbox;
                 }
-                if (!string.IsNullOrEmpty(settingsData.SecLinkToContactUs))
-                {
-                    this.hdnFooterContactUsLink.Value = settingsData.SecLinkToContactUs;
-                }
-                if (!string.IsNullOrEmpty(settingsData.ShowLogo))
-                {
-                    this.hdnFooterLogo.Value = settingsData.ShowLogo;
-                }
+               
 
-                if (!string.IsNullOrEmpty(settingsData.LinkToFacebook))
-                {
-                    this.hdnFacebook.Value = settingsData.LinkToFacebook;
-                }
-
-                if (!string.IsNullOrEmpty(settingsData.LinkToYoutube))
-                {
-                    this.hdnYoutube.Value = settingsData.LinkToYoutube;
-                }
-
-                this.hdnSkinPath.Value = PortalSettings.ActiveTab.SkinPath;
+                //this.hdnSkinPath.Value = PortalSettings.ActiveTab.SkinPath;
             }
 
             catch (Exception exc)
@@ -130,9 +112,6 @@ namespace Samarpan.Modules.Footer
                 return Actions;
             }
         }
-
-
-
 
 
 
